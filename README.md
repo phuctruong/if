@@ -1,4 +1,3 @@
-```markdown
 # 🧠 IF Theory: Prime Fields, Dark Matter, and Dark Energy
 Welcome to the official repository for **IF Theory** – a symbolic model of curvature, structure, and expansion that explains dark matter and dark energy without free parameters or mass assumptions.
 
@@ -92,5 +91,4 @@ pip install numpy scipy astropy matplotlib tqdm
 
 This project is open-source under the MIT License. Use it, fork it, share it — and test the structure of the cosmos for yourself.
 
-```
 
