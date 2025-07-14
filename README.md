@@ -32,6 +32,15 @@ We test symbolic curvature fields like:
 ✅ All results are **replicable using these notebooks**  
 ✅ No ΛCDM assumptions or mass fitting required
 
+
+### 🛡️ Disclaimer on Correlation and Sigma
+
+This notebook shows symbolic alignment between IF Theory’s predicted prime field and the expansion trend of real galaxy data.
+
+We do not claim a cosmological discovery. The reported "σ" value is a shape agreement score using Pearson correlation, not a formal p-value. No cosmic variance, bootstrapping, or ΛCDM comparison is included (yet).
+
+We invite the community to test, replicate, and improve on this result.
+
 ---
 
 ## 📁 Notebooks
