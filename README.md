@@ -24,7 +24,7 @@ We test symbolic curvature fields like:
 |--------------|----------------|----------------------|----------------------|--------|
 | **SDSS DR12**  | Dark Matter     | 1 / log r             | **19.55σ**            | ✅ Confirmed |
 | **DESI ELG**   | Dark Matter     | 1 / log r             | **18.11σ**            | ✅ Confirmed |
-| **EUCLID **    | Dark Matter     | 1 / log r             | **5.87**              | ✅ Confirmed |
+| **EUCLID**     | Dark Matter     | 1 / log r             | **5.87**              | ✅ Confirmed |
 | **SDSS DR12**  | Dark Energy     | 1 / log(log r)        | **12.43σ**            | ✅ Confirmed |
 | **DESI ELG**   | Dark Energy     | 1 / log(log r)        | **24.81σ**            | ✅ Confirmed |
 | **EUCLID**     | Dark Energy     | 1 / log(log r)        | **7.19σ**             | ✅ Confirmed |
