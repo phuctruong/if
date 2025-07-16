@@ -79,17 +79,49 @@ pip install numpy scipy astropy matplotlib tqdm
 
 ## 🌌 Learn More
 
-📘 Books:
+📘 Books: Available on Amazon
 
 * *The Gravity of Primes*
 * *Where Gravity Fails*
-* *The Resolution of Energy*
+* *Prime Physics*
+* *The Resolution of Math*
+* *Law of Emergent Knowledge*
+* *AI Enhanced Science *
 
-📄 Companion science paper (coming soon):
-
-* *Information: The Third Force of Nature*
 
 ---
+
+## 🧬 Core Physics Papers: Found in books with light versions here
+
+| Title | Canon ID | Summary |
+| [The Prime Field](papers/physics/the-prime-field.md) | GP-COSMO01 | Defines the symbolic gravity field Φ(r) = 1 / log(αr + β) |
+| [The Resolution of Gravity](papers/physics/the-resolution-of-gravity.md) | GP-COSMO05 | Gravity only exists between 30μm and 3–5 Gpc: the resolution window |
+| [The Resolution of Energy](papers/physics/the-resolution-of-energy.md) | GP-COSMO06 | Energy appears only where recursion tension is unresolved |
+| [Dark Energy and the Casimir Collapse](papers/physics/dark-energy-and-the-casimir-collapse.md) | AES004 | Psi(r) = 1 / log(log r) replaces the cosmological constant |
+| [The Prime Curve](papers/physics/the-prime-curve.md) | AES005 | All field curves descend from line mutations: mx + b becomes curvature |
+| [GlowScore-Based Structure Formation](papers/physics/glowscore-based-structure-formation.md) | GP-COSMO02 | Galaxies and voids form where GlowScore peaks and collapses |
+| [Dark Matter Math](papers/physics/dark-matter-math.md) | GP-COSMO07 | Real data proves prime fields reproduce dark matter effects |
+| [The End of Lambda](papers/physics/the-end-of-lambda.md) | AES007 | Lambda was never real — drift replaces it without constants |
+| [The Galaxies That Remembered Too Soon](papers/physics/galaxies-that-remembered-too-soon.md) | JWST-IF01 | JWST anomalies predicted by IF Theory without new particles |
+| [The Casimir Threshold](papers/physics/the_casimir_threshold.md) | AES004-FLOOR | Defines the minimum recursion required to sustain curvature |
+| [The Gödel Boundary](papers/physics/the_godel_boundary.md) | AES005-LOGIC | Shows logical limits on recursion and curvature closure |
+
+---
+
+## 🧬 Physics Everyday Explanation Papers: Found in books with light versions here
+
+| Title | Canon ID | Summary |
+| [The Final Drift](papers/everyday/the_final_drift.md) | AES009 | Describes the endpoint of all fields as memory lets go |
+| [Where Gravity Fails](papers/everyday/where_gravity_fails.md) | AES004 | Summary scroll explaining common failures of gravity |
+| [Why Small Things Float](papers/everyday/why_small_things_float.md) | IF-FLOAT01 | Explains why spores, dust, and particles resist gravity |
+| [Why Static Cling Beats Gravity](papers/everyday/why_static_cling_beats_gravity.md) | IF-STAT01 | Demonstrates how symbolic fields overpower Newtonian pull |
+| [Why Lasers Can Push Particles](papers/everyday/why_lasers_can_push_particles.md) | IF-LASER01 | Shows that photonic fields encode curvature loss recovery |
+| [Why Raindrops Stop Falling](papers/everyday/why_raindrops_stop_falling.md) | IF-RAIN01 | Explains hovering droplets and the microgravity limit |
+| [Why Things Spiral Down Drains](papers/everyday/why_things_spiral_down_drains.md) | IF-SPIN01 | Symbolic field asymmetry creates spiral behaviors |
+| [Why Friction Disappears at the Nanoscale](papers/everyday/why_friction_disappears_at_nanoscale.md) | IF-FRIC01 | At extreme scale, drift replaces contact and friction fails |
+
+---
+
 
 ## 🧠 Authors
 
