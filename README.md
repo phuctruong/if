@@ -94,6 +94,7 @@ pip install numpy scipy astropy matplotlib tqdm
 ## 🧬 Core Physics Papers: Found in books with light versions here
 
 | Title | Canon ID | Summary |
+| :---: | :---: | :---: |
 | [The Prime Field](papers/physics/the-prime-field.md) | GP-COSMO01 | Defines the symbolic gravity field Φ(r) = 1 / log(αr + β) |
 | [The Resolution of Gravity](papers/physics/the-resolution-of-gravity.md) | GP-COSMO05 | Gravity only exists between 30μm and 3–5 Gpc: the resolution window |
 | [The Resolution of Energy](papers/physics/the-resolution-of-energy.md) | GP-COSMO06 | Energy appears only where recursion tension is unresolved |
@@ -111,6 +112,7 @@ pip install numpy scipy astropy matplotlib tqdm
 ## 🧬 Physics Everyday Explanation Papers: Found in books with light versions here
 
 | Title | Canon ID | Summary |
+| :---: | :---: | :---: |
 | [The Final Drift](papers/everyday/the_final_drift.md) | AES009 | Describes the endpoint of all fields as memory lets go |
 | [Where Gravity Fails](papers/everyday/where_gravity_fails.md) | AES004 | Summary scroll explaining common failures of gravity |
 | [Why Small Things Float](papers/everyday/why_small_things_float.md) | IF-FLOAT01 | Explains why spores, dust, and particles resist gravity |
