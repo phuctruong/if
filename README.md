@@ -86,7 +86,7 @@ pip install numpy scipy astropy matplotlib tqdm
 * *Prime Physics*
 * *The Resolution of Math*
 * *Law of Emergent Knowledge*
-* *AI Enhanced Science *
+* *AI Enhanced Science*
 
 
 ---
