@@ -1,34 +1,34 @@
-# Core Scientific Computing
-numpy>=1.21.0
-scipy>=1.7.0
-pandas>=1.3.0
+# ---------------------------------------------------------------------------
+# Core Requirements
+# These packages are essential for the basic theory, calculations, and data handling.
+# As described in TECHNICAL.md
+# ---------------------------------------------------------------------------
+numpy
+scipy
+pandas
+astropy
 
-# Astronomy Specific
-astropy>=5.0.0
+# ---------------------------------------------------------------------------
+# Analysis & Visualization Requirements
+# Required for running the analysis notebooks, plotting results, and validation.
+# ---------------------------------------------------------------------------
+matplotlib
+jupyter
 
-# Performance & Clustering
-numba>=0.56.0          # Optional: For JIT-optimized pair counting
-scikit-learn>=1.0.0    # For k-means clustering in Jackknife error estimation
-psutil>=5.8.0          # Optional: For memory monitoring during large computations
+# ---------------------------------------------------------------------------
+# Optional & Recommended Packages
+# For performance optimization and advanced analysis features mentioned in the documentation.
+#
+# ---------------------------------------------------------------------------
 
-# Data Downloading
-requests>=2.26.0
-tqdm>=4.62.0           # For progress bars during downloads
+# For 10-20x performance speedup on pair counting via JIT compilation
+numba
 
-# Visualization
-matplotlib>=3.4.0
-seaborn>=0.11.0        # Used for enhanced plot styling in notebooks
+# For robust statistical methods like jackknife region creation
+scikit-learn
 
-# --- Optional for Development & Documentation ---
+# For user-friendly progress bars during long computations
+tqdm
 
-# Jupyter Support (for running notebooks)
-jupyterlab>=3.0.0
-notebook>=6.4.0
-ipykernel>=6.0.0
-
-# Testing
-pytest>=6.2.0
-
-# Documentation
-sphinx>=4.0.0
-sphinx-rtd-theme>=1.0.0
+# For robust data downloads from web archives
+requests

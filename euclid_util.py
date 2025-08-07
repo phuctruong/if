@@ -415,9 +415,8 @@ def load_mer_catalog(filepath: str, tile_id: str) -> Tuple[Dict[int, Tuple[float
                 except (ValueError, KeyError):
                     continue
             
-            logger.info(f"  Loaded {len(positions_by_obj_id):,} positions from tile {tile_id}")
-            if has_seg_id:
-                logger.info(f"  Also indexed by SEGMENTATION_MAP_ID")
+ #           logger.info(f"  Loaded {len(positions_by_obj_id):,} positions from tile {tile_id}")
+#            if has_seg_id: logger.info(f"  Also indexed by SEGMENTATION_MAP_ID")
             
             # Show sample IDs for debugging
             if DEBUG_MATCHING:
@@ -760,7 +759,7 @@ class EuclidDataLoader:
             
             # Load SPE (redshifts)
             spe_file = spe_files[0]
-            logger.info(f"  SPE file: {os.path.basename(spe_file)}")
+            #logger.info(f"  SPE file: {os.path.basename(spe_file)}")
             redshifts = load_spe_catalog(spe_file, tile_id)
             
             if not redshifts:
@@ -769,7 +768,7 @@ class EuclidDataLoader:
             
             # Load MER (positions)
             mer_file = tiles[tile_id]['MER'][0]
-            logger.info(f"  MER file: {os.path.basename(mer_file)}")
+            #logger.info(f"  MER file: {os.path.basename(mer_file)}")
             positions_by_obj_id, positions_by_seg_id = load_mer_catalog(mer_file, tile_id)
             
             if not positions_by_obj_id and not positions_by_seg_id:
@@ -782,7 +781,7 @@ class EuclidDataLoader:
             
             # Strategy 1: Try matching SPE OBJECT_ID with MER SEGMENTATION_MAP_ID
             if positions_by_seg_id:
-                logger.info("  Trying SPE OBJECT_ID ↔ MER SEGMENTATION_MAP_ID matching...")
+                #logger.info("  Trying SPE OBJECT_ID ↔ MER SEGMENTATION_MAP_ID matching...")
                 for obj_id, z in redshifts.items():
                     if obj_id in positions_by_seg_id:
                         ra, dec = positions_by_seg_id[obj_id]
@@ -799,7 +798,7 @@ class EuclidDataLoader:
             
             # Strategy 2: If no segmentation matches, try direct OBJECT_ID matching
             if matched == 0:
-                logger.info("  Trying direct OBJECT_ID matching...")
+                #logger.info("  Trying direct OBJECT_ID matching...")
                 for obj_id, z in redshifts.items():
                     if obj_id in positions_by_obj_id:
                         ra, dec = positions_by_obj_id[obj_id]
@@ -815,12 +814,12 @@ class EuclidDataLoader:
                             matched += 1
             
             match_rate = 100 * matched / len(redshifts) if redshifts else 0
-            logger.info(f"  Matched {matched:,}/{len(redshifts):,} objects ({match_rate:.1f}%)")
+            #logger.info(f"  Matched {matched:,}/{len(redshifts):,} objects ({match_rate:.1f}%)")
             
             if matched > 0:
                 tiles_used.append(tile_id)
-                logger.info(f"  Added {len(all_galaxies) - tile_galaxies_before:,} galaxies from this tile")
-                logger.info(f"  Total galaxies so far: {len(all_galaxies):,}")
+               # logger.info(f"  Added {len(all_galaxies) - tile_galaxies_before:,} galaxies from this tile")
+               # logger.info(f"  Total galaxies so far: {len(all_galaxies):,}")
         
         # Check if we have enough data
         if not all_galaxies:
