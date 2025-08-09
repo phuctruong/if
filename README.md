@@ -55,10 +55,10 @@ At larger scales (r > 14 Mpc), gravitational "bubbles" around galaxies decouple 
 
 | Survey | Sample | Galaxies | Redshift | Correlation | Significance |
 |--------|--------|----------|----------|-------------|--------------|
-| **SDSS DR12** | LOWZ | 361,762 | 0.15-0.43 | **0.994** | 7.7σ |
-| **SDSS DR12** | CMASS | 777,202 | 0.43-0.70 | 0.989 | 6.8σ |
-| **DESI DR1** | ELG | 129,724 | 0.8-1.6 | 0.954 | 7.0σ |
-| **Euclid DR1** | All | 490,000 | 0.5-2.5 | 0.955 | 7.4σ |
+| **SDSS DR12** | LOWZ | 361,762 | 0.15-0.43 | 0.988 | 6.3σ |
+| **SDSS DR12** | CMASS | 777,202 | 0.43-0.70 | 0.983 | 6.0σ |
+| **DESI DR1** | ELG | 129,724 | 0.8-1.6 | 0.978 | 8.2σ |
+| **Euclid DR1** | All | 490,000 | 0.5-2.5 | 0.940 | 7.1σ |
 
 ### Dark Energy Tests: DESI DR1 BAO Validation
 
@@ -73,10 +73,6 @@ At larger scales (r > 14 Mpc), gravitational "bubbles" around galaxies decouple 
 | **Parameters** | **0** | 6 | ✓ Bubble Universe |
 
 **Key Result**: Information criteria prefer our model despite higher χ² because it uses zero parameters!
-
-### The Smoking Gun: 13,700× χ²/dof Variation
-
-Different galaxy samples yield χ²/dof from 2.4 to 32,849—a **13,700× variation**. This is impossible if we had any free parameters to adjust. It's the strongest proof of a truly parameter-free model.
 
 ---
 
@@ -150,7 +146,7 @@ Great unifications in physics:
 - **Maxwell**: Electricity and magnetism (1865)
 - **Einstein**: Space and time, matter and energy (1905/1915)
 - **Standard Model**: Three fundamental forces (1970s)
-- **Prime Field Theory**: Dark matter and dark energy (2024)
+- **Prime Field Theory**: Dark matter and dark energy (2025)
 
 Each unification led to technological revolutions. This could be next.
 
