@@ -324,6 +324,51 @@ python3 predictions/hubble_tension.py
 - Transition from 73 → 67 km/s/Mpc between 10-100 Mpc
 - **If H₀ is constant at all scales, IF Theory's bubble mechanism is falsified**
 
+### S8 Tension Resolution (>4σ anomaly)
+
+The S8 tension (early universe: 0.83 vs late universe: 0.76) is resolved by **logarithmic smoothing**:
+
+```bash
+python3 predictions/s8_tension.py
+```
+
+| Survey | Redshift | Observed S8 | Predicted S8 | Agreement |
+|--------|----------|-------------|--------------|-----------|
+| Planck CMB | 1100 | 0.832 ± 0.013 | 0.813 | ✓ 1.4σ |
+| KiDS Lensing | 0.5 | 0.759 ± 0.024 | 0.770 | ✓ 0.4σ |
+| DES Y3 | 0.3 | 0.776 ± 0.017 | 0.766 | ✓ 0.6σ |
+
+**Key Insight:** S8 is NOT constant—it evolves with redshift due to logarithmic structure smoothing.
+
+**Testable Prediction:**
+- Euclid should measure S8 ~ 0.773 at z = 0.8
+- S8 should decrease smoothly from z=1100 to z=0
+- **If S8 is constant at all redshifts, IF Theory is falsified**
+
+### CMB Cold Spot Explanation (Recursion Cosmology)
+
+The CMB Cold Spot (~3σ anomaly, 10° diameter, 150 μK deficit) is explained as a **"memory well"**:
+
+```bash
+python3 predictions/cmb_cold_spot.py
+```
+
+**IF Theory Explanation:** In Recursion Cosmology, the Big Bang is a "loop closure" from a prior universe cycle. The Cold Spot is a region where prior-cycle information is incompletely compressed—a "scar" from the previous universe.
+
+| Property | Observed | IF Theory Explanation |
+|----------|----------|----------------------|
+| Origin | Unknown | Prior universe imprint |
+| Supervoid | Effect? | Effect, not cause |
+| Temperature profile | Measured | Logarithmic (from prime field) |
+
+**Testable Predictions:**
+- Cold Spot has PRIMORDIAL origin (not recent structure)
+- If Supervoid exists, it formed IN the memory well (effect, not cause)
+- Polarization signature should be consistent with primordial origin
+- **If Cold Spot is purely ISW effect from supervoid, Recursion Cosmology is wrong**
+
+⚠️ **Note:** This is the most speculative IF Theory prediction. Recursion Cosmology is philosophical but TESTABLE.
+
 ---
 
 ## Why Zero Parameters Matters
