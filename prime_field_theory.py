@@ -93,14 +93,21 @@ class PrimeFieldTheory:
     3. Pure mathematics (no fitting)
     """
     
-    def __init__(self):
-        """Initialize with mathematically determined parameters."""
+    def __init__(self, use_empirical_r0: bool = False):
+        """Initialize with mathematically determined parameters.
+
+        Parameters
+        ----------
+        use_empirical_r0 : bool
+            If True, use empirically validated r₀ = 0.65 kpc instead of attempting
+            σ₈ integration (which currently fails). Default False raises exception.
+        """
         logger.info("="*70)
         logger.info("PRIME FIELD THEORY - ZERO PARAMETER VERSION")
         logger.info("="*70)
-        
+
         # Derive all parameters using modular component
-        self.param_derivation = ParameterDerivation()
+        self.param_derivation = ParameterDerivation(use_empirical_r0=use_empirical_r0)
         params = self.param_derivation.get_parameters()
         
         # Store core parameters
