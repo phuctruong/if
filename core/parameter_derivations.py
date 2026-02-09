@@ -73,8 +73,10 @@ class ParameterDerivation:
             """Complete integrand for variance calculation."""
             if r < 1e-10:
                 return 0.0
-                
+
             # Correlation function ξ(r) = [Φ(r)]²
+            # NOTE: This formula produces σ₈ ~ 0.17-0.24, not 0.8159
+            # TODO: Fix normalization or use different approach
             x = r / r0 + 1
             if x <= 1:
                 xi = 0.0
@@ -168,12 +170,32 @@ class ParameterDerivation:
             logger.info(f"    Final r₀ = {r0_mpc:.6f} Mpc = {r0_mpc*1000:.3f} kpc")
             return r0_mpc
         else:
-            # Use known good value from published results
-            # This value has been validated against 3.5M+ galaxies
-            logger.warning("    WARNING: σ₈ integration failed to converge!")
-            logger.warning("    Using validated value r₀ = 0.014824 Mpc = 14.824 kpc")
-            logger.warning("    (From SDSS/DESI/Euclid validation, NOT a free parameter)")
-            return 0.014824  # Known good value
+            # CRITICAL ERROR: σ₈ integration failed to produce valid r₀
+            # The variance calculation is producing σ₈ ~ 0.17-0.24 instead of 0.8159
+            # This indicates a fundamental problem with the correlation function formula
+            # or the integration approach itself.
+            #
+            # Published value: r₀ = 0.65 kpc (validated against 3.5M+ galaxies)
+            # Integration target: Find r₀ such that σ₈ = 0.8159
+            # Current status: FAILING (off by ~4x)
+            #
+            # Possible issues:
+            # 1. ξ(r) = [growth × Φ(r)]² may need different normalization
+            # 2. Window function integration may be incorrect
+            # 3. This approach may not be the right way to derive r₀
+            #
+            # NO FALLBACK: Raise exception to force proper fix
+            raise RuntimeError(
+                "σ₈ integration failed to converge!\n"
+                "  Expected: σ₈ = 0.8159\n"
+                "  Calculated: σ₈ ~ 0.17-0.24 (4x too small)\n"
+                "  \n"
+                "  The correlation function ξ(r) = [Φ(r)]² produces incorrect variance.\n"
+                "  This calculation must be fixed before the theory can claim r₀ is derived.\n"
+                "  \n"
+                "  Published value: r₀ = 0.65 kpc (empirically validated)\n"
+                "  To use this value directly, see validate_from_first_principles.py"
+            )
     
     def _derive_velocity_scale_virial(self) -> tuple:
         """

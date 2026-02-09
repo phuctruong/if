@@ -30,7 +30,7 @@ class FieldEquations:
     def __init__(self, r0_mpc: float):
         """
         Initialize field equations with the characteristic scale.
-        
+
         Parameters
         ----------
         r0_mpc : float
@@ -38,6 +38,21 @@ class FieldEquations:
         """
         self.r0_mpc = r0_mpc
         self.amplitude = AMPLITUDE  # Always 1 from prime number theorem
+
+    def update_r0(self, r0_mpc: float):
+        """
+        Update the characteristic scale r₀.
+
+        This is needed when r₀ is corrected after initialization
+        (e.g., when σ₈ integration fails and fallback value is used).
+
+        Parameters
+        ----------
+        r0_mpc : float
+            New characteristic scale in Mpc
+        """
+        self.r0_mpc = r0_mpc
+        logger.info(f"FieldEquations: Updated r₀ to {r0_mpc:.6f} Mpc = {r0_mpc*1000:.3f} kpc")
         
     @staticmethod
     def validate_distance(r: Union[float, np.ndarray], name: str = "r") -> np.ndarray:
