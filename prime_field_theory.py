@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """
-prime_field_theory.py - Zero Parameter Dark Matter Theory (Modular Version)
+prime_field_theory.py - Prime Field Dark Matter Theory (Modular Version)
 =============================================================================
 
-A revolutionary theory where dark matter emerges from the prime number theorem
-with ZERO free parameters. All constants are mathematically determined.
-
-This version uses modular components while preserving all original functionality
-including all visualization methods.
+A theory where dark matter emerges from the prime number theorem.
 
 Core equation: Φ(r) = 1/log(r/r₀ + 1)
-- The amplitude is exactly 1 from the prime number theorem: π(x) ~ x/log(x)
-- The scale r₀ emerges from σ₈ normalization or MW constraint
-- No fitting, no tuning - pure mathematics
+- Amplitude = 1 (exact, from prime number theorem π(x) ~ x/log(x))
+- C_XI = 62 via Mersenne Tower Theorem (DEFAULT, zero free parameters)
+- r₀ derived from σ₈ + C_XI = 0.6595 kpc (or empirical 0.65 kpc)
+- v₀ semi-derived from virial analysis
 
-Version: 9.3.0 (Modular)
+Parameter modes:
+  Mersenne tower (DEFAULT): 0 free parameters (C_XI = 2×π(127) = 62, THEOREM)
+  Conservative: 1 free parameter (r₀ empirical)
+
+Version: 10.0.0 (Mersenne Tower Theorem)
 """
 
 import numpy as np
@@ -82,32 +83,43 @@ USE_SIGMA8_DERIVATION = True
 @dataclass
 class PrimeFieldTheory:
     """
-    Prime Field Theory with ZERO free parameters - Modular Implementation.
-    
+    Prime Field Theory - Modular Implementation.
+
     This version uses modular components for core physics while preserving
     all original methods including visualizations.
-    
-    Everything is derived from:
-    1. The prime number theorem (amplitude = 1)
-    2. σ₈ normalization (TRUE ZERO parameters) or MW constraint
-    3. Pure mathematics (no fitting)
+
+    Parameter hierarchy (Mersenne tower mode, DEFAULT):
+    1. Amplitude = 1 (exact, from prime number theorem)
+    2. C_XI = 62 (from Mersenne Tower Theorem: 2 × π(127))
+    3. r₀ = 0.6595 kpc (derived from σ₈² = C_XI × I(r₀))
+    4. v₀ semi-derived from virial/dimensional analysis (~30% uncertainty)
+    Free parameters: 0
     """
-    
-    def __init__(self, use_empirical_r0: bool = False):
+
+    def __init__(self, use_empirical_r0: bool = False, use_mersenne_tower: bool = True):
         """Initialize with mathematically determined parameters.
 
         Parameters
         ----------
         use_empirical_r0 : bool
-            If True, use empirically validated r₀ = 0.65 kpc instead of attempting
-            σ₈ integration (which currently fails). Default False raises exception.
+            If True, use empirically validated r₀ = 0.65 kpc (1 free parameter).
+        use_mersenne_tower : bool
+            If True (DEFAULT), use Mersenne Tower Theorem: C_XI = 62,
+            r₀ derived from σ₈. Zero free parameters.
         """
+        self.mode = 'mersenne_tower' if use_mersenne_tower else (
+            'empirical' if use_empirical_r0 else 'sigma8')
+
+        mode_label = "ZERO-PARAMETER MODEL (Mersenne Tower Theorem)" if use_mersenne_tower else "SINGLE INPUT MODEL (r₀ empirical)"
         logger.info("="*70)
-        logger.info("PRIME FIELD THEORY - ZERO PARAMETER VERSION")
+        logger.info(f"PRIME FIELD THEORY - {mode_label}")
         logger.info("="*70)
 
         # Derive all parameters using modular component
-        self.param_derivation = ParameterDerivation(use_empirical_r0=use_empirical_r0)
+        self.param_derivation = ParameterDerivation(
+            use_empirical_r0=use_empirical_r0,
+            use_mersenne_tower=use_mersenne_tower
+        )
         params = self.param_derivation.get_parameters()
         
         # Store core parameters
@@ -144,10 +156,15 @@ class PrimeFieldTheory:
         
         logger.info("Φ(r) = 1/log(r/r₀ + 1)")
         logger.info(f"Amplitude = {self.amplitude} (exact from prime number theorem)")
-        logger.info(f"Scale r₀ = {self.r0_kpc:.3f} kpc (DERIVED from σ₈)")
+        if use_mersenne_tower:
+            logger.info(f"C_XI = 62 (Mersenne Tower Theorem: 2 × π(127) = 2 × 31)")
+            logger.info(f"Scale r₀ = {self.r0_kpc:.4f} kpc (DERIVED from σ₈ with C_XI = 62)")
+            logger.info("Free parameters: 0 (ZERO — all derived from theory)")
+        else:
+            logger.info(f"Scale r₀ = {self.r0_kpc:.3f} kpc (EMPIRICAL from galaxy correlation shape)")
+            logger.info("Free parameters: 1 (r₀ empirical)")
         logger.info(f"Velocity scale v₀ = {self.v0_kms:.1f} ± {self.v0_kms * self.v0_uncertainty:.1f} km/s")
         logger.info("Note: ±30% uncertainty from virial theorem assumptions")
-        logger.info("TRUE ZERO free parameters - everything from first principles!")
         logger.info("Enhanced with numerical stability for r ∈ [1e-6, 1e5] Mpc")
         logger.info("="*70)
     
@@ -440,20 +457,38 @@ class PrimeFieldTheory:
         if isinstance(v_10kpc, np.ndarray):
             v_10kpc = float(v_10kpc)
         
-        summary = f"""KEY FEATURES:
-• TRUE ZERO free parameters
+        if self.mode == 'mersenne_tower':
+            summary = f"""KEY FEATURES:
+• 0 free parameters (THEOREM)
+• C_XI = 62 (Mersenne Tower Theorem)
 • Amplitude = 1 (prime theorem)
-• Scale = {self.r0_kpc:.3f} kpc (from σ₈)
+• Scale = {self.r0_kpc:.4f} kpc (derived)
 • Velocity = {self.v0_kms:.1f} km/s (virial)
 • 13 testable predictions
-• Numerically stable
 
 UNIQUE SIGNATURES:
 • 124% velocity deviation at 1 Gpc
 • {enhancement_200:.2f}× void growth at 200 Mpc
 • GW speed varies with frequency
 • Redshift quantization
-• CMB prime peaks
+
+MW PREDICTION:
+• Predicted: {v_10kpc:.1f} km/s
+• Observed: 220 ± 20 km/s
+• TRUE prediction, not fit!"""
+        else:
+            summary = f"""KEY FEATURES:
+• 1 empirical input (r₀)
+• Amplitude = 1 (prime theorem)
+• Scale = {self.r0_kpc:.3f} kpc (empirical)
+• Velocity = {self.v0_kms:.1f} km/s (virial)
+• 13 testable predictions
+
+UNIQUE SIGNATURES:
+• 124% velocity deviation at 1 Gpc
+• {enhancement_200:.2f}× void growth at 200 Mpc
+• GW speed varies with frequency
+• Redshift quantization
 
 MW PREDICTION:
 • Predicted: {v_10kpc:.1f} km/s
@@ -472,11 +507,18 @@ MW PREDICTION:
                 transform=ax.transAxes, fontsize=14, ha='center')
         ax.text(0.5, 0.35, 'π(x) ~ x/log(x)', 
                 transform=ax.transAxes, fontsize=20, ha='center', fontfamily='monospace')
-        ax.text(0.5, 0.15, 'TRUE ZERO PARAMETERS!', 
-                transform=ax.transAxes, fontsize=14, ha='center', 
-                weight='bold', color=theory_color)
-        ax.text(0.5, 0.0, f'r₀ = {self.r0_kpc:.3f} kpc (from σ₈)', 
-                transform=ax.transAxes, fontsize=12, ha='center')
+        if self.mode == 'mersenne_tower':
+            ax.text(0.5, 0.15, 'ZERO FREE PARAMETERS (Mersenne Tower Theorem)',
+                    transform=ax.transAxes, fontsize=14, ha='center',
+                    weight='bold', color=theory_color)
+            ax.text(0.5, 0.0, f'C_XI = 62, r₀ = {self.r0_kpc:.4f} kpc (derived)',
+                    transform=ax.transAxes, fontsize=12, ha='center')
+        else:
+            ax.text(0.5, 0.15, 'ONE EMPIRICAL INPUT (r₀)',
+                    transform=ax.transAxes, fontsize=14, ha='center',
+                    weight='bold', color=theory_color)
+            ax.text(0.5, 0.0, f'r₀ = {self.r0_kpc:.3f} kpc (empirical)',
+                    transform=ax.transAxes, fontsize=12, ha='center')
         
         plt.suptitle('Prime Field Theory: Zero-Parameter Dark Matter from Number Theory', 
                     fontsize=16, weight='bold')
@@ -510,14 +552,15 @@ MW PREDICTION:
             "\\section{Prime Field Theory: Zero-Parameter Dark Matter}",
             "",
             "\\subsection{Fundamental Equation}",
-            "The field emerges from the prime number theorem with \\textbf{zero free parameters}:",
+            "The field emerges from the prime number theorem with zero free parameters:",
             "\\begin{equation}",
             "\\Phi(r) = \\frac{1}{\\log(r/r_0 + 1)}",
             "\\end{equation}",
             "where:",
             "\\begin{itemize}",
             "\\item Amplitude = 1 (exact from $\\pi(x) \\sim x/\\log x$)",
-            f"\\item $r_0 = {self.r0_kpc:.3f}$ kpc (DERIVED from $\\sigma_8$ normalization)",
+            "\\item $C_{\\Xi} = 62$ (Mersenne Tower Theorem: $2 \\times \\pi(127)$)",
+            f"\\item $r_0 = {self.r0_kpc:.4f}$ kpc (derived from $\\sigma_8$ with $C_{{\\Xi}} = 62$)",
             f"\\item MW velocity is a PREDICTION: {v_10kpc:.0f} km/s",
             f"\\item Velocity scale $v_0 = {self.v0_kms:.1f}$ km/s (virial theorem)"
         ]
@@ -566,8 +609,8 @@ def main():
     """Demonstrate the zero-parameter prime field theory with modular implementation."""
     # Create results directory
     os.makedirs('results', exist_ok=True)
-    
-    # Create theory instance
+
+    # Create theory instance (default: Mersenne tower mode, zero free parameters)
     theory = PrimeFieldTheory()
     
     # Test numerical stability first
@@ -624,9 +667,9 @@ def main():
     logger.info("\n" + "="*70)
     logger.info("KEY POINTS FOR PEER REVIEWERS:")
     logger.info("="*70)
-    logger.info("1. TRUE ZERO free parameters - r₀ derived from σ₈")
+    logger.info("1. ZERO free parameters (Mersenne Tower Theorem: C_XI = 62)")
     logger.info("2. MW velocity is a PREDICTION, not calibration")
-    logger.info("3. Everything emerges from cosmology + prime number theorem")
+    logger.info("3. Everything emerges from prime number theorem + 3 axioms")
     logger.info("4. Makes 13 specific, testable predictions")
     logger.info("5. No dark matter particles needed")
     logger.info("6. Based on pure mathematics, not phenomenology")
@@ -674,8 +717,8 @@ def main():
     logger.info("  - results/prime_field_zero_params_modular.png (visualization)")
     logger.info("  - results/numerical_stability_results_modular.json (stability tests)")
     
-    logger.info("\n✅ TRUE ZERO PARAMETERS achieved!")
-    logger.info("✅ r₀ derived from σ₈, MW velocity is a prediction!")
+    logger.info("\nZero free parameters (Mersenne Tower Theorem).")
+    logger.info("MW velocity at 10 kpc is a prediction (prime field only).")
     logger.info("✅ Modular implementation ready for peer review!")
 
 

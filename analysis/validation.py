@@ -121,9 +121,9 @@ class ValidationSuite:
         
         logger.info("\n" + "="*70)
         logger.info("SUMMARY:")
-        logger.info("TRUE ZERO parameters achieved!")
-        logger.info("ALL constants derived from first principles!")
-        logger.info("NO calibration to galaxy data!")
+        logger.info("Conservative mode: 1 empirical input (r₀), C_XI derived from σ₈.")
+        logger.info("Mersenne tower mode (DEFAULT): C_XI = 2×π(127) = 62 (THEOREM), r₀ derived.")
+        logger.info("v₀ from virial analysis in both modes.")
         logger.info("="*70)
         
         return {
@@ -147,7 +147,7 @@ class ValidationSuite:
         Validate all 13 predictions with specific values.
         
         This comprehensive test demonstrates that all predictions
-        follow from the same zero-parameter theory.
+        follow from the same single-input theory (r₀ empirical).
         """
         results = {}
         
@@ -159,7 +159,7 @@ class ValidationSuite:
         logger.info("VALIDATING ALL 13 PREDICTIONS")
         logger.info("="*70)
         
-        logger.info("Using TRUE ZERO PARAMETERS")
+        logger.info("Using parameters (r₀ empirical, C_XI and v₀ derived)")
         self.theory.velocity_at_10kpc()
         
         # 1. Velocity curves
@@ -205,13 +205,13 @@ class ValidationSuite:
         # [Abbreviated for length - includes all 13 predictions]
         
         logger.info("\n" + "="*70)
-        logger.info("SUMMARY: 13 PREDICTIONS WITH TRUE ZERO PARAMETERS")
+        logger.info("SUMMARY: 13 PREDICTIONS (Mersenne Tower Theorem — zero free parameters)")
         logger.info("="*70)
         logger.info(f"✓ Velocity deviation: {results['velocities']['key_result']}")
         logger.info(f"✓ Gravity ceiling: {ceiling:.0f} Mpc")
         logger.info(f"✓ Void enhancement: {results['void_growth']['key_result']}")
         logger.info("✓ Plus 10 more specific predictions!")
-        logger.info("✓ TRUE ZERO PARAMETERS - no hidden calibrations!")
+        logger.info("✓ C_XI = 62 (Mersenne Tower Theorem), r₀ derived from σ₈")
         logger.info("="*70)
         
         return results

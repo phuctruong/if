@@ -3,17 +3,20 @@
 dark_energy_util.py - Bubble Universe Dark Energy Theory Implementation
 =======================================================================
 
-A zero-parameter cosmological model where dark energy emerges from the 
-dynamics of gravitational bubbles at galaxy scales.
+A cosmological model where dark energy emerges from the dynamics of
+gravitational bubbles at galaxy scales.
 
-This module implements the theoretical framework described in:
-"A Zero-Parameter Model for Dark Energy: The Bubble Universe Theory"
+This module implements the theoretical framework for the Bubble Universe Theory.
 
-All parameters are derived from first principles:
-- r₀ = 0.65 kpc (from σ₈ normalization of cosmic structure)
-- v₀ = 400 km/s (from virial theorem in logarithmic potential)
+Parameter hierarchy:
+- r₀ = 0.6595 kpc (derived via Mersenne Tower Theorem: C_XI=62)
+  or 0.65 kpc (empirical, conservative mode)
+- v₀ = 400 km/s (semi-derived from virial theorem, ~30% uncertainty)
 - r_bubble = 10.3 Mpc (from v₀/H₀ × √3 decoupling condition)
 - r_coupling = 3.79 Mpc (from r_bubble/e decay scale)
+
+Mersenne Tower Theorem (DEFAULT zero-parameter mode):
+  C_XI = 2 × π(127) = 62 → r₀ derived from σ₈ → all else follows
 
 Author: [Your name]
 Version: 1.0.0 (Publication Version)
@@ -38,7 +41,7 @@ logger = logging.getLogger(__name__)
 H0 = 67.36  # Hubble constant [km/s/Mpc]
 OMEGA_M = 0.3153  # Matter density parameter
 OMEGA_LAMBDA = 0.6847  # Dark energy density parameter
-SIGMA8 = 0.8111  # Amplitude of matter fluctuations
+SIGMA8 = 0.8111  # Amplitude of matter fluctuations (Planck 2018 TT,TE,EE+lowE+lensing)
 
 # Physical constants
 C_LIGHT = 299792.458  # Speed of light [km/s]
@@ -127,12 +130,14 @@ class PrimeFieldPotential:
     def gradient(self, r_mpc: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
         """
         Calculate gradient of potential.
-        
+
+        dΦ/dr = -1 / [r₀ × (r/r₀ + 1) × log²(r/r₀ + 1)]
+
         Parameters
         ----------
         r_mpc : float or array
             Distance in Mpc
-            
+
         Returns
         -------
         float or array
@@ -140,14 +145,15 @@ class PrimeFieldPotential:
         """
         r = np.atleast_1d(r_mpc)
         result = np.zeros_like(r)
-        
+
         mask = r > 0
         if np.any(mask):
             x = r[mask] / self.r0_mpc + 1
             valid = x > 1
             if np.any(valid):
-                result[mask] = np.where(valid, -1.0 / (r[mask] * np.log(x)**2), 0.0)
-        
+                log_x = np.log(np.where(valid, x, np.e))
+                result[mask] = np.where(valid, -1.0 / (self.r0_mpc * x * log_x**2), 0.0)
+
         return result.item() if r.ndim == 0 else result
 
 
@@ -161,7 +167,7 @@ class BubbleUniverseDarkEnergy:
     
     This model proposes that dark energy emerges from gravitational bubbles
     that decouple from cosmic expansion at characteristic scales. All parameters
-    are derived from first principles with zero free parameters.
+    use one empirical input (r₀) with other parameters derived.
     """
     
     def __init__(self):
