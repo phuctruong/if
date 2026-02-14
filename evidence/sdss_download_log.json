@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-02-14T11:19:53.616200",
+  "downloads": {
+    "lowz": {
+      "status": "FAILED",
+      "reason": "Download failed",
+      "url": "http://svn.sdss.org/public/sdss/eboss/lss/galaxy_DR12v5_LOWZ_South.fits"
+    },
+    "cmass": {
+      "status": "FAILED",
+      "reason": "Download failed",
+      "url": "http://svn.sdss.org/public/sdss/eboss/lss/galaxy_DR12v5_CMASS_South.fits"
+    },
+    "desi": {
+      "status": "FAILED",
+      "reason": "Download failed",
+      "url": "http://data.desi.lbl.gov/public/edr/spectro/redux/emline_galaxies.fits"
+    }
+  },
+  "summary": {
+    "total_attempted": 3,
+    "successful": 0,
+    "failed": 3,
+    "skipped": 0,
+    "total_size_mb": 0
+  }
+}
