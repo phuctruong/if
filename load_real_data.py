@@ -183,18 +183,23 @@ class RealDataLoader:
                 data_list.append(data)
 
         if not data_list:
-            logger.warning("No SDSS LOWZ data files found - using placeholder")
-            if use_placeholder:
-                return {
-                    'name': config['name'],
-                    'status': 'PLACEHOLDER',
-                    'count': config['expected_count'],
-                    'redshift_range': (config['z_min'], config['z_max']),
-                    'correlation': 0.988,
-                    'note': 'Placeholder values - download real data from http://sdss.org',
-                }
-            else:
-                raise FileNotFoundError(f"No data files found in {config['path']}")
+            logger.error("❌ REAL DATA REQUIRED")
+            logger.error(f"   No SDSS LOWZ data files found in {config['path']}")
+            logger.error("   Expected file: galaxy_DR12v5_LOWZ_South.fits")
+            logger.error("   ")
+            logger.error("   This project does NOT accept synthetic or fake data.")
+            logger.error("   You MUST obtain real SDSS DR12 data from official sources:")
+            logger.error("   ")
+            logger.error("   1. SDSS DataLab: https://datalab.noao.edu/")
+            logger.error("   2. SDSS CAS: https://data.sdss.org/")
+            logger.error("   3. SDSS Website: https://www.sdss.org/dr12/")
+            logger.error("   ")
+            logger.error("   See: REAL_DATA_ACQUISITION_GUIDE.md for detailed instructions")
+            raise FileNotFoundError(
+                f"REAL DATA REQUIRED: No files in {config['path']}\n"
+                "This project uses ONLY real SDSS DR12 observations.\n"
+                "Download from official sources and place in data/sdss_dr12/lowz/"
+            )
 
         # Combine multiple files
         combined_data = np.concatenate(data_list)
@@ -232,18 +237,23 @@ class RealDataLoader:
                 data_list.append(data)
 
         if not data_list:
-            logger.warning("No SDSS CMASS data files found - using placeholder")
-            if use_placeholder:
-                return {
-                    'name': config['name'],
-                    'status': 'PLACEHOLDER',
-                    'count': config['expected_count'],
-                    'redshift_range': (config['z_min'], config['z_max']),
-                    'correlation': 0.983,
-                    'note': 'Placeholder values - download real data from http://sdss.org',
-                }
-            else:
-                raise FileNotFoundError(f"No data files found in {config['path']}")
+            logger.error("❌ REAL DATA REQUIRED")
+            logger.error(f"   No SDSS CMASS data files found in {config['path']}")
+            logger.error("   Expected file: galaxy_DR12v5_CMASS_South.fits")
+            logger.error("   ")
+            logger.error("   This project does NOT accept synthetic or fake data.")
+            logger.error("   You MUST obtain real SDSS DR12 data from official sources:")
+            logger.error("   ")
+            logger.error("   1. SDSS DataLab: https://datalab.noao.edu/")
+            logger.error("   2. SDSS CAS: https://data.sdss.org/")
+            logger.error("   3. SDSS Website: https://www.sdss.org/dr12/")
+            logger.error("   ")
+            logger.error("   See: REAL_DATA_ACQUISITION_GUIDE.md for detailed instructions")
+            raise FileNotFoundError(
+                f"REAL DATA REQUIRED: No files in {config['path']}\n"
+                "This project uses ONLY real SDSS DR12 observations.\n"
+                "Download from official sources and place in data/sdss_dr12/cmass/"
+            )
 
         combined_data = np.concatenate(data_list)
         filtered_data, stats = cls._validate_galaxy_data(combined_data, config)
@@ -280,18 +290,22 @@ class RealDataLoader:
                 data_list.append(data)
 
         if not data_list:
-            logger.warning("No DESI ELG data files found - using placeholder")
-            if use_placeholder:
-                return {
-                    'name': config['name'],
-                    'status': 'PLACEHOLDER',
-                    'count': config['expected_count'],
-                    'redshift_range': (config['z_min'], config['z_max']),
-                    'correlation': 0.978,
-                    'note': 'Placeholder values - download real data from http://desi.lbl.gov',
-                }
-            else:
-                raise FileNotFoundError(f"No data files found in {config['path']}")
+            logger.error("❌ REAL DATA REQUIRED")
+            logger.error(f"   No DESI ELG data files found in {config['path']}")
+            logger.error("   Expected file: emline_galaxies.fits")
+            logger.error("   ")
+            logger.error("   This project does NOT accept synthetic or fake data.")
+            logger.error("   You MUST obtain real DESI DR1 data from official sources:")
+            logger.error("   ")
+            logger.error("   1. DESI Data Release: http://data.desi.lbl.gov/")
+            logger.error("   2. DESI Collaboration: https://www.desi.lbl.gov/")
+            logger.error("   ")
+            logger.error("   See: REAL_DATA_ACQUISITION_GUIDE.md for detailed instructions")
+            raise FileNotFoundError(
+                f"REAL DATA REQUIRED: No files in {config['path']}\n"
+                "This project uses ONLY real DESI DR1 observations.\n"
+                "Download from official sources and place in data/desi_dr1/elg/"
+            )
 
         combined_data = np.concatenate(data_list)
         filtered_data, stats = cls._validate_galaxy_data(combined_data, config)
