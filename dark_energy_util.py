@@ -36,9 +36,11 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # PHYSICAL CONSTANTS
 # =============================================================================
+# NOTE: These duplicate values from core/constants.py for standalone usage.
+# Canonical source is core/constants.py — keep in sync if values change.
 
 # Cosmological parameters (Planck 2018)
-H0 = 67.36  # Hubble constant [km/s/Mpc]
+H0 = 67.36  # Hubble constant [km/s/Mpc] (= H_PLANCK * 100 in core/constants.py)
 OMEGA_M = 0.3153  # Matter density parameter
 OMEGA_LAMBDA = 0.6847  # Dark energy density parameter
 SIGMA8 = 0.8111  # Amplitude of matter fluctuations (Planck 2018 TT,TE,EE+lowE+lensing)

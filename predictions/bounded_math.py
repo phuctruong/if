@@ -312,7 +312,7 @@ class BoundedMath:
     # THEOREM 3: Entropy in Bounded Systems
     # =========================================================================
 
-    def bounded_entropy_dynamics(self, n_steps: int = 100) -> Dict:
+    def bounded_entropy_dynamics(self, n_steps: int = 100, seed: int = 42) -> Dict:
         """
         VALIDATION 3: GlowEntropy in bounded recursive systems.
 
@@ -320,7 +320,17 @@ class BoundedMath:
         (memories) are sealed, GlowEntropy approaches zero."
 
         Models entropy evolution in a bounded recursive system.
+
+        Parameters
+        ----------
+        n_steps : int
+            Number of simulation steps
+        seed : int
+            RNG seed for reproducible results
         """
+        # Fixed-seed RNG for deterministic, reproducible results
+        rng = np.random.default_rng(seed)
+
         # Simulate a bounded recursive system
         # GlowEntropy = delta between current state and verified truth
 
@@ -331,8 +341,8 @@ class BoundedMath:
         glow_score = np.zeros(n_steps)
 
         for i in range(1, n_steps):
-            # Drift: belief accumulates noise
-            drift = 0.1 * np.random.randn()
+            # Drift: belief accumulates noise (deterministic with fixed seed)
+            drift = 0.1 * rng.standard_normal()
             belief_state[i] = belief_state[i-1] + drift
 
             # Resolution: periodically verify against scroll

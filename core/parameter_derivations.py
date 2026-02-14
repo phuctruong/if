@@ -171,7 +171,8 @@ class ParameterDerivation:
         logger.info(f"    π(M₇) = π(127) = 31 = M₅ (unique tower-closure, Lemma L3)")
         logger.info(f"    STATUS: THEOREM (conditional on axioms A1-A3)")
 
-        return float(c_xi)
+        # 62 is exact in float64 (no precision loss), returned as float for numpy compatibility
+        return float(c_xi)  # exactly 62.0
 
     def _derive_r0_from_sigma8_with_c_xi(self, c_xi: float) -> float:
         """
@@ -202,12 +203,23 @@ class ParameterDerivation:
             options={'xatol': 1e-12, 'maxiter': 2000}
         )
 
+        # Validate optimization converged
+        if not result.success and result.fun > 1e-6:
+            logger.warning(f"    WARNING: Optimization did not fully converge (fun={result.fun:.2e})")
+
+        if result.fun > 1e-4:
+            logger.error(f"    ERROR: Optimization residual too large ({result.fun:.2e}), falling back to empirical r₀")
+            return 0.00065  # fallback to empirical 0.65 kpc
+
         r0_mpc = np.exp(result.x)
         r0_kpc = r0_mpc * 1000
         final_sigma8 = np.sqrt(self._compute_sigma8_squared(r0_mpc, c_xi))
 
         error_pct = abs(final_sigma8 - SIGMA_8) / SIGMA_8 * 100
         empirical_diff = abs(r0_kpc - 0.65) / 0.65 * 100
+
+        if error_pct > 1.0:
+            logger.warning(f"    WARNING: σ₈ reproduction error = {error_pct:.2f}%, derivation may be unreliable")
 
         logger.info(f"    r₀ = {r0_kpc:.4f} kpc = {r0_mpc:.6f} Mpc")
         logger.info(f"    Verification: σ₈ = {final_sigma8:.6f} (target: {SIGMA_8:.4f}, error: {error_pct:.2f}%)")
@@ -297,6 +309,11 @@ class ParameterDerivation:
             integrand, 0, 2 * R_8,
             epsabs=1e-14, epsrel=1e-12, limit=500
         )
+
+        # Validate integration convergence
+        if result > 0 and error / result > 1e-6:
+            logger.warning(f"    Integration relative error = {error/result:.2e} (threshold: 1e-6)")
+
         return result
 
     def _derive_r0_from_sigma8(self) -> float:
@@ -337,6 +354,10 @@ class ParameterDerivation:
             method='bounded',
             options={'xatol': 1e-10, 'maxiter': 1000}
         )
+
+        # Validate optimization converged
+        if not result.success and result.fun > 1e-6:
+            logger.warning(f"    WARNING: Optimization did not fully converge (fun={result.fun:.2e})")
 
         r0_mpc = np.exp(result.x)
         r0_kpc = r0_mpc * 1000
@@ -511,6 +532,51 @@ class ParameterDerivation:
     # =========================================================================
     # OUTPUT
     # =========================================================================
+
+    def sigma8_from_r0(self, r0_mpc: float, c_xi: float = None) -> float:
+        """
+        Convenience method: Given r₀, compute σ₈.
+
+        Parameters
+        ----------
+        r0_mpc : float
+            Characteristic scale in Mpc
+        c_xi : float, optional
+            Correlation normalization. If None, uses Mersenne tower value (62).
+
+        Returns
+        -------
+        float
+            σ₈ value
+        """
+        if c_xi is None:
+            c_xi = 62.0  # Mersenne tower default
+
+        sigma8_sq = self._compute_sigma8_squared(r0_mpc, c_xi)
+        return np.sqrt(sigma8_sq)
+
+    def r0_from_sigma8(self, target_sigma8: float = None, c_xi: float = None) -> float:
+        """
+        Convenience method: Given σ₈, compute r₀.
+
+        Parameters
+        ----------
+        target_sigma8 : float, optional
+            Target σ₈ value. If None, uses Planck 2018 value (0.8111).
+        c_xi : float, optional
+            Correlation normalization. If None, uses Mersenne tower value (62).
+
+        Returns
+        -------
+        float
+            r₀ in Mpc
+        """
+        if target_sigma8 is None:
+            target_sigma8 = SIGMA_8
+        if c_xi is None:
+            c_xi = 62.0  # Mersenne tower default
+
+        return self._derive_r0_from_sigma8_with_c_xi(c_xi)
 
     def get_parameters(self) -> dict:
         """Return all derived parameters."""

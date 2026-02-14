@@ -32,3 +32,6 @@ tqdm
 
 # For robust data downloads from web archives
 requests
+
+# For system memory monitoring during large computations
+psutil

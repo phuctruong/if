@@ -35,7 +35,44 @@ class FieldEquations:
         ----------
         r0_mpc : float
             Characteristic scale in Mpc, derived from σ₈
+
+        Raises
+        ------
+        ValueError
+            If r0_mpc is None (null), zero, or negative
+        TypeError
+            If r0_mpc is not a number
         """
+        # Null check: r0_mpc cannot be None
+        if r0_mpc is None:
+            raise TypeError("r0_mpc cannot be None (null). Must be a positive float.")
+
+        # Type check
+        try:
+            r0_mpc = float(r0_mpc)
+        except (ValueError, TypeError):
+            raise TypeError(f"r0_mpc must be a number, got {type(r0_mpc)}")
+
+        # Zero check: r0_mpc must be > 0
+        if r0_mpc == 0:
+            raise ValueError("r0_mpc cannot be zero. The field is undefined at r/r₀ = 0.")
+
+        # Negative check: r0_mpc must be > 0
+        if r0_mpc < 0:
+            raise ValueError(f"r0_mpc cannot be negative. Got {r0_mpc}. Must be positive.")
+
+        # NaN check: r0_mpc must be finite
+        if np.isnan(r0_mpc):
+            raise ValueError("r0_mpc cannot be NaN. Must be a finite positive number.")
+
+        # Inf check: r0_mpc must be finite
+        if np.isinf(r0_mpc):
+            raise ValueError("r0_mpc cannot be infinite. Must be a finite positive number.")
+
+        # Reasonable bounds check
+        if r0_mpc < 1e-8 or r0_mpc > 1.0:
+            logger.warning(f"r0_mpc = {r0_mpc} is outside expected range [1e-8, 1] Mpc. Proceeding anyway.")
+
         self.r0_mpc = r0_mpc
         self.amplitude = AMPLITUDE  # Always 1 from prime number theorem
 
@@ -105,79 +142,70 @@ class FieldEquations:
     def field(self, r: Union[float, np.ndarray]) -> np.ndarray:
         """
         Calculate the prime field Φ(r) = 1/log(r/r₀ + 1).
-        
+
+        Note: The singularity at r=0 (where Φ→∞) is regularized by
+        validate_distance clipping r to [R_MIN_MPC, R_MAX_MPC].
+        At R_MIN_MPC, the field returns a large but finite value.
+
         Parameters
         ----------
         r : float or array
             Distance(s) in Mpc
-            
+
         Returns
         -------
         field : array
             Field values with numerical stability
         """
         r = self.validate_distance(r, "field distance")
-        
-        # Special handling for r = 0
-        r_is_zero = (r < R_MIN_MPC)
-        
+
         # Calculate argument of logarithm
+        # After validate_distance, r >= R_MIN_MPC, so x > 1 always
         x = r / self.r0_mpc + 1.0
-        
+
         # Ensure x > 1 to avoid log(1) = 0
         x = np.maximum(x, LOG_ARG_MIN)
-        
+
         # Calculate field with stability
         with np.errstate(divide='ignore', invalid='ignore'):
             log_x = np.log(x)
-            
-            # Handle edge cases
+
             field = np.zeros_like(r, dtype=float)
-            mask = (log_x > EPSILON) & (~r_is_zero)
+            mask = log_x > EPSILON
             field[mask] = self.amplitude / log_x[mask]
-            
-            # Explicitly set field to 0 at r = 0
-            field[r_is_zero] = 0.0
-            
+
         return self.validate_field(field)
     
     def field_gradient(self, r: Union[float, np.ndarray]) -> np.ndarray:
         """
         Calculate gradient dΦ/dr = -1/[r₀(r/r₀ + 1)log²(r/r₀ + 1)].
-        
+
+        Note: Regularized at small r by validate_distance clipping to R_MIN_MPC.
+
         Parameters
         ----------
         r : float or array
             Distance(s) in Mpc
-            
+
         Returns
         -------
         gradient : array
             Field gradient with correct sign (negative)
         """
         r = self.validate_distance(r, "gradient distance")
-        
-        # Special handling for r = 0
-        r_is_zero = (r < R_MIN_MPC)
-        
-        # Calculate terms
+
+        # Calculate terms (r >= R_MIN_MPC after validation)
         x = r / self.r0_mpc + 1.0
         x = np.maximum(x, LOG_ARG_MIN)
-        
+
         with np.errstate(divide='ignore', invalid='ignore'):
             log_x = np.log(x)
-            
-            # Initialize gradient
+
             gradient = np.zeros_like(r, dtype=float)
-            
-            # Calculate where log(x) is significantly non-zero
-            mask = (log_x > EPSILON) & (~r_is_zero)
+            mask = log_x > EPSILON
             if np.any(mask):
                 gradient[mask] = -self.amplitude / (self.r0_mpc * x[mask] * log_x[mask]**2)
-            
-            # Explicitly set gradient to 0 at r = 0
-            gradient[r_is_zero] = 0.0
-        
+
         return gradient
     
     def field_laplacian(self, r: Union[float, np.ndarray]) -> np.ndarray:
