@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-14T11:20:58.440810",
+  "timestamp": "2026-02-14T13:14:58.915063",
   "schema_version": "1.3.0",
   "rungs": {
     "641": {
@@ -9,25 +9,25 @@
           "test": "Input Domain (r > 0)",
           "passed": true,
           "detail": "Valid domain finite: True, negatives rejected: True",
-          "timestamp": "2026-02-14T11:20:58.432131"
+          "timestamp": "2026-02-14T13:14:58.905304"
         },
         {
           "test": "Boundary Conditions (r\u21920, r\u2192\u221e)",
           "passed": true,
           "detail": "Monotonic decreasing: True",
-          "timestamp": "2026-02-14T11:20:58.433335"
+          "timestamp": "2026-02-14T13:14:58.906434"
         },
         {
           "test": "Null/Zero Distinction",
           "passed": true,
           "detail": "Zero, negative, null all properly rejected; valid value accepted",
-          "timestamp": "2026-02-14T11:20:58.433364"
+          "timestamp": "2026-02-14T13:14:58.906462"
         },
         {
           "test": "NaN/Inf Handling",
           "passed": true,
           "detail": "Finite inputs produce finite outputs",
-          "timestamp": "2026-02-14T11:20:58.433630"
+          "timestamp": "2026-02-14T13:14:58.906723"
         }
       ],
       "summary": {
@@ -43,25 +43,25 @@
           "test": "Replay Path (r\u2080 \u2192 \u03c3\u2088 \u2192 r\u2080)",
           "passed": true,
           "detail": "Round-trip error: 1.46e-02",
-          "timestamp": "2026-02-14T11:20:58.439979"
+          "timestamp": "2026-02-14T13:14:58.914105"
         },
         {
           "test": "Regression Test",
           "passed": true,
           "detail": "Known r\u2080 values handled correctly",
-          "timestamp": "2026-02-14T11:20:58.440112"
+          "timestamp": "2026-02-14T13:14:58.914299"
         },
         {
           "test": "Exact Arithmetic (Fraction/Decimal)",
           "passed": true,
           "detail": "Exact match error: 0.00e+00",
-          "timestamp": "2026-02-14T11:20:58.440163"
+          "timestamp": "2026-02-14T13:14:58.914360"
         },
         {
           "test": "Adversarial Correctness",
           "passed": true,
           "detail": "Extreme values handled correctly",
-          "timestamp": "2026-02-14T11:20:58.440250"
+          "timestamp": "2026-02-14T13:14:58.914459"
         }
       ],
       "summary": {
@@ -77,31 +77,31 @@
           "test": "Evidence Contract",
           "passed": true,
           "detail": "6/6 evidence items present",
-          "timestamp": "2026-02-14T11:20:58.440267"
+          "timestamp": "2026-02-14T13:14:58.914480"
         },
         {
           "test": "Replay Stability",
           "passed": true,
           "detail": "3 runs bit-perfect identical",
-          "timestamp": "2026-02-14T11:20:58.440360"
+          "timestamp": "2026-02-14T13:14:58.914582"
         },
         {
           "test": "No Forbidden States",
           "passed": true,
           "detail": "All checks: positive, finite, monotonic",
-          "timestamp": "2026-02-14T11:20:58.440486"
+          "timestamp": "2026-02-14T13:14:58.914730"
         },
         {
           "test": "Comprehensive Null Handling",
           "passed": true,
           "detail": "All checks: {'null_r0': True, 'zero_r0': True, 'negative_r0': True, 'nan_r0': True}",
-          "timestamp": "2026-02-14T11:20:58.440509"
+          "timestamp": "2026-02-14T13:14:58.914755"
         },
         {
           "test": "Exact Computation Verified",
           "passed": true,
           "detail": "Max relative error: 1.55e-16",
-          "timestamp": "2026-02-14T11:20:58.440797"
+          "timestamp": "2026-02-14T13:14:58.915048"
         }
       ],
       "summary": {
@@ -122,7 +122,7 @@
         "exact_arithmetic": "Exact arithmetic enforced \u2713",
         "null_zero_distinct": "Null/zero distinction verified \u2713"
       },
-      "timestamp": "2026-02-14T11:20:58.440265"
+      "timestamp": "2026-02-14T13:14:58.914477"
     }
   ],
   "overall_status": "PASSED"
