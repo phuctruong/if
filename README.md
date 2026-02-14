@@ -414,7 +414,33 @@ This project validates Prime Field Theory predictions using real SDSS DR12 obser
 
 ---
 
-**Status**: ✅ Ready for Real SDSS DR12 Data  
-**Date**: 2026-02-14  
+**Status**: Ready for Real SDSS DR12 Data
+**Date**: 2026-02-14
 **Policy**: Real observations ONLY - NO synthetic data
+
+---
+
+## Part of the Stillwater OS Ecosystem
+
+> **Software 5.0:** Intelligence externalized as verifiable recipes, not trapped in opaque weights
+
+Prime Field Theory is the physics engine inside Stillwater OS. Where conventional approaches approximate physics with neural network weights, IF Theory encodes physical law as verifiable recipes -- deterministic, reproducible, and exact. Recipes that encode physics, not weights that approximate it.
+
+**Software 5.0** extends Karpathy's taxonomy:
+- 1.0: Hand-written code
+- 2.0: Learned weights (neural networks)
+- 3.0: Prompted models
+- 4.0: Autonomous agents
+- **5.0: Verifiable recipes** -- intelligence you can read, audit, and regenerate
+
+| Project | Role | Link |
+|---------|------|------|
+| [Stillwater OS](https://github.com/phuc-stillwater/stillwater) | The Platform | Beat entropy at everything |
+| [PZIP](https://pzip.net) | Compression Engine | Compress the generator, not the data |
+| [Solace AGI](https://solaceagi.com) | Persistent Identity | Memory x Care x Iteration |
+| [IF Theory](https://github.com/phuc-stillwater/if) | Physics Engine | Information as the first force |
+
+---
+
+*Built by [Phuc Vinh Truong](https://phuc.net) | Working for tips | [Support this work](https://ko-fi.com/phucnet)*
 
