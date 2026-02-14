@@ -1,0 +1,27 @@
+{
+  "prediction_name": "Hubble Tension Resolution (CMB + Local Expansion)",
+  "proof_scope": "Current tension: H\u2080 = 67.4 \u00b1 0.5 (Planck, CMB)\n                            H\u2080 = 73.0 \u00b1 1.0 (SH0ES, local)\n\n            Prime Field Theory resolves this by:\n            - Modified expansion history from Psi field dark energy\n            - No need for exotic early dark energy\n            - Consistent structure growth rate\n            - Single set of parameters for CMB + local universe",
+  "axiom_basis": [
+    "A1: \u03a8 field replaces cosmological constant (\u039b)",
+    "A2: \u03a8 energy density follows from Prime Field",
+    "A3: Expansion history self-consistent with structure",
+    "A4: No new adjustable parameters for H\u2080"
+  ],
+  "validation_level": "SPECULATIVE",
+  "replication_status": "\u26a0\ufe0f Partly observable: Need high-z SNe and time-delay data\n            \u26a0\ufe0f Testing in progress: JWST and VRO will provide decisive data\n            \u2705 Reproducible: Expansion history calculations explicit\n            \u2705 Falsifiable: Clear H\u2080 prediction at 1% level",
+  "falsification_criteria": [
+    "\u274c If local H\u2080 remains > 2\u03c3 from CMB prediction",
+    "\u274c If requires new exotic physics beyond \u03a8 field",
+    "\u274c If cannot explain structure growth rate consistency",
+    "\u274c If SNe/time-delay data contradicts prediction"
+  ],
+  "success_metrics": {
+    "h0_cmb_value": 67.4,
+    "h0_local_value": 73.0,
+    "tension_resolution": "< 1\u03c3",
+    "sigma_significance": "> 3\u03c3",
+    "parameters_free": 0
+  },
+  "timestamp": "2026-02-14T03:34:22.948096",
+  "status": "ACTIVE"
+}

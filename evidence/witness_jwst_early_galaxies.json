@@ -1,0 +1,27 @@
+{
+  "prediction_name": "JWST Early Galaxy Formation at z > 10",
+  "proof_scope": "JWST observed unexpectedly high numbers of galaxies at z > 10.\n            Prime Field Theory with gradient-driven structure formation\n            predicts this without new physics:\n            - Galaxy formation efficiency f_eff ~ \u2207\u03a6 / |\u03a6|\n            - Early epoch amplification from higher GlowScore\n            - Matches JWST observations without fine-tuning",
+  "axiom_basis": [
+    "A1: GlowScore \u2207\u03a6 drives structure formation",
+    "A2: Early universe has higher effective density contrast",
+    "A3: Galaxy formation follows local potential gradient",
+    "A4: No separate early universe physics needed"
+  ],
+  "validation_level": "EMPIRICAL",
+  "replication_status": "\u2705 Observable: JWST data publicly available\n            \u2705 Testable: Compare predictions to JWST early galaxy counts\n            \u2705 Reproducible: Structure formation simulations can verify\n            \u2705 Falsifiable: Clear numerical predictions at each z bin",
+  "falsification_criteria": [
+    "\u274c If JWST galaxy counts at z=10-20 differ from prediction > 2\u03c3",
+    "\u274c If need fine-tuned parameters for each redshift",
+    "\u274c If GlowScore distribution doesn't match simulations",
+    "\u274c If early universe requires separate physics"
+  ],
+  "success_metrics": {
+    "z_range": "10 - 20",
+    "galaxy_count_agreement": "> 90%",
+    "redshift_bins": 10,
+    "significance_target": "> 5\u03c3 combined",
+    "parameters_required": 0
+  },
+  "timestamp": "2026-02-14T03:34:22.948089",
+  "status": "ACTIVE"
+}

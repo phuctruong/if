@@ -1,0 +1,26 @@
+{
+  "prediction_name": "S8 Tension Resolution (CMB + Large-Scale Structure)",
+  "proof_scope": "The tension between Planck CMB measurements (\u03c3\u2088 = 0.8111 \u00b1 0.0060)\n            and local measurements from weak lensing (S8 = 0.776 \u00b1 0.017) will be\n            resolved by Prime Field Theory producing predictions consistent with\n            BOTH without parameter tuning.",
+  "axiom_basis": [
+    "A1: Prime Field \u03a6(r) = 1/log(r/r\u2080 + 1) is exact",
+    "A2: Zero free parameters (r\u2080 and amplitude from first principles)",
+    "A3: Structure formation follows from Prime Field without modifications",
+    "A4: CMB \u03c3\u2088 = 0.8111 (Planck 2018) is ground truth"
+  ],
+  "validation_level": "FRAMEWORK",
+  "replication_status": "\u2705 Fully replicable: Uses only public data (Planck, SDSS, DESI, Euclid)\n            \u2705 Open source: All code available on GitHub\n            \u2705 Independent verification: Any group can run analysis\n            \u2705 Publication: Results in ApJ/MNRAS format with full documentation",
+  "falsification_criteria": [
+    "\u274c If \u03c3\u2088(structure) differs from \u03c3\u2088(CMB) by > 3\u03c3 after validation",
+    "\u274c If prediction requires tunable parameters (proves non-zero-parameter)",
+    "\u274c If theory fails regression tests on known astrophysical data",
+    "\u274c If independent analysis cannot replicate results"
+  ],
+  "success_metrics": {
+    "correlation_min": 0.93,
+    "chi2_dof_max": 500,
+    "significance_min": 6.0,
+    "agreement_target": "< 1\u03c3 between CMB and structure"
+  },
+  "timestamp": "2026-02-14T03:34:22.948061",
+  "status": "ACTIVE"
+}

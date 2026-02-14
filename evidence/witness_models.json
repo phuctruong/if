@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.0.0",
+  "title": "Prime Field Theory - Falsifiable Predictions Witness Models",
+  "description": "Formal contracts for 3 falsifiable predictions with explicit success criteria",
+  "timestamp": "2026-02-14T03:34:22.948164",
+  "predictions": {
+    "s8_tension": {
+      "prediction_name": "S8 Tension Resolution (CMB + Large-Scale Structure)",
+      "proof_scope": "The tension between Planck CMB measurements (\u03c3\u2088 = 0.8111 \u00b1 0.0060)\n            and local measurements from weak lensing (S8 = 0.776 \u00b1 0.017) will be\n            resolved by Prime Field Theory producing predictions consistent with\n            BOTH without parameter tuning.",
+      "axiom_basis": [
+        "A1: Prime Field \u03a6(r) = 1/log(r/r\u2080 + 1) is exact",
+        "A2: Zero free parameters (r\u2080 and amplitude from first principles)",
+        "A3: Structure formation follows from Prime Field without modifications",
+        "A4: CMB \u03c3\u2088 = 0.8111 (Planck 2018) is ground truth"
+      ],
+      "validation_level": "FRAMEWORK",
+      "replication_status": "\u2705 Fully replicable: Uses only public data (Planck, SDSS, DESI, Euclid)\n            \u2705 Open source: All code available on GitHub\n            \u2705 Independent verification: Any group can run analysis\n            \u2705 Publication: Results in ApJ/MNRAS format with full documentation",
+      "falsification_criteria": [
+        "\u274c If \u03c3\u2088(structure) differs from \u03c3\u2088(CMB) by > 3\u03c3 after validation",
+        "\u274c If prediction requires tunable parameters (proves non-zero-parameter)",
+        "\u274c If theory fails regression tests on known astrophysical data",
+        "\u274c If independent analysis cannot replicate results"
+      ],
+      "success_metrics": {
+        "correlation_min": 0.93,
+        "chi2_dof_max": 500,
+        "significance_min": 6.0,
+        "agreement_target": "< 1\u03c3 between CMB and structure"
+      },
+      "timestamp": "2026-02-14T03:34:22.948155",
+      "status": "ACTIVE"
+    },
+    "jwst_early_galaxies": {
+      "prediction_name": "JWST Early Galaxy Formation at z > 10",
+      "proof_scope": "JWST observed unexpectedly high numbers of galaxies at z > 10.\n            Prime Field Theory with gradient-driven structure formation\n            predicts this without new physics:\n            - Galaxy formation efficiency f_eff ~ \u2207\u03a6 / |\u03a6|\n            - Early epoch amplification from higher GlowScore\n            - Matches JWST observations without fine-tuning",
+      "axiom_basis": [
+        "A1: GlowScore \u2207\u03a6 drives structure formation",
+        "A2: Early universe has higher effective density contrast",
+        "A3: Galaxy formation follows local potential gradient",
+        "A4: No separate early universe physics needed"
+      ],
+      "validation_level": "EMPIRICAL",
+      "replication_status": "\u2705 Observable: JWST data publicly available\n            \u2705 Testable: Compare predictions to JWST early galaxy counts\n            \u2705 Reproducible: Structure formation simulations can verify\n            \u2705 Falsifiable: Clear numerical predictions at each z bin",
+      "falsification_criteria": [
+        "\u274c If JWST galaxy counts at z=10-20 differ from prediction > 2\u03c3",
+        "\u274c If need fine-tuned parameters for each redshift",
+        "\u274c If GlowScore distribution doesn't match simulations",
+        "\u274c If early universe requires separate physics"
+      ],
+      "success_metrics": {
+        "z_range": "10 - 20",
+        "galaxy_count_agreement": "> 90%",
+        "redshift_bins": 10,
+        "significance_target": "> 5\u03c3 combined",
+        "parameters_required": 0
+      },
+      "timestamp": "2026-02-14T03:34:22.948158",
+      "status": "ACTIVE"
+    },
+    "hubble_tension": {
+      "prediction_name": "Hubble Tension Resolution (CMB + Local Expansion)",
+      "proof_scope": "Current tension: H\u2080 = 67.4 \u00b1 0.5 (Planck, CMB)\n                            H\u2080 = 73.0 \u00b1 1.0 (SH0ES, local)\n\n            Prime Field Theory resolves this by:\n            - Modified expansion history from Psi field dark energy\n            - No need for exotic early dark energy\n            - Consistent structure growth rate\n            - Single set of parameters for CMB + local universe",
+      "axiom_basis": [
+        "A1: \u03a8 field replaces cosmological constant (\u039b)",
+        "A2: \u03a8 energy density follows from Prime Field",
+        "A3: Expansion history self-consistent with structure",
+        "A4: No new adjustable parameters for H\u2080"
+      ],
+      "validation_level": "SPECULATIVE",
+      "replication_status": "\u26a0\ufe0f Partly observable: Need high-z SNe and time-delay data\n            \u26a0\ufe0f Testing in progress: JWST and VRO will provide decisive data\n            \u2705 Reproducible: Expansion history calculations explicit\n            \u2705 Falsifiable: Clear H\u2080 prediction at 1% level",
+      "falsification_criteria": [
+        "\u274c If local H\u2080 remains > 2\u03c3 from CMB prediction",
+        "\u274c If requires new exotic physics beyond \u03a8 field",
+        "\u274c If cannot explain structure growth rate consistency",
+        "\u274c If SNe/time-delay data contradicts prediction"
+      ],
+      "success_metrics": {
+        "h0_cmb_value": 67.4,
+        "h0_local_value": 73.0,
+        "tension_resolution": "< 1\u03c3",
+        "sigma_significance": "> 3\u03c3",
+        "parameters_free": 0
+      },
+      "timestamp": "2026-02-14T03:34:22.948162",
+      "status": "ACTIVE"
+    }
+  },
+  "summary": {
+    "total_predictions": 3,
+    "validation_levels": {
+      "THEOREM": 0,
+      "FRAMEWORK": 1,
+      "EMPIRICAL": 1,
+      "SPECULATIVE": 1
+    },
+    "replication_status": "All fully replicable or in-progress observation",
+    "falsification_status": "All predictions are falsifiable"
+  }
+}
