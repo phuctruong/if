@@ -139,7 +139,13 @@ def validate_hubble_tension_prediction(h0_cmb: float, h0_local: float,
         print(f"  {status}: {criterion}")
 
     overall_passed = all(validation_result.values())
-    print(f"\n{'✅ PREDICTION VALIDATED' if overall_passed else '⏳ PREDICTION PENDING (Future data needed)'}")
+    if overall_passed:
+        print(f"\n✅ PREDICTION VALIDATED")
+    else:
+        print(f"\n❌ PREDICTION FALSIFIED")
+        print(f"   Primary criterion failed: tension_less_than_1sigma")
+        print(f"   Theory predicts H₀ tension < 1σ, actual tension is {h0_tension:.1f} km/s/Mpc")
+        print(f"   This prediction is currently disproven by observations.")
 
     return {
         'prediction': 'Hubble_tension',
@@ -200,7 +206,12 @@ def main():
     print(f"\nPassed: {passed_count}/{total_count}")
 
     for result in results:
-        status = "✅" if result['overall_passed'] else "⏳" if result['prediction'] == 'Hubble_tension' else "❌"
+        if result['overall_passed']:
+            status = "✅"
+        elif result['prediction'] == 'Hubble_tension':
+            status = "❌"  # Hubble is falsified, not pending
+        else:
+            status = "❌"
         print(f"  {status} {result['prediction']}")
 
     # Save to file
