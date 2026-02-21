@@ -15,6 +15,7 @@ DOMAIN: physics simulation / information theory
 ## Stillwater Core Skills
 # Loaded: prime-safety, prime-coder, prime-math
 # Read: skills/prime-safety.md (always) + domain skills as needed; paste inline for sub-agents
+# Swarms: swarms/ has agent types with personas (scout=KenT, forecaster=Grace, etc.)
 
 <!-- QUICK LOAD (10-15 lines): Use this block for fast context; load full file for production.
 SKILL: prime-safety (god-skill) v2.1.0
