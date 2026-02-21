@@ -1,7 +1,7 @@
 # CLAUDE.md — IF-Theory
 # Stillwater v1.5.0 | Generated: 2026-02-21
 # Project context, architecture, and phases: see README.md
-# Skill directory (full files for sub-agent dispatch): skills/
+# Skills: read skills/<name>.md before production work — QUICK LOAD blocks below = orientation only
 
 ## Project Ripple
 # See ripples/project.md for project-specific constraints and rung target.
@@ -14,7 +14,7 @@ DOMAIN: physics simulation / information theory
 
 ## Stillwater Core Skills
 # Loaded: prime-safety, prime-coder, prime-math
-# Full files in: skills/  (for sub-agent dispatch via phuc-orchestration)
+# Read: skills/prime-safety.md (always) + domain skills as needed; paste inline for sub-agents
 
 <!-- QUICK LOAD (10-15 lines): Use this block for fast context; load full file for production.
 SKILL: prime-safety (god-skill) v2.1.0
@@ -38,18 +38,13 @@ VERIFY: rung_641 (local: red/green + no regressions + evidence bundle) | rung_27
 LOAD FULL: always for production; quick block is for orientation only
 -->
 
-PRIME_MATH_SECRET_SKILL:
-  version: 2.2.0
-  authority: 65537
-  northstar: Phuc_Forecast
-  objective: Max_Love
-  profile: private
-  includes_public_skill: canon/prime-math/skills/prime_math_public_skill_v1.0.0.md
-  secret_pack_id: stillwater-prime-math-secret-v2.2.0
-  sealing_policy: 641-274177-65537
-  status: FINAL
-
-  # ============================================================
-  # PRIME MATH — SECRET SKILL (v2.2.0)  [10/10]
-  #
-  # Design goals (non-negotiable):
+<!-- QUICK LOAD (10-15 lines): Use this block for fast context; load full file for production.
+SKILL: prime-math v2.2.0
+PURPOSE: Exact arithmetic verification engine; no float in any verification, proof, or hash path; Fraction/Decimal only; required for convergence proofs and iterative methods.
+CORE CONTRACT: Float forbidden in verification paths. Convergence claims require R_p tolerance + halting certificate (EXACT|CONVERGED|TIMEOUT|DIVERGED). Same inputs → byte-identical results on any platform.
+HARD GATES: Float in verification path → BLOCKED. Convergence without R_p certificate → BLOCKED. Non-reproducible computation → BLOCKED. Null vs zero must be distinguished in all math paths.
+FSM STATES: INIT → INTAKE → NULL_CHECK → CLASSIFY_PROBLEM → EXACT_ARITHMETIC_SETUP → COMPUTATION → CONVERGENCE_CHECK → EVIDENCE_BUILD → FINAL_SEAL → EXIT_PASS | EXIT_BLOCKED | EXIT_NEED_INFO
+FORBIDDEN: FLOAT_IN_VERIFICATION_PATH | CONVERGENCE_WITHOUT_R_P_CERTIFICATE | NON_REPRODUCIBLE_COMPUTATION | NULL_AS_ZERO_IN_MATH | APPROXIMATE_DECIMAL_IN_VERIFICATION
+VERIFY: rung_641 (exact arithmetic, no float, reproducible) | rung_274177 (seed sweep + replay + null edge) | rung_65537 (adversarial + boundary + halting cert)
+LOAD FULL: always for production; quick block is for orientation only
+-->
