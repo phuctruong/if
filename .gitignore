@@ -3,3 +3,6 @@ data
 bao_data
 euclid_data
 results
+
+# Claude Code commands and config (local only)
+.claude/
