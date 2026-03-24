@@ -257,7 +257,7 @@ class CosmologicalPredictions:
                 t = t_universe * np.exp(-p/5)
                 if 0.001 < t < t_universe:
                     spurts.append(t)
-            except:
+            except (ValueError, OverflowError, ZeroDivisionError):
                 continue
         
         return sorted(spurts)

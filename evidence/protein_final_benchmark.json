@@ -1,0 +1,11 @@
+{
+  "n_proteins": 18,
+  "mean_rg_error": 27.419787147545513,
+  "median_rg_sigma": 3.7687986632597,
+  "mean_rg_sigma": 4.572517815050126,
+  "t_statistic": 5.1225233627440465,
+  "p_value": 8.486714844803953e-05,
+  "significance_sigma": 3.9302229024037274,
+  "mean_tm": 0.11082527568162542,
+  "gdb_shapes": 1001
+}

@@ -132,7 +132,7 @@ class ObservationalPredictions:
                 decay = np.exp(-2 * gap / (r1 + r2))
                 
                 return float(field_ratio * decay)
-            except:
+            except (ValueError, OverflowError, ZeroDivisionError):
                 return 0.0
     
     def gravitational_wave_speed(self, frequency: float, f0: float = 1e-9) -> float:

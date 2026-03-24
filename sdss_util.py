@@ -678,7 +678,7 @@ class SDSSDataLoader:
                         z_min, z_max = self.sample_config['z_range']
                         mask = (data['Z'] >= z_min) & (data['Z'] <= z_max)
                         total_available += np.sum(mask)
-                except:
+                except (OSError, KeyError, ValueError):
                     pass
         
         logger.info(f"  Available: {total_available:,} randoms in redshift range")

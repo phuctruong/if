@@ -1,0 +1,124 @@
+{
+  "equation": "Phi(r) = A * ln(r/r0 + 1)",
+  "A": 46699.0,
+  "r0_kpc": 7.1,
+  "v_asymptotic": 216.1,
+  "results": [
+    {
+      "r_kpc": 4,
+      "v_bary": 195.0,
+      "v_info": 129.7,
+      "v_total": 234.2,
+      "v_obs": 230,
+      "v_err": 15,
+      "sigma": 0.28,
+      "source": "Sofue 2012",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 8,
+      "v_bary": 175.0,
+      "v_info": 157.3,
+      "v_total": 235.3,
+      "v_obs": 230,
+      "v_err": 12,
+      "sigma": 0.44,
+      "source": "Reid+ 2019",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 10,
+      "v_bary": 160.0,
+      "v_info": 165.3,
+      "v_total": 230.0,
+      "v_obs": 220,
+      "v_err": 10,
+      "sigma": 1.0,
+      "source": "Eilers+ 2019",
+      "within_1sig": false
+    },
+    {
+      "r_kpc": 15,
+      "v_bary": 130.0,
+      "v_info": 178.0,
+      "v_total": 220.4,
+      "v_obs": 228,
+      "v_err": 10,
+      "sigma": 0.76,
+      "source": "Eilers+ 2019",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 20,
+      "v_bary": 110.0,
+      "v_info": 185.6,
+      "v_total": 215.8,
+      "v_obs": 220,
+      "v_err": 8,
+      "sigma": 0.53,
+      "source": "Eilers+ 2019",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 25,
+      "v_bary": 95.0,
+      "v_info": 190.7,
+      "v_total": 213.1,
+      "v_obs": 220,
+      "v_err": 10,
+      "sigma": 0.69,
+      "source": "Eilers+ 2019",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 30,
+      "v_bary": 80.0,
+      "v_info": 194.3,
+      "v_total": 210.1,
+      "v_obs": 210,
+      "v_err": 15,
+      "sigma": 0.01,
+      "source": "Huang+ 2016",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 50,
+      "v_bary": 45.0,
+      "v_info": 202.2,
+      "v_total": 207.2,
+      "v_obs": 200,
+      "v_err": 20,
+      "sigma": 0.36,
+      "source": "Deason+ 2012",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 80,
+      "v_bary": 25.0,
+      "v_info": 207.1,
+      "v_total": 208.6,
+      "v_obs": 190,
+      "v_err": 25,
+      "sigma": 0.74,
+      "source": "Deason+ 2012",
+      "within_1sig": true
+    },
+    {
+      "r_kpc": 100,
+      "v_bary": 20.0,
+      "v_info": 208.8,
+      "v_total": 209.8,
+      "v_obs": 180,
+      "v_err": 30,
+      "sigma": 0.99,
+      "source": "Watkins+ 2019",
+      "within_1sig": true
+    }
+  ],
+  "chi2": 4.2745,
+  "chi2_dof": 0.5343,
+  "max_sigma": 1.0,
+  "all_within_1sig": false,
+  "n_data": 10,
+  "n_params": 2
+}

@@ -37,7 +37,7 @@ def test_parameter_consistency():
     print(f"Error:    {error:.3f}%")
     print(f"Status:   {'✅ PASS' if error < 2.0 else '❌ FAIL'} (tolerance: 2%)")
 
-    return error < 2.0
+    assert error < 2.0, f"Round-trip error {error:.3f}% exceeds 2% tolerance"
 
 
 def test_field_equations_consistency():
@@ -77,7 +77,7 @@ def test_field_equations_consistency():
     status = all_positive and all_finite
     print(f"\nStatus: {'✅ PASS' if status else '❌ FAIL'} (all positive and finite)")
 
-    return status
+    assert status, "Field values must be positive and finite at all test distances"
 
 
 def test_exact_kernel_consistency():
@@ -99,15 +99,12 @@ def test_exact_kernel_consistency():
         if isinstance(result, dict) and 'pearson_r' in result:
             print(f"Pearson r: {result.get('pearson_r', 'N/A')}")
             print(f"Status: ✅ PASS")
-            return True
+            assert True
         else:
-            print("Status: ⚠️ Unexpected result format")
-            return False
+            assert False, "Unexpected result format"
 
     except Exception as e:
-        print(f"ERROR: {e}")
-        print("Status: ❌ FAIL")
-        return False
+        assert False, f"Validation failed: {e}"
 
 
 def test_witness_validator_consistency():
@@ -143,16 +140,16 @@ def test_witness_validator_consistency():
             'expected_pass': True
         },
         {
-            'name': 'Hubble - Good',
+            'name': 'Hubble - Realistic (SH0ES)',
             'type': 'hubble',
-            'params': {'h0_cmb': 67.4, 'h0_local': 68.0, 'sigma_significance': 4.0},
-            'expected_pass': True
+            'params': {'h0_cmb': 67.4, 'h0_local': 73.0, 'sigma_significance': 3.5},
+            'expected_pass': True  # IF Theory partially resolves (69.5 closer than 67.4)
         },
         {
-            'name': 'Hubble - Bad',
+            'name': 'Hubble - Low significance',
             'type': 'hubble',
-            'params': {'h0_cmb': 67.4, 'h0_local': 75.0, 'sigma_significance': 2.0},
-            'expected_pass': False
+            'params': {'h0_cmb': 67.4, 'h0_local': 73.0, 'sigma_significance': 2.0},
+            'expected_pass': False  # Fails sigma_significance_min_3
         }
     ]
 
@@ -187,7 +184,7 @@ def test_witness_validator_consistency():
             all_pass = False
 
     print(f"\nStatus: {'✅ PASS' if all_pass else '⚠️ PARTIAL'} (consistency checks)")
-    return all_pass
+    assert all_pass, "One or more witness validator consistency checks failed"
 
 
 def test_component_disagreements():
@@ -232,7 +229,7 @@ def test_component_disagreements():
     print(f"  All criteria pass: {'✅' if component3_pass else '❌'}")
 
     print(f"\nStatus: ✅ PASS (no detected disagreements)")
-    return True
+    assert True
 
 
 def main():

@@ -13,6 +13,7 @@ astropy
 # Required for running the analysis notebooks, plotting results, and validation.
 # ---------------------------------------------------------------------------
 matplotlib
+seaborn>=0.13.0
 jupyter
 
 # ---------------------------------------------------------------------------

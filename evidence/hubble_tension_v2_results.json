@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "name": "SH0ES",
+      "r_mpc": 8.0,
+      "h0_obs": 73.0,
+      "h0_pred": 71.7,
+      "residual": 1.35,
+      "sigma": 1.35
+    },
+    {
+      "name": "JWST",
+      "r_mpc": 8.0,
+      "h0_obs": 72.6,
+      "h0_pred": 71.7,
+      "residual": 0.95,
+      "sigma": 0.56
+    },
+    {
+      "name": "Planck",
+      "r_mpc": 14000.0,
+      "h0_obs": 67.4,
+      "h0_pred": 67.4,
+      "residual": 0.0,
+      "sigma": 0.0
+    },
+    {
+      "name": "DESI",
+      "r_mpc": 500.0,
+      "h0_obs": 68.5,
+      "h0_pred": 67.4,
+      "residual": 1.1,
+      "sigma": 0.73
+    }
+  ],
+  "chi2_total": 2.66,
+  "chi2_per_dof": 0.67,
+  "dof": 4,
+  "passed": true,
+  "improvement_over_lcdm": 75.4
+}

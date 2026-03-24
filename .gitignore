@@ -1,8 +1,11 @@
-__pycache__
-data
-bao_data
-euclid_data
-results
 
-# Claude Code commands and config (local only)
+bao_data
 .claude/
+# Claude Code commands and config (local only)
+data
+euclid_data
+__pycache__
+results
+scratch/
+old_code/
+__pycache__/

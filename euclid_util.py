@@ -270,7 +270,7 @@ def load_spe_catalog(filepath: str, tile_id: str) -> Dict[int, float]:
                         if len(data) > 0:
                             data_hdu = hdu_name
                             break
-                    except:
+                    except (KeyError, ValueError, TypeError):
                         continue
             
             # If not found, try the first extension with data
@@ -283,7 +283,7 @@ def load_spe_catalog(filepath: str, tile_id: str) -> Dict[int, float]:
                                 data_hdu = f"HDU[{i}]"
                                 logger.debug(f"  Using {data_hdu}")
                                 break
-                    except:
+                    except (KeyError, ValueError, TypeError):
                         continue
             
             if data is None:
