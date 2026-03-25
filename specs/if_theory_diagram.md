@@ -7,11 +7,13 @@ This specification identifies exactly how IF Theory structurally decouples from 
 ```mermaid
 graph TD
     %% Base Structural Generation
-    GAI[Geometric AI 'gai'] --> |Quaternary Sequence Coordinates| COORDS[(GPU Spatial Tensor)]
+    GAI_Protein[Geometric AI 'gai' (Amino Acids)] --> |Quaternary Sequence Coordinates| COORDS[(Universal Spatial Tensor)]
+    GAI_Material[Solace Materials (Atoms)] --> |Elemental Unit Cell Coordinates| COORDS
     
     %% Information Field Intercept
     COORDS --> |3D Distances/Positions| IFCore[if: Coulomb Field Extractor]
-    IFCore --> |IF Force Gradients Natively| Adam[PyTorch Adam Optimizer]
+    IFCore --> |IF Force Gradients Native Euclidean Bounds| Native[IF-DG SVD Matrix Inversion]
+
     
     %% Thermodynamic Resolution
     Adam --> |Resolution Delta| GAI
