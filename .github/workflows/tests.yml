@@ -1,0 +1,61 @@
+name: validation tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy astropy sympy pytest
+
+      - name: Run pytest suite
+        run: python -m pytest tests/ -v
+
+      - name: Run Mersenne tower verification
+        run: python mersenne_tower_theorem.py
+
+      - name: Verify canonical constants module-load assertion
+        run: python -c "from prime_field_util import verify_canonical_constants; verify_canonical_constants(); print('OK')"
+
+  smoke-tests:
+    runs-on: ubuntu-latest
+    needs: pytest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy astropy sympy
+
+      - name: Smoke test - hubble_tension_bubble (no external data needed)
+        run: python predictions/hubble_tension_bubble_test.py
+
+      - name: Smoke test - delta_max derivation
+        run: python predictions/delta_max_derivation.py
+
+      - name: Smoke test - Casimir consistency (analytical)
+        run: python predictions/casimir_consistency_test.py
