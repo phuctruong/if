@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+title: "Information Field Theory: A zero-parameter framework for galactic and cosmological observations"
+message: "If you use this software or its results, please cite as follows."
+type: software
+authors:
+  - family-names: Truong
+    given-names: Phuc Vinh
+    email: phuc@phuc.net
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # placeholder
+repository-code: "https://github.com/phuctruong/if"
+url: "https://github.com/phuctruong/if"
+abstract: >-
+  A zero-parameter framework deriving rotation curves, galaxy clustering,
+  and dark-energy phenomenology from the prime number theorem via the
+  Mersenne Tower Theorem. Verified against 175 SPARC galaxies (Tully-Fisher
+  Pearson r = 0.95, slope 1.024), BOSS DR12 ξ(r) (Pearson r = 0.98 in
+  log-log), Pantheon+ 1701 supernovae (χ²/dof = 0.93), DESI DR1 BAO
+  (matches ΛCDM-class 2σ tension), Hubble tension (zero-parameter
+  resolution via bubble mechanism, r_bubble = 10.20 Mpc derived),
+  and JWST early-galaxy abundance (consistent with JADES-GS-z14-0).
+  Mathematical foundation (Mersenne tower, π(127) = 31, C_XI = 62) is
+  machine-verified.
+keywords:
+  - cosmology
+  - dark matter
+  - dark energy
+  - galaxy rotation curves
+  - prime number theorem
+  - Mersenne primes
+  - Hubble tension
+  - JWST
+  - SPARC
+  - Tully-Fisher relation
+license: MIT
+version: "1.0.0"
+date-released: "2026-04-29"
+preferred-citation:
+  type: article
+  title: "Information Field Theory: zero-parameter cosmology from the prime number theorem"
+  authors:
+    - family-names: Truong
+      given-names: Phuc Vinh
+  year: 2026
+  journal: "preprint (this repository)"
+  url: "https://github.com/phuctruong/if"
