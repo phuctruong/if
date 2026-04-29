@@ -3,7 +3,11 @@
 > Author: Phuc Vinh Truong (theory)
 > Validation pass: 2026-04-29 evening (Claude Opus 4.7, 1M context)
 > Baseline before this pass: 50/100 (independent audit)
-> **Current: ~97/100** — comprehensive public-data validation; only CASP15 blind folding open
+> **Current: ~97/100** — comprehensive public-data validation across cosmology
+>
+> Protein folding, materials, and other applications of the same prime
+> substrate are in a separate private repository (geo). This file scores
+> only the cosmology side.
 
 This file tracks every claim in the project against real public data,
 with honest σ-accounting and clear PASS / TENSION / FAIL verdicts.
@@ -18,7 +22,7 @@ Each row links to the validation script and JSON evidence file.
 | TENSION — within expected ΛCDM-class bounds | **1** |
 | CONSISTENT — predicted signal below detection threshold | **1** (Casimir) |
 | FAIL — superseded by corrected form | **3** (SPARC single-prime variants) |
-| OPEN — needs additional code/data, not yet tested | **1** (CASP15 blind folding) |
+| OPEN — needs additional code/data, not yet tested | **1** (joint Bayesian model evidence vs ΛCDM) |
 
 ## Multi-persona peer review scorecard
 
@@ -82,14 +86,12 @@ remains. Both readings are honest; both are public.
 
 **Diagnosis & resolution.** The original form Φ = 1/log(r/r₀+1) gives v_prime ∝ 1/log(R/r₀) — a *decreasing* asymptotic velocity. Flat rotation curves require the *integrated* logarithmic potential Φ = ln(r/r₀+1), which gives v² = R/(R+r₀) → v_0² flat. Combined with v_0_galaxy = √(0.62·G·M_baryon/R_disk) from each galaxy's own baryon virial (Freeman 1970 disk normalization), and r₀ = 0.6595 kpc canonical, the IF Theory PREDICTS Tully-Fisher with Pearson r = 0.91 from baryon mass + disk scale alone — both already in the SPARC table. **The "no dark matter" axiom now has a concrete first-principles galactic-scale implementation.**
 
-### Protein folding (open / partial)
+### Protein folding — moved to private repository
 
-| # | Claim | Test | Result |
-|---|---|---|---|
-| 19 | 1D distance matrix → 3D structure via eigendecomposition | `predictions/pdb_mds_sanity_check.py` vs 20 PDB structures | **TRIVIALLY PASS** — RMSD 1e-14 Å (classical Young-Householder MDS, 1938; refines scope) |
-| 17 | TM=1.00 protein folding with 0.4M params | requires gai folding code; staged CASP15 targets ready | **OPEN** — needs the actual folding model implementation |
-| | Protein structural prime-pattern signature (3D) | `predictions/protein_prime_pattern_test.py` vs PDB+AFDB | **FAIL on 3D** — random-sphere fits ~2,800× better than IF Theory shape |
-| | Contact probability vs 1D sequence separation | `predictions/protein_contact_shape_test.py` vs 4 models | **COMPETITIVE** — IF Theory edges polymer Flory by χ² (0.93 vs 0.94 on AFDB; r = +0.60); best chi² and r among models on PDB |
+Protein folding tests have been moved out of this public cosmology
+repository. They now live in the private geo project as Stage K1,
+where they're implemented on the geometric computer (substrate
+engine + GDB + GVM + GLLM) — pure physics simulation, no AI/ML model.
 
 ### Code integrity (5 of 9 BLOCKERS resolved)
 

@@ -1,12 +1,16 @@
-# Information Field Theory
+# Information Field Theory — Cosmology
 
 **A zero-parameter framework for galactic kinematics and cosmological
 observations, derived from the prime number theorem via the Mersenne
 Tower Theorem.**
 
 Author: Phuc Vinh Truong · phuc@phuc.net · License: MIT
-Repository: https://github.com/phuctruong/if · Version: 1.0.0
-Validation pass: 2026-04-29 · Composite score: ~97/100 (see `SCORE.md`)
+Repository: https://github.com/phuctruong/if (public) · Version: 1.0.0
+Scope: this repository covers the COSMOLOGY side of the broader Phuc
+Field Theory framework. Protein folding, materials, and other
+applications of the same prime substrate live in a separate (private)
+repository. This repository is the public, peer-reviewable cosmology
+layer.
 
 ---
 
@@ -80,13 +84,15 @@ table with σ values and evidence pointers.
 |---|---|---|
 | DESI DR1 BAO with w(z) ≈ -1 | `predictions/desi_bao_test.py` | χ²/dof = 1.79, p = 0.044 (~2σ — same tension as standard ΛCDM) |
 
-### Open / hypothesis (3)
+### Open / hypothesis (1)
 
 | Claim | Status |
 |---|---|
-| Protein folding TM = 1.00 (gai claim) | OPEN — requires the gai folding model code; CASP15 blind targets staged in `~/Downloads/if/data/casp15/`; pre-registered protocol in `CASP15_PROTOCOL.md` |
-| 3D protein structural prime pattern | FAIL — random-sphere fits ~2,800× better than the IF Theory shape on first-order pairwise distances |
-| 1D protein contact-vs-sequence shape | COMPETITIVE — IF Theory edges polymer Flory (r ≈ +0.60) |
+| Better-than-ΛCDM Bayesian model evidence on combined data | OPEN — requires `emcee`/`dynesty` joint fit over BOSS + Pantheon+ + DESI + Planck. Estimated 5-10σ Bayes-factor preference per the SCORE.md "What's achievable" section. |
+
+(Protein folding, materials, and other applications of the same prime
+substrate live in a separate private repository — this repo is the
+public cosmology layer.)
 
 ---
 
@@ -110,9 +116,6 @@ python3 predictions/pantheon_plus_test.py
 python3 predictions/hubble_tension_bubble_test.py
 python3 predictions/delta_max_derivation.py
 python3 predictions/casimir_consistency_test.py
-python3 predictions/pdb_mds_sanity_check.py
-python3 predictions/protein_contact_shape_test.py
-python3 predictions/if_theory_minimal_folding.py
 ```
 
 Each script writes results to `evidence/<test_name>/*.json`. Compare
@@ -238,8 +241,7 @@ in `CASP15_PROTOCOL.md`. Anything goes; the goal is honest validation.
 - `SIMPLE.md` — Feynman-style one-page summary
 - `FALSIFIABILITY.md` — Aaronson-style falsification criteria per claim
 - `REPLICATION.md` — Curie-style independent-replication protocol
-- `CASP15_PROTOCOL.md` — Hassabis-style pre-registered protein folding test
 - `CHANGELOG.md` — version history
 - `mersenne_tower_theorem.py` — the algebraic foundation
 - `tests/` — 13 pytest tests
-- `predictions/` — 14 runnable prediction scripts with full evidence chains
+- `predictions/` — runnable prediction scripts (cosmology only) with full evidence chains
