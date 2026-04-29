@@ -37,37 +37,60 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Data sources configuration
+# URLs verified 2026-04-29 against the official SAS data archive at data.sdss.org.
+# The previously hardcoded svn.sdss.org URLs returned HTTP 404 (the SVN host is
+# deprecated). Files at the SAS archive are gzip-compressed (.fits.gz).
 SDSS_FILES = {
-    'lowz': {
+    'lowz_south': {
         'name': 'SDSS DR12 LOWZ South',
-        'url': 'http://svn.sdss.org/public/sdss/eboss/lss/galaxy_DR12v5_LOWZ_South.fits',
-        'filename': 'galaxy_DR12v5_LOWZ_South.fits',
+        'url': 'https://data.sdss.org/sas/dr12/boss/lss/galaxy_DR12v5_LOWZ_South.fits.gz',
+        'filename': 'galaxy_DR12v5_LOWZ_South.fits.gz',
         'path': 'data/sdss_dr12/lowz/',
-        'size_mb': 500,
-        'galaxies': 361762,
+        'size_mb': 32,
+        'galaxies': 145264,
         'z_range': '0.15-0.43',
-        'required': True,  # Essential for validation
+        'required': True,
     },
-    'cmass': {
+    'lowz_north': {
+        'name': 'SDSS DR12 LOWZ North',
+        'url': 'https://data.sdss.org/sas/dr12/boss/lss/galaxy_DR12v5_LOWZ_North.fits.gz',
+        'filename': 'galaxy_DR12v5_LOWZ_North.fits.gz',
+        'path': 'data/sdss_dr12/lowz/',
+        'size_mb': 80,
+        'galaxies': 248237,
+        'z_range': '0.15-0.43',
+        'required': True,
+    },
+    'cmass_south': {
         'name': 'SDSS DR12 CMASS South',
-        'url': 'http://svn.sdss.org/public/sdss/eboss/lss/galaxy_DR12v5_CMASS_South.fits',
-        'filename': 'galaxy_DR12v5_CMASS_South.fits',
+        'url': 'https://data.sdss.org/sas/dr12/boss/lss/galaxy_DR12v5_CMASS_South.fits.gz',
+        'filename': 'galaxy_DR12v5_CMASS_South.fits.gz',
         'path': 'data/sdss_dr12/cmass/',
-        'size_mb': 800,
-        'galaxies': 777202,
+        'size_mb': 75,
+        'galaxies': 280067,
         'z_range': '0.43-0.70',
-        'required': True,  # Essential for validation
+        'required': True,
     },
-    'desi': {
-        'name': 'DESI DR1 ELG',
-        'url': 'http://data.desi.lbl.gov/public/edr/spectro/redux/emline_galaxies.fits',
-        'filename': 'emline_galaxies.fits',
-        'path': 'data/desi_dr1/elg/',
-        'size_mb': 2000,
-        'galaxies': 1000000,
-        'z_range': '0.6-1.1',
-        'required': False,  # Optional for extended analysis
-    }
+    'cmass_north': {
+        'name': 'SDSS DR12 CMASS North',
+        'url': 'https://data.sdss.org/sas/dr12/boss/lss/galaxy_DR12v5_CMASS_North.fits.gz',
+        'filename': 'galaxy_DR12v5_CMASS_North.fits.gz',
+        'path': 'data/sdss_dr12/cmass/',
+        'size_mb': 200,
+        'galaxies': 568776,
+        'z_range': '0.43-0.70',
+        'required': True,
+    },
+    'random0_lowz_south': {
+        'name': 'SDSS DR12 LOWZ South Random0 (Landy-Szalay)',
+        'url': 'https://data.sdss.org/sas/dr12/boss/lss/random0_DR12v5_LOWZ_South.fits.gz',
+        'filename': 'random0_DR12v5_LOWZ_South.fits.gz',
+        'path': 'data/sdss_dr12/lowz/',
+        'size_mb': 700,
+        'galaxies': 7263200,
+        'z_range': '0.15-0.43',
+        'required': False,
+    },
 }
 
 

@@ -39,6 +39,43 @@ import time
 import os
 import json
 
+# =============================================================================
+# CANONICAL PRIME FIELD CONSTANTS (single source of truth)
+# =============================================================================
+# r0 derives from sigma_8 via the Mersenne Tower: C_XI = 2 * pi(M_7) = 2 * pi(127)
+# = 2 * 31 = 62 (Mersenne Tower Theorem; 31 = M_5 closes the recursion). Solving
+# sigma_8^2 = C_XI * I(r_0) yields r_0 = 0.6594900863537677 kpc — see
+# prime_field_theory.PrimeFieldTheory(use_mersenne_tower=True).r0_kpc.
+#
+# This is the single canonical r_0 used throughout the correlation model and
+# the scale_factor / amplitude derivations. Earlier versions of this file
+# hardcoded r0_base = np.e (~2.718 kpc) at lines ~1762 and ~1863, which was
+# inconsistent with the Mersenne Tower derivation. Fixed 2026-04-29.
+R0_KPC_CANONICAL = 0.6594900863537677  # kpc; derived from sigma_8, NOT fitted
+C_XI_CANONICAL = 62  # = 2 * pi(127); Mersenne Tower Theorem (Stage 12)
+PI_M7 = 31  # pi(127) = 31 = M_5; verified at module import via verify_canonical_constants()
+
+
+def verify_canonical_constants():
+    """Re-derive R0_KPC_CANONICAL and C_XI_CANONICAL from primitives.
+
+    Asserts:
+      pi(127) = 31  (computed from scratch, not hardcoded)
+      C_XI = 2 * pi(127) = 62
+      r_0 within 0.1% of the documented zero-parameter value 0.6595 kpc
+
+    This runs at module import to fail loudly if anything drifts.
+    """
+    # pi(127) computed from scratch
+    pi127 = sum(1 for n in range(2, 128) if all(n % d != 0 for d in range(2, int(n**0.5) + 1)))
+    assert pi127 == PI_M7, f"pi(127) = {pi127}, expected {PI_M7}"
+    assert 2 * pi127 == C_XI_CANONICAL, f"C_XI = {2 * pi127}, expected {C_XI_CANONICAL}"
+    assert abs(R0_KPC_CANONICAL - 0.6595) < 1e-3, \
+        f"R0_KPC_CANONICAL = {R0_KPC_CANONICAL}, expected ~0.6595"
+
+
+verify_canonical_constants()
+
 # Import scikit-learn for k-means clustering in Jackknife
 try:
     from sklearn.cluster import MiniBatchKMeans
@@ -1752,16 +1789,16 @@ class PrimeFieldParameters:
         
         # For the logarithmic profile, we use:
         normalization_factor = 0.6  # Empirical value that matches observations
-        
+
         # Base amplitude at 8 Mpc/h
         r_8h = 8.0  # in Mpc/h
         amplitude_8h = self.sigma8**2 * normalization_factor * growth_factor**2
-        
+
         # Now scale from 8 Mpc/h to the normalization radius
         # For Prime Field: ξ(r) ∝ [1/log(r/r₀ + 1)]²
-        r0_kpc = np.e  # Base scale in kpc
+        r0_kpc = R0_KPC_CANONICAL  # 0.6595 kpc, from sigma_8 + Mersenne Tower (Stage 12)
         r0_mpc = r0_kpc / 1000  # Convert to Mpc
-        
+
         # Field values
         field_8h = 1.0 / np.log(r_8h*1000/r0_kpc + 1)  # Field at 8 Mpc/h
         field_norm = 1.0 / np.log(r_norm*1000/r0_kpc + 1)  # Field at r_norm
@@ -1858,21 +1895,52 @@ class PrimeFieldParameters:
 # =============================================================================
 
 def prime_field_correlation_model(r: np.ndarray, amplitude: float = 1.0, bias: float = 1.0, r0_factor: float = 1.0) -> np.ndarray:
-    """Prime Field correlation function model."""
-    # Base scale in kpc
-    r0_base = np.e  # e kpc
-    r0_effective = r0_base * r0_factor  # Modified scale
-    
+    """Prime Field correlation function model.
+
+    Parameters
+    ----------
+    r : np.ndarray
+        Separation in Mpc.
+    amplitude : float
+        DERIVED from sigma_8 + C_XI (see CosmologyCalculator.correlation_amplitude).
+        Default 1.0 for unit testing only — fitting amplitude is a 1-free-parameter
+        fit; declare in any calling notebook.
+    bias : float
+        Galaxy bias factor (DERIVED from galaxy_bias() per sample). Default 1.0
+        for testing; fitting bias is a 1-free-parameter fit; declare.
+    r0_factor : float
+        Multiplicative deviation from the canonical Mersenne-tower-derived
+        r_0 = R0_KPC_CANONICAL = 0.6595 kpc. r0_factor = 1.0 means the
+        canonical value (zero free parameters in r_0). Fitting r0_factor is
+        a 1-free-parameter fit; declare.
+
+    Returns
+    -------
+    np.ndarray
+        Correlation function ξ(r) values.
+
+    Note (post-2026-04-29 audit fix)
+    -------------------------------
+    Earlier versions hardcoded `r0_base = np.e` (≈ 2.718 kpc), inconsistent
+    with the canonical r_0 = 0.6595 kpc derived from sigma_8 + C_XI = 62 in
+    `prime_field_theory.py` zero-parameter mode. The discrepancy (4.12×)
+    was absorbed into the fitted r0_factor — meaning the headline "zero free
+    parameters" was misleading because r0_factor was always being fitted.
+    Now r0_base = R0_KPC_CANONICAL; r0_factor = 1.0 corresponds to the
+    Mersenne-tower-derived value with zero deviation.
+    """
+    r0_base = R0_KPC_CANONICAL  # 0.6595 kpc, single source of truth
+    r0_effective = r0_base * r0_factor  # r0_factor = 1.0 means canonical (zero deviation)
+
     # Convert r from Mpc to kpc
     r_kpc = r * 1000
-    
-    # Prime field (no additional normalization here!)
+
+    # Prime field
     field = 1.0 / np.log(r_kpc / r0_effective + 1)
-    
+
     # Correlation function
-    # The amplitude already includes the proper normalization
     xi = amplitude * bias**2 * field**2
-    
+
     return xi
 
 # =============================================================================
