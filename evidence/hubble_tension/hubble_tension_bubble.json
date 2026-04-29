@@ -1,0 +1,23 @@
+{
+  "r_bubble_mpc": 10.202139029745462,
+  "r_bubble_book_value_mpc": 10.3,
+  "r_bubble_deviation_pct": -0.9501065073256191,
+  "delta_max": 0.13660419108767294,
+  "v0_kms": 397.0,
+  "H0_planck": 67.4,
+  "H0_sh0es": 73.04,
+  "L_scales_mpc": {
+    "SH0ES_cepheid": 5.0,
+    "DESI_BAO": 150.0,
+    "Planck_CMB": 14000.0
+  },
+  "H0_predictions_kmps_per_mpc": {
+    "SH0ES_scale": 73.04,
+    "DESI_scale": 67.40000379122384,
+    "Planck_scale": 67.4
+  },
+  "tension_sigma_observed": 4.887561225309663,
+  "verdict_r_bubble_passes": true,
+  "verdict_delta_max_passes": true,
+  "verdict_overall": "PASS \u2014 bubble mechanism PRODUCES the observed Hubble tension naturally"
+}
