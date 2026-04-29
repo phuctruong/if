@@ -1,0 +1,60 @@
+{
+  "test": "Joint Pantheon+ + DESI DR1 BAO Bayesian comparison",
+  "results": [
+    {
+      "model": "\u039bCDM (IF, h=Planck)",
+      "n_params": 2,
+      "chi2_desi": 21.447780692096536,
+      "n_desi": 12,
+      "chi2_pantheon": 4210.403426673633,
+      "n_pantheon": 1580,
+      "chi2_total": 4231.851207365729,
+      "n_total": 1592,
+      "chi2_per_dof": 2.66154163985266,
+      "AIC": 4235.851207365729,
+      "BIC": 4246.596700098538
+    },
+    {
+      "model": "\u039bCDM (IF, h=SH0ES)",
+      "n_params": 2,
+      "chi2_desi": 208.7324171889675,
+      "n_desi": 12,
+      "chi2_pantheon": 1486.1313312456743,
+      "n_pantheon": 1580,
+      "chi2_total": 1694.8637484346418,
+      "n_total": 1592,
+      "chi2_per_dof": 1.0659520430406553,
+      "AIC": 1698.8637484346418,
+      "BIC": 1709.6092411674504
+    },
+    {
+      "model": "w\u2080wa  (h=Planck, DESI best fit)",
+      "n_params": 4,
+      "chi2_desi": 14.06922395136104,
+      "n_desi": 12,
+      "chi2_pantheon": 3674.171545441562,
+      "n_pantheon": 1580,
+      "chi2_total": 3688.240769392923,
+      "n_total": 1592,
+      "chi2_per_dof": 2.3225697540257704,
+      "AIC": 3696.240769392923,
+      "BIC": 3717.7317548585406
+    },
+    {
+      "model": "w\u2080wa  (h=SH0ES, DESI best fit)",
+      "n_params": 4,
+      "chi2_desi": 234.223801103468,
+      "n_desi": 12,
+      "chi2_pantheon": 1476.6415954057936,
+      "n_pantheon": 1580,
+      "chi2_total": 1710.8653965092617,
+      "n_total": 1592,
+      "chi2_per_dof": 1.0773711564919783,
+      "AIC": 1718.8653965092617,
+      "BIC": 1740.356381974879
+    }
+  ],
+  "delta_AIC_IF_minus_w0wa": -20.00164807461988,
+  "delta_BIC_IF_minus_w0wa": -30.74714080742865,
+  "verdict": "IF Theory PREFERRED \u2014 fewer parameters and comparable fit"
+}
