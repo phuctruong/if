@@ -1,0 +1,11 @@
+{
+  "H_planck": 67.4,
+  "H_sh0es": 73.04,
+  "H_ratio": 1.083679525222552,
+  "delta_H_observed": 0.08367952522255195,
+  "delta_void_derived": 0.5230839401597267,
+  "delta_max_first_principles": 0.1366182315613863,
+  "delta_max_calibrated_in_other_test": 0.137,
+  "match_pct": 0.2786630938786171,
+  "interpretation": "\u03b4_max is not free; it follows from r_bubble + LTB linear Hubble enhancement + observed cosmic void densities"
+}
