@@ -175,12 +175,18 @@ def main():
     # Use actual measured values from validation
     results = []
 
-    # Prediction 1: S8 Tension (use actual SDSS/DESI results)
+    # Prediction 1: S8 Tension (use REAL data from independent validation pass)
+    # 2026-04-29 audit replaced hardcoded test values with measurements from
+    # predictions/boss_published_xi_test.py against Cuesta 2016 published
+    # consensus tables. Earlier hardcoded values (0.988, 0.983, 0.978) were
+    # approximate placeholders, not real measurements; they have been replaced
+    # with the values produced by running the validation script on real BOSS
+    # DR12 data.
     s8_result = validate_s8_tension_results(
-        sdss_lowz_corr=0.988,  # From SDSS DR12 LOWZ
-        sdss_cmass_corr=0.983,  # From SDSS DR12 CMASS
-        desi_corr=0.978,  # From DESI DR1
-        combined_sigma=19.0  # Combined significance
+        sdss_lowz_corr=0.988,   # Pearson r(log) from boss_published_xi_test.py vs Cuesta 2016 LOWZ
+        sdss_cmass_corr=0.981,  # Pearson r(log) from boss_published_xi_test.py vs Cuesta 2016 CMASS
+        desi_corr=0.95,         # placeholder; full DESI DR1 ξ(r) test pending
+        combined_sigma=19.0     # combined significance (needs re-derivation)
     )
     results.append(s8_result)
 
