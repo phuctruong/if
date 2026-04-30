@@ -161,7 +161,7 @@ def download_file(product: SurveyProduct, data_root: Path, timeout: int, force: 
     )
 
 
-def download_euclid_tiles(data_root: Path, max_tiles: int, dry_run: bool) -> DownloadResult:
+def download_euclid_tiles(data_root: Path, max_tiles: int, max_attempts: int, dry_run: bool) -> DownloadResult:
     """Use the Euclid loader's IRSA tile discovery path for real Q1 SPE/MER data."""
 
     target_dir = validate_target_path(data_root, Path("euclid_q1"))
@@ -172,7 +172,7 @@ def download_euclid_tiles(data_root: Path, max_tiles: int, dry_run: bool) -> Dow
             status="DRY_RUN",
             path=str(target_dir),
             url="https://irsa.ipac.caltech.edu/ibe/data/euclid/q1/catalogs/",
-            reason=f"would discover and download {max_tiles} SPE/MER tile pair(s)",
+            reason=f"would discover and download {max_tiles} SPE/MER tile pair(s); max_attempts={max_attempts}",
         )
 
     try:
@@ -181,10 +181,13 @@ def download_euclid_tiles(data_root: Path, max_tiles: int, dry_run: bool) -> Dow
         raise DownloadError("Euclid downloads require euclid_util.py dependencies") from exc
 
     loader = EuclidDataLoader(data_dir=str(target_dir))
-    success = loader.download_matching_tiles(max_tiles=max_tiles)
+    success = loader.download_matching_tiles(max_tiles=max_tiles, max_attempts=max_attempts)
     summary = loader.get_data_summary()
     if not success:
-        raise DownloadError("Euclid IRSA tile discovery did not download any complete SPE/MER tile pairs")
+        raise DownloadError(
+            "Euclid IRSA tile discovery did not download any complete SPE/MER tile pairs "
+            f"after {max_attempts} candidate tile attempt(s)"
+        )
 
     return DownloadResult(
         product_id="euclid_q1_tile_pair",
@@ -251,6 +254,12 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         help="Product tags to include: minimal, full, sdss-galaxies, sdss-randoms, desi-bao, desi-lss, euclid-q1, all.",
     )
     parser.add_argument("--max-euclid-tiles", type=int, default=1, help="Number of Euclid Q1 SPE/MER tile pairs.")
+    parser.add_argument(
+        "--max-euclid-attempts",
+        type=int,
+        default=3,
+        help="Maximum Euclid candidate tiles to try before failing closed.",
+    )
     parser.add_argument("--timeout", type=int, default=300, help="Per-request timeout in seconds.")
     parser.add_argument("--force", action="store_true", help="Re-download files even when present.")
     parser.add_argument("--dry-run", action="store_true", help="Print selected products without downloading.")
@@ -298,7 +307,14 @@ def main(argv: list[str] | None = None) -> int:
 
         try:
             if product.dynamic and product.survey == "euclid":
-                results.append(download_euclid_tiles(data_root, args.max_euclid_tiles, dry_run=False))
+                results.append(
+                    download_euclid_tiles(
+                        data_root,
+                        args.max_euclid_tiles,
+                        args.max_euclid_attempts,
+                        dry_run=False,
+                    )
+                )
             elif product.dynamic:
                 raise DownloadError(f"No dynamic downloader registered for {product.product_id}")
             else:

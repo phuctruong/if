@@ -498,7 +498,7 @@ class EuclidDataLoader:
         
         return tiles
     
-    def download_matching_tiles(self, max_tiles: int = 5) -> bool:
+    def download_matching_tiles(self, max_tiles: int = 5, max_attempts: int | None = None) -> bool:
         """
         Download SPE and MER data for matching tiles.
         Continues trying tiles until the target number is successfully downloaded.
@@ -507,13 +507,17 @@ class EuclidDataLoader:
         ----------
         max_tiles : int
             Target number of complete tiles to download
+        max_attempts : int, optional
+            Maximum number of candidate tiles to try before returning. This
+            bounds runtime when the remote IRSA listings are slow or unavailable.
             
         Returns
         -------
         bool
             True if any downloads succeeded
         """
-        logger.info(f"\nDownloading {max_tiles} matching tiles...")
+        attempt_label = "unbounded" if max_attempts is None else str(max_attempts)
+        logger.info(f"\nDownloading {max_tiles} matching tiles (max attempts: {attempt_label})...")
         
         success_count = 0
         tiles_tried = 0
@@ -538,6 +542,10 @@ class EuclidDataLoader:
         for tile_id in EuclidConfig.KNOWN_GOOD_TILES:
             # Stop if we have enough tiles
             if success_count >= max_tiles:
+                break
+
+            if max_attempts is not None and tiles_tried >= max_attempts:
+                logger.warning("  Stopping Euclid tile discovery after %s bounded attempts", max_attempts)
                 break
             
             # Skip if we already checked this tile
@@ -572,6 +580,8 @@ class EuclidDataLoader:
             
             # Warn if we're running out of tiles to try
             tiles_remaining = len(EuclidConfig.KNOWN_GOOD_TILES) - tiles_tried
+            if max_attempts is not None:
+                tiles_remaining = min(tiles_remaining, max_attempts - tiles_tried)
             tiles_needed = max_tiles - success_count
             
             if tiles_remaining < tiles_needed and tiles_remaining > 0:

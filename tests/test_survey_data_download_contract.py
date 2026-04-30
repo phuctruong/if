@@ -4,6 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from euclid_util import EuclidConfig, EuclidDataLoader
 from survey_data_manifest import SURVEY_PRODUCTS, safe_relative_path, select_products
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -57,3 +58,25 @@ def test_download_survey_data_dry_run_has_no_network_dependency() -> None:
     assert "DRY RUN sdss_dr12_lowz_south" in proc.stdout
     assert "DRY RUN desi_dr1_bao_all_gccomb_mean" in proc.stdout
     assert "DRY RUN euclid_q1_tile_pair" in proc.stdout
+
+
+def test_euclid_tile_discovery_has_bounded_attempts(tmp_path, monkeypatch) -> None:
+    attempts: list[tuple[str, str]] = []
+
+    def always_missing(self, catalog_type: str, tile_id: str) -> bool:
+        attempts.append((catalog_type, tile_id))
+        return False
+
+    monkeypatch.setattr(EuclidConfig, "KNOWN_GOOD_TILES", ["tile-a", "tile-b", "tile-c"])
+    monkeypatch.setattr(EuclidDataLoader, "_download_catalog", always_missing)
+
+    loader = EuclidDataLoader(data_dir=str(tmp_path))
+    success = loader.download_matching_tiles(max_tiles=1, max_attempts=2)
+
+    assert not success
+    assert attempts == [
+        ("SPE", "tile-a"),
+        ("MER", "tile-a"),
+        ("SPE", "tile-b"),
+        ("MER", "tile-b"),
+    ]
