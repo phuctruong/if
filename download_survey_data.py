@@ -290,7 +290,13 @@ def main(argv: list[str] | None = None) -> int:
         target = validate_target_path(data_root, product.relative_path)
         if args.dry_run:
             status = "DRY_RUN"
-            reason = "dynamic discovery" if product.dynamic else f"would download {product.expected_bytes} bytes"
+            if product.dynamic and product.survey == "euclid":
+                reason = (
+                    f"would discover {args.max_euclid_tiles} SPE/MER tile pair(s); "
+                    f"max_attempts={args.max_euclid_attempts}"
+                )
+            else:
+                reason = "dynamic discovery" if product.dynamic else f"would download {product.expected_bytes} bytes"
             results.append(
                 DownloadResult(
                     product_id=product.product_id,

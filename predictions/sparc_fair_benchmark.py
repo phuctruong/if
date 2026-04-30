@@ -25,7 +25,6 @@ if str(_ROOT) not in sys.path:
 from predictions.sparc_corrected_log_potential import (  # noqa: E402
     SPARC_DIR,
     SPARC_TABLE,
-    G_kpc_kms_msun,
     load_rotmod,
     parse_sparc_table,
 )

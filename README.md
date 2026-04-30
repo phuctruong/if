@@ -132,11 +132,13 @@ python3 download_survey_data.py --dry-run --surveys sdss desi euclid --products 
 python3 download_survey_data.py --surveys sdss desi euclid --products minimal
 python3 download_survey_data.py --surveys sdss desi --products full
 # Euclid Q1 SPE/MER tiles are discovered dynamically from IRSA:
-python3 download_survey_data.py --surveys euclid --products euclid-q1 --max-euclid-tiles 3
+python3 download_survey_data.py --surveys euclid --products euclid-q1 --max-euclid-tiles 3 --max-euclid-attempts 12
 ```
 
-Downloads are staged under `data/` and recorded in `data/DATA_MANIFEST.json`
-with byte counts and SHA-256 digests.
+Downloads are staged under `~/Downloads/if/data/` by default and recorded in
+`~/Downloads/if/data/DATA_MANIFEST.json` with byte counts and SHA-256 digests.
+Euclid tile discovery is fail-closed and bounded by `--max-euclid-attempts`
+because the IRSA dynamic catalog listings can be slow or temporarily incomplete.
 
 ---
 
