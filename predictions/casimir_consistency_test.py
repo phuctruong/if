@@ -49,7 +49,6 @@ Reference:
 from __future__ import annotations
 
 import json
-import math
 from pathlib import Path
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "evidence" / "casimir"
@@ -122,7 +121,7 @@ def main() -> int:
 
     print()
     print(f"Decca 2007 precision: {DECCA_2007_PRECISION_FRAC * 100:.1f}% relative on F(d)")
-    print(f"  (i.e., upper bound on detectable |ε(d)| ≈ 5e-3)")
+    print("  (i.e., upper bound on detectable |ε(d)| ≈ 5e-3)")
     print()
 
     # Verdict

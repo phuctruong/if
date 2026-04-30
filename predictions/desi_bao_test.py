@@ -28,9 +28,9 @@ import sys
 from pathlib import Path
 from typing import List, Tuple
 
+import astropy.units as u
 import numpy as np
 from astropy.cosmology import FlatLambdaCDM
-import astropy.units as u
 
 DESI_DIR = Path("/home/phuc/Downloads/if/data/desi_dr1/bao_likelihoods")
 OUT_DIR = Path(__file__).resolve().parent.parent / "evidence" / "desi_bao"
@@ -93,6 +93,19 @@ def predict(z: float, kind: str, cosmo: FlatLambdaCDM, rs: float) -> float:
         raise ValueError(f"unknown kind: {kind}")
 
 
+def verdict_for_p_value(p_value: float) -> str:
+    if p_value > 0.05:
+        return f"CONSISTENT (p = {p_value:.3f} > 0.05)"
+    if p_value > 0.003:  # ~3σ
+        return f"TENSION-2σ (p = {p_value:.3f})"
+    return f"FAILED (p = {p_value:.4f}, > 3σ)"
+
+
+def exit_code_for_p_value(p_value: float) -> int:
+    """Return nonzero only for publication-blocking DESI disagreement."""
+    return 0 if p_value > 0.003 else 1
+
+
 def main() -> int:
     means_path = DESI_DIR / "desi_2024_gaussian_bao_ALL_GCcomb_mean.txt"
     cov_path = DESI_DIR / "desi_2024_gaussian_bao_ALL_GCcomb_cov.txt"
@@ -102,7 +115,7 @@ def main() -> int:
     assert cov.shape == (len(rows), len(rows))
 
     cosmo = FlatLambdaCDM(H0=PLANCK_H * 100, Om0=PLANCK_OMEGA_M)
-    print(f"ΛCDM (IF Theory bubble: w ≈ -1):")
+    print("ΛCDM (IF Theory bubble: w ≈ -1):")
     print(f"  Ω_m = {PLANCK_OMEGA_M}, h = {PLANCK_H}, r_s = {RS_MPC:.1f} Mpc")
     print()
 
@@ -136,12 +149,7 @@ def main() -> int:
     from scipy.stats import chi2 as chi2dist
     p_value = float(chi2dist.sf(chi2, dof))
     print(f"P-value              = {p_value:.4f}")
-    if p_value > 0.05:
-        verdict = f"CONSISTENT (p = {p_value:.3f} > 0.05)"
-    elif p_value > 0.003:  # ~3σ
-        verdict = f"TENSION-2σ (p = {p_value:.3f})"
-    else:
-        verdict = f"FAILED (p = {p_value:.4f}, > 3σ)"
+    verdict = verdict_for_p_value(p_value)
     print(f"VERDICT              = {verdict}")
     print("=" * 60)
 
@@ -158,14 +166,14 @@ def main() -> int:
         "verdict": verdict,
         "per_point": [
             {"z": z, "kind": k, "data": d, "theory": t, "sigma": float(s)}
-            for z, k, d, t, s in zip(z_arr, kind_arr, data_arr, theory_arr, sigmas)
+            for z, k, d, t, s in zip(z_arr, kind_arr, data_arr, theory_arr, sigmas, strict=False)
         ],
     }
     with open(OUT_DIR / "desi_bao_lcdm_test.json", "w") as f:
         json.dump(out, f, indent=2)
     print(f"\nWrote {OUT_DIR / 'desi_bao_lcdm_test.json'}")
 
-    return 0 if p_value > 0.05 else 1
+    return exit_code_for_p_value(p_value)
 
 
 if __name__ == "__main__":

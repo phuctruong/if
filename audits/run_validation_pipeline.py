@@ -11,13 +11,12 @@ This script:
 6. Generates comprehensive report
 """
 
-import os
-import sys
 import json
 import logging
+import os
+from typing import Dict, Tuple
+
 import requests
-from typing import Dict, Tuple, Optional
-import numpy as np
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -79,10 +78,10 @@ def download_file(url: str, destination: str, description: str) -> bool:
                         percent = (downloaded / total_size) * 100
                         logger.info(f"  Progress: {percent:.1f}% ({downloaded/(1024**2):.1f} MB)")
 
-        logger.info(f"✅ Downloaded successfully")
+        logger.info("✅ Downloaded successfully")
         return True
 
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.error(f"❌ Download failed: {e}")
         return False
 
@@ -113,13 +112,13 @@ def compute_correlation_from_data(data_path: str, sample_name: str) -> Tuple[flo
         # For now, we demonstrate the structure
 
         logger.info(f"  Would load: {data_path}")
-        logger.info(f"  Would compute Pearson r with theory predictions")
-        logger.info(f"  Would estimate uncertainty from jackknife")
+        logger.info("  Would compute Pearson r with theory predictions")
+        logger.info("  Would estimate uncertainty from jackknife")
 
         # Return placeholder
         return 0.985, 0.05
 
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.error(f"Error processing {data_path}: {e}")
         return None, None
 
@@ -150,7 +149,7 @@ def run_validation_pipeline(download_data: bool = True) -> Dict:
             logger.info(f"  Redshift: {source_info['redshift_range']}")
 
             # Note: Actual download would happen here
-            logger.info(f"  Status: Download framework ready (actual download requires API keys)")
+            logger.info("  Status: Download framework ready (actual download requires API keys)")
             data_files[source_key] = filename
     else:
         logger.info("⏭️ Skipping data download (framework only)")
@@ -194,7 +193,7 @@ def run_validation_pipeline(download_data: bool = True) -> Dict:
         'combined_sigma': 19.0,  # Combined significance
     }
 
-    logger.info(f"\nS8 Tension Validation:")
+    logger.info("\nS8 Tension Validation:")
     logger.info(f"  SDSS LOWZ:  r = {sdss_lowz_r:.3f} {'✅' if sdss_lowz_r >= 0.93 else '❌'}")
     logger.info(f"  SDSS CMASS: r = {sdss_cmass_r:.3f} {'✅' if sdss_cmass_r >= 0.93 else '❌'}")
     logger.info(f"  DESI ELG:   r = {desi_r:.3f} {'✅' if desi_r >= 0.93 else '❌'}")
@@ -231,11 +230,11 @@ def run_validation_pipeline(download_data: bool = True) -> Dict:
     logger.info("VALIDATION PIPELINE COMPLETE")
     logger.info("="*70)
 
-    logger.info(f"\n📊 Results:")
+    logger.info("\n📊 Results:")
     logger.info(f"  Real data used: {'YES' if report['data_acquired'] else 'NO (using test fixtures)'}")
     logger.info(f"  Correlations computed: {len(correlations)}/3")
     logger.info(f"  S8 Tension status: {report['summary']['s8_tension_status']}")
-    logger.info(f"\n✅ Pipeline ready for publication")
+    logger.info("\n✅ Pipeline ready for publication")
 
     return report
 

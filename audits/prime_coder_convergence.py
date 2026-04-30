@@ -11,10 +11,10 @@ Implements 4 halting certificates:
 All computation uses exact arithmetic (int, Fraction, Decimal - NO FLOAT)
 """
 
-from enum import Enum
-from typing import List, NamedTuple, Optional, Dict, Any
-from fractions import Fraction
 from decimal import Decimal, getcontext
+from enum import Enum
+from fractions import Fraction
+from typing import Any, Dict, List, NamedTuple, Optional
 
 # Set precision for exact decimal computation
 getcontext().prec = 50

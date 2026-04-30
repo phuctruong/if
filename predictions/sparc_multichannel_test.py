@@ -31,7 +31,7 @@ import logging
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List
+from typing import List
 
 import numpy as np
 
@@ -102,9 +102,12 @@ def load_rotmod(path: Path) -> dict:
             parts = line.split()
             if len(parts) < 6:
                 continue
-            R.append(float(parts[0])); Vobs.append(float(parts[1]))
-            errV.append(float(parts[2])); Vgas.append(float(parts[3]))
-            Vdisk.append(float(parts[4])); Vbul.append(float(parts[5]))
+            R.append(float(parts[0]))
+            Vobs.append(float(parts[1]))
+            errV.append(float(parts[2]))
+            Vgas.append(float(parts[3]))
+            Vdisk.append(float(parts[4]))
+            Vbul.append(float(parts[5]))
     return dict(R=np.asarray(R), Vobs=np.asarray(Vobs), errV=np.asarray(errV),
                 Vgas=np.asarray(Vgas), Vdisk=np.asarray(Vdisk), Vbul=np.asarray(Vbul))
 
@@ -119,7 +122,9 @@ def evaluate_galaxy(
     d = load_rotmod(path)
     R = d["R"]
     keep = R > 0
-    R = R[keep]; Vobs = d["Vobs"][keep]; errV = np.maximum(d["errV"][keep], min_floor_err)
+    R = R[keep]
+    Vobs = d["Vobs"][keep]
+    errV = np.maximum(d["errV"][keep], min_floor_err)
     Vbar = np.sqrt(d["Vgas"][keep] ** 2 + d["Vdisk"][keep] ** 2 + d["Vbul"][keep] ** 2)
     if len(R) < 3:
         return {"name": name, "skipped": True}
@@ -152,7 +157,7 @@ def run_population(v0_kms: float, scaling: str) -> dict:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
     chi2_per_dof = np.array([r["chi2_per_dof"] for r in results])
     return {

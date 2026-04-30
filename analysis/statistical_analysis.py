@@ -6,15 +6,17 @@ This module implements proper statistical analysis for models with
 zero free parameters, where standard chi-squared interpretation differs.
 """
 
-import numpy as np
-import pandas as pd
-from scipy import stats
-from typing import Dict, Optional
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Dict, Optional
+
+import numpy as np
+import pandas as pd
+from scipy import stats
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:

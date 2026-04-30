@@ -19,11 +19,11 @@ Results (MW, 10 data points):
 
 Auth: 65537 | Session P-75
 """
-import numpy as np
-from typing import Dict, List, Tuple
 import json
 import os
+from typing import Dict
 
+import numpy as np
 
 # MW baryonic decomposition (Sofue 2013, simplified)
 SOFUE_BARY_R = [2, 4, 6, 8, 10, 15, 20, 25, 30, 50, 80, 100]

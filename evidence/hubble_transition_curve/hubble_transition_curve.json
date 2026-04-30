@@ -1,0 +1,86 @@
+{
+  "artifact": "IF Theory pre-registered H0 transition curve",
+  "model": "H0(L)=H0_global*(1+delta_max*exp(-L/r_bubble))",
+  "status": "PREDICTION_LOCKED_NOT_INDEPENDENTLY_CONFIRMED",
+  "inputs": {
+    "H0_global_km_s_mpc": 67.4,
+    "v0_km_s": 397.0,
+    "delta_void": 0.5,
+    "L_SH0ES_reference_mpc": 5.0
+  },
+  "derived": {
+    "r_bubble_mpc": 10.202139029745462,
+    "delta_h_at_SH0ES_reference": 0.08012344973464347,
+    "delta_max": 0.1307990097822044
+  },
+  "confirmation_rule": {
+    "pass": "Independent distance-binned H0 data must follow the locked monotone curve with chi2/dof <= 2 without refitting r_bubble or delta_max.",
+    "fail": "A precise monotone-flat H0 across 1-300 Mpc, or a transition radius outside 5-25 Mpc, falsifies this version."
+  },
+  "curve": [
+    {
+      "distance_mpc": 0.0,
+      "h0_km_s_mpc": 76.21585325932058
+    },
+    {
+      "distance_mpc": 1.0,
+      "h0_km_s_mpc": 75.39273454491625
+    },
+    {
+      "distance_mpc": 2.0,
+      "h0_km_s_mpc": 74.64646879052306
+    },
+    {
+      "distance_mpc": 5.0,
+      "h0_km_s_mpc": 72.80032051211498
+    },
+    {
+      "distance_mpc": 10.0,
+      "h0_km_s_mpc": 70.70807022028602
+    },
+    {
+      "distance_mpc": 15.0,
+      "h0_km_s_mpc": 69.42642205361572
+    },
+    {
+      "distance_mpc": 20.0,
+      "h0_km_s_mpc": 68.64132381295857
+    },
+    {
+      "distance_mpc": 30.0,
+      "h0_km_s_mpc": 67.86579567724073
+    },
+    {
+      "distance_mpc": 50.0,
+      "h0_km_s_mpc": 67.46558676161276
+    },
+    {
+      "distance_mpc": 75.0,
+      "h0_km_s_mpc": 67.40565707720032
+    },
+    {
+      "distance_mpc": 100.0,
+      "h0_km_s_mpc": 67.40048794179897
+    },
+    {
+      "distance_mpc": 150.0,
+      "h0_km_s_mpc": 67.4000036301106
+    },
+    {
+      "distance_mpc": 300.0,
+      "h0_km_s_mpc": 67.4000000000015
+    },
+    {
+      "distance_mpc": 500.0,
+      "h0_km_s_mpc": 67.4
+    },
+    {
+      "distance_mpc": 1000.0,
+      "h0_km_s_mpc": 67.4
+    },
+    {
+      "distance_mpc": 14000.0,
+      "h0_km_s_mpc": 67.4
+    }
+  ]
+}

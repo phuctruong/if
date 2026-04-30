@@ -15,22 +15,21 @@ Author: Phuc Vinh Truong & Solace AGI
 Date: December 2025
 """
 
-import numpy as np
-from scipy.integrate import quad
-from scipy.optimize import brentq
-from typing import Dict, List, Tuple
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Dict, List
+
+import numpy as np
+from scipy.integrate import quad
+from scipy.optimize import brentq
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON, R_MIN_MPC
-    )
+    from core.constants import AMPLITUDE, C_LIGHT, EPSILON, H0, H_PLANCK, OMEGA_M, R_MIN_MPC, SIGMA_8
 except ImportError:
     # Fallback for standalone execution
     SIGMA_8 = 0.8159

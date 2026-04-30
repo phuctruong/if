@@ -16,11 +16,11 @@ Author: Phuc Vinh Truong & Solace AGI
 Date: December 2025
 """
 
+import logging
+from typing import Dict
+
 import numpy as np
 from scipy.integrate import quad
-from scipy.special import lambertw
-from typing import Dict, List, Tuple
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -410,7 +410,7 @@ class BoundedMath:
         def wigner_dyson(s, beta=2):
             """Wigner-Dyson distribution for GUE (beta=2)."""
             # Approximation: P(s) ∝ s^beta * exp(-C * s²)
-            a = (beta + 1) / 2
+            (beta + 1) / 2
             return (np.pi / 2) * s * np.exp(-np.pi * s**2 / 4)
 
         expected_gue = np.array([wigner_dyson(s) for s in bin_centers])
@@ -587,7 +587,7 @@ def run_bounded_math_validation():
 
     # Example: Milky Way gravity
     mw_result = bm.gravity_from_glow(mass_solar=1e12, distance_mpc=0.008)  # 8 kpc from center
-    print(f"Milky Way Example (M=10¹² M☉, r=8 kpc):")
+    print("Milky Way Example (M=10¹² M☉, r=8 kpc):")
     print(f"  Newton: g = {mw_result['g_newton']:.6e}")
     print(f"  Prime (raw): ∇Glow = {mw_result['g_prime_raw']:.6e}")
     print(f"  Mechanism: {mw_result['mechanism']}")

@@ -15,13 +15,12 @@ Data Sources:
   - DESI DR1: http://data.desi.lbl.gov/
 """
 
-import numpy as np
-from typing import Dict, Tuple, Optional
 import logging
 import os
-from pathlib import Path
-import json
 from datetime import datetime
+from typing import Dict, Optional, Tuple
+
+import numpy as np
 
 try:
     from astropy.io import fits
@@ -89,7 +88,7 @@ class RealDataLoader:
                 logger.info(f"✓ Loaded {len(data)} rows from {os.path.basename(filepath)}")
                 return data
 
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"Error reading FITS file {filepath}: {e}")
             return None
 
@@ -156,7 +155,7 @@ class RealDataLoader:
             logger.info(f"✓ Data validation passed: {n_after} galaxies")
             return data[mask], stats
 
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"Error validating data: {e}")
             return data, {'valid': False, 'reason': str(e)}
 

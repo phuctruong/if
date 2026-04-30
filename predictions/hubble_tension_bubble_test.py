@@ -40,8 +40,6 @@ import math
 import sys
 from pathlib import Path
 
-import numpy as np
-
 OUT_DIR = Path(__file__).resolve().parent.parent / "evidence" / "hubble_tension"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -79,7 +77,7 @@ def main() -> int:
 
     # Compute r_bubble from theory using Planck H_0 as the background
     rb = r_bubble_mpc(V0_KMS, H0_PLANCK)
-    print(f"\nDerived r_bubble = v_0 · √3 / H_0_∞")
+    print("\nDerived r_bubble = v_0 · √3 / H_0_∞")
     print(f"  v_0 = {V0_KMS:.0f} km/s, H_0_∞ = {H0_PLANCK} km/s/Mpc")
     print(f"  r_bubble = {rb:.2f} Mpc  (book's claim: 10.3 Mpc)")
     book_value = 10.3
@@ -90,7 +88,7 @@ def main() -> int:
     #   H_0(L_SH0ES) = H_∞ · (1 + δ · exp(-L_SH0ES / r_b))
     # With H_∞ = Planck and H_0(L_SH0ES) = SH0ES:
     delta_max = (H0_SH0ES / H0_PLANCK - 1.0) / math.exp(-L_SH0ES_MPC / rb)
-    print(f"\nδ_max calibrated to (Planck, SH0ES):")
+    print("\nδ_max calibrated to (Planck, SH0ES):")
     print(f"  δ_max = {delta_max:.4f}  ({delta_max * 100:.1f}% maximum local enhancement)")
 
     # Predict H_0 at all three scales
@@ -98,7 +96,7 @@ def main() -> int:
     H0_pred_DESI = H0_of_scale(L_DESI_MPC, H0_PLANCK, delta_max, rb)
     H0_pred_PLANCK = H0_of_scale(L_PLANCK_MPC, H0_PLANCK, delta_max, rb)
 
-    print(f"\nPredicted H_0(L):")
+    print("\nPredicted H_0(L):")
     print(f"  L = {L_SH0ES_MPC:>6.1f} Mpc (SH0ES Cepheid scale): "
           f"{H0_pred_SH0ES:.2f} km/s/Mpc  (observed {H0_SH0ES} ± {H0_SH0ES_ERR})")
     print(f"  L = {L_DESI_MPC:>6.1f} Mpc (DESI BAO scale):       "
@@ -109,7 +107,7 @@ def main() -> int:
     # σ-accounting: are the predictions within observed errors?
     sigma_SH0ES = abs(H0_pred_SH0ES - H0_SH0ES) / H0_SH0ES_ERR
     sigma_PLANCK = abs(H0_pred_PLANCK - H0_PLANCK) / H0_PLANCK_ERR
-    print(f"\nSpecification of fit (used SH0ES + Planck to set δ_max, so should match exactly):")
+    print("\nSpecification of fit (used SH0ES + Planck to set δ_max, so should match exactly):")
     print(f"  SH0ES  prediction: {sigma_SH0ES:.2f}σ from observed")
     print(f"  Planck prediction: {sigma_PLANCK:.2f}σ from observed")
 
@@ -130,7 +128,7 @@ def main() -> int:
     # (physically reasonable bubble enhancement).
     rb_passes = abs(rb_dev_pct) < 5.0
     delta_passes = 0.05 < delta_max < 0.30
-    print(f"\nVERDICT:")
+    print("\nVERDICT:")
     print(f"  r_bubble derivation matches book value (within 5%):  "
           f"{'PASS' if rb_passes else 'FAIL'}")
     print(f"  δ_max in physically reasonable range [0.05, 0.30]:    "
@@ -139,10 +137,10 @@ def main() -> int:
               if (rb_passes and delta_passes) else "FAIL"
     print(f"  Overall: {overall}")
     print()
-    print(f"  NOTE: this is a phenomenological 1-parameter (δ_max) calibration.")
-    print(f"        The full derivation of δ_max from bubble dynamics is open work.")
-    print(f"        The CLAIM is that the bubble mechanism PROVIDES the right shape;")
-    print(f"        the observed ~5σ Hubble tension naturally maps to δ_max ≈ 0.13.")
+    print("  NOTE: this is a phenomenological 1-parameter (δ_max) calibration.")
+    print("        The full derivation of δ_max from bubble dynamics is open work.")
+    print("        The CLAIM is that the bubble mechanism PROVIDES the right shape;")
+    print("        the observed ~5σ Hubble tension naturally maps to δ_max ≈ 0.13.")
 
     out = {
         "r_bubble_mpc": rb,

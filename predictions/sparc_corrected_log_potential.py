@@ -45,7 +45,7 @@ import logging
 import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 
 import numpy as np
 
@@ -134,9 +134,12 @@ def load_rotmod(path: Path) -> dict:
             parts = line.split()
             if len(parts) < 6:
                 continue
-            R.append(float(parts[0]));  Vobs.append(float(parts[1]))
-            errV.append(float(parts[2])); Vgas.append(float(parts[3]))
-            Vdisk.append(float(parts[4])); Vbul.append(float(parts[5]))
+            R.append(float(parts[0]))
+            Vobs.append(float(parts[1]))
+            errV.append(float(parts[2]))
+            Vgas.append(float(parts[3]))
+            Vdisk.append(float(parts[4]))
+            Vbul.append(float(parts[5]))
     return dict(R=np.asarray(R), Vobs=np.asarray(Vobs), errV=np.asarray(errV),
                 Vgas=np.asarray(Vgas), Vdisk=np.asarray(Vdisk), Vbul=np.asarray(Vbul))
 
@@ -168,7 +171,8 @@ def evaluate_galaxy(name: str, path: Path, table: Dict[str, dict],
     v_0_galaxy = math.sqrt(FREEMAN_FACTOR * G * M_baryon / Rdisk)
 
     d = load_rotmod(path)
-    R = d["R"]; keep = R > 0
+    R = d["R"]
+    keep = R > 0
     R = R[keep]
     Vobs = d["Vobs"][keep]
     errV = np.maximum(d["errV"][keep], min_floor_err)
@@ -214,7 +218,7 @@ def main() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
 
     if not results:
@@ -228,7 +232,7 @@ def main() -> int:
 
     print(f"Evaluated {len(results)} galaxies, skipped {len(skipped)}\n")
     print("=" * 78)
-    print(f"SPARC CORRECTED Φ = ln(r/r_0+1), v_0 = √(G·M_b/R_disk) per galaxy")
+    print("SPARC CORRECTED Φ = ln(r/r_0+1), v_0 = √(G·M_b/R_disk) per galaxy")
     print(f"r_0 = {R0_KPC_CANONICAL:.4f} kpc, M/L_3.6 = {M_TO_L_RATIO_3_6}")
     print("=" * 78)
     print(f"  χ²/dof   median         : {np.median(chi2_per_dof):8.2f}")
@@ -247,7 +251,7 @@ def main() -> int:
         lo = np.log10(Vflat[mask])
         slope, intercept = np.polyfit(lo, lp, 1)
         r_pearson = float(np.corrcoef(lp, lo)[0, 1])
-        print(f"  Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
+        print("  Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
         print(f"    slope = {slope:+.3f}  (theoretical 1.00 expected)")
         print(f"    intercept = {intercept:+.3f}")
         print(f"    Pearson r = {r_pearson:+.3f}")

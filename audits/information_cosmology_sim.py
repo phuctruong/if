@@ -68,11 +68,11 @@ WHAT THIS SIMULATION CAN SHOW
 Version: 1.0.0 (Prototype)
 """
 
+import sys
+import time
+
 import numpy as np
 from scipy.optimize import curve_fit
-import time
-import sys
-
 
 # =============================================================================
 # CONSTANTS (from core/constants.py, kept local for standalone use)
@@ -756,8 +756,8 @@ def run_cosmology_sim(N=500, L=100.0, T=50, G_eff=5e4, softening=0.5,
     # -------------------------------------------------------------------------
     print("--- COMPARISON WITH MERSENNE TOWER PREDICTION ---")
     print(f"  Theoretical C_XI = {C_XI_MERSENNE}")
-    print(f"  (From: C_XI = 2 * pi(M_7) = 2 * pi(127) = 2 * 31 = 62)")
-    print(f"  (STATUS: THEOREM, conditional on axioms A1-A3)")
+    print("  (From: C_XI = 2 * pi(M_7) = 2 * pi(127) = 2 * 31 = 62)")
+    print("  (STATUS: THEOREM, conditional on axioms A1-A3)")
     print()
 
     if fit_ok and np.isfinite(C_XI_fit):

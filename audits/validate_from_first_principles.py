@@ -23,7 +23,6 @@ TWO MODES:
 """
 
 import numpy as np
-from scipy import integrate
 from scipy.stats import pearsonr, spearmanr
 
 # =============================================================================
@@ -109,12 +108,12 @@ class PrimeField:
         print("=" * 70)
         print("PRIME FIELD THEORY - SINGLE INPUT MODEL")
         print("=" * 70)
-        print(f"\nCore Equation: Φ(r) = 1/log(r/r₀ + 1)")
-        print(f"\nDerived Parameters:")
+        print("\nCore Equation: Φ(r) = 1/log(r/r₀ + 1)")
+        print("\nDerived Parameters:")
         print(f"  Amplitude = {self.amplitude} (exact from prime number theorem)")
         print(f"  r₀ = {self.r0_kpc:.3f} kpc (empirical from galaxy correlations)")
         print(f"  v₀ = {self.v0:.1f} km/s (from virial dimensional analysis)")
-        print(f"\nNOTE: r₀ is empirical (1 input), v₀ is semi-derived.")
+        print("\nNOTE: r₀ is empirical (1 input), v₀ is semi-derived.")
         print("=" * 70)
 
     def field(self, r_mpc):
@@ -202,18 +201,18 @@ def validate_milky_way():
     v_error = 20
     v0_uncertainty = 0.3
 
-    print(f"\nRotation Curve Peak (prime field contribution only):")
+    print("\nRotation Curve Peak (prime field contribution only):")
     print(f"  Peak at r = {r_peak_kpc:.1f} kpc: v = {v_peak:.1f} km/s")
     print(f"  Observed MW peak: ~{v_observed} km/s at ~5-8 kpc")
 
     peak_match = abs(v_peak - v_observed) <= 2 * v_error
     print(f"  Peak agreement: {'✓ PASS' if peak_match else '⚠ CHECK'} (within 2σ)")
 
-    print(f"\nAt r = 10 kpc (prime field only):")
+    print("\nAt r = 10 kpc (prime field only):")
     print(f"  Predicted: {v_10kpc:.1f} km/s")
     print(f"  With ±30% v₀ uncertainty: [{v_10kpc*(1-v0_uncertainty):.1f}, {v_10kpc*(1+v0_uncertainty):.1f}] km/s")
     print(f"  Observed:  {v_observed} ± {v_error} km/s")
-    print(f"  NOTE: Baryonic disk/bulge adds ~80 km/s at 10 kpc (not included)")
+    print("  NOTE: Baryonic disk/bulge adds ~80 km/s at 10 kpc (not included)")
 
     # Show rotation curve shape
     print("\nRotation Curve Shape:")
@@ -256,13 +255,13 @@ def validate_correlation_shape():
     r_pearson, p_pearson = pearsonr(np.log(xi_observed), np.log(xi_predicted))
     r_spearman, p_spearman = spearmanr(xi_observed, xi_predicted)
 
-    print(f"\nCorrelation Function Comparison:")
+    print("\nCorrelation Function Comparison:")
     print(f"  {'r (Mpc)':<10} {'ξ_obs':<12} {'ξ_pred':<12} {'ratio':<10}")
     for i, r in enumerate(r_bins):
         ratio = xi_predicted[i] / xi_observed[i]
         print(f"  {r:<10} {xi_observed[i]:<12.4f} {xi_predicted[i]:<12.4f} {ratio:<10.2f}")
 
-    print(f"\nShape Agreement:")
+    print("\nShape Agreement:")
     print(f"  Pearson r  = {r_pearson:.4f} (p = {p_pearson:.2e})")
     print(f"  Spearman r = {r_spearman:.4f} (p = {p_spearman:.2e})")
 
@@ -293,7 +292,7 @@ def validate_bubble_universe():
     r_coupling = r_bubble / np.e
     r_detachment = r_bubble + r_coupling
 
-    print(f"\nBubble Universe Parameters (ALL DERIVED):")
+    print("\nBubble Universe Parameters (ALL DERIVED):")
     print(f"  r_bubble     = {r_bubble:.2f} Mpc (decoupling scale)")
     print(f"  r_coupling   = {r_coupling:.2f} Mpc (interaction decay)")
     print(f"  r_detachment = {r_detachment:.2f} Mpc (complete independence)")
@@ -302,16 +301,16 @@ def validate_bubble_universe():
     # w(z) = -1 + small_correction
     w0 = -1 + 5e-6  # Nearly exactly -1
 
-    print(f"\nDark Energy Equation of State:")
+    print("\nDark Energy Equation of State:")
     print(f"  w₀ = {w0:.6f}")
-    print(f"  This is indistinguishable from cosmological constant (w = -1)")
-    print(f"  But arises NATURALLY from bubble dynamics!")
+    print("  This is indistinguishable from cosmological constant (w = -1)")
+    print("  But arises NATURALLY from bubble dynamics!")
 
     # BAO modification
     r_bao = 150  # Mpc (BAO scale)
     modification = (r_bubble / r_bao) ** 2
 
-    print(f"\nBAO Peak Modification:")
+    print("\nBAO Peak Modification:")
     print(f"  Fractional shift: {modification*100:.2f}%")
     print(f"  Verdict: {'✓ PASS (<1%)' if modification < 0.01 else '⚠ CHECK'}")
 
@@ -339,7 +338,7 @@ def validate_chi2_variation():
         "Euclid": 450,
     }
 
-    print(f"\nχ²/dof Values Across Samples:")
+    print("\nχ²/dof Values Across Samples:")
     print(f"  {'Sample':<25} {'χ²/dof':<15}")
     for sample, chi2 in chi2_dof_values.items():
         print(f"  {sample:<25} {chi2:<15.1f}")
@@ -348,17 +347,17 @@ def validate_chi2_variation():
     values = list(chi2_dof_values.values())
     variation = max(values) / min(values)
 
-    print(f"\nVariation Analysis:")
+    print("\nVariation Analysis:")
     print(f"  Minimum χ²/dof: {min(values):.1f}")
     print(f"  Maximum χ²/dof: {max(values):.1f}")
     print(f"  Variation: {variation:.0f}× (13,700× in full data)")
 
-    print(f"\nWhat This Means:")
-    print(f"  - Models with many parameters: χ²/dof ~ 1 always (can tune to fit)")
-    print(f"  - Minimal-parameter models: Wild variation (cannot tune)")
-    print(f"  - Our 13,700× variation shows model has no shape freedom")
+    print("\nWhat This Means:")
+    print("  - Models with many parameters: χ²/dof ~ 1 always (can tune to fit)")
+    print("  - Minimal-parameter models: Wild variation (cannot tune)")
+    print("  - Our 13,700× variation shows model has no shape freedom")
 
-    print(f"\n  Verdict: ✓ MINIMAL PARAMETERS CONFIRMED (0 free parameters via Mersenne Tower Theorem)")
+    print("\n  Verdict: ✓ MINIMAL PARAMETERS CONFIRMED (0 free parameters via Mersenne Tower Theorem)")
 
     return variation > 100
 
@@ -400,13 +399,13 @@ def validate_information_criteria():
     delta_bic = bic_lcdm - bic_bubble
     bayes_factor = np.exp(delta_bic / 2)
 
-    print(f"\nBayes Factor Analysis:")
+    print("\nBayes Factor Analysis:")
     print(f"  ΔBIC = {delta_bic:.1f}")
     print(f"  Bayes Factor K = exp(ΔBIC/2) = {bayes_factor:.1f}")
     print(f"  Interpretation: {'Strong' if bayes_factor > 10 else 'Substantial'} evidence for simpler model")
 
     print(f"\n  Winner: {'✓ BUBBLE UNIVERSE' if bic_bubble < bic_lcdm else 'ΛCDM'}")
-    print(f"  (Fewer parameters wins on information criteria!)")
+    print("  (Fewer parameters wins on information criteria!)")
 
     return bic_bubble < bic_lcdm
 
@@ -478,6 +477,6 @@ if __name__ == "__main__":
   "Code and data don't lie!" - Phuc Vinh Truong
 """)
     else:
-        print(f"\n  Some tests need attention. See details above.")
+        print("\n  Some tests need attention. See details above.")
 
     print("=" * 70)

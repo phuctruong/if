@@ -6,13 +6,15 @@ This module implements the primary prediction of Prime Field Theory:
 galaxy rotation curves that remain flat to cosmological distances.
 """
 
-import numpy as np
-from typing import Union, Tuple
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Tuple, Union
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
@@ -133,7 +135,7 @@ class OrbitalDynamics:
             v_max = float(v_max[0]) if len(v_max) > 0 else float(v_max)
         
         # Log the prediction
-        logger.info(f"\nMilky Way Velocity PREDICTION:")
+        logger.info("\nMilky Way Velocity PREDICTION:")
         logger.info(f"  At 10 kpc: {v_nominal:.1f} km/s")
         logger.info(f"  Uncertainty range: {v_min:.1f} - {v_max:.1f} km/s")
         logger.info(f"  Observed: {MW_VELOCITY_OBSERVED:.0f} ± {MW_VELOCITY_ERROR:.0f} km/s")
@@ -143,9 +145,9 @@ class OrbitalDynamics:
         obs_max = MW_VELOCITY_OBSERVED + MW_VELOCITY_ERROR
         
         if v_max >= obs_min and v_min <= obs_max:
-            logger.info(f"  Agreement: ✓ Overlapping uncertainty ranges")
+            logger.info("  Agreement: ✓ Overlapping uncertainty ranges")
         else:
-            logger.info(f"  Agreement: Marginal (no overlap)")
+            logger.info("  Agreement: Marginal (no overlap)")
         
         logger.info("  This is a TRUE PREDICTION, not calibration!")
         

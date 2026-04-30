@@ -16,21 +16,17 @@ Version: 2.0.0
 License: MIT
 """
 
-import os
-import glob
-import gzip
-import numpy as np
 import logging
+import os
 import time
-import hashlib
-from typing import Dict, List, Tuple, Optional, Union, Any
-from dataclasses import dataclass
-from astropy.io import fits
-from astropy.table import Table
-import warnings
-import urllib.request
 import urllib.error
+import urllib.request
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin
+
+import numpy as np
+from astropy.io import fits
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -217,7 +213,7 @@ class SDSSDataDownloader:
             logger.error(f"  ❌ URL Error: {e.reason}")
             return False
             
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"  ❌ Download failed: {e}")
             # Clean up partial download
             if os.path.exists(output_path):
@@ -248,7 +244,7 @@ class SDSSDataDownloader:
                     
             return True
             
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"  Failed to verify {filepath}: {e}")
             return False
 
@@ -379,7 +375,7 @@ class SDSSDataLoader:
                 else:
                     stats['failed'] += 1
                     # Try to re-download if verification failed
-                    logger.warning(f"  ⚠️ Verification failed, attempting re-download...")
+                    logger.warning("  ⚠️ Verification failed, attempting re-download...")
                     if self.downloader.download_file(filename, self.data_dir, force=True):
                         if self.downloader.verify_file(filepath):
                             stats['galaxies_verified'] += 1
@@ -432,14 +428,14 @@ class SDSSDataLoader:
                     logger.info(f"  ✓ Valid existing file: {filename}")
         
         # Summary
-        logger.info(f"\n📊 Download Summary:")
+        logger.info("\n📊 Download Summary:")
         logger.info(f"  Galaxy catalogs: {stats['galaxies_verified']}/{len(regions)} verified")
         logger.info(f"  Random catalogs: {stats['randoms_verified']}/{n_random_files * len(regions)} verified")
         
         if stats['failed'] > 0:
             logger.warning(f"  ⚠️ Failed downloads: {stats['failed']}")
         else:
-            logger.info(f"  ✅ All downloads successful!")
+            logger.info("  ✅ All downloads successful!")
             
         return stats
     
@@ -472,8 +468,8 @@ class SDSSDataLoader:
             need_download = True
         
         if need_download and self.auto_download:
-            logger.info(f"\n🔄 Auto-downloading missing data...")
-            stats = self.download_sample_data(n_random_files=max(min_random_files, 4))
+            logger.info("\n🔄 Auto-downloading missing data...")
+            self.download_sample_data(n_random_files=max(min_random_files, 4))
             
             # Re-check completeness
             completeness = self.check_data_completeness()
@@ -490,7 +486,7 @@ class SDSSDataLoader:
             logger.error("❌ Insufficient data and auto_download is disabled")
             logger.info("\nTo download manually:")
             logger.info(f"  loader = SDSSDataLoader('{self.data_dir}', '{self.sample_type}')")
-            logger.info(f"  loader.download_sample_data()")
+            logger.info("  loader.download_sample_data()")
             return False
             
         return True
@@ -596,7 +592,7 @@ class SDSSDataLoader:
                         logger.info(f"  ✓ Loaded {os.path.basename(filepath)}: "
                                    f"{len(dataset):,} galaxies")
                         
-                except Exception as e:
+                except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                     logger.error(f"  ❌ Error reading {filepath}: {e}")
         
         if not datasets:
@@ -717,7 +713,7 @@ class SDSSDataLoader:
                             logger.info(f"  ✓ Loaded {os.path.basename(filepath)}: "
                                        f"{len(dataset):,} randoms")
                         
-                except Exception as e:
+                except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                     logger.error(f"  ❌ Error reading {filepath}: {e}")
         
         if not datasets:
@@ -739,7 +735,7 @@ class SDSSDataLoader:
             with fits.open(filepath) as hdul:
                 # SDSS catalogs have data in extension 1
                 return hdul[1].data
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"Failed to load {filepath}: {e}")
             return None
     
@@ -989,7 +985,7 @@ def download_all_sdss_data(data_dir: str = "bao_data/dr12",
         samples = ['LOWZ', 'CMASS']
         
     logger.info(f"\n{'='*70}")
-    logger.info(f"DOWNLOADING ALL SDSS DATA")
+    logger.info("DOWNLOADING ALL SDSS DATA")
     logger.info(f"{'='*70}")
     logger.info(f"Samples: {samples}")
     logger.info(f"Random files per sample: {n_random_files}")
@@ -1008,7 +1004,7 @@ def download_all_sdss_data(data_dir: str = "bao_data/dr12",
     
     # Summary
     logger.info(f"\n{'='*70}")
-    logger.info(f"DOWNLOAD COMPLETE")
+    logger.info("DOWNLOAD COMPLETE")
     logger.info(f"{'='*70}")
     
     total_files = 0
@@ -1052,11 +1048,11 @@ def test_sdss_data_loader():
         print(f"  Z range: {loader_cmass.sample_config['z_range']}")
         
         try:
-            loader_bad = SDSSDataLoader(test_dir, "BAD")
+            SDSSDataLoader(test_dir, "BAD")
         except ValueError as e:
             print(f"✓ Correctly rejected bad sample type: {e}")
             
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         print(f"✗ Initialization failed: {e}")
         return False
     
@@ -1169,7 +1165,10 @@ if __name__ == "__main__":
         print("  - CMASS galaxy and random catalogs")
         print("  - Total size: ~2-3 GB")
         print("\nFiles will be saved to: bao_data/dr12/")
-        response = input("\nDownload all data needed for analysis? [y/N]: ")
+        try:
+            response = input("\nDownload all data needed for analysis? [y/N]: ")
+        except EOFError:
+            response = ""
         
         if response.lower() == 'y':
             print("\n" + "="*70)
@@ -1213,7 +1212,7 @@ if __name__ == "__main__":
                     print("\n⚠️ Some downloads may have failed")
                     print("Check your internet connection and try again")
                     
-            except Exception as e:
+            except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                 print(f"\n❌ Error during download: {e}")
                 import traceback
                 traceback.print_exc()

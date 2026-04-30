@@ -39,11 +39,10 @@ from __future__ import annotations
 
 import json
 import logging
-import math
 import sys
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 import numpy as np
 
@@ -162,7 +161,7 @@ def main() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} (error: {e})")
 
     if not results:

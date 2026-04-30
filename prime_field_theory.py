@@ -18,18 +18,15 @@ Parameter modes:
 Version: 10.0.0 (Mersenne Tower Theorem)
 """
 
-import numpy as np
-from scipy import integrate, optimize, special, stats
-from scipy.interpolate import interp1d
-from scipy.signal import find_peaks
-from dataclasses import dataclass
-from typing import Dict, Tuple, Optional, List, Union, Any
-import logging
-import matplotlib.pyplot as plt
-import pandas as pd
-import warnings
-import os
 import json
+import logging
+import os
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Union
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(message)s')
@@ -37,28 +34,28 @@ logger = logging.getLogger(__name__)
 
 # Import core physics modules
 try:
-    from .core.constants import *
-    from .core.parameter_derivations import ParameterDerivation
-    from .core.field_equations import FieldEquations
-    from .predictions.orbital_dynamics import OrbitalDynamics
-    from .predictions.cosmological import CosmologicalPredictions
-    from .predictions.observational import ObservationalPredictions
     from .analysis.statistical_analysis import StatisticalAnalysis
     from .analysis.validation import ValidationSuite
+    from .core.constants import *
+    from .core.field_equations import FieldEquations
+    from .core.parameter_derivations import ParameterDerivation
+    from .predictions.cosmological import CosmologicalPredictions
+    from .predictions.observational import ObservationalPredictions
+    from .predictions.orbital_dynamics import OrbitalDynamics
     from .utils.error_propagation import ErrorPropagation
     from .utils.numerical_stability import NumericalStability
 except ImportError:
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     try:
-        from core.constants import *
-        from core.parameter_derivations import ParameterDerivation
-        from core.field_equations import FieldEquations
-        from predictions.orbital_dynamics import OrbitalDynamics
-        from predictions.cosmological import CosmologicalPredictions
-        from predictions.observational import ObservationalPredictions
         from analysis.statistical_analysis import StatisticalAnalysis
         from analysis.validation import ValidationSuite
+        from core.constants import *
+        from core.field_equations import FieldEquations
+        from core.parameter_derivations import ParameterDerivation
+        from predictions.cosmological import CosmologicalPredictions
+        from predictions.observational import ObservationalPredictions
+        from predictions.orbital_dynamics import OrbitalDynamics
         from utils.error_propagation import ErrorPropagation
         from utils.numerical_stability import NumericalStability
     except ImportError as e:
@@ -157,7 +154,7 @@ class PrimeFieldTheory:
         logger.info("Φ(r) = 1/log(r/r₀ + 1)")
         logger.info(f"Amplitude = {self.amplitude} (exact from prime number theorem)")
         if use_mersenne_tower:
-            logger.info(f"C_XI = 62 (Mersenne Tower Theorem: 2 × π(127) = 2 × 31)")
+            logger.info("C_XI = 62 (Mersenne Tower Theorem: 2 × π(127) = 2 × 31)")
             logger.info(f"Scale r₀ = {self.r0_kpc:.4f} kpc (DERIVED from σ₈ with C_XI = 62)")
             logger.info("Free parameters: 0 (ZERO — all derived from theory)")
         else:
@@ -627,7 +624,7 @@ def main():
     logger.info("\n" + "="*70)
     logger.info("PARAMETER DERIVATION")
     logger.info("="*70)
-    params = theory.calculate_all_parameters(0.43, 0.70, "CMASS")
+    theory.calculate_all_parameters(0.43, 0.70, "CMASS")
     
     # Validate all predictions
     results = theory.validate_all_predictions()
@@ -657,7 +654,7 @@ def main():
             if isinstance(grad, np.ndarray):
                 grad = float(grad)
             logger.info(f"  r = {r:.2e} Mpc: Φ = {field:.6f}, dΦ/dr = {grad:.2e}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"  r = {r:.2e} Mpc: ERROR - {e}")
     
     # Generate visualization
@@ -688,7 +685,6 @@ def main():
     logger.info("="*70)
     
     # Save results
-    import json
     
     # Custom JSON encoder for numpy types
     class NumpyEncoder(json.JSONEncoder):

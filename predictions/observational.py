@@ -6,13 +6,15 @@ This module implements predictions that can be tested with
 current and near-future observations.
 """
 
-import numpy as np
-from typing import Union, List
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import List, Union
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:

@@ -6,12 +6,11 @@ Validates that dark_matter_sdss.ipynb, dark_matter_desi.ipynb, dark_matter_eucli
 converge to exact or acceptable approximations with formal halting certificates.
 """
 
-from prime_coder_convergence import (
-    ResolutionLimitDetector, HaltingCertificate, ConvergenceResult
-)
+import json
 from decimal import Decimal
 from typing import Dict, List, NamedTuple
-import json
+
+from prime_coder_convergence import HaltingCertificate, ResolutionLimitDetector
 
 
 class ConvergenceValidationReport(NamedTuple):

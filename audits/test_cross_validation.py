@@ -6,15 +6,24 @@ Tests that different components of the validation system
 produce consistent results when computing the same quantities.
 """
 
-import sys
 import json
-sys.path.insert(0, '/home/phuc/projects/if')
+import sys
+from pathlib import Path
 
-from core.parameter_derivations import ParameterDerivation
-from core.field_equations import FieldEquations
-from witness_models import WitnessValidator
-from dark_matter_exact_kernel import DarkMatterExactKernel
+REPO_ROOT = Path(__file__).resolve().parents[1]
+AUDITS_DIR = Path(__file__).resolve().parent
+for path in (REPO_ROOT, AUDITS_DIR):
+    path_str = str(path)
+    if path_str not in sys.path:
+        sys.path.insert(0, path_str)
+
 import numpy as np
+from dark_matter_exact_kernel import DarkMatterExactKernel
+from witness_models import WitnessValidator
+
+from core.field_equations import FieldEquations
+from core.parameter_derivations import ParameterDerivation
+
 
 def test_parameter_consistency():
     """Test that parameter derivation methods are consistent"""
@@ -91,20 +100,20 @@ def test_exact_kernel_consistency():
         kernel = DarkMatterExactKernel()
         result = kernel.validate_sdss()
 
-        print(f"Kernel instantiated: ✅")
-        print(f"SDSS validation executed: ✅")
+        print("Kernel instantiated: ✅")
+        print("SDSS validation executed: ✅")
         print(f"Result type: {type(result)}")
         print(f"Result keys: {list(result.keys()) if isinstance(result, dict) else 'N/A'}")
 
         if isinstance(result, dict) and 'pearson_r' in result:
             print(f"Pearson r: {result.get('pearson_r', 'N/A')}")
-            print(f"Status: ✅ PASS")
+            print("Status: ✅ PASS")
             assert True
         else:
-            assert False, "Unexpected result format"
+            raise AssertionError("Unexpected result format")
 
-    except Exception as e:
-        assert False, f"Validation failed: {e}"
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
+        raise AssertionError(f"Validation failed: {e}") from e
 
 
 def test_witness_validator_consistency():
@@ -179,7 +188,7 @@ def test_witness_validator_consistency():
                 print(f"  Result: {'PASS' if passed else 'FAIL'} ❌ (expected {'PASS' if expected else 'FAIL'})")
                 all_pass = False
 
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             print(f"  ERROR: {e} ❌")
             all_pass = False
 
@@ -205,9 +214,9 @@ def test_component_disagreements():
     try:
         fe = FieldEquations(r0_test)
         # Field equations use r0 directly
-        field_at_100 = fe.field(100.0)
+        fe.field(100.0)
         component2_status = "Initialized successfully"
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         component2_status = f"Error: {e}"
 
     # Component 3: Witness validator would accept these values?
@@ -218,17 +227,17 @@ def test_component_disagreements():
     )
     component3_pass = all(validator_result.values())
 
-    print(f"Component 1 (Parameter Derivation):")
+    print("Component 1 (Parameter Derivation):")
     print(f"  σ₈ computed from r₀: {component1_sigma8:.6f}")
 
-    print(f"\nComponent 2 (Field Equations):")
-    print(f"  r₀ accepted: ✅")
+    print("\nComponent 2 (Field Equations):")
+    print("  r₀ accepted: ✅")
     print(f"  Status: {component2_status}")
 
-    print(f"\nComponent 3 (Witness Validator):")
+    print("\nComponent 3 (Witness Validator):")
     print(f"  All criteria pass: {'✅' if component3_pass else '❌'}")
 
-    print(f"\nStatus: ✅ PASS (no detected disagreements)")
+    print("\nStatus: ✅ PASS (no detected disagreements)")
     assert True
 
 
@@ -240,13 +249,23 @@ def main():
     print("Verify all components work together consistently")
     print("="*70)
 
-    results = {
-        'parameter_consistency': test_parameter_consistency(),
-        'field_equations': test_field_equations_consistency(),
-        'exact_kernel': test_exact_kernel_consistency(),
-        'witness_validators': test_witness_validator_consistency(),
-        'component_disagreements': test_component_disagreements(),
+    checks = {
+        'parameter_consistency': test_parameter_consistency,
+        'field_equations': test_field_equations_consistency,
+        'exact_kernel': test_exact_kernel_consistency,
+        'witness_validators': test_witness_validator_consistency,
+        'component_disagreements': test_component_disagreements,
     }
+
+    results = {}
+    for name, check in checks.items():
+        try:
+            check()
+        except AssertionError as error:
+            print(f"\n{name} failed: {error}")
+            results[name] = False
+        else:
+            results[name] = True
 
     print("\n" + "="*70)
     print("CROSS-VALIDATION SUMMARY")
@@ -278,7 +297,7 @@ def main():
             }
         }, f, indent=2)
 
-    print(f"\n✅ Results saved to: evidence/cross_validation_results.json")
+    print("\n✅ Results saved to: evidence/cross_validation_results.json")
 
     return all(results.values())
 

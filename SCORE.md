@@ -191,10 +191,10 @@ folding claim is testable but requires the actual folding model code.
 # Set up
 git clone https://github.com/phuctruong/if.git
 cd if
-pip install numpy scipy astropy sympy matplotlib
+pip install -r requirements.txt
 
 # Run all tests
-python3 -m pytest tests/ -v
+python3 -m pytest tests audits -v
 
 # Run individual validations
 python3 predictions/mw_rotation_sigma_accounting.py

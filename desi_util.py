@@ -18,20 +18,16 @@ Key changes in this version:
 - Focus on robust, theory-driven analysis
 """
 
-import os
 import glob
-import numpy as np
 import logging
-from typing import Dict, List, Tuple, Optional, Union, Any
+import os
 from dataclasses import dataclass, field
-from astropy.io import fits
-from astropy.table import Table
-import warnings
-from scipy import stats, integrate, interpolate, optimize
-from scipy.ndimage import gaussian_filter1d
-from scipy.optimize import curve_fit
-import time
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
+from astropy.io import fits
+from scipy import stats
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -98,7 +94,7 @@ def download_file(url: str, output_path: str, chunk_size: int = 8192) -> bool:
         logger.info(f"  ✅ Downloaded: {output_path}")
         return True
         
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.error(f"  ❌ Failed: {url}\n     Error: {e}")
         # Clean up partial download
         if os.path.exists(output_path):
@@ -393,7 +389,7 @@ class DESIDataLoader:
                     logger.info(f"  ✓ Loaded {os.path.basename(filepath)}: "
                                f"{n_valid:,} valid galaxies")
                     
-            except Exception as e:
+            except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                 logger.error(f"  ❌ Error reading {filepath}: {e}")
         
         if n_loaded == 0:
@@ -502,7 +498,7 @@ class DESIDataLoader:
                     logger.info(f"  ✓ Loaded {os.path.basename(filepath)}: "
                                f"{n_valid:,} randoms")
                     
-            except Exception as e:
+            except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                 logger.error(f"  ❌ Error reading {filepath}: {e}")
         
         if n_loaded == 0:
@@ -541,7 +537,7 @@ class DESIDataLoader:
                     return hdul[1].data
                 else:
                     return hdul[0].data
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"Failed to load {filepath}: {e}")
             return None
     

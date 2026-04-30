@@ -28,7 +28,6 @@ Per-galaxy free parameters:
 from __future__ import annotations
 
 import json
-import math
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -41,10 +40,13 @@ _ROOT = _HERE.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from prime_field_util import R0_KPC_CANONICAL  # noqa: E402
 from predictions.sparc_corrected_log_potential import (  # noqa: E402
-    parse_sparc_table, load_rotmod, SPARC_DIR, SPARC_TABLE,
+    SPARC_DIR,
+    SPARC_TABLE,
+    load_rotmod,
+    parse_sparc_table,
 )
+from prime_field_util import R0_KPC_CANONICAL  # noqa: E402
 
 OUT_DIR = Path(_ROOT, "evidence", "sparc_shape_only")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -80,10 +82,14 @@ def evaluate_galaxy(name: str, path: Path, table: dict,
         raise ValueError(r_0_strategy)
 
     d = load_rotmod(path)
-    R = d["R"]; keep = R > 0
-    R = R[keep]; Vobs = d["Vobs"][keep]
+    R = d["R"]
+    keep = R > 0
+    R = R[keep]
+    Vobs = d["Vobs"][keep]
     errV = np.maximum(d["errV"][keep], min_floor_err)
-    Vgas = d["Vgas"][keep]; Vdisk = d["Vdisk"][keep]; Vbul = d["Vbul"][keep]
+    Vgas = d["Vgas"][keep]
+    Vdisk = d["Vdisk"][keep]
+    Vbul = d["Vbul"][keep]
     if len(R) < 3:
         return None
 
@@ -119,7 +125,7 @@ def run_strategy(table: dict, files: list, strategy: str) -> dict:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
     return {"strategy": strategy, "results": results, "skipped": skipped}
 
@@ -184,7 +190,7 @@ def _legacy_main_replaced() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
     if not results:
         return 1
@@ -209,7 +215,7 @@ def _legacy_main_replaced() -> int:
     print(f"  Fraction χ²/dof < 10    : {np.mean(chi2_per_dof < 10):.1%}")
     print(f"  Fraction χ²/dof < 50    : {np.mean(chi2_per_dof < 50):.1%}")
     print()
-    print(f"  Y_fitted distribution:")
+    print("  Y_fitted distribution:")
     print(f"    median = {np.median(Y_fitted):.3f}")
     print(f"    25th   = {np.percentile(Y_fitted, 25):.3f}")
     print(f"    75th   = {np.percentile(Y_fitted, 75):.3f}")

@@ -85,8 +85,8 @@ DEPENDENCIES
 =============================================================================
 """
 
-import sys
 import logging
+import sys
 from typing import Dict, Tuple
 
 # ---------------------------------------------------------------------------
@@ -102,8 +102,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Import sympy for exact number theory verification
 # ---------------------------------------------------------------------------
-from sympy import isprime, primepi, prime
-
+from sympy import isprime, prime, primepi
 
 # =============================================================================
 # PART 1: Number Theory Verification
@@ -201,9 +200,9 @@ def verify_prime_counting_recursion() -> None:
     assert pi_127 == 31, f"pi(127) = {pi_127}, expected 31"
     assert pi_127 == m5, f"pi(127) = {pi_127} != M_5 = {m5}"
 
-    logger.info(f"  VERIFIED: pi(M_7) = pi(127) = 31 = M_5")
-    logger.info(f"  The prime counting function maps the 'cognitive prime' (127)")
-    logger.info(f"  to the 'emergence prime' (31), folding the Mersenne tower.")
+    logger.info("  VERIFIED: pi(M_7) = pi(127) = 31 = M_5")
+    logger.info("  The prime counting function maps the 'cognitive prime' (127)")
+    logger.info("  to the 'emergence prime' (31), folding the Mersenne tower.")
     logger.info("")
 
 
@@ -228,13 +227,13 @@ def verify_293_is_62nd_prime() -> None:
     assert p62 == 293, f"p_62 = {p62}, expected 293"
     assert isprime(293), "293 is not prime (expected prime)"
 
-    logger.info(f"  VERIFIED: 293 is the 62nd prime")
-    logger.info(f"  VERIFIED: 293 is prime")
+    logger.info("  VERIFIED: 293 is the 62nd prime")
+    logger.info("  VERIFIED: 293 is prime")
 
     # Verify 62 = 2 * 31 = 2 * M_5
     assert 62 == 2 * 31, "62 != 2 * 31"
-    logger.info(f"  62 = 2 * 31 = 2 * M_5")
-    logger.info(f"  The two-point index (62) references twice the emergence prime (31).")
+    logger.info("  62 = 2 * 31 = 2 * M_5")
+    logger.info("  The two-point index (62) references twice the emergence prime (31).")
     logger.info("")
 
 
@@ -369,11 +368,11 @@ def verify_physical_consequence() -> Tuple[float, float, float]:
 
     if deviation_pct < 5.0:
         logger.info(f"    CONSISTENT: {deviation_pct:.2f}% deviation is within")
-        logger.info(f"    Planck sigma_8 measurement uncertainty.")
-        logger.info(f"    The Mersenne tower conjecture is empirically viable.")
+        logger.info("    Planck sigma_8 measurement uncertainty.")
+        logger.info("    The Mersenne tower conjecture is empirically viable.")
     else:
         logger.info(f"    WARNING: {deviation_pct:.2f}% deviation may indicate")
-        logger.info(f"    tension with the conjecture.")
+        logger.info("    tension with the conjecture.")
 
     logger.info(f"    Free parameters in this mode: {params['free_parameters']}")
     logger.info("")
@@ -422,7 +421,7 @@ def verify_phase_decomposition() -> None:
     total = BASE + SOLID + LIQUID + BRIDGE
 
     logger.info(f"  62 = {BASE} + {SOLID} + {LIQUID} + {BRIDGE}")
-    logger.info(f"       (BASE + SOLID + LIQUID + BRIDGE)")
+    logger.info("       (BASE + SOLID + LIQUID + BRIDGE)")
     logger.info("")
 
     assert total == 62, f"Phase sum = {total}, expected 62"
@@ -560,7 +559,7 @@ def print_summary(r0_kpc: float, c_xi: float, deviation_pct: float) -> None:
     logger.info("  PHYSICAL PREDICTION:")
     logger.info(f"    C_XI = {c_xi:.1f}")
     logger.info(f"    r0   = {r0_kpc:.4f} kpc  (derived, zero free parameters)")
-    logger.info(f"    Empirical r0 = 0.65 kpc  (from galaxy fitting)")
+    logger.info("    Empirical r0 = 0.65 kpc  (from galaxy fitting)")
     logger.info(f"    Deviation = {deviation_pct:.2f}%  (within Planck sigma_8 uncertainty)")
     logger.info("")
     logger.info("  PHASE DECOMPOSITION:")

@@ -10,10 +10,10 @@ Rules:
 - Deterministic, reproducible output
 """
 
-from fractions import Fraction
-from decimal import Decimal, getcontext
-from typing import Dict, List, NamedTuple, Union, Optional
 import json
+from decimal import Decimal, getcontext
+from fractions import Fraction
+from typing import Dict, List, NamedTuple, Optional, Union
 
 # Set high precision for Decimal
 getcontext().prec = 50
@@ -112,7 +112,7 @@ class CorrelationComputation:
         theory_devs = [y - theory_mean for y in theory_fracs]
 
         # Compute covariance numerator (exact)
-        covar = sum(o * t for o, t in zip(obs_devs, theory_devs))
+        covar = sum(o * t for o, t in zip(obs_devs, theory_devs, strict=False))
 
         # Compute standard deviations (exact)
         obs_var = sum(o * o for o in obs_devs)
@@ -155,7 +155,7 @@ class CorrelationComputation:
 
         # Compute residuals squared / error squared (exact)
         chi2_sum = Fraction(0)
-        for obs, theory, err in zip(self.correlations, theory_values, self.errors):
+        for obs, theory, err in zip(self.correlations, theory_values, self.errors, strict=False):
             residual = obs.fraction - theory.fraction
             residual_sq = residual * residual
             error_sq = err.fraction * err.fraction

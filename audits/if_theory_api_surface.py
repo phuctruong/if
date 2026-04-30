@@ -5,9 +5,10 @@ Analyzes core module boundaries using ClosureDetector.
 Ensures API stability and prevents breaking changes without major version bump.
 """
 
-from prime_coder_closure import ClosureDetector, Complexity, VersionBump
 import json
-from typing import Dict, List
+from typing import Dict
+
+from prime_coder_closure import ClosureDetector, Complexity
 
 
 def analyze_if_theory_apis() -> Dict:
@@ -157,7 +158,7 @@ class ClosureDetector:
 
 def lock_api_surfaces() -> Dict:
     """Lock API surfaces for all core modules (v1.0 baseline)."""
-    detector = ClosureDetector()
+    ClosureDetector()
 
     core_modules = {
         "PrimeFieldTheory": "prime_field_theory.py",

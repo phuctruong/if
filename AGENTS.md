@@ -31,12 +31,12 @@ Read `TODO.md` for current tasks. Execute in order.
 ## Build & Test
 
 ```bash
-python -m pytest audits/ -v                           # all verification tests (19 tests)
-python prime_field_theory.py                          # main theory demonstration
-python validate_from_first_principles.py              # independent validation (5/5 PASS)
-python predictions/hubble_tension.py                  # Hubble tension resolution
-python predictions/jwst_early_galaxies.py             # JWST early galaxy prediction
-ruff check .                                          # lint
+python3 -m pytest tests audits -v                      # all local verification tests
+python3 prime_field_theory.py                          # main theory demonstration
+python3 audits/validate_from_first_principles.py       # independent validation (5/5 PASS)
+python3 predictions/hubble_tension.py                  # Hubble tension resolution
+python3 predictions/jwst_early_galaxies.py             # JWST early galaxy prediction
+python3 -m ruff check .                                # lint
 ```
 
 ## Coding Rules
@@ -68,7 +68,7 @@ ruff check .                                          # lint
 | `dark_energy_util.py` | Bubble Universe model |
 | `mersenne_tower_theorem.py` | Mersenne Tower formal proof |
 | `predictions/` | Testable predictions (JWST, Hubble, CMB, orbital) |
-| `audits/` | Verification tests (19 tests) |
+| `audits/` | Verification and validation tests |
 | `papers/everyday/` | 8 accessible physics papers |
 | `papers/physics/` | 11 technical physics papers |
 | `Documentation/` | THEORY.md, VALIDATION.md, TECHNICAL.md, FAQ.md |
@@ -87,7 +87,7 @@ papers -> diagrams -> styleguides -> webservices -> tests -> code -> seal
 3. Read relevant skills (prime-safety first, then prime-math)
 4. Write failing test (RED)
 5. Implement (GREEN) -- exact arithmetic, zero parameters
-6. `python -m pytest audits/ -v`
+6. `python3 -m pytest tests audits -v`
 7. Verify deterministic output -> mark done
 
 ## Persona Loading (P3 -- On-Demand)

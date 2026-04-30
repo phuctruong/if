@@ -24,20 +24,19 @@ Version: 5.0.0 (Revised with fixes)
 License: MIT
 """
 
-import numpy as np
-from scipy.spatial import cKDTree
-from scipy.interpolate import interp1d
-from scipy import stats
-from typing import Union, Tuple, Optional, Dict, List, Any
+import gc
+import json
 import logging
+import os
+import time
+import warnings
 from dataclasses import dataclass
 from enum import Enum
-import warnings
-import gc
+from typing import Dict, List, Optional, Tuple, Union
+
+import numpy as np
 import psutil
-import time
-import os
-import json
+from scipy.spatial import cKDTree
 
 # =============================================================================
 # CANONICAL PRIME FIELD CONSTANTS (single source of truth)
@@ -86,7 +85,7 @@ except ImportError:
     
 # Try to import Numba for optimization
 try:
-    from numba import jit, njit, prange, config
+    from numba import jit, njit, prange
     NUMBA_AVAILABLE = True
 except ImportError:
     NUMBA_AVAILABLE = False
@@ -182,7 +181,7 @@ class CosmologyParams:
         # Check flatness
         omega_total = self.omega_m + self.omega_lambda + self.omega_k
         if abs(omega_total - 1.0) > 0.01:
-            warnings.warn(f"Universe not flat: Ω_total = {omega_total:.4f}")
+            warnings.warn(f"Universe not flat: Ω_total = {omega_total:.4f}", stacklevel=2)
 
 # Predefined cosmologies
 COSMOLOGY_PARAMS = {
@@ -219,7 +218,7 @@ def report_memory_status(step=""):
             logger.info(f"  After cleanup: {mem_gb_after:.2f} GB")
         
         return mem_gb
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.warning(f"  Memory monitoring failed: {e}")
         return 0
     
@@ -613,18 +612,22 @@ def apply_redshift_space_distortions(positions: np.ndarray, velocities: np.ndarr
 # =============================================================================
 
 if NUMBA_AVAILABLE:
-    @njit(parallel=True)
+    @njit
     def numba_count_pairs_auto(positions, bins_squared, n_bins):
         """
         FIXED: Numba-optimized auto-correlation pair counting.
         Uses squared distances to avoid sqrt operations.
         Now with proper binning logic and binary search.
+
+        This intentionally uses a serial JIT loop. Updating one shared counts
+        array from a prange loop causes nondeterministic under-counting unless
+        atomic reductions are used.
         """
         n = len(positions)
         counts = np.zeros(n_bins, dtype=np.int64)
         
         # Only compute upper triangle to avoid double counting
-        for i in prange(n-1):  # Parallel loop
+        for i in range(n - 1):
             for j in range(i+1, n):
                 # Squared distance
                 dx = positions[i, 0] - positions[j, 0]
@@ -652,17 +655,21 @@ if NUMBA_AVAILABLE:
         
         return counts
 
-    @njit(parallel=True)
+    @njit
     def numba_count_pairs_cross(positions1, positions2, bins_squared, n_bins):
         """
         FIXED: Numba-optimized cross-correlation pair counting.
         Now with proper binning logic and binary search.
+
+        This intentionally uses a serial JIT loop. Updating one shared counts
+        array from a prange loop causes nondeterministic under-counting unless
+        atomic reductions are used.
         """
         n1 = len(positions1)
         n2 = len(positions2)
         counts = np.zeros(n_bins, dtype=np.int64)
         
-        for i in prange(n1):  # Parallel loop
+        for i in range(n1):
             for j in range(n2):
                 # Squared distance
                 dx = positions1[i, 0] - positions2[j, 0]
@@ -995,7 +1002,7 @@ class JackknifeCorrelationFunction:
         try:
             regions = kmeans.fit_predict(positions)
             return regions
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"K-means clustering failed: {e}. Check your data for NaNs or empty arrays.")
             # Return a dummy assignment on failure
             return np.zeros(len(positions), dtype=int)
@@ -1014,7 +1021,7 @@ class JackknifeCorrelationFunction:
         n_ran = len(random_positions)
         n_bins = len(bins) - 1
         
-        logger.info(f"Computing correlation with jackknife errors...")
+        logger.info("Computing correlation with jackknife errors...")
         logger.info(f"  Galaxies: {n_gal:,}")
         logger.info(f"  Randoms: {n_ran:,}")
         logger.info(f"  Bins: {n_bins}")
@@ -1158,7 +1165,7 @@ class JackknifeCorrelationFunction:
             'n_valid_regions': n_valid
         }
         
-        logger.info(f"  Correlation function computed successfully")
+        logger.info("  Correlation function computed successfully")
         logger.info(f"  Mean ξ: {np.nanmean(xi_full):.3f}")
         if n_valid >= 2:
             logger.info(f"  Mean error: {np.nanmean(xi_err):.3f}")
@@ -1206,7 +1213,7 @@ def count_pairs_memory_safe(positions1, positions2, bins, is_auto=False,
         # Pre-compute squared bins for Numba
         bins_squared = bins * bins
         
-        logger.info(f"    Using Numba JIT-optimized counting...")
+        logger.info("    Using Numba JIT-optimized counting...")
         
         t0 = time.time()
         
@@ -1221,7 +1228,7 @@ def count_pairs_memory_safe(positions1, positions2, bins, is_auto=False,
         return counts
     
     # For very large datasets, fall back to tree-based method
-    logger.info(f"    Using tree-based counting...")
+    logger.info("    Using tree-based counting...")
     
     if is_auto:
         # Use PairCounter for consistency
@@ -1311,7 +1318,7 @@ def count_pairs_rr_optimized(random_positions: np.ndarray, bins: np.ndarray,
         
     elif method == "tree":
         # Full tree-based computation
-        logger.info(f"    Using tree-based counting")
+        logger.info("    Using tree-based counting")
         return PairCounter.count_pairs_auto(random_positions, bins, use_numba=False)
         
     else:  # subsample
@@ -1797,7 +1804,7 @@ class PrimeFieldParameters:
         # Now scale from 8 Mpc/h to the normalization radius
         # For Prime Field: ξ(r) ∝ [1/log(r/r₀ + 1)]²
         r0_kpc = R0_KPC_CANONICAL  # 0.6595 kpc, from sigma_8 + Mersenne Tower (Stage 12)
-        r0_mpc = r0_kpc / 1000  # Convert to Mpc
+        r0_kpc / 1000  # Convert to Mpc
 
         # Field values
         field_8h = 1.0 / np.log(r_8h*1000/r0_kpc + 1)  # Field at 8 Mpc/h
@@ -2039,7 +2046,7 @@ def download_file(url: str, output_path: str, chunk_size: int = 8192) -> bool:
         logger.info(f"  ✅ Downloaded: {output_path}")
         return True
         
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.error(f"  ❌ Failed: {url}\n     Error: {e}")
         return False
 
@@ -2367,7 +2374,7 @@ def run_unit_tests():
         
         logger.info("✓ Jackknife implementation tests passed")
         
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.warning(f"Jackknife test failed with: {e}")
         logger.info("✓ Jackknife implementation exists (full test requires more data)")
     
@@ -2485,7 +2492,7 @@ if __name__ == "__main__":
     dc = cosmo.comoving_distance(z_array)
     
     logger.info("\nComoving distances:")
-    for z, d in zip(z_array, dc):
+    for z, d in zip(z_array, dc, strict=False):
         logger.info(f"  z={z}: {d:.1f} Mpc")
     
     # Example 2: Mock galaxy catalog
@@ -2527,7 +2534,7 @@ if __name__ == "__main__":
     
     # Predict for LOWZ sample
     lowz_params = params.predict_all_parameters(0.15, 0.43, "LOWZ")
-    logger.info(f"\nLOWZ predictions (z=0.15-0.43):")
+    logger.info("\nLOWZ predictions (z=0.15-0.43):")
     logger.info(f"  Amplitude: {lowz_params['amplitude']:.3f} (from σ8, NO calibration!)")
     logger.info(f"  Bias: {lowz_params['bias']:.2f} (from Kaiser theory)")
     logger.info(f"  r0_factor: {lowz_params['r0_factor']:.2f} (from baryon physics)")
@@ -2541,7 +2548,7 @@ if __name__ == "__main__":
         lowz_params['r0_factor']
     )
     
-    logger.info(f"\nCorrelation function at key scales:")
+    logger.info("\nCorrelation function at key scales:")
     for r, xi in [(1, xi_theory[0]), (10, xi_theory[24]), (100, xi_theory[-1])]:
         logger.info(f"  ξ({r} Mpc) = {xi:.3f}")
     

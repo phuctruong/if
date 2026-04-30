@@ -25,9 +25,10 @@ MODE 2 — Mersenne tower (THEOREM, zero-parameter, DEFAULT):
   Empirically consistent: r₀ = 0.6595 kpc (1.46% from empirical 0.65 kpc).
 """
 
+import logging
+
 import numpy as np
 from scipy import integrate, optimize
-import logging
 
 # Import constants
 try:
@@ -99,7 +100,7 @@ class ParameterDerivation:
             self.r0_mpc = 0.00065  # 0.65 kpc
             self.r0_kpc = 0.65
             logger.info(f"  r₀ = {self.r0_kpc:.3f} kpc (EMPIRICAL from galaxy correlation shape)")
-            logger.info(f"       Citation: Validated against SDSS/DESI/Euclid (3.5M+ galaxies)")
+            logger.info("       Citation: Validated against SDSS/DESI/Euclid (3.5M+ galaxies)")
             # Derive C_XI from σ₈ (genuine derivation given r₀)
             self.correlation_normalization = self._derive_correlation_normalization()
         else:
@@ -168,8 +169,8 @@ class ParameterDerivation:
         c_xi = 2 * pi_M7  # = 62
 
         logger.info(f"  C_XI from Mersenne Tower Theorem: 2 × π(M₇) = 2 × π(127) = 2 × {pi_M7} = {c_xi}")
-        logger.info(f"    π(M₇) = π(127) = 31 = M₅ (unique tower-closure, Lemma L3)")
-        logger.info(f"    STATUS: THEOREM (conditional on axioms A1-A3)")
+        logger.info("    π(M₇) = π(127) = 31 = M₅ (unique tower-closure, Lemma L3)")
+        logger.info("    STATUS: THEOREM (conditional on axioms A1-A3)")
 
         # 62 is exact in float64 (no precision loss), returned as float for numpy compatibility
         return float(c_xi)  # exactly 62.0
@@ -226,7 +227,7 @@ class ParameterDerivation:
         logger.info(f"    Comparison with empirical: {empirical_diff:.2f}% from 0.65 kpc")
 
         if empirical_diff < 5.0:
-            logger.info(f"    CONSISTENT with empirical r₀ (within Planck σ₈ uncertainty)")
+            logger.info("    CONSISTENT with empirical r₀ (within Planck σ₈ uncertainty)")
         else:
             logger.warning(f"    WARNING: {empirical_diff:.1f}% from empirical r₀ = 0.65 kpc")
 
@@ -370,8 +371,8 @@ class ParameterDerivation:
         if error_pct > 5:
             logger.warning(f"    WARNING: σ₈ error = {error_pct:.1f}%")
             logger.warning(f"    This r₀ = {r0_kpc:.2f} kpc differs from empirical 0.65 kpc")
-            logger.warning(f"    because C_XI = π√3 is an assumption, not a derivation.")
-            logger.warning(f"    The empirical r₀ = 0.65 kpc (from shape fitting) is more reliable.")
+            logger.warning("    because C_XI = π√3 is an assumption, not a derivation.")
+            logger.warning("    The empirical r₀ = 0.65 kpc (from shape fitting) is more reliable.")
         else:
             logger.info(f"    SUCCESS: σ₈ integration converged ({error_pct:.2f}% error)")
 
@@ -501,12 +502,12 @@ class ParameterDerivation:
         v_2p5 = _v_at(0.0025)  # 2.5 kpc
         v_10 = _v_at(0.01)     # 10 kpc
 
-        logger.info(f"  Rotation curve (prime field contribution only):")
-        logger.info(f"    v(r) is monotonically decreasing (no peak)")
+        logger.info("  Rotation curve (prime field contribution only):")
+        logger.info("    v(r) is monotonically decreasing (no peak)")
         logger.info(f"    At 2.5 kpc: v = {v_2p5:.1f} km/s")
         logger.info(f"    At 10 kpc:  v = {v_10:.1f} km/s")
-        logger.info(f"    Observed MW: 220 ± 20 km/s (flat from ~5 to 100+ kpc)")
-        logger.info(f"    NOTE: Baryonic disk/bulge adds ~100-150 km/s at 10 kpc")
+        logger.info("    Observed MW: 220 ± 20 km/s (flat from ~5 to 100+ kpc)")
+        logger.info("    NOTE: Baryonic disk/bulge adds ~100-150 km/s at 10 kpc")
 
     def _derive_velocity_scale_dimensional(self) -> float:
         """

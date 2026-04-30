@@ -6,13 +6,15 @@ This module orchestrates the validation of all 13 predictions
 and parameter derivations.
 """
 
-import numpy as np
-from typing import Dict, Any
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Any, Dict
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
@@ -51,20 +53,20 @@ class ValidationSuite:
         
         # 1. Scale determination
         logger.info("\n1. SCALE DETERMINATION:")
-        logger.info(f"   Method: σ₈ normalization via full integration")
+        logger.info("   Method: σ₈ normalization via full integration")
         logger.info(f"   σ₈ = {SIGMA_8:.4f} (observed)")
         logger.info(f"   → r₀ = {self.theory.r0_mpc:.6f} Mpc = {self.theory.r0_kpc:.3f} kpc")
         logger.info("   NO magic numbers!")
         
         # 2. Amplitude
         logger.info("\n2. AMPLITUDE:")
-        logger.info(f"   Prime number theorem: π(x) ~ x/log(x)")
+        logger.info("   Prime number theorem: π(x) ~ x/log(x)")
         logger.info(f"   → Amplitude = {AMPLITUDE} (exact)")
         
         # 3. Velocity scale
         logger.info("\n3. VELOCITY SCALE:")
-        logger.info(f"   Primary method: Virial theorem (v9.3)")
-        logger.info(f"   NO arbitrary normalizations")
+        logger.info("   Primary method: Virial theorem (v9.3)")
+        logger.info("   NO arbitrary normalizations")
         logger.info(f"   → v₀ = {self.theory.v0_kms:.1f} ± {self.theory.v0_kms * self.theory.v0_uncertainty:.1f} km/s")
         logger.info("   Alternative derivations:")
         for method, value in self.theory.alternative_v0.items():
@@ -86,7 +88,7 @@ class ValidationSuite:
         growth_factor = (g_z / (1 + z_eff)) / g_0
         
         logger.info(f"\n4. GROWTH FACTOR at z={z_eff:.2f}:")
-        logger.info(f"   Linear perturbation theory")
+        logger.info("   Linear perturbation theory")
         logger.info(f"   → D(z) = {growth_factor:.3f}")
         
         # 5. Galaxy bias
@@ -95,15 +97,15 @@ class ValidationSuite:
         bias = 1 + (nu - 1) / DELTA_C
         
         logger.info(f"\n5. GALAXY BIAS ({galaxy_type}):")
-        logger.info(f"   Kaiser (1984) formula: b = 1 + (ν-1)/δc")
+        logger.info("   Kaiser (1984) formula: b = 1 + (ν-1)/δc")
         logger.info(f"   Peak height ν = {nu:.2f}")
         logger.info(f"   → b = {bias:.2f}")
         
         # 6. Overall amplitude
         amplitude = SIGMA_8**2 * growth_factor**2 * bias**2
         
-        logger.info(f"\n6. CORRELATION AMPLITUDE:")
-        logger.info(f"   From σ₈ normalization")
+        logger.info("\n6. CORRELATION AMPLITUDE:")
+        logger.info("   From σ₈ normalization")
         logger.info(f"   → A ~ {amplitude:.3f}")
         
         # 7. Baryon effects
@@ -112,12 +114,12 @@ class ValidationSuite:
         feedback_factor = 1 + 0.1 * np.exp(-z_eff)
         r0_factor = baryon_boost * feedback_factor
         
-        logger.info(f"\n7. BARYON EFFECTS:")
+        logger.info("\n7. BARYON EFFECTS:")
         logger.info(f"   f_baryon = {f_baryon:.3f}")
         logger.info(f"   → r₀_factor = {r0_factor:.2f}")
         
         # MW velocity check
-        v_10kpc = self.theory.velocity_at_10kpc()
+        self.theory.velocity_at_10kpc()
         
         logger.info("\n" + "="*70)
         logger.info("SUMMARY:")
@@ -183,7 +185,7 @@ class ValidationSuite:
         # 2. Gravity ceiling
         ceiling = self.theory.gravity_ceiling_radius()
         logger.info(f"\n2. GRAVITY CEILING: {ceiling:.0f} Mpc")
-        logger.info(f"   (Field drops to 1% of value at 1 Mpc)")
+        logger.info("   (Field drops to 1% of value at 1 Mpc)")
         results['ceiling'] = ceiling
         
         # 3. Void growth

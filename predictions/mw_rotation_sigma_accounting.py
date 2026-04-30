@@ -182,7 +182,7 @@ def main() -> int:
     print(f"\nFor exact match v_total = 220 km/s, would need v_0 = {v0_req:.1f} km/s")
     print(f"  (theoretical v_0 = {v0_default} km/s; required deviation = "
           f"{(v0_req / v0_default - 1) * 100:+.1f}%)")
-    print(f"  Fits within documented ±30% v_0 uncertainty.")
+    print("  Fits within documented ±30% v_0 uncertainty.")
 
     return 0 if pred.deviation_sigma < 1.0 else 1
 

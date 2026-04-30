@@ -28,26 +28,28 @@ RUNG 65537 (Final Seal / God Approval):
 This implements the state machine for publication-grade validation.
 """
 
-import numpy as np
-from scipy import integrate, optimize
-from fractions import Fraction
-from decimal import Decimal, getcontext
-import sys
-import os
 import json
+import sys
 from datetime import datetime
-from typing import Dict, List, Tuple, NamedTuple, Optional, Any
+from decimal import Decimal, getcontext
+from fractions import Fraction
+from pathlib import Path
+from typing import Any, Dict, NamedTuple
+
+import numpy as np
 
 # Set high precision for Decimal
 getcontext().prec = 50
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
-from core.constants import SIGMA_8, H_PLANCK, AMPLITUDE
+import logging
+
 from core.field_equations import FieldEquations
 from core.parameter_derivations import ParameterDerivation
 
-import logging
 logging.basicConfig(level=logging.WARNING)
 
 
@@ -116,7 +118,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Valid r > 0: {passed}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_641_results.append(VerificationResult(
                 rung_id=641, test_name="Input Domain",
                 passed=False, detail=str(e),
@@ -149,7 +151,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Monotonic decreasing: {is_monotonic}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_641_results.append(VerificationResult(
                 rung_id=641, test_name="Boundary Conditions",
                 passed=False, detail=str(e),
@@ -164,7 +166,7 @@ class VerificationLadder:
 
             # Test with r₀ = 0 (should be rejected)
             try:
-                fe_invalid = FieldEquations(r0_mpc=0.0)
+                FieldEquations(r0_mpc=0.0)
                 print("  ✗ Should have rejected r₀ = 0")
                 passed_all = False
             except (ValueError, ZeroDivisionError) as e:
@@ -173,7 +175,7 @@ class VerificationLadder:
 
             # Test with r₀ < 0 (should be rejected)
             try:
-                fe_negative = FieldEquations(r0_mpc=-0.00065)
+                FieldEquations(r0_mpc=-0.00065)
                 print("  ✗ Should have rejected r₀ < 0")
                 passed_all = False
             except ValueError as e:
@@ -182,7 +184,7 @@ class VerificationLadder:
 
             # Test with r₀ = None (should be rejected)
             try:
-                fe_null = FieldEquations(r0_mpc=None)
+                FieldEquations(r0_mpc=None)
                 print("  ✗ Should have rejected null r₀")
                 passed_all = False
             except (TypeError, ValueError) as e:
@@ -191,10 +193,10 @@ class VerificationLadder:
 
             # Test with valid r₀ (should work)
             try:
-                fe_valid = FieldEquations(r0_mpc=0.00065)
+                FieldEquations(r0_mpc=0.00065)
                 print("  ✓ Correctly accepted valid r₀ = 0.00065")
                 passed_all = passed_all and True
-            except Exception as e:
+            except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                 print(f"  ✗ Should have accepted valid r₀: {e}")
                 passed_all = False
 
@@ -203,7 +205,7 @@ class VerificationLadder:
                 passed=passed_all, detail="Zero, negative, null all properly rejected; valid value accepted",
                 timestamp=datetime.utcnow().isoformat()
             ))
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_641_results.append(VerificationResult(
                 rung_id=641, test_name="Null/Zero Distinction",
                 passed=False, detail=str(e),
@@ -218,11 +220,11 @@ class VerificationLadder:
 
             # Test with NaN
             r_nan = np.array([float('nan'), 1.0])
-            phi_nan = fe.field(r_nan)
+            fe.field(r_nan)
 
             # Test with Inf
             r_inf = np.array([float('inf'), 1.0])
-            phi_inf = fe.field(r_inf)
+            fe.field(r_inf)
 
             # Valid finite values should be finite
             r_valid = np.array([1.0, 10.0])
@@ -235,7 +237,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Finite handling: {passed}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_641_results.append(VerificationResult(
                 rung_id=641, test_name="NaN/Inf Handling",
                 passed=False, detail=str(e),
@@ -285,7 +287,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Round-trip consistency: {passed} (error: {rel_error:.2e})")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_274177_results.append(VerificationResult(
                 rung_id=274177, test_name="Replay Path",
                 passed=False, detail=str(e),
@@ -314,7 +316,7 @@ class VerificationLadder:
                         print(f"  ✗ {label} (r₀={r0_test}): Invalid result")
                     else:
                         print(f"  ✓ {label}: φ(1 Mpc) = {phi_test:.4f}")
-                except Exception as e:
+                except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                     passed = False
                     print(f"  ✗ {label}: {e}")
 
@@ -323,7 +325,7 @@ class VerificationLadder:
                 passed=passed, detail="Known r₀ values handled correctly",
                 timestamp=datetime.utcnow().isoformat()
             ))
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_274177_results.append(VerificationResult(
                 rung_id=274177, test_name="Regression Test",
                 passed=False, detail=str(e),
@@ -336,7 +338,7 @@ class VerificationLadder:
         try:
             # Use exact arithmetic for comparison
             r0_frac = Fraction(65, 100000)  # 0.00065 as fraction
-            r0_dec = Decimal('0.00065')
+            Decimal('0.00065')
 
             # Field computation should match exactly
             fe = FieldEquations(r0_mpc=float(r0_frac))
@@ -356,7 +358,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Exact arithmetic: {passed} (error: {rel_error:.2e})")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_274177_results.append(VerificationResult(
                 rung_id=274177, test_name="Exact Arithmetic",
                 passed=False, detail=str(e),
@@ -385,7 +387,7 @@ class VerificationLadder:
                         print(f"  ✗ r={r_val}: Invalid (φ={phi})")
                     else:
                         print(f"  ✓ r={r_val}: φ={phi:.6f}")
-                except Exception as e:
+                except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
                     passed = False
                     print(f"  ✗ r={r_val}: Exception {e}")
 
@@ -394,7 +396,7 @@ class VerificationLadder:
                 passed=passed, detail="Extreme values handled correctly",
                 timestamp=datetime.utcnow().isoformat()
             ))
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_274177_results.append(VerificationResult(
                 rung_id=274177, test_name="Adversarial Correctness",
                 passed=False, detail=str(e),
@@ -446,11 +448,11 @@ class VerificationLadder:
 
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="Evidence Contract",
-                passed=completeness, detail=f"6/6 evidence items present",
+                passed=completeness, detail="6/6 evidence items present",
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Evidence contract: {len(evidence_items)}/6 items")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="Evidence Contract",
                 passed=False, detail=str(e),
@@ -480,7 +482,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Replay stability: {reproducible}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="Replay Stability",
                 passed=False, detail=str(e),
@@ -512,11 +514,11 @@ class VerificationLadder:
                 passed=passed, detail="All checks: positive, finite, monotonic",
                 timestamp=datetime.utcnow().isoformat()
             ))
-            print(f"  ✓ Forbidden states: None detected")
+            print("  ✓ Forbidden states: None detected")
             print(f"    - Positive: {no_negative}")
             print(f"    - Finite: {no_nan_inf}")
             print(f"    - Monotonic: {monotonic}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="No Forbidden States",
                 passed=False, detail=str(e),
@@ -569,10 +571,10 @@ class VerificationLadder:
                 passed=passed, detail=f"All checks: {null_checks}",
                 timestamp=datetime.utcnow().isoformat()
             ))
-            print(f"  ✓ Null handling:")
+            print("  ✓ Null handling:")
             for check, result in null_checks.items():
                 print(f"    - {check}: {'✓' if result else '✗'}")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="Comprehensive Null Handling",
                 passed=False, detail=str(e),
@@ -613,7 +615,7 @@ class VerificationLadder:
                 timestamp=datetime.utcnow().isoformat()
             ))
             print(f"  ✓ Exact computation: {passed} (max error: {max_error:.2e})")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             self.rung_65537_results.append(VerificationResult(
                 rung_id=65537, test_name="Exact Computation Verified",
                 passed=False, detail=str(e),

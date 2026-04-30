@@ -50,8 +50,8 @@ def test_R0_kpc_matches_prime_field_theory():
     """The canonical r_0 in prime_field_util matches prime_field_theory.PrimeFieldTheory zero-param mode."""
     import logging
     logging.basicConfig(level=logging.WARNING)
-    from prime_field_util import R0_KPC_CANONICAL
     from prime_field_theory import PrimeFieldTheory
+    from prime_field_util import R0_KPC_CANONICAL
     pft = PrimeFieldTheory(use_mersenne_tower=True)
     assert abs(pft.r0_kpc - R0_KPC_CANONICAL) < 1e-9, \
         f"prime_field_theory r0_kpc = {pft.r0_kpc}, util R0_KPC_CANONICAL = {R0_KPC_CANONICAL}"

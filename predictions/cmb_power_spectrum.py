@@ -13,14 +13,13 @@ We use CAMB to compute C_ℓ for both ΛCDM and IF Theory, then compare.
 The key prediction: IF Theory should match Planck at high ℓ (small scales)
 but DIFFER at low ℓ (large scales) where the bubble transition matters.
 """
-import numpy as np
 import json
-import os
 from pathlib import Path
+
+import numpy as np
 
 try:
     import camb
-    from camb import model
     CAMB_AVAILABLE = True
 except ImportError:
     CAMB_AVAILABLE = False
@@ -103,12 +102,12 @@ def compare_spectra(lcdm: dict, if_theory: dict) -> dict:
     # Compute differences at key multipoles
     key_ells = [2, 10, 50, 100, 200, 500, 1000, 1500, 2000]
     diffs = {}
-    for l in key_ells:
-        if l < len(cl_lcdm):
-            diff_pct = (cl_if[l] - cl_lcdm[l]) / max(abs(cl_lcdm[l]), 1e-10) * 100
-            diffs[l] = {
-                'cl_lcdm': float(cl_lcdm[l]),
-                'cl_if': float(cl_if[l]),
+    for ell in key_ells:
+        if ell < len(cl_lcdm):
+            diff_pct = (cl_if[ell] - cl_lcdm[ell]) / max(abs(cl_lcdm[ell]), 1e-10) * 100
+            diffs[ell] = {
+                'cl_lcdm': float(cl_lcdm[ell]),
+                'cl_if': float(cl_if[ell]),
                 'diff_pct': float(diff_pct),
             }
 
@@ -145,8 +144,8 @@ def run_cmb_analysis():
 
     print(f"\n{'ℓ':>6} {'ΛCDM (μK²)':>12} {'IF Theory':>12} {'Diff %':>8}")
     print("-" * 42)
-    for l, data in sorted(comparison['key_multipoles'].items()):
-        print(f"{l:6d} {data['cl_lcdm']:12.2f} {data['cl_if']:12.2f} {data['diff_pct']:8.3f}%")
+    for ell, data in sorted(comparison['key_multipoles'].items()):
+        print(f"{ell:6d} {data['cl_lcdm']:12.2f} {data['cl_if']:12.2f} {data['diff_pct']:8.3f}%")
 
     print(f"\nRMS difference (ℓ=30-2500): {comparison['rms_diff_pct']:.4f}%")
     print(f"Max difference: {comparison['max_diff_pct']:.4f}%")

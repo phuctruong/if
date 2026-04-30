@@ -16,28 +16,24 @@ Key Features:
 Version: 7.0.0 (Fixed for new catalog naming conventions)
 """
 
-import os
 import glob
-import numpy as np
 import logging
-import requests
-import json
+import os
 import re
-from typing import Dict, List, Tuple, Optional, Union, Any
 from dataclasses import dataclass, field
-from enum import Enum
 from datetime import datetime
+from enum import Enum
+from typing import Any, Dict, List, Optional, Tuple
 
-# Import utilities from prime_field_util
-from prime_field_util import (
-    download_file,
-    report_memory_status,
-    NumpyEncoder
-)
+import numpy as np
+import requests
 
 # Import required packages
 from astropy.io import fits
 from astropy.table import Table
+
+# Import utilities from prime_field_util
+from prime_field_util import download_file, report_memory_status
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -70,7 +66,7 @@ class EuclidDataset:
     def __post_init__(self):
         """Validate data consistency."""
         lengths = [len(self.ra), len(self.dec), len(self.z)]
-        if not all(l == lengths[0] for l in lengths):
+        if not all(length == lengths[0] for length in lengths):
             raise ValueError(f"Inconsistent array lengths: {lengths}")
     
     def __len__(self):
@@ -337,7 +333,7 @@ def load_spe_catalog(filepath: str, tile_id: str) -> Dict[int, float]:
                     z = float(row[z_col])
                     if 0 < z < 10:  # Valid range
                         redshifts[obj_id] = z
-                except (ValueError, KeyError) as e:
+                except (ValueError, KeyError):
                     continue
             
             logger.info(f"  Loaded {len(redshifts):,} redshifts from tile {tile_id}")
@@ -347,7 +343,7 @@ def load_spe_catalog(filepath: str, tile_id: str) -> Dict[int, float]:
                 sample_ids = list(redshifts.keys())[:5]
                 logger.debug(f"  Sample SPE IDs: {sample_ids}")
     
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.warning(f"  Error loading {os.path.basename(filepath)}: {e}")
         if DEBUG_MATCHING:
             import traceback
@@ -427,7 +423,7 @@ def load_mer_catalog(filepath: str, tile_id: str) -> Tuple[Dict[int, Tuple[float
                     sample_ids = list(positions_by_seg_id.keys())[:5]
                     logger.debug(f"  Sample SEGMENTATION_MAP_IDs: {sample_ids}")
     
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.warning(f"  Error loading {os.path.basename(filepath)}: {e}")
     
     return positions_by_obj_id, positions_by_seg_id
@@ -568,11 +564,11 @@ class EuclidDataLoader:
             else:
                 tiles_failed.append(tile_id)
                 if spe_success:
-                    logger.info(f"  ⚠️ Only SPE downloaded, missing MER")
+                    logger.info("  ⚠️ Only SPE downloaded, missing MER")
                 elif mer_success:
-                    logger.info(f"  ⚠️ Only MER downloaded, missing SPE")
+                    logger.info("  ⚠️ Only MER downloaded, missing SPE")
                 else:
-                    logger.info(f"  ⚠️ Failed to download both catalogs")
+                    logger.info("  ⚠️ Failed to download both catalogs")
             
             # Warn if we're running out of tiles to try
             tiles_remaining = len(EuclidConfig.KNOWN_GOOD_TILES) - tiles_tried
@@ -583,7 +579,7 @@ class EuclidDataLoader:
         
         # Final summary
         logger.info(f"\n{'='*50}")
-        logger.info(f"Download Summary:")
+        logger.info("Download Summary:")
         logger.info(f"  Target tiles: {max_tiles}")
         logger.info(f"  Successfully downloaded: {success_count}")
         logger.info(f"  Tiles attempted: {tiles_tried}")
@@ -684,7 +680,7 @@ class EuclidDataLoader:
         except requests.exceptions.RequestException as e:
             logger.debug(f"  Network error accessing {catalog_type}: {e}")
             return False
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.debug(f"  Unexpected error accessing {catalog_type}: {e}")
             import traceback
             logger.debug(traceback.format_exc())
@@ -754,7 +750,7 @@ class EuclidDataLoader:
             # Find the CAT-Z file for this tile
             spe_files = [f for f in tiles[tile_id]['SPE'] if 'CAT-Z' in f.upper()]
             if not spe_files:
-                logger.warning(f"  No CAT-Z file found, skipping tile")
+                logger.warning("  No CAT-Z file found, skipping tile")
                 continue
             
             # Load SPE (redshifts)
@@ -763,7 +759,7 @@ class EuclidDataLoader:
             redshifts = load_spe_catalog(spe_file, tile_id)
             
             if not redshifts:
-                logger.warning(f"  No redshifts loaded, skipping tile")
+                logger.warning("  No redshifts loaded, skipping tile")
                 continue
             
             # Load MER (positions)
@@ -772,12 +768,12 @@ class EuclidDataLoader:
             positions_by_obj_id, positions_by_seg_id = load_mer_catalog(mer_file, tile_id)
             
             if not positions_by_obj_id and not positions_by_seg_id:
-                logger.warning(f"  No positions loaded, skipping tile")
+                logger.warning("  No positions loaded, skipping tile")
                 continue
             
             # Match SPE OBJECT_ID with MER data
             matched = 0
-            tile_galaxies_before = len(all_galaxies)
+            len(all_galaxies)
             
             # Strategy 1: Try matching SPE OBJECT_ID with MER SEGMENTATION_MAP_ID
             if positions_by_seg_id:
@@ -813,7 +809,7 @@ class EuclidDataLoader:
                             })
                             matched += 1
             
-            match_rate = 100 * matched / len(redshifts) if redshifts else 0
+            100 * matched / len(redshifts) if redshifts else 0
             #logger.info(f"  Matched {matched:,}/{len(redshifts):,} objects ({match_rate:.1f}%)")
             
             if matched > 0:
@@ -829,7 +825,7 @@ class EuclidDataLoader:
         
         # Apply subsampling if requested
         if max_objects and len(all_galaxies) > max_objects:
-            logger.info(f"\n📊 Subsampling phase:")
+            logger.info("\n📊 Subsampling phase:")
             logger.info(f"  Total galaxies from {len(tiles_used)} tiles: {len(all_galaxies):,}")
             logger.info(f"  Subsampling to: {max_objects:,} galaxies")
             
@@ -850,8 +846,8 @@ class EuclidDataLoader:
                 tile_id = g['TILE_ID']
                 tile_counts_after[tile_id] = tile_counts_after.get(tile_id, 0) + 1
             
-            logger.info(f"  ✓ Subsampling complete")
-            logger.info(f"  Galaxies kept from each tile:")
+            logger.info("  ✓ Subsampling complete")
+            logger.info("  Galaxies kept from each tile:")
             for tile_id in sorted(tile_counts_after.keys())[:5]:
                 before = tile_counts_before[tile_id]
                 after = tile_counts_after[tile_id]
@@ -1041,7 +1037,7 @@ if __name__ == "__main__":
     
     # Show data summary
     summary = loader.get_data_summary()
-    logger.info(f"\nData summary:")
+    logger.info("\nData summary:")
     logger.info(f"  Total tiles: {summary['total_tiles']}")
     logger.info(f"  Complete tiles: {summary['complete_tiles']}")
     
@@ -1051,7 +1047,7 @@ if __name__ == "__main__":
         
         # Show updated summary
         summary = loader.get_data_summary()
-        logger.info(f"\nAfter download:")
+        logger.info("\nAfter download:")
         logger.info(f"  Complete tiles: {summary['complete_tiles']}")
     
     if summary['complete_tiles'] > 0:
@@ -1062,7 +1058,7 @@ if __name__ == "__main__":
             logger.info("\nTesting load functionality...")
             galaxies = loader.load_galaxy_catalog(max_objects=1000)
             logger.info(f"✓ Successfully loaded {len(galaxies)} galaxies")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             logger.error(f"✗ Load failed: {e}")
     
     logger.info("\n✨ Revised Euclid utilities ready!")

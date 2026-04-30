@@ -38,9 +38,9 @@ import sys
 from pathlib import Path
 from typing import Tuple
 
-import numpy as np
-from astropy.cosmology import Flatw0waCDM, FlatLambdaCDM
 import astropy.units as u
+import numpy as np
+from astropy.cosmology import FlatLambdaCDM, Flatw0waCDM
 
 DESI_DIR = Path("/home/phuc/Downloads/if/data/desi_dr1/bao_likelihoods")
 PANTHEON_DIR = Path("/home/phuc/Downloads/if/data/pantheon_plus/Pantheon+_Data/4_DISTANCES_AND_COVAR")

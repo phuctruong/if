@@ -6,13 +6,15 @@ This module implements predictions related to large-scale structure,
 dark energy, CMB, and cosmic evolution.
 """
 
-import numpy as np
-from typing import Union, List
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import List, Union
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
@@ -231,9 +233,9 @@ class CosmologicalPredictions:
         peaks = []
         
         for p in PRIMES_100[:15]:  # First 15 primes
-            l = p * 100
-            if l < 3000:  # Planck range
-                peaks.append(l)
+            ell = p * 100
+            if ell < 3000:  # Planck range
+                peaks.append(ell)
         
         return peaks
     

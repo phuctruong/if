@@ -62,8 +62,8 @@ Model scale. These are deferred to higher-prime-channel theories.
 ```bash
 git clone https://github.com/phuctruong/if
 cd if
-pip install numpy scipy astropy sympy
-python3 -m pytest tests/        # 13 tests pass
+pip install -r requirements.txt
+python3 -m pytest tests audits -v
 python3 predictions/sparc_per_galaxy_ml.py   # → TF slope 1.024, r 0.95
 python3 predictions/mw_rotation_sigma_accounting.py   # → 0.23σ
 python3 predictions/boss_published_xi_test.py   # → r 0.98

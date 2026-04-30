@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T08:46:43.364308",
+  "timestamp": "2026-04-30T01:11:02.584195",
   "schema_version": "1.3.0",
   "predictions": [
     {
@@ -12,8 +12,8 @@
       "overall_passed": true,
       "input_data": {
         "sdss_lowz_corr": 0.988,
-        "sdss_cmass_corr": 0.983,
-        "desi_corr": 0.978,
+        "sdss_cmass_corr": 0.981,
+        "desi_corr": 0.95,
         "combined_sigma": 19.0
       }
     },

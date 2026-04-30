@@ -1,0 +1,63 @@
+{
+  "artifact": "IF Theory LSS/BAO locked zero-parameter prediction",
+  "status": "PREDICTION_LOCKED_FOR_FUTURE_SURVEYS",
+  "model_spec": {
+    "formula": "xi(r)=C_XI/[log(r/r0+1)]^2",
+    "C_XI": 62,
+    "r0_kpc": 0.6594900863537677,
+    "free_parameters_allowed_on_future_data": 0
+  },
+  "model_spec_sha256": "cfd57476b369211f27866d4738ee90e6183283200034bf9c7631e22f1e1bc515",
+  "future_data_rule": {
+    "allowed": "Apply the exact model_spec to new DESI/Euclid/Roman correlation data.",
+    "forbidden": "No amplitude fit, no r0 fit, no bin-range tuning after seeing the new data.",
+    "pass": "Pearson r(log xi) >= 0.93 and predeclared chi2/dof threshold for the survey covariance.",
+    "fail": "Shape Pearson r(log xi) < 0.80 on a predeclared survey range, or post-hoc renormalization required."
+  },
+  "locked_table": [
+    {
+      "r_mpc": 5.0,
+      "xi_locked": 0.7768503727819862
+    },
+    {
+      "r_mpc": 8.0,
+      "xi_locked": 0.7011426541392412
+    },
+    {
+      "r_mpc": 10.0,
+      "xi_locked": 0.6690172188495971
+    },
+    {
+      "r_mpc": 20.0,
+      "xi_locked": 0.5821680698382925
+    },
+    {
+      "r_mpc": 30.0,
+      "xi_locked": 0.538983896582274
+    },
+    {
+      "r_mpc": 50.0,
+      "xi_locked": 0.49109109440888915
+    },
+    {
+      "r_mpc": 75.0,
+      "xi_locked": 0.45747859739558594
+    },
+    {
+      "r_mpc": 100.0,
+      "xi_locked": 0.43567994034248797
+    },
+    {
+      "r_mpc": 120.0,
+      "xi_locked": 0.42266169699925155
+    },
+    {
+      "r_mpc": 150.0,
+      "xi_locked": 0.4075075716055531
+    },
+    {
+      "r_mpc": 200.0,
+      "xi_locked": 0.38914393840501393
+    }
+  ]
+}

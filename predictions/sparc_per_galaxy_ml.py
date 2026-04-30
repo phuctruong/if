@@ -45,10 +45,14 @@ _ROOT = _HERE.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from prime_field_util import R0_KPC_CANONICAL  # noqa: E402
 from predictions.sparc_corrected_log_potential import (  # noqa: E402
-    G_kpc_kms_msun, parse_sparc_table, load_rotmod, SPARC_DIR, SPARC_TABLE,
+    SPARC_DIR,
+    SPARC_TABLE,
+    G_kpc_kms_msun,
+    load_rotmod,
+    parse_sparc_table,
 )
+from prime_field_util import R0_KPC_CANONICAL  # noqa: E402
 
 OUT_DIR = Path(_ROOT, "evidence", "sparc_per_galaxy_ml")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -84,10 +88,14 @@ def evaluate_galaxy(name: str, path: Path, table: dict,
         return None
 
     d = load_rotmod(path)
-    R = d["R"]; keep = R > 0
-    R = R[keep]; Vobs = d["Vobs"][keep]
+    R = d["R"]
+    keep = R > 0
+    R = R[keep]
+    Vobs = d["Vobs"][keep]
     errV = np.maximum(d["errV"][keep], min_floor_err)
-    Vgas = d["Vgas"][keep]; Vdisk = d["Vdisk"][keep]; Vbul = d["Vbul"][keep]
+    Vgas = d["Vgas"][keep]
+    Vdisk = d["Vdisk"][keep]
+    Vbul = d["Vbul"][keep]
     if len(R) < 3:
         return None
 
@@ -133,7 +141,7 @@ def main() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
     if not results:
         return 1
@@ -144,7 +152,7 @@ def main() -> int:
     Vflat = np.array([r["V_flat_observed_kms"] for r in results])
 
     print("=" * 78)
-    print(f"SPARC per-galaxy M/L fit (Y ∈ [0.1, 1.0]); IF Theory: corrected log Φ")
+    print("SPARC per-galaxy M/L fit (Y ∈ [0.1, 1.0]); IF Theory: corrected log Φ")
     print("=" * 78)
     print(f"  Galaxies evaluated      : {len(results)}")
     print(f"  Skipped                 : {len(skipped)}")
@@ -159,7 +167,7 @@ def main() -> int:
     print(f"  Fraction χ²/dof < 10    : {np.mean(chi2_per_dof < 10):.1%}")
     print(f"  Fraction χ²/dof < 50    : {np.mean(chi2_per_dof < 50):.1%}")
     print()
-    print(f"  Y_fitted distribution:")
+    print("  Y_fitted distribution:")
     print(f"    median = {np.median(Y_fitted):.3f}")
     print(f"    25th   = {np.percentile(Y_fitted, 25):.3f}")
     print(f"    75th   = {np.percentile(Y_fitted, 75):.3f}")
@@ -168,11 +176,12 @@ def main() -> int:
 
     mask = (v0_pred > 0) & (Vflat > 0)
     if mask.sum() > 5:
-        lp = np.log10(v0_pred[mask]); lo = np.log10(Vflat[mask])
+        lp = np.log10(v0_pred[mask])
+        lo = np.log10(Vflat[mask])
         slope, intercept = np.polyfit(lo, lp, 1)
         r_pearson = float(np.corrcoef(lp, lo)[0, 1])
         print()
-        print(f"  Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
+        print("  Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
         print(f"    slope = {slope:+.3f}")
         print(f"    intercept = {intercept:+.3f}")
         print(f"    Pearson r = {r_pearson:+.3f}")

@@ -48,19 +48,23 @@ REVIEWER NOTES:
     - If ALL code tests pass, any disagreement with real data is a PHYSICS issue, not code
 """
 
+import sys
+from pathlib import Path
+
 import numpy as np
 from scipy import integrate, optimize
 from scipy.stats import pearsonr
-import sys
-import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
-from core.constants import SIGMA_8, H_PLANCK, AMPLITUDE
+import logging
+
+from core.constants import AMPLITUDE, H_PLANCK, SIGMA_8
 from core.field_equations import FieldEquations
 from core.parameter_derivations import ParameterDerivation
 
-import logging
 logging.basicConfig(level=logging.WARNING)
 
 PASS = 0
@@ -616,28 +620,28 @@ def test_parameter_count():
     print("  PARAMETER HIERARCHY:")
     print()
     print(f"    1. Amplitude = {pd.amplitude}")
-    print(f"       Source: prime number theorem pi(x) ~ x/log(x), coefficient = 1")
-    print(f"       Status: EXACT — no freedom")
+    print("       Source: prime number theorem pi(x) ~ x/log(x), coefficient = 1")
+    print("       Status: EXACT — no freedom")
     print()
     print(f"    2. r0 = {pd.r0_kpc} kpc ({pd.r0_mpc} Mpc)")
-    print(f"       Source: fitted to galaxy correlation function shape")
-    print(f"       Data: SDSS DR12, DESI DR1, Euclid DR1 (3.5M+ galaxies)")
-    print(f"       Status: EMPIRICAL — 1 free parameter")
+    print("       Source: fitted to galaxy correlation function shape")
+    print("       Data: SDSS DR12, DESI DR1, Euclid DR1 (3.5M+ galaxies)")
+    print("       Status: EMPIRICAL — 1 free parameter")
     print()
     print(f"    3. C_XI = {pd.correlation_normalization:.4f}")
-    print(f"       Formula: C_XI = sigma8^2 / integral(Phi^2 * f ds)")
-    print(f"       Inputs: r0 (empirical) + sigma8 (Planck 2018)")
-    print(f"       Status: DERIVED — uniquely determined, no freedom")
+    print("       Formula: C_XI = sigma8^2 / integral(Phi^2 * f ds)")
+    print("       Inputs: r0 (empirical) + sigma8 (Planck 2018)")
+    print("       Status: DERIVED — uniquely determined, no freedom")
     print()
     print(f"    4. v0 = {pd.v0_kms:.1f} +/- {pd.v0_kms*0.3:.1f} km/s")
-    print(f"       Formula: v0^2 = c^2 * (r0/r_H) * geometric_factor")
-    print(f"       Inputs: r0, H0, c, geometric_factor = 2*pi")
-    print(f"       Status: SEMI-DERIVED — 30% uncertainty from geometric factor")
+    print("       Formula: v0^2 = c^2 * (r0/r_H) * geometric_factor")
+    print("       Inputs: r0, H0, c, geometric_factor = 2*pi")
+    print("       Status: SEMI-DERIVED — 30% uncertainty from geometric factor")
     print()
     print("  OBSERVATIONAL INPUTS (not theory parameters):")
     print(f"    sigma8 = {SIGMA_8} (Planck 2018 TT,TE,EE+lowE+lensing)")
     print(f"    H0 = {H_PLANCK*100} km/s/Mpc (Planck 2018)")
-    print(f"    Omega_m = 0.3153 (Planck 2018)")
+    print("    Omega_m = 0.3153 (Planck 2018)")
     print()
     print("  VERDICT: 1 empirical parameter (r0)")
     print("    Comparable to MOND (1: a0), much fewer than LCDM (6)")
@@ -682,15 +686,15 @@ def test_mersenne_tower_recursion():
 
     print(f"  Primes up to 127: {len(primes_to_127)}")
     print(f"  π(127) = {pi_127}")
-    print(f"  M₅ = 2⁵ - 1 = 31")
+    print("  M₅ = 2⁵ - 1 = 31")
 
     # Verify π(127) = 31
-    report(f"π(M₇) = π(127) = 31 = M₅", pi_127 == 31,
+    report("π(M₇) = π(127) = 31 = M₅", pi_127 == 31,
            f"π(127) = {pi_127}")
 
     # Verify 2 × 31 = 62
     c_xi = 2 * pi_127
-    report(f"C_XI = 2 × π(127) = 62", c_xi == 62,
+    report("C_XI = 2 × π(127) = 62", c_xi == 62,
            f"2 × π(127) = {c_xi}")
 
     # Verify 293 is the 62nd prime
@@ -703,12 +707,12 @@ def test_mersenne_tower_recursion():
                 sieve2[j] = False
     all_primes = [i for i in range(2, limit2 + 1) if sieve2[i]]
     p62 = all_primes[61] if len(all_primes) >= 62 else -1
-    report(f"p₆₂ = 293 (the 62nd prime)", p62 == 293,
+    report("p₆₂ = 293 (the 62nd prime)", p62 == 293,
            f"62nd prime = {p62}")
 
     # Verify phase decomposition: 62 = 5 + 13 + 23 + 21
     decomp = 5 + 13 + 23 + 21
-    report(f"Phase decomposition: 62 = 5 + 13 + 23 + 21", decomp == 62,
+    report("Phase decomposition: 62 = 5 + 13 + 23 + 21", decomp == 62,
            f"5 + 13 + 23 + 21 = {decomp}")
 
 
@@ -755,7 +759,7 @@ def test_mersenne_tower_mode():
            f"C_XI = {c_xi}")
     report("Zero free parameters", free_params == 0,
            f"free_parameters = {free_params}")
-    report(f"r₀ within 5% of empirical 0.65 kpc", r0_pct <= 5.0,
+    report("r₀ within 5% of empirical 0.65 kpc", r0_pct <= 5.0,
            f"r₀ = {r0_kpc:.4f} kpc ({r0_pct:.2f}% from empirical)")
 
 
@@ -794,11 +798,11 @@ def test_zero_parameter_consistency():
     print(f"  Mersenne tower:  r₀={p_mt['r0_kpc']:.4f} kpc, C_XI={p_mt['correlation_normalization']:.2f}, v₀={p_mt['v0_kms']:.1f} km/s")
     print(f"  Differences:     r₀={r0_diff:.2f}%, C_XI={cxi_diff:.2f}%, v₀={v0_diff:.2f}%")
 
-    report(f"r₀ consistent (<5%)", r0_diff <= 5.0,
+    report("r₀ consistent (<5%)", r0_diff <= 5.0,
            f"difference = {r0_diff:.2f}%")
-    report(f"C_XI consistent (<2%)", cxi_diff <= 2.0,
+    report("C_XI consistent (<2%)", cxi_diff <= 2.0,
            f"difference = {cxi_diff:.2f}%")
-    report(f"v₀ consistent (<5%)", v0_diff <= 5.0,
+    report("v₀ consistent (<5%)", v0_diff <= 5.0,
            f"difference = {v0_diff:.2f}%")
 
 

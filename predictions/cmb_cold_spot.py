@@ -19,20 +19,19 @@ Author: Phuc Vinh Truong & Solace AGI
 Date: December 2025
 """
 
-import numpy as np
-from typing import Dict, List, Union
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Dict, List
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
+    from core.constants import AMPLITUDE, C_LIGHT, EPSILON, H0, H_PLANCK, OMEGA_M, SIGMA_8
 except ImportError:
     SIGMA_8 = 0.8159
     OMEGA_M = 0.3153
@@ -318,7 +317,7 @@ def run_cold_spot_predictions():
     print("=" * 70)
     print()
 
-    pred = predictor.predict_cold_spot_properties()
+    predictor.predict_cold_spot_properties()
     comp = predictor.compare_with_observations()
 
     print(f"{'Property':<25} {'Observed':<15} {'Predicted':<15} {'Match':<10}")

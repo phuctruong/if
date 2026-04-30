@@ -6,9 +6,10 @@ This module implements the fundamental field equations derived from
 the prime number theorem. All numerical stability measures are included.
 """
 
-import numpy as np
-from typing import Union
 import logging
+from typing import Union
+
+import numpy as np
 
 # Import constants
 try:
@@ -50,8 +51,8 @@ class FieldEquations:
         # Type check
         try:
             r0_mpc = float(r0_mpc)
-        except (ValueError, TypeError):
-            raise TypeError(f"r0_mpc must be a number, got {type(r0_mpc)}")
+        except (ValueError, TypeError) as error:
+            raise TypeError(f"r0_mpc must be a number, got {type(r0_mpc)}") from error
 
         # Zero check: r0_mpc must be > 0
         if r0_mpc == 0:

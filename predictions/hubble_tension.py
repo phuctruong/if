@@ -18,21 +18,19 @@ Author: Phuc Vinh Truong & Solace AGI
 Date: December 2025
 """
 
-import numpy as np
-from scipy.integrate import quad
-from typing import Dict, List, Tuple, Union
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Dict, Union
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
+    from core.constants import AMPLITUDE, C_LIGHT, EPSILON, H0, H_PLANCK, OMEGA_M, SIGMA_8
 except ImportError:
     SIGMA_8 = 0.8159
     OMEGA_M = 0.3153
@@ -287,7 +285,7 @@ def run_hubble_tension_predictions():
     print("The Bubble Universe mechanism predicts H₀ varies with measurement scale:")
     print()
 
-    profile = predictor.tension_resolution_profile()
+    predictor.tension_resolution_profile()
 
     print(f"{'Distance (Mpc)':<18} {'H₀ (km/s/Mpc)':<18} {'Regime':<15}")
     print("-" * 70)

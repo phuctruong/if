@@ -38,8 +38,12 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from predictions.sparc_corrected_log_potential import (  # noqa: E402
-    G_kpc_kms_msun, parse_sparc_table, load_rotmod, M_TO_L_RATIO_3_6,
-    SPARC_DIR, SPARC_TABLE,
+    M_TO_L_RATIO_3_6,
+    SPARC_DIR,
+    SPARC_TABLE,
+    G_kpc_kms_msun,
+    load_rotmod,
+    parse_sparc_table,
 )
 
 OUT_DIR = Path(_ROOT, "evidence", "sparc_r0_per_galaxy")
@@ -66,7 +70,8 @@ def evaluate_galaxy(name: str, path: Path, table: dict,
     r_0_galaxy = Rdisk  # galaxy-specific: prime-field transition matches disk scale
 
     d = load_rotmod(path)
-    R = d["R"]; keep = R > 0
+    R = d["R"]
+    keep = R > 0
     R = R[keep]
     Vobs = d["Vobs"][keep]
     errV = np.maximum(d["errV"][keep], min_floor_err)
@@ -108,7 +113,7 @@ def main() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} ({e})")
     if not results:
         return 1
@@ -129,11 +134,12 @@ def main() -> int:
 
     mask = (v0_pred > 0) & (Vflat > 0)
     if mask.sum() > 5:
-        lp = np.log10(v0_pred[mask]); lo = np.log10(Vflat[mask])
+        lp = np.log10(v0_pred[mask])
+        lo = np.log10(Vflat[mask])
         slope, intercept = np.polyfit(lo, lp, 1)
         r_pearson = float(np.corrcoef(lp, lo)[0, 1])
         print()
-        print(f"Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
+        print("Tully-Fisher: log(v_0_pred) vs log(V_flat_obs):")
         print(f"  slope = {slope:+.3f}  (theoretical 1.00 expected)")
         print(f"  intercept = {intercept:+.3f}")
         print(f"  Pearson r = {r_pearson:+.3f}")

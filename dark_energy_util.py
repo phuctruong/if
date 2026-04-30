@@ -23,11 +23,12 @@ Version: 1.0.0 (Publication Version)
 Date: 2024
 """
 
-import numpy as np
-from scipy import integrate, stats
-from typing import Tuple, Dict, Optional, Union, Any
-from dataclasses import dataclass
 import logging
+from dataclasses import dataclass
+from typing import Any, Dict, Tuple, Union
+
+import numpy as np
+from scipy import integrate
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')

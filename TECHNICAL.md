@@ -446,8 +446,8 @@ def new_prediction(self, input_param: float) -> float:
 ### 8.3 Testing Framework
 
 ```python
-# Run all unit tests
-python -m pytest tests/
+# Run all local tests
+python3 -m pytest tests audits -v
 
 # Test numerical stability
 from prime_field_theory import PrimeFieldTheory

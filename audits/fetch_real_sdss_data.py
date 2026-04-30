@@ -11,14 +11,9 @@ Options:
 3. Alternative mirror sites
 """
 
-import os
-import sys
-import json
-import urllib.request
-import urllib.error
-from pathlib import Path
-from datetime import datetime
 import logging
+import os
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -87,7 +82,7 @@ def print_data_sources():
     logger.info("REAL SDSS DR12 DATA SOURCES")
     logger.info("="*70)
 
-    for key, source in REAL_SDSS_SOURCES.items():
+    for _key, source in REAL_SDSS_SOURCES.items():
         logger.info(f"\nOption: {source['description']}")
         logger.info(f"URL: {source['url']}")
         logger.info(f"Steps:{source['instructions']}")
@@ -161,7 +156,7 @@ def verify_real_fits_file(filepath):
             logger.info(f"✓ Real FITS file verified: {filepath} ({n_galaxies} galaxies)")
             return True
 
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         logger.warning(f"Error verifying {filepath}: {e}")
         return False
 
@@ -176,15 +171,15 @@ def check_for_synthetic_data():
 
     # Check generated synthetic FITS files
     if os.path.exists('data/sdss_dr12/lowz/galaxy_DR12v5_LOWZ_South.fits'):
-        if verify_real_fits_file('data/sdss_dr12/lowz/galaxy_DR12v5_LOWZ_South.fits') == False:
+        if not verify_real_fits_file('data/sdss_dr12/lowz/galaxy_DR12v5_LOWZ_South.fits'):
             synthetic_files.append('data/sdss_dr12/lowz/galaxy_DR12v5_LOWZ_South.fits')
 
     if os.path.exists('data/sdss_dr12/cmass/galaxy_DR12v5_CMASS_South.fits'):
-        if verify_real_fits_file('data/sdss_dr12/cmass/galaxy_DR12v5_CMASS_South.fits') == False:
+        if not verify_real_fits_file('data/sdss_dr12/cmass/galaxy_DR12v5_CMASS_South.fits'):
             synthetic_files.append('data/sdss_dr12/cmass/galaxy_DR12v5_CMASS_South.fits')
 
     if synthetic_files:
-        logger.warning(f"\n⚠️  FOUND SYNTHETIC DATA FILES:")
+        logger.warning("\n⚠️  FOUND SYNTHETIC DATA FILES:")
         for f in synthetic_files:
             logger.warning(f"    {f}")
         logger.warning("\nThese are NOT real SDSS observations.")

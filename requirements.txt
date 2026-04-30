@@ -36,3 +36,10 @@ requests
 
 # For system memory monitoring during large computations
 psutil
+
+# ---------------------------------------------------------------------------
+# Verification & Linting
+# Required to reproduce the repository validation commands.
+# ---------------------------------------------------------------------------
+pytest
+ruff

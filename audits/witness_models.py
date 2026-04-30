@@ -19,8 +19,8 @@ Each includes:
 
 import json
 from datetime import datetime
-from typing import Dict, List, Any, NamedTuple
 from enum import Enum
+from typing import Any, Dict, List, NamedTuple
 
 
 class ValidationLevel(str, Enum):
@@ -359,21 +359,21 @@ def main():
     output = WitnessModelGenerator.generate_all_witnesses()
 
     # Display each prediction
-    for pred_key, pred_data in output.items():
+    for pred_data in output.values():
         print(f"\n{'='*70}")
         print(f"📊 {pred_data['prediction_name']}")
         print(f"{'='*70}")
         print(f"\nValidation Level: {pred_data['validation_level']}")
         print(f"Status: {pred_data['status']}")
         print(f"\nProof Scope:\n{pred_data['proof_scope']}")
-        print(f"\nAxiom Basis:")
+        print("\nAxiom Basis:")
         for axiom in pred_data['axiom_basis']:
             print(f"  {axiom}")
         print(f"\nReplication Status:\n{pred_data['replication_status']}")
-        print(f"\nFalsification Criteria:")
+        print("\nFalsification Criteria:")
         for criterion in pred_data['falsification_criteria']:
             print(f"  {criterion}")
-        print(f"\nSuccess Metrics:")
+        print("\nSuccess Metrics:")
         for metric, value in pred_data['success_metrics'].items():
             print(f"  {metric}: {value}")
 
@@ -395,15 +395,15 @@ def main():
     print(f"\n{'='*70}")
     print("WITNESS MODEL SUMMARY")
     print(f"{'='*70}")
-    print(f"\n✅ Total predictions: 3")
-    print(f"✅ All predictions: Formally specified")
-    print(f"✅ All predictions: Falsifiable")
-    print(f"✅ Replication: Full or in-progress")
-    print(f"\nValidation Levels:")
-    print(f"  - FRAMEWORK: S8 Tension (structure + CMB)")
-    print(f"  - EMPIRICAL: JWST Early Galaxies (observable now)")
-    print(f"  - SPECULATIVE: Hubble Tension (testable soon)")
-    print(f"\nAll witnesses saved to evidence/ directory")
+    print("\n✅ Total predictions: 3")
+    print("✅ All predictions: Formally specified")
+    print("✅ All predictions: Falsifiable")
+    print("✅ Replication: Full or in-progress")
+    print("\nValidation Levels:")
+    print("  - FRAMEWORK: S8 Tension (structure + CMB)")
+    print("  - EMPIRICAL: JWST Early Galaxies (observable now)")
+    print("  - SPECULATIVE: Hubble Tension (testable soon)")
+    print("\nAll witnesses saved to evidence/ directory")
 
 
 if __name__ == "__main__":

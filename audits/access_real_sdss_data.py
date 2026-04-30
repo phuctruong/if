@@ -6,12 +6,8 @@ This script provides multiple working methods to get real SDSS galaxy data.
 No synthetic data - only real observations from SDSS DR12 BOSS survey.
 """
 
-import os
-import sys
-import json
-from pathlib import Path
-from datetime import datetime
 import logging
+from importlib.util import find_spec
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -145,7 +141,9 @@ def method_3_python_sdss_access():
     logger.info("="*70)
 
     try:
-        import sdss
+        sdss_available = find_spec("sdss") is not None
+        if not sdss_available:
+            raise ImportError("sdss module is not installed")
         logger.info("✓ SDSS module available")
 
         instructions = """

@@ -101,10 +101,13 @@ public cosmology layer.)
 ```bash
 git clone https://github.com/phuctruong/if
 cd if
-pip install numpy scipy astropy sympy matplotlib
+pip install -r requirements.txt
 
-# Run all tests (13 should pass in <2 seconds)
-python3 -m pytest tests/ -v
+# Run all local tests
+python3 -m pytest tests audits -v
+
+# Run lint
+python3 -m ruff check .
 
 # Reproduce each prediction
 python3 predictions/mw_rotation_sigma_accounting.py
@@ -122,12 +125,18 @@ Each script writes results to `evidence/<test_name>/*.json`. Compare
 against the committed evidence files to verify byte-equal reproduction
 modulo platform-specific float ordering.
 
-For full data downloads (~120 MB total):
+For public survey data downloads:
 
 ```bash
-mkdir -p ~/Downloads/if/data
-# Per-dataset commands and sha256 hashes in DATA_MANIFEST.md
+python3 download_survey_data.py --dry-run --surveys sdss desi euclid --products minimal
+python3 download_survey_data.py --surveys sdss desi euclid --products minimal
+python3 download_survey_data.py --surveys sdss desi --products full
+# Euclid Q1 SPE/MER tiles are discovered dynamically from IRSA:
+python3 download_survey_data.py --surveys euclid --products euclid-q1 --max-euclid-tiles 3
 ```
+
+Downloads are staged under `data/` and recorded in `data/DATA_MANIFEST.json`
+with byte counts and SHA-256 digests.
 
 ---
 

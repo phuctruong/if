@@ -5,14 +5,15 @@ visualization.py - Create publication-quality figures.
 This module handles all visualization for Prime Field Theory.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from typing import Optional
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Optional
+
+import matplotlib.pyplot as plt
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:

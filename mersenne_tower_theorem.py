@@ -56,10 +56,10 @@ PROOF STRUCTURE
 =============================================================================
 """
 
-import sys
-import os
 import logging
-from typing import Dict, List, Tuple, Optional
+import os
+import sys
+from typing import List, Tuple
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -70,7 +70,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Imports
 # ---------------------------------------------------------------------------
-from sympy import isprime, primepi, prime, nextprime
+from sympy import isprime, primepi
 
 # Ensure core is importable
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -238,8 +238,8 @@ def verify_lemma_2() -> None:
     assert isprime(5), "5 is not prime (required for Mersenne prime definition)"
 
     logger.info(f"    M₅ = 2⁵ - 1 = {m5}  [VERIFIED]")
-    logger.info(f"    isprime(31) = True  [VERIFIED]")
-    logger.info(f"    isprime(5) = True   [VERIFIED]")
+    logger.info("    isprime(31) = True  [VERIFIED]")
+    logger.info("    isprime(5) = True   [VERIFIED]")
     logger.info("")
 
 
@@ -384,9 +384,9 @@ def verify_lemma_3() -> List[Tuple[int, int, int, bool, bool]]:
     )
 
     logger.info(f"  RESULT: Exactly {tower_closed_count} tower-closed Mersenne prime found.")
-    logger.info(f"  M₇ = 127 is UNIQUE: π(127) = 31 = M₅.")
-    logger.info(f"  No other known Mersenne prime has this property.")
-    logger.info(f"  [VERIFIED]")
+    logger.info("  M₇ = 127 is UNIQUE: π(127) = 31 = M₅.")
+    logger.info("  No other known Mersenne prime has this property.")
+    logger.info("  [VERIFIED]")
     logger.info("")
 
     return results
@@ -429,7 +429,7 @@ def verify_lemma_4() -> None:
         p = mp
 
     logger.info(f"    Mersenne tower: {' → '.join(str(x) for x in tower)}")
-    logger.info(f"    (Each step: p → M_p = 2^p - 1, verified prime)")
+    logger.info("    (Each step: p → M_p = 2^p - 1, verified prime)")
     logger.info("")
 
     # The fold: π(127) = 31, and 31 appears in the tower
@@ -442,10 +442,10 @@ def verify_lemma_4() -> None:
     tower_exponents = [2, 3, 5, 7]  # The exponents used
     assert 5 in tower_exponents, "5 must be a tower exponent"
 
-    logger.info(f"    Fold: π(127) = 31 = M₅")
+    logger.info("    Fold: π(127) = 31 = M₅")
     logger.info(f"    Tower exponents: {tower_exponents}")
-    logger.info(f"    127 is at position 4 (value), maps back to position 3 (value 31)")
-    logger.info(f"    This is irreducible closure: the tower folds onto itself.")
+    logger.info("    127 is at position 4 (value), maps back to position 3 (value 31)")
+    logger.info("    This is irreducible closure: the tower folds onto itself.")
     logger.info("")
 
     # Verify no other fold exists in the tower
@@ -636,7 +636,7 @@ def verify_physical_predictions() -> Tuple[float, float, float]:
     logger.info("")
     logger.info("  COROLLARY C1 — Derived Scale:")
     logger.info(f"    C_XI = {c_xi:.1f}")
-    logger.info(f"    σ₈   = 0.8111 (Planck 2018 TT,TE,EE+lowE+lensing)")
+    logger.info("    σ₈   = 0.8111 (Planck 2018 TT,TE,EE+lowE+lensing)")
     logger.info(f"    r₀   = {r0_kpc:.4f} kpc (DERIVED, zero free parameters)")
     logger.info(f"    v₀   = {params['v0_kms']:.1f} km/s (semi-derived, virial)")
     logger.info("")
@@ -847,7 +847,7 @@ def print_summary(r0_kpc: float, c_xi: float, deviation_pct: float) -> None:
     logger.info(f"    C_XI = {c_xi:.1f}")
     logger.info(f"    r₀   = {r0_kpc:.4f} kpc (derived, ZERO free parameters)")
     logger.info(f"    vs empirical r₀ = 0.65 kpc → {deviation_pct:.2f}% deviation")
-    logger.info(f"    v₀   ≈ virial-derived (semi-derived, ~30% uncertainty)")
+    logger.info("    v₀   ≈ virial-derived (semi-derived, ~30% uncertainty)")
     logger.info("")
     logger.info("  INFORMATION FORCE CHAIN:")
     logger.info("    π(x) → Mersenne → Closure → Φ(r) → Gravity → ξ(r) = 62×[Φ]²")

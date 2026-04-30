@@ -45,7 +45,7 @@ _ROOT = _HERE.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from prime_field_util import R0_KPC_CANONICAL, C_XI_CANONICAL  # noqa: E402
+from prime_field_util import C_XI_CANONICAL, R0_KPC_CANONICAL  # noqa: E402
 
 BOSS_DIR = Path("/home/phuc/Downloads/if/data/boss_published_xi")
 R0_MPC = R0_KPC_CANONICAL / 1000.0
@@ -128,7 +128,7 @@ def evaluate_sample(name: str, path: Path, r_min: float = 8.0, r_max: float = 15
         "dof": dof_h0,
         "chi2_per_dof": chi2_h0 / dof_h0,
     }
-    print(f"  H_0 (zero params, C_XI=62, r_0=0.6595 kpc):")
+    print("  H_0 (zero params, C_XI=62, r_0=0.6595 kpc):")
     print(f"      Pearson r(log) = {r_p_h0:+.4f}; χ²/dof = {chi2_h0 / dof_h0:.2f}")
     print(f"      ξ_pred range: [{xi_h0.min():.4e}, {xi_h0.max():.4e}]")
     print(f"      ξ_data/ξ_pred mean: {np.mean(xi / xi_h0):.2e}")
@@ -150,10 +150,10 @@ def evaluate_sample(name: str, path: Path, r_min: float = 8.0, r_max: float = 15
             "dof": dof_h1,
             "chi2_per_dof": chi2_h1 / dof_h1,
         }
-        print(f"  H_1 (1 param: amplitude):")
+        print("  H_1 (1 param: amplitude):")
         print(f"      A_fit = {popt[0]:.3e} ; r_0 = 0.6595 kpc fixed")
         print(f"      Pearson r(log) = {r_p_h1:+.4f}; χ²/dof = {chi2_h1 / dof_h1:.2f}")
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         print(f"  H_1 fit failed: {e}")
         out["H1"] = {"error": str(e)}
 
@@ -176,10 +176,10 @@ def evaluate_sample(name: str, path: Path, r_min: float = 8.0, r_max: float = 15
             "dof": dof_h2,
             "chi2_per_dof": chi2_h2 / dof_h2,
         }
-        print(f"  H_2 (2 params: amplitude + r_0):")
+        print("  H_2 (2 params: amplitude + r_0):")
         print(f"      A_fit = {popt[0]:.3e} ; r_0_fit = {popt[1] * 1000:.3f} kpc")
         print(f"      Pearson r(log) = {r_p_h2:+.4f}; χ²/dof = {chi2_h2 / dof_h2:.2f}")
-    except Exception as e:
+    except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
         print(f"  H_2 fit failed: {e}")
         out["H2"] = {"error": str(e)}
 

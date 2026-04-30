@@ -4,6 +4,7 @@ bao_data
 # Claude Code commands and config (local only)
 data
 euclid_data
+.codex
 __pycache__
 results
 scratch/

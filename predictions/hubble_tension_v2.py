@@ -14,17 +14,18 @@ Key changes from v1:
 Source: ~/projects/pvideo/canon/pvideo/papers/C5-publication-draft.md
 Auth: 65537
 """
-import numpy as np
-from typing import Dict, List
-import logging
 import json
+import logging
 import os
-
 import sys
+from typing import Dict
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
-    from core.constants import H_PLANCK, SIGMA_8, OMEGA_M
+    from core.constants import H_PLANCK, OMEGA_M, SIGMA_8
 except ImportError:
     H_PLANCK = 0.6736
     SIGMA_8 = 0.8159
@@ -147,7 +148,7 @@ def print_report():
     print(f"  r_bubble  = {R_BUBBLE_MPC} Mpc (derived from v₀/H₀ × √3)")
     print(f"  w         = {W_TRANSITION} Mpc (transition width)")
     print(f"  r₀        = {R0_KPC} kpc (from σ₈ = 0.811, C5 value)")
-    print(f"  Parameters fitted: ZERO")
+    print("  Parameters fitted: ZERO")
     print()
 
     validation = validate_hubble_v2()
@@ -164,7 +165,7 @@ def print_report():
 
     print("-" * 70)
     print(f"χ²/dof = {validation['chi2_per_dof']:.2f} ({validation['dof']} dof)")
-    print(f"ΛCDM χ²/dof ≈ 2.7")
+    print("ΛCDM χ²/dof ≈ 2.7")
     print(f"Improvement: {validation['improvement_over_lcdm']:.1f}% over ΛCDM")
     print()
 

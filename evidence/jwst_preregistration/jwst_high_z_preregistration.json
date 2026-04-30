@@ -1,0 +1,66 @@
+{
+  "artifact": "IF Theory JWST high-z preregistration",
+  "status_as_of_2026_04_30": "SUPPORTIVE_BELOW_TRIGGER",
+  "current_context": {
+    "highest_confirmed_used_for_context": "MoM-z14, z_spec=14.44, below the z>=20 trigger",
+    "do_not_count_as_confirmation": "Any post-hoc z<20 agreement or photometric-only z>=20 candidate"
+  },
+  "locked_confirmation_thresholds": {
+    "confirm": {
+      "condition": "At least one spectroscopically confirmed mature galaxy at z >= 20",
+      "maturity_cut": "stellar_mass_msun >= 1e8 OR M_UV <= -19.5 with non-AGN-dominated spectrum",
+      "deadline": "2030-01-01"
+    },
+    "strong_confirm": {
+      "condition": "At least one spectroscopically confirmed mature galaxy at z >= 25",
+      "maturity_cut": "stellar_mass_msun >= 1e8 OR M_UV <= -19.5 with non-AGN-dominated spectrum",
+      "deadline": "2030-01-01"
+    },
+    "fail_closed": {
+      "condition": "Sufficient JWST/Roman spectroscopy covers the expected survey volume and finds no mature galaxies at z >= 18",
+      "note": "Survey volume threshold must be specified before applying this fail condition to a named survey."
+    }
+  },
+  "if_theory_prediction_grid": [
+    {
+      "stellar_or_halo_mass_msun": 100000000.0,
+      "earliest_z_if": 47.31092457473954,
+      "earliest_z_lcdm": 36.51418633909701,
+      "t_formation_if_myr": 51.359922706824534,
+      "t_formation_lcdm_myr": 75.05808962933078,
+      "speedup_factor": 1.461413601764578
+    },
+    {
+      "stellar_or_halo_mass_msun": 500000000.0,
+      "earliest_z_if": 44.60648858437221,
+      "earliest_z_lcdm": 36.51418633909701,
+      "t_formation_if_myr": 55.995376546089204,
+      "t_formation_lcdm_myr": 75.05808962933078,
+      "speedup_factor": 1.3404336975491407
+    },
+    {
+      "stellar_or_halo_mass_msun": 1000000000.0,
+      "earliest_z_if": 43.74944442356191,
+      "earliest_z_lcdm": 36.51418633909701,
+      "t_formation_if_myr": 57.61168191489028,
+      "t_formation_lcdm_myr": 75.05808962933078,
+      "speedup_factor": 1.3028276060437547
+    },
+    {
+      "stellar_or_halo_mass_msun": 5000000000.0,
+      "earliest_z_if": 42.242521306313535,
+      "earliest_z_lcdm": 36.51418633909701,
+      "t_formation_if_myr": 60.649234573114235,
+      "t_formation_lcdm_myr": 75.05808962933078,
+      "speedup_factor": 1.2375768656873367
+    },
+    {
+      "stellar_or_halo_mass_msun": 10000000000.0,
+      "earliest_z_if": 41.748621573505346,
+      "earliest_z_lcdm": 36.51418633909701,
+      "t_formation_if_myr": 61.70332891313362,
+      "t_formation_lcdm_myr": 75.05808962933078,
+      "speedup_factor": 1.2164350117154634
+    }
+  ]
+}

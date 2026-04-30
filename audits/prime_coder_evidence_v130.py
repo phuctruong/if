@@ -9,7 +9,7 @@ Complete evidence artifact generation with:
 
 import json
 from datetime import datetime
-from typing import Dict, Any, List
+from typing import Any, Dict, List
 
 
 class EvidenceSchema:

@@ -18,21 +18,19 @@ Author: Phuc Vinh Truong & Solace AGI
 Date: December 2025
 """
 
-import numpy as np
-from scipy.integrate import quad
-from typing import Dict, List, Union
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Dict
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
+    from core.constants import AMPLITUDE, C_LIGHT, EPSILON, H0, H_PLANCK, OMEGA_M, SIGMA_8
 except ImportError:
     SIGMA_8 = 0.8159
     OMEGA_M = 0.3153
@@ -268,7 +266,7 @@ def run_s8_predictions():
 
     print("THE S8 TENSION (>4σ):")
     print("-" * 70)
-    print(f"  S8 = σ8 × (Ωm/0.3)^0.5 - measures matter clumpiness")
+    print("  S8 = σ8 × (Ωm/0.3)^0.5 - measures matter clumpiness")
     print()
     print(f"  Early Universe (Planck CMB):     S8 = {S8_CMB} ± {S8_CMB_ERR}")
     print(f"  Late Universe (KiDS lensing):    S8 = {S8_LENSING} ± {S8_LENSING_ERR}")

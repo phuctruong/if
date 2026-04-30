@@ -15,9 +15,9 @@ Where:
 """
 
 import ast
-from typing import Dict, List, NamedTuple, Optional, Tuple, Set
 from dataclasses import dataclass, field
 from enum import Enum
+from typing import Dict, List, Optional, Tuple
 
 
 class Complexity(Enum):
@@ -128,7 +128,7 @@ class ClosureDetector(ast.NodeVisitor):
             closure.boundary_elements.append(f"kwarg_{arg.arg}")
 
         # Boundary: decorators
-        for decorator in node.decorator_list:
+        for _decorator in node.decorator_list:
             closure.boundary_elements.append("decorator")
 
         # Interior: function body statements

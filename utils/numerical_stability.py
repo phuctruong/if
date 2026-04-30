@@ -6,13 +6,15 @@ This module ensures all calculations are numerically stable
 across extreme parameter ranges.
 """
 
-import numpy as np
-from typing import Dict, Any
 import logging
+import os
 
 # Import from parent modules
 import sys
-import os
+from typing import Any, Dict
+
+import numpy as np
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
@@ -60,7 +62,7 @@ class NumericalStability:
             if np.any(np.isnan(field_small)):
                 results['warnings'].append("NaN in field at small r")
             results['tests']['small_r'] = 'PASSED'
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             results['tests']['small_r'] = f'FAILED: {str(e)}'
             results['passed'] = False
         
@@ -71,7 +73,7 @@ class NumericalStability:
             if np.all(field_large == 0):
                 results['warnings'].append("Field exactly 0 at large r")
             results['tests']['large_r'] = 'PASSED'
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             results['tests']['large_r'] = f'FAILED: {str(e)}'
             results['passed'] = False
         
@@ -83,7 +85,7 @@ class NumericalStability:
             if abs(field_zero) > 1e-10 or abs(grad_zero) > 1e-10:
                 results['warnings'].append(f"Unexpected r=0: Φ={field_zero}, dΦ/dr={grad_zero}")
             results['tests']['singularity'] = 'PASSED'
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             results['tests']['singularity'] = f'FAILED: {str(e)}'
             results['passed'] = False
         
@@ -106,7 +108,7 @@ class NumericalStability:
                 if max_error > 0.01:
                     results['warnings'].append(f"Gradient error: {max_error:.2%}")
             results['tests']['gradient'] = 'PASSED'
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             results['tests']['gradient'] = f'FAILED: {str(e)}'
             results['passed'] = False
         
@@ -118,7 +120,7 @@ class NumericalStability:
             else:
                 results['tests']['velocity_consistency'] = 'PASSED with warnings'
                 results['warnings'].append("Velocity methods show variation but within acceptable range")
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             results['tests']['velocity_consistency'] = f'FAILED: {str(e)}'
             results['passed'] = False
         
@@ -168,7 +170,7 @@ class NumericalStability:
         results['std'] = v_std
         results['cv'] = cv
         
-        logger.info(f"\nResults:")
+        logger.info("\nResults:")
         logger.info(f"  Mean v₀: {v_mean:.1f} km/s")
         logger.info(f"  Std dev: {v_std:.1f} km/s")
         logger.info(f"  Coefficient of variation: {cv:.2f}")

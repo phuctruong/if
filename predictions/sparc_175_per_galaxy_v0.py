@@ -32,11 +32,10 @@ from __future__ import annotations
 
 import json
 import logging
-import math
 import sys
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Optional, List
+from typing import List, Optional
 
 import numpy as np
 from scipy.optimize import minimize_scalar
@@ -158,7 +157,7 @@ def main() -> int:
                 skipped.append(name)
             else:
                 results.append(r)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError, KeyError, IndexError, TypeError, AttributeError, ArithmeticError, ImportError) as e:
             skipped.append(f"{name} (error: {e})")
 
     if not results:
@@ -171,7 +170,7 @@ def main() -> int:
     f1 = np.array([r.fraction_within_1sigma for r in results])
 
     print("=" * 78)
-    print(f"SPARC 175 — IF Theory shape test, ONE free parameter per galaxy (v_0)")
+    print("SPARC 175 — IF Theory shape test, ONE free parameter per galaxy (v_0)")
     print("=" * 78)
     print(f"  Galaxies fitted        : {len(results)} / {len(files)}")
     print(f"  Skipped                : {len(skipped)}")
@@ -200,7 +199,7 @@ def main() -> int:
         # robust linear fit
         slope, intercept = np.polyfit(log_vo, log_v0, 1)
         r_pearson = float(np.corrcoef(log_v0, log_vo)[0, 1])
-        print(f"  log(v_0_fitted) vs log(v_obs_outer) linear fit:")
+        print("  log(v_0_fitted) vs log(v_obs_outer) linear fit:")
         print(f"    slope = {slope:.2f}  (Tully-Fisher M-σ relation predicts ~1)")
         print(f"    intercept = {intercept:.2f}")
         print(f"    Pearson r = {r_pearson:.3f}")

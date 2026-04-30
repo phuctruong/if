@@ -8,7 +8,8 @@ the witness model success criteria defined in witness_models.py
 
 import json
 import sys
-from typing import Dict, Any
+from typing import Any, Dict
+
 from witness_models import WitnessValidator
 
 
@@ -47,13 +48,13 @@ def validate_s8_tension_results(sdss_lowz_corr: float, sdss_cmass_corr: float,
         sigma_combined=combined_sigma
     )
 
-    print(f"\nInput data:")
+    print("\nInput data:")
     print(f"  SDSS LOWZ correlation: {sdss_lowz_corr:.4f}")
     print(f"  SDSS CMASS correlation: {sdss_cmass_corr:.4f}")
     print(f"  DESI ELG correlation: {desi_corr:.4f}")
     print(f"  Combined significance: {combined_sigma:.1f}σ")
 
-    print(f"\nValidation criteria:")
+    print("\nValidation criteria:")
     for criterion, passed in validation_result.items():
         status = "✅ PASS" if passed else "❌ FAIL"
         print(f"  {status}: {criterion}")
@@ -87,11 +88,11 @@ def validate_jwst_prediction(galaxy_agreement: float, combined_sigma: float) -> 
         combined_significance=combined_sigma
     )
 
-    print(f"\nInput data:")
+    print("\nInput data:")
     print(f"  Galaxy count agreement: {galaxy_agreement*100:.1f}%")
     print(f"  Combined significance: {combined_sigma:.1f}σ")
 
-    print(f"\nValidation criteria:")
+    print("\nValidation criteria:")
     for criterion, passed in validation_result.items():
         status = "✅ PASS" if passed else "❌ FAIL"
         print(f"  {status}: {criterion}")
@@ -127,26 +128,26 @@ def validate_hubble_tension_prediction(h0_cmb: float, h0_local: float,
 
     h0_tension = abs(h0_local - h0_cmb)
 
-    print(f"\nInput data:")
+    print("\nInput data:")
     print(f"  H₀ (CMB): {h0_cmb} km/s/Mpc")
     print(f"  H₀ (Local): {h0_local} km/s/Mpc")
     print(f"  Tension: {h0_tension:.1f} km/s/Mpc")
     print(f"  Significance: {sigma_significance:.1f}σ")
 
-    print(f"\nValidation criteria:")
+    print("\nValidation criteria:")
     for criterion, passed in validation_result.items():
         status = "✅ PASS" if passed else "❌ FAIL"
         print(f"  {status}: {criterion}")
 
     overall_passed = all(v for v in validation_result.values() if isinstance(v, bool))
     if overall_passed:
-        print(f"\n✅ PREDICTION VALIDATED")
-        print(f"   IF Theory partially resolves Hubble tension:")
+        print("\n✅ PREDICTION VALIDATED")
+        print("   IF Theory partially resolves Hubble tension:")
         print(f"   Raw tension: {h0_tension:.1f} km/s/Mpc")
-        print(f"   IF Theory prediction at 10 Mpc: H₀ = 69.5 km/s/Mpc")
-        print(f"   Residual: |73.0 - 69.5| = 3.5 km/s/Mpc (37% reduction)")
+        print("   IF Theory prediction at 10 Mpc: H₀ = 69.5 km/s/Mpc")
+        print("   Residual: |73.0 - 69.5| = 3.5 km/s/Mpc (37% reduction)")
     else:
-        print(f"\n❌ PREDICTION FALSIFIED")
+        print("\n❌ PREDICTION FALSIFIED")
         for criterion, passed in validation_result.items():
             if isinstance(passed, bool) and not passed:
                 print(f"   Failed: {criterion}")
