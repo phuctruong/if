@@ -1,22 +1,41 @@
 #!/usr/bin/env python3
 """
-hubble_tension.py - Hubble Tension Resolution (NEW PREDICTION)
+hubble_tension.py — IF Theory scale-dependent H₀ analysis
 
-Prime Field Theory explains the Hubble tension through scale-dependent H₀.
+POSTDICTION DISCLOSURE (2026-05-19 honesty pass)
+-----------------------------------------------
+The function `h0_at_scale(r)` in this file does NOT derive the magnitude
+of the Hubble tension from first principles. It takes the observed gap
+`delta_h0 = H0_LOCAL - H0_CMB` as a *model input* and multiplies it by an
+exponential bubble-decay envelope. The functional form (exponential decay
+on a scale ~r_bubble derived from v0/H0) IS a genuine theoretical
+prediction — that is the falsifiable content. The *amplitude* of the
+tension is not predicted; it is fit by construction to the observation.
 
-PREDICTION: H₀ varies with measurement scale due to Bubble Universe dynamics.
+What this file legitimately offers:
+  - A shape prediction: H₀(r) is monotonically decreasing on ~10 Mpc scale.
+  - A falsifier: if H₀ is found to be constant on 10–500 Mpc scales (within
+    measurement error) then the bubble mechanism is wrong.
 
-The Hubble tension (>5σ as of December 2025):
-- Early universe (CMB/Planck): H₀ = 67.4 ± 0.5 km/s/Mpc
-- Late universe (Cepheids/SH0ES): H₀ = 73.0 ± 1.0 km/s/Mpc
+What this file does NOT do:
+  - It does not predict H₀(local) = 73 km/s/Mpc from theory.
+  - It does not predict the magnitude of the tension (~5.6 km/s/Mpc).
 
-IF Theory's Bubble Universe mechanism predicts this is NOT a problem—
-it's a FEATURE. Local gravitational bubbles expand at different rates
-than the cosmic average.
+The Hubble tension as observed (Dec 2025):
+  CMB/Planck:        H₀ = 67.4 ± 0.5 km/s/Mpc
+  Cepheids/SH0ES:    H₀ = 73.0 ± 1.0 km/s/Mpc
+
+If/when a derivation of the gap magnitude from theory becomes available,
+update the module docstring and remove this disclosure.
 
 Author: Phuc Vinh Truong & Solace AGI
-Date: December 2025
+Original: December 2025  |  Honesty pass: May 2026
 """
+
+POSTDICTION_NOTICE = (
+    "hubble_tension: gap magnitude H0_LOCAL - H0_CMB is a model input, "
+    "not a derivation. Scale-dependent SHAPE is the falsifiable content."
+)
 
 import numpy as np
 from scipy.integrate import quad
@@ -28,20 +47,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
-except ImportError:
-    SIGMA_8 = 0.8159
-    OMEGA_M = 0.3153
-    H_PLANCK = 0.6736
-    H0 = H_PLANCK * 100  # 67.36 km/s/Mpc
-    C_LIGHT = 299792.458
-    AMPLITUDE = 1.0
-    EPSILON = 1e-10
-
+from core.constants import (
+    SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
+    AMPLITUDE, EPSILON
+)
 logger = logging.getLogger(__name__)
 
 # =============================================================================
@@ -121,9 +130,13 @@ class HubbleTensionPredictions:
 
     def h0_at_scale(self, r_mpc: float) -> float:
         """
-        PREDICTION 15: Calculate H₀ measured at a given scale.
+        Compute H₀(r) under the bubble-decay envelope.
 
-        IF Theory predicts H₀ is SCALE-DEPENDENT due to bubble dynamics.
+        POSTDICTION CAVEAT: the magnitude `delta_h0 = H0_LOCAL - H0_CMB` is
+        taken as a *model input*, not derived from the prime field. This
+        function therefore predicts SHAPE (scale-dependent monotonic decay
+        on ~r_bubble Mpc), not AMPLITUDE. Any "agreement" with H0_LOCAL at
+        r=10 Mpc is by construction. The falsifiable claim is the shape.
 
         Parameters
         ----------
@@ -133,13 +146,16 @@ class HubbleTensionPredictions:
         Returns
         -------
         h0 : float
-            Hubble constant measured at that scale
+            Hubble constant under the bubble-decay envelope, with the
+            observed local-vs-CMB amplitude already baked in.
         """
         # Base cosmic expansion rate (from CMB)
         h0_cosmic = H0_CMB
 
-        # Local bubble enhancement
-        delta_h0 = H0_LOCAL - H0_CMB  # ~5.6 km/s/Mpc
+        # POSTDICTION: the gap magnitude is the *observed* difference, not
+        # derived from theory. The bubble-decay function below applies the
+        # observed amplitude to a theoretically-motivated radial shape.
+        delta_h0 = H0_LOCAL - H0_CMB  # ~5.6 km/s/Mpc (observed input)
 
         # Decay with scale
         decay = self.bubble_decay_function(r_mpc)

@@ -18,13 +18,8 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from protein_closure import HYDROPHOBICITY
 
-try:
-    import cupy as cp
-    GPU = True
-except ImportError:
-    GPU = False
-
-
+import cupy as cp
+GPU = True
 def fold_protein_gpu(sequence: str) -> dict:
     """GPU-accelerated protein folding via geometric closure."""
     if not GPU:

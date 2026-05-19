@@ -15,11 +15,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import *
-except ImportError:
-    from ..core.constants import *
-
+from core.constants import *
 logger = logging.getLogger(__name__)
 
 

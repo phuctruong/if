@@ -1,22 +1,40 @@
 #!/usr/bin/env python3
 """
-s8_tension.py - S8 Tension Resolution (NEW PREDICTION)
+s8_tension.py — IF Theory logarithmic-smoothing S8 analysis
 
-Prime Field Theory explains the S8 tension through logarithmic smoothing.
+POSTDICTION DISCLOSURE (2026-05-19 honesty pass)
+-----------------------------------------------
+The function `s8_at_redshift(z)` takes the observed gap
+`delta_s8 = S8_CMB - S8_LENSING` as a *model input* and applies a
+logarithmic smoothing envelope to it. The functional form (logarithmic
+suppression with z) IS a genuine theoretical prediction. The *magnitude*
+of the gap is taken from observation, not derived.
 
-PREDICTION: S8 decreases from early to late universe due to
-logarithmic structure smoothing from the prime field.
+What this file legitimately offers:
+  - A shape prediction: S8(z) is monotonically increasing with z under
+    the logarithmic-smoothing kernel.
+  - A falsifier: if S8 is found to be flat with z (within errors) then
+    the smoothing mechanism is wrong.
 
-The S8 tension (>4σ):
-- Early universe (CMB/Planck): S8 = 0.83 ± 0.01
-- Late universe (weak lensing): S8 = 0.75 ± 0.02
+What this file does NOT do:
+  - It does not predict S8(z=0) = 0.759 from theory.
+  - It does not predict the magnitude of the tension (~0.073).
 
-IF Theory predicts this is NOT a problem—the logarithmic potential
-naturally smooths structure over cosmic time.
+S8 tension as observed:
+  CMB/Planck:       S8 = 0.83 ± 0.01
+  KiDS-1000 lens:   S8 = 0.75 ± 0.02
+
+If/when the gap magnitude is derived from theory, update this docstring
+and remove this disclosure.
 
 Author: Phuc Vinh Truong & Solace AGI
-Date: December 2025
+Original: December 2025  |  Honesty pass: May 2026
 """
+
+POSTDICTION_NOTICE = (
+    "s8_tension: gap magnitude S8_CMB - S8_LENSING is a model input, "
+    "not a derivation. Logarithmic SHAPE is the falsifiable content."
+)
 
 import numpy as np
 from scipy.integrate import quad
@@ -28,20 +46,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
-except ImportError:
-    SIGMA_8 = 0.8159
-    OMEGA_M = 0.3153
-    H_PLANCK = 0.6736
-    H0 = H_PLANCK * 100
-    C_LIGHT = 299792.458
-    AMPLITUDE = 1.0
-    EPSILON = 1e-10
-
+from core.constants import (
+    SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
+    AMPLITUDE, EPSILON
+)
 logger = logging.getLogger(__name__)
 
 # =============================================================================
@@ -145,8 +153,11 @@ class S8TensionPredictions:
         # Smoothing reduces S8 over time
         smoothing = self.logarithmic_smoothing_factor(z)
 
-        # Total reduction from CMB to z=0
-        delta_s8 = S8_CMB - S8_LENSING  # ~0.073
+        # POSTDICTION: the magnitude of the reduction is the *observed*
+        # CMB-vs-lensing gap, not a derivation from the prime field. The
+        # smoothing function applies a theoretically-motivated shape to
+        # an empirically-given amplitude.
+        delta_s8 = S8_CMB - S8_LENSING  # ~0.073 (observed input)
 
         # S8(z) = S8_CMB - ΔS8 × (1 - smoothing)
         s8 = s8_early - delta_s8 * (1 - smoothing)

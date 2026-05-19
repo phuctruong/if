@@ -1,23 +1,43 @@
 #!/usr/bin/env python3
 """
-cmb_cold_spot.py - CMB Cold Spot Prediction (NEW PREDICTION)
+cmb_cold_spot.py — IF Theory "memory well" analogy for the CMB cold spot
 
-Prime Field Theory explains the CMB Cold Spot through Recursion Cosmology.
+POSTDICTION DISCLOSURE (2026-05-19 honesty pass)
+-----------------------------------------------
+The "memory well" interpretation in this file is an ANALOGY, not a
+derivation. The scale factor in `info_deficit_to_temperature(...)` is
+chosen as `T_CMB_FLUCTUATIONS * 8` so that the predicted temperature
+deficit lands near the observed ~150 μK. That factor of 8 is tuned, not
+derived. A real derivation of the cold-spot amplitude from prime-field
+recursion cosmology is not present in the current codebase.
 
-PREDICTION: The Cold Spot is a "memory well" - an information imprint
-from the prior universe cycle.
+What this file legitimately offers:
+  - A *qualitative* mechanism: an information-deficit region produces a
+    logarithmic temperature deficit under Φ(r) = 1/log(r/r₀+1).
+  - A research direction worth pursuing if the mechanism can be made
+    quantitative.
 
-The CMB Cold Spot:
-- Location: RA 03h 15m, Dec -19°
-- Angular size: ~10° diameter
-- Temperature deficit: ~150 μK
-- Significance: ~3σ anomaly
+What this file does NOT do:
+  - It does not predict the cold-spot temperature deficit from theory.
+  - It does not predict the cold-spot location or angular size.
 
-ΛCDM has no natural explanation. IF Theory does.
+Observed cold spot:
+  Location: RA 03h 15m, Dec -19°
+  Angular size: ~10° diameter
+  Temperature deficit: ~150 μK
+  Significance: ~3σ anomaly
+
+Until the scale factor is derived rather than fit, this is best framed
+as a heuristic, not a prediction.
 
 Author: Phuc Vinh Truong & Solace AGI
-Date: December 2025
+Original: December 2025  |  Honesty pass: May 2026
 """
+
+POSTDICTION_NOTICE = (
+    "cmb_cold_spot: temperature scale factor is tuned to reproduce "
+    "the observed ~150 μK deficit, not derived. Heuristic, not a prediction."
+)
 
 import numpy as np
 from typing import Dict, List, Union
@@ -28,20 +48,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON
-    )
-except ImportError:
-    SIGMA_8 = 0.8159
-    OMEGA_M = 0.3153
-    H_PLANCK = 0.6736
-    H0 = H_PLANCK * 100
-    C_LIGHT = 299792.458
-    AMPLITUDE = 1.0
-    EPSILON = 1e-10
-
+from core.constants import (
+    SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
+    AMPLITUDE, EPSILON
+)
 logger = logging.getLogger(__name__)
 
 # =============================================================================
@@ -110,8 +120,10 @@ class CMBColdSpotPredictions:
         if info_deficit <= 0:
             return 0.0
 
-        # Scale factor from CMB physics
-        scale = T_CMB_FLUCTUATIONS * 8  # ~150 μK for typical memory well
+        # POSTDICTION: the factor of 8 below is tuned to reproduce the
+        # observed ~150 μK cold-spot deficit, not derived from theory.
+        # Heuristic, not a prediction. See module docstring.
+        scale = T_CMB_FLUCTUATIONS * 8  # tuned to reproduce 150 μK observation
 
         temp = scale / np.log(info_deficit + np.e)
 

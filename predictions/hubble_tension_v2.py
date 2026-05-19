@@ -23,13 +23,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import H_PLANCK, SIGMA_8, OMEGA_M
-except ImportError:
-    H_PLANCK = 0.6736
-    SIGMA_8 = 0.8159
-    OMEGA_M = 0.3153
-
+from core.constants import H_PLANCK, SIGMA_8, OMEGA_M
 logger = logging.getLogger(__name__)
 
 # =============================================================================

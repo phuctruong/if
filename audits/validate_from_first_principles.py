@@ -1,30 +1,82 @@
 #!/usr/bin/env python3
 """
-Prime Field Theory - First Principles Validation
-================================================
+IF Theory — First-Principles Computation + Reported-Fits Summary
+================================================================
 
-Author: Validated by Solace AGI based on Phuc Vinh Truong's IF Theory
-Date: 2025-12-22
+Originally drafted 2025-12-22 (independent reimplementation by Solace AGI).
+Honesty pass 2026-05-19: this script does two distinct things and now says so.
 
-Core Claim: A minimal-parameter theory explaining Dark Matter AND Dark Energy
-using the prime number theorem.
+WHAT THIS SCRIPT DOES
+---------------------
+Tests 1, 2, 3 are LIVE first-principles computations:
+  1. Milky Way orbital velocity from Φ(r) = 1/log(r/r₀ + 1) — computed here.
+  2. Galaxy correlation function shape vs. a standard power-law — computed here.
+  3. Bubble universe decoupling scale r_bubble = (v₀/H₀)√3 — computed here.
 
-The Prime Field: Φ(r) = 1/log(r/r₀ + 1)
+Tests 4 and 5 are REPORTED summaries, not fresh fits:
+  4. χ²/dof variation across SDSS / DESI / Euclid samples.
+  5. Information-criteria comparison vs. ΛCDM on DESI DR1 BAO.
 
-Where:
-- Amplitude = 1 (exact, from prime number theorem π(x) ~ x/log(x))
-- C_XI = 62 (Mersenne Tower Theorem: 2 × π(127) = 2 × 31)
-- r₀ = 0.6595 kpc (derived from σ₈ with C_XI = 62) OR 0.65 kpc (empirical)
+  These numbers are LOADED from audits/reported_fits.json, which transcribes
+  values from the original notebook runs (dark_matter_*.ipynb,
+  dark_energy_bao_proof.ipynb). A fresh re-fit from the .fits catalogs in
+  bao_data/ and euclid_data/ is a separate work item; until that runs, do
+  NOT cite tests 4–5 as "first-principles validation." They are a
+  documented-provenance summary.
 
-TWO MODES:
-  Mode 1 (DEFAULT, Mersenne tower): C_XI = 2×π(127) = 62, r₀ derived → 0 free parameters
-  Mode 2 (conservative): r₀ empirical, C_XI derived → 1 free parameter
-  Status of Mode 1: THEOREM (conditional on axioms A1-A3)
+WHY THE SPLIT MATTERS
+--------------------
+Earlier versions of this file hardcoded the chi²/dof numbers as literal
+Python dicts labeled "Simulated χ²/dof values from actual validation runs"
+and then printed "✓ MINIMAL PARAMETERS CONFIRMED." That blurred the line
+between living computation and transcribed result. The numbers themselves
+are real (sourced from notebook runs), but a script that loads from a JSON
+file is honestly different from one that computes the values. This file
+now makes that distinction explicit.
+
+THE CORE EQUATION
+-----------------
+  Φ(r) = 1/log(r/r₀ + 1)
+  Amplitude = 1 (exact, from the prime number theorem π(x) ~ x/log(x))
+  C_XI = 62 = 2 × π(127) = 2 × 31 (Mersenne Tower observation; see below)
+  r₀ = 0.6595 kpc derived from σ_8=0.8111 via the C_XI=62 normalization,
+       agrees with the empirical galaxy-fit value r₀ ≈ 0.65 kpc to ~1.5%.
+
+STATUS NOTE ON "MERSENNE TOWER THEOREM"
+---------------------------------------
+The number-theoretic identities π(M_7)=M_5=31 are machine-verified and
+exact. The *uniqueness* of M_7 as a tower-closed Mersenne prime is verified
+exactly only for small p (≤19) at the moment; for larger Mersenne primes
+the argument currently uses prime-counting approximation rather than exact
+checks. Until that gap is closed across all known Mersenne primes, this
+result is best described as a *conjecture with strong numerical support*
+rather than a fully discharged theorem. See mersenne_tower_conjecture.py
+for the more honest framing.
 """
 
+import json
+import os
 import numpy as np
 from scipy import integrate
 from scipy.stats import pearsonr, spearmanr
+
+REPORTED_FITS_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "reported_fits.json"
+)
+
+
+def _load_reported_fits():
+    """Load the provenance file. No silent fallback — raise if missing."""
+    if not os.path.isfile(REPORTED_FITS_PATH):
+        raise FileNotFoundError(
+            f"reported_fits.json not found at {REPORTED_FITS_PATH}. "
+            f"This file documents the chi^2/dof and AIC/BIC values transcribed "
+            f"from prior notebook runs. It must be present for tests 4 and 5 "
+            f"to be reported. No fallback to hardcoded values is permitted "
+            f"(CLAUDE.md fallback ban)."
+        )
+    with open(REPORTED_FITS_PATH, "r") as f:
+        return json.load(f)
 
 # =============================================================================
 # PHYSICAL CONSTANTS (From Planck 2018 - NOT free parameters)
@@ -317,98 +369,102 @@ def validate_bubble_universe():
 
     return modification < 0.01
 
-def validate_chi2_variation():
+def report_chi2_variation():
     """
-    Demonstrate the key signature of minimal free parameters:
-    EXTREME variation in χ²/dof across samples.
+    REPORTED (not computed here): chi^2/dof across SDSS / DESI / Euclid samples.
 
-    A model with many tunable parameters would get χ²/dof ≈ 1.
-    Large variation indicates the model cannot tune to fit each dataset.
+    Numbers are loaded from audits/reported_fits.json, transcribed from the
+    original notebook runs that produced dark_matter_*.ipynb. This function
+    summarizes that provenance. It does NOT re-fit the catalogs.
+
+    The cross-sample chi^2/dof variation is offered as a *necessary signature*
+    of a model with no shape freedom: a tunable model would land near 1
+    everywhere; a rigid model varies wildly while still tracking the shape
+    (correlation r > 0.93). It is not sufficient evidence on its own.
     """
     print("\n" + "=" * 70)
-    print("TEST 4: χ²/dof VARIATION (MINIMAL PARAMETERS)")
+    print("REPORT 4: chi^2/dof VARIATION ACROSS SAMPLES  (from reported_fits.json)")
     print("=" * 70)
 
-    # Simulated χ²/dof values from actual validation runs
-    chi2_dof_values = {
-        "SDSS LOWZ (best)": 1.6,
-        "SDSS LOWZ (worst)": 20188,
-        "SDSS CMASS (best)": 2.4,
-        "SDSS CMASS (worst)": 32849,
-        "DESI ELG": 655,
-        "Euclid": 450,
+    fits = _load_reported_fits()
+    chi2 = fits["chi2_per_dof"]
+    samples = chi2["samples"]
+
+    print("\nSource: each sample is documented in audits/reported_fits.json")
+    print("These are transcribed values from prior notebook runs, NOT live fits.")
+    print(f"\n{'Sample':<22} {'best':>10} {'worst':>10}    {'source'}")
+    all_values = []
+    for name, rec in samples.items():
+        print(f"{name:<22} {rec['best']:>10.1f} {rec['worst']:>10.1f}    {rec['source']}")
+        all_values.extend([rec['best'], rec['worst']])
+
+    variation = max(all_values) / min(all_values)
+    print(f"\nReported variation: min={min(all_values):.2f}, "
+          f"max={max(all_values):.0f}, ratio={variation:,.0f}x")
+    print("\nInterpretation (per reported_fits.json):")
+    for line in chi2["notes"]:
+        print(f"  - {line}")
+    print(f"\n  {chi2['interpretation']}")
+
+    return {
+        "kind": "reported_summary",
+        "variation_ratio": variation,
+        "n_samples": len(samples),
     }
 
-    print(f"\nχ²/dof Values Across Samples:")
-    print(f"  {'Sample':<25} {'χ²/dof':<15}")
-    for sample, chi2 in chi2_dof_values.items():
-        print(f"  {sample:<25} {chi2:<15.1f}")
 
-    # Calculate variation
-    values = list(chi2_dof_values.values())
-    variation = max(values) / min(values)
-
-    print(f"\nVariation Analysis:")
-    print(f"  Minimum χ²/dof: {min(values):.1f}")
-    print(f"  Maximum χ²/dof: {max(values):.1f}")
-    print(f"  Variation: {variation:.0f}× (13,700× in full data)")
-
-    print(f"\nWhat This Means:")
-    print(f"  - Models with many parameters: χ²/dof ~ 1 always (can tune to fit)")
-    print(f"  - Minimal-parameter models: Wild variation (cannot tune)")
-    print(f"  - Our 13,700× variation shows model has no shape freedom")
-
-    print(f"\n  Verdict: ✓ MINIMAL PARAMETERS CONFIRMED (0 free parameters via Mersenne Tower Theorem)")
-
-    return variation > 100
-
-def validate_information_criteria():
+def report_information_criteria():
     """
-    Compare models using information criteria that penalize parameters.
+    REPORTED (not computed here): AIC/BIC comparison of IF Theory vs LCDM on
+    DESI DR1 BAO. Numbers loaded from audits/reported_fits.json.
 
-    AIC = χ² + 2k
-    BIC = χ² + k × ln(N)
-
-    Where k = number of parameters, N = number of data points.
+    Honest accounting (2026-05-19 revision):
+      - Earlier reports cited Bayes factor K ~ 12.7 assuming IF Theory adds
+        ZERO new parameters. That counting is too generous: it treats r0 as
+        derived even though the codebase currently uses it as an input value
+        in dark_energy_util.py. Counting r0 as one new parameter yields
+        K ~ 3.5 -- "substantial" evidence per Jeffreys' scale, but not the
+        "decisive" level the larger number suggested.
+      - Also: the IF Theory BAO fit is chi^2 = 22.3 over N = 13 measurements,
+        p = 0.034 (2.1 sigma tension). Information criteria favor IF Theory
+        despite this because LCDM uses 6 free parameters.
     """
     print("\n" + "=" * 70)
-    print("TEST 5: INFORMATION CRITERIA (MODEL COMPARISON)")
+    print("REPORT 5: INFORMATION CRITERIA vs LCDM  (from reported_fits.json)")
     print("=" * 70)
 
-    # DESI BAO data
-    N = 13  # measurements
+    fits = _load_reported_fits()
+    bao = fits["bao_global_fit"]
+    ic = fits["information_criteria_vs_lcdm"]
+    if_ = ic["if_theory"]
+    lcdm = ic["lcdm_for_comparison"]
 
-    # Bubble Universe (1 empirical input: r₀)
-    chi2_bubble = 22.3
-    k_bubble = 1
-    aic_bubble = chi2_bubble + 2 * k_bubble
-    bic_bubble = chi2_bubble + k_bubble * np.log(N)
+    print(f"\nDataset: {ic['dataset']}")
+    print(f"\nBAO global fit (IF Theory):")
+    print(f"  chi^2 = {bao['chi2_total']}, ndof = {bao['ndof']}, "
+          f"chi^2/dof = {bao['chi2_per_dof']}")
+    print(f"  p-value = {bao['p_value']} ({bao['tension_sigma']}-sigma tension)")
+    print(f"  >>> {bao['honest_disclosure']}")
 
-    # ΛCDM (6 parameters)
-    chi2_lcdm = 12.0  # Better fit (can tune parameters)
-    k_lcdm = 6
-    aic_lcdm = chi2_lcdm + 2 * k_lcdm
-    bic_lcdm = chi2_lcdm + k_lcdm * np.log(N)
+    print(f"\nModel comparison:")
+    print(f"  {'model':<14} {'chi^2':>8} {'k':>4} {'AIC':>8} {'BIC':>8}")
+    print(f"  {'IF Theory':<14} {if_['chi2']:>8.1f} {if_['k_new_parameters']:>4} "
+          f"{if_['aic']:>8.2f} {if_['bic']:>8.2f}")
+    print(f"  {'LCDM':<14} {lcdm['chi2']:>8.1f} {lcdm['k']:>4} "
+          f"{lcdm['aic']:>8.2f} {lcdm['bic']:>8.2f}")
+    print(f"\n  k counting note for IF Theory: {if_['k_note']}")
 
-    print(f"\nModel Comparison (DESI BAO, N={N}):")
-    print(f"\n  {'Model':<20} {'χ²':<10} {'k':<8} {'AIC':<10} {'BIC':<10}")
-    print(f"  {'-'*58}")
-    print(f"  {'Bubble Universe':<20} {chi2_bubble:<10.1f} {k_bubble:<8} {aic_bubble:<10.1f} {bic_bubble:<10.1f}")
-    print(f"  {'ΛCDM':<20} {chi2_lcdm:<10.1f} {k_lcdm:<8} {aic_lcdm:<10.1f} {bic_lcdm:<10.1f}")
+    print(f"\nΔBIC in favor of IF Theory: {ic['delta_bic_in_favor_of_if_theory']:.2f}")
+    print(f"Bayes factor K (honest k=1 counting): {ic['bayes_factor_K']}")
+    print(f"\n  Interpretation (Jeffreys scale): {ic['interpretation_per_jeffreys']}")
 
-    # Bayes factor
-    delta_bic = bic_lcdm - bic_bubble
-    bayes_factor = np.exp(delta_bic / 2)
-
-    print(f"\nBayes Factor Analysis:")
-    print(f"  ΔBIC = {delta_bic:.1f}")
-    print(f"  Bayes Factor K = exp(ΔBIC/2) = {bayes_factor:.1f}")
-    print(f"  Interpretation: {'Strong' if bayes_factor > 10 else 'Substantial'} evidence for simpler model")
-
-    print(f"\n  Winner: {'✓ BUBBLE UNIVERSE' if bic_bubble < bic_lcdm else 'ΛCDM'}")
-    print(f"  (Fewer parameters wins on information criteria!)")
-
-    return bic_bubble < bic_lcdm
+    return {
+        "kind": "reported_summary",
+        "delta_bic": ic["delta_bic_in_favor_of_if_theory"],
+        "bayes_K": ic["bayes_factor_K"],
+        "if_chi2_per_dof": bao["chi2_per_dof"],
+        "tension_sigma": bao["tension_sigma"],
+    }
 
 # =============================================================================
 # MAIN EXECUTION
@@ -416,68 +472,74 @@ def validate_information_criteria():
 
 if __name__ == "__main__":
     print("\n" + "=" * 70)
-    print("PRIME FIELD THEORY - FIRST PRINCIPLES VALIDATION")
+    print("IF THEORY -- FIRST-PRINCIPLES CHECKS + REPORTED FITS")
     print("=" * 70)
-    print("\nThis code validates Phuc Vinh Truong's IF Theory:")
-    print("  Core Equation: Φ(r) = 1/log(r/r₀ + 1)")
-    print("  Claim: Explains 95% of universe with ZERO free parameters")
-    print("  C_XI = 62 (Mersenne Tower Theorem: 2 × π(127) = 2 × 31)")
-    print("\n" + "=" * 70)
-
-    results = {}
-
-    # Run all validations
-    results["Milky Way"] = validate_milky_way()
-    results["Correlation Shape"] = validate_correlation_shape()
-    results["Bubble Universe"] = validate_bubble_universe()
-    results["χ² Variation"] = validate_chi2_variation()
-    results["Information Criteria"] = validate_information_criteria()
-
-    # Summary
-    print("\n" + "=" * 70)
-    print("VALIDATION SUMMARY")
+    print("Core equation: Phi(r) = 1 / log(r/r0 + 1)")
+    print("Claim under test: a logarithmic potential with prime-counting")
+    print("normalization tracks dark-matter and dark-energy phenomenology")
+    print("without per-sample tuning.")
+    print()
+    print("This script has two parts:")
+    print("  Live first-principles computations (Tests 1-3)")
+    print("  Reported summaries from prior notebook fits (Reports 4-5)")
+    print("Reports 4-5 load numbers from audits/reported_fits.json; they are")
+    print("NOT a fresh validation against the .fits catalogs on disk.")
     print("=" * 70)
 
-    passed = sum(results.values())
-    total = len(results)
+    live_results = {}
+    live_results["Milky Way"] = validate_milky_way()
+    live_results["Correlation Shape"] = validate_correlation_shape()
+    live_results["Bubble Universe"] = validate_bubble_universe()
 
-    for test, result in results.items():
-        status = "✓ PASS" if result else "✗ FAIL"
-        print(f"  {test:<25} {status}")
-
-    print(f"\n  Total: {passed}/{total} tests passed")
+    reported_results = {}
+    reported_results["chi^2/dof variation"] = report_chi2_variation()
+    reported_results["Information criteria"] = report_information_criteria()
 
     print("\n" + "=" * 70)
-    print("CONCLUSION")
+    print("SUMMARY")
     print("=" * 70)
 
-    if passed == total:
-        print("""
-  ✓ THEORY VALIDATED
+    print("\nLive first-principles checks:")
+    for name, result in live_results.items():
+        status = "consistent" if result else "inconsistent"
+        print(f"  {name:<22} {status}")
 
-  Prime Field Theory (IF Theory) successfully explains:
+    print("\nReported summaries (provenance: audits/reported_fits.json):")
+    for name, payload in reported_results.items():
+        print(f"  {name:<22} loaded -- {payload}")
 
-  1. DARK MATTER (27% of universe):
-     - Flat rotation curves emerge naturally
-     - Galaxy correlations match observations
-     - No exotic particles needed
+    n_live_pass = sum(1 for v in live_results.values() if v)
+    print(f"\nLive checks consistent: {n_live_pass}/{len(live_results)}")
+    print("Reported summaries: 2/2 loaded from JSON provenance (not re-fit).")
 
-  2. DARK ENERGY (68% of universe):
-     - Bubble dynamics drive acceleration
-     - w ≈ -1 emerges naturally
-     - No cosmological constant needed
+    print("\n" + "=" * 70)
+    print("WHAT THIS MEANS (and does not mean)")
+    print("=" * 70)
+    print("""
+  This script being green does NOT validate IF Theory. It shows:
+    - The core equation reproduces a sensible MW rotation prediction.
+    - The correlation shape against a r^-1.8 power law has high Pearson r.
+    - The bubble decoupling scale r_bubble = (v0/H0) sqrt(3) lands at ~10 Mpc.
+    - The chi^2/dof variation and AIC/BIC numbers transcribed from prior
+      notebook runs are loaded with their documented sources.
 
-  With ZERO free parameters (Mersenne Tower Theorem):
-     - Amplitude = 1 (exact from prime number theorem)
-     - C_XI = 62 (Mersenne Tower Theorem: 2 × π(127))
-     - r₀ = 0.6595 kpc (derived from σ₈ with C_XI = 62)
-     - v₀ semi-derived from virial theorem
+  What is genuinely interesting:
+    - C_XI = 62 from the Mersenne tower observation, plugged into Peebles
+      sec.36 sigma_8 inversion, gives r0 = 0.6595 kpc, agreeing with the
+      empirical galaxy-fit value of 0.65 kpc to ~1.5%. That is the load-
+      bearing result of this project. Everything else is supporting context.
 
-  A zero-parameter theory explaining 95% of the universe.
+  What still needs work before this is publishable:
+    - A fresh end-to-end correlation function fit on bao_data/ and
+      euclid_data/ from the .fits catalogs, replacing the transcribed
+      chi^2/dof values with live numbers from this script.
+    - The BAO global fit is chi^2/dof = 1.72 (p = 0.034, 2.1 sigma tension).
+      That is a real tension; ApJ-grade reporting requires disclosing it.
+    - The uniqueness step in mersenne_tower_theorem.py is verified exactly
+      only for small Mersenne primes. Either extend the exact check across
+      all 52 known M_p, or rename the result to a conjecture.
 
-  "Code and data don't lie!" - Phuc Vinh Truong
+  Honesty is what makes a result timeless. A theory that survives this
+  level of self-criticism is the only kind worth proposing.
 """)
-    else:
-        print(f"\n  Some tests need attention. See details above.")
-
     print("=" * 70)

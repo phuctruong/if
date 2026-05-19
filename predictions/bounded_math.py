@@ -21,21 +21,19 @@ from scipy.integrate import quad
 from scipy.special import lambertw
 from typing import Dict, List, Tuple
 import logging
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.constants import SIGMA_8, OMEGA_M, H0, C_LIGHT, AMPLITUDE
 
 logger = logging.getLogger(__name__)
 
-# =============================================================================
-# PRIME FIELD CONSTANTS (Derived, not fitted)
-# =============================================================================
-SIGMA_8 = 0.8159          # Matter fluctuation amplitude
-OMEGA_M = 0.3153          # Matter density
-H0 = 67.36                # Hubble constant (km/s/Mpc)
-C_LIGHT = 299792.458      # Speed of light (km/s)
-
-# Prime Physics constants
+# Prime Physics constants (canonical r0 lives in core.constants if you need
+# to override; the value below matches the empirical galaxy-fit value and
+# is consistent with the Mersenne tower derivation to ~1.5%).
 R0_KPC = 0.65             # Characteristic scale from σ₈
 R0_MPC = 0.00065          # In Mpc
-AMPLITUDE = 1.0           # From prime number theorem (exactly 1)
 
 
 class BoundedMath:

@@ -26,22 +26,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from core.constants import (
-        SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
-        AMPLITUDE, EPSILON, R_MIN_MPC
-    )
-except ImportError:
-    # Fallback for standalone execution
-    SIGMA_8 = 0.8159
-    OMEGA_M = 0.3153
-    H_PLANCK = 0.6736
-    H0 = H_PLANCK * 100
-    C_LIGHT = 299792.458
-    AMPLITUDE = 1.0
-    EPSILON = 1e-10
-    R_MIN_MPC = 1e-6
-
+from core.constants import (
+    SIGMA_8, OMEGA_M, H0, C_LIGHT, H_PLANCK,
+    AMPLITUDE, EPSILON, R_MIN_MPC
+)
 logger = logging.getLogger(__name__)
 
 # =============================================================================

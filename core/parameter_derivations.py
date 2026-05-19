@@ -208,8 +208,17 @@ class ParameterDerivation:
             logger.warning(f"    WARNING: Optimization did not fully converge (fun={result.fun:.2e})")
 
         if result.fun > 1e-4:
-            logger.error(f"    ERROR: Optimization residual too large ({result.fun:.2e}), falling back to empirical r₀")
-            return 0.00065  # fallback to empirical 0.65 kpc
+            # CLAUDE.md fallback ban: do NOT substitute the empirical value
+            # silently. If the σ₈ inversion fails, the caller deserves an
+            # exception so the failure is visible. Returning 0.00065 here
+            # would let downstream code claim "derived from σ₈" while
+            # actually using the empirical value.
+            raise RuntimeError(
+                f"σ₈ inversion failed to converge: residual {result.fun:.2e} "
+                f"exceeds tolerance 1e-4. Refusing to silently substitute the "
+                f"empirical value r₀ = 0.00065 Mpc. Investigate the "
+                f"optimization bounds, σ₈ target ({SIGMA_8}), or C_XI ({c_xi})."
+            )
 
         r0_mpc = np.exp(result.x)
         r0_kpc = r0_mpc * 1000
@@ -413,8 +422,13 @@ class ParameterDerivation:
         )
 
         if I_r0 <= 0:
-            logger.error("  ERROR: Integral I(r₀) ≤ 0, cannot derive C_XI")
-            return np.pi * np.sqrt(3)  # fallback
+            # CLAUDE.md fallback ban: refuse to silently substitute π√3.
+            raise RuntimeError(
+                f"σ₈ pair-counting integral returned non-positive value "
+                f"I(r₀) = {I_r0:.6e} (quad reported error {error:.2e}). "
+                f"Cannot derive C_XI. Investigate the integrand near s→0 "
+                f"and the pair-distance PDF normalization."
+            )
 
         C_XI = SIGMA_8**2 / I_r0
 

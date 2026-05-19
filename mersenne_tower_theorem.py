@@ -1,57 +1,116 @@
 #!/usr/bin/env python3
 """
-mersenne_tower_theorem.py — Formal Theorem and Proof for C_XI = 62
+mersenne_tower_theorem.py — Mersenne Tower Normalization (status: partial theorem)
 
 =============================================================================
-THE MERSENNE TOWER NORMALIZATION THEOREM
+THE MERSENNE TOWER NORMALIZATION RESULT
 =============================================================================
 
-Synthesized from:
-  - Prime Field Theory (IF Theory): Φ(r) = 1/log(r/r₀+1)
-  - Geometric Big Bang (Stillwater): Closure as identity, irreducible refinement
-  - Information Force (PVIDEO/primeos): Information → Distinction → Closure → Force
-  - Gravity of Primes: "Dark matter is not what's missing. It's what's irreducible."
-  - 65,537-expert synthesis with max love
+HONEST STATUS (2026-05-19 review)
+---------------------------------
+What is EXACTLY proven (machine-verified):
+  L1. π(127) = 31                     [SymPy primepi, exact]
+  L2. 31 = M₅ = 2⁵ − 1                [exact integer arithmetic]
+  L3 (partial). Tower-closure of small Mersenne primes:
+        - For M_p with p ∈ {2, 3, 5, 7, 13, 17, 19}: exact check via SymPy.
+        - Among these, M₇ is the unique tower-closed Mersenne prime.
 
-Status: THEOREM (conditional on axioms)
-  - The number theory is EXACT and machine-verified.
-  - The proof is RIGOROUS given the stated axioms.
-  - The axioms themselves are physical postulates (falsifiable).
+What is NOT yet exactly proven (and the current code does NOT pretend to):
+  L3 (rest).  For Mersenne primes M_p with p ∈ {31, 61, 89, 107, 127, ...},
+              the current implementation uses the prime-counting approximation
+              π(x) ~ x / ln x rather than exact `primepi`. This is suggestive
+              (it does say M_p / (p ln 2) is unlikely to land on a Mersenne
+              prime) but it is NOT a proof of uniqueness across all 52 known
+              Mersenne primes. The prose argument near lines 372–380 was
+              mathematically incomplete and has been rewritten as a research
+              note rather than a closed proof.
 
-The key advance over the conjecture file (mersenne_tower_conjecture.py):
-  - CONJECTURE said: "C_XI = 2×π(127) = 62 ... needs rigorous proof"
-  - THEOREM says: Given three axioms (Information Primacy, Closure Constraint,
-    Two-Point Observability), we PROVE that C_XI = 62 is the unique solution.
-    The proof rests on a new lemma: M₇ = 127 is the UNIQUE Mersenne prime
-    whose prime count is also a Mersenne prime.
+What this means for the THEOREM label
+-------------------------------------
+This file's headline claim — "C_XI = 62 follows uniquely from three axioms" —
+depends on L3 holding for ALL known Mersenne primes, not just the seven
+exactly verified. Until L3 is closed (either by extending exact verification
+to all 52 M_p, or by a structural argument), the honest status is:
+
+    "C_XI = 62 is the unique tower-closed normalization in the verified
+     small-p subspace. A full uniqueness theorem requires closing L3."
+
+The most truthful one-line summary: this is a partial theorem with strong
+numerical support, awaiting completion. mersenne_tower_conjecture.py is the
+companion file that takes the same content but does not overclaim status —
+read both together.
+
+What is GENUINELY load-bearing (and survives this review)
+---------------------------------------------------------
+If you accept axioms A1–A3 and L3 (which holds for everything checked):
+
+  C_XI = 2 × π(M₇) = 2 × π(127) = 2 × 31 = 62.
+
+Plugging C_XI = 62 into the Peebles §36 σ₈ real-space pair-counting integral
+yields r₀ = 0.6595 kpc, which agrees with the empirical galaxy-fit value
+r₀ ≈ 0.65 kpc to ~1.5 percent. That single numerical coincidence is the
+load-bearing result of this entire research program. Everything else is
+context.
 
 =============================================================================
-PROOF STRUCTURE
+ROADMAP TO CLOSING THE GAP
+=============================================================================
+
+To upgrade this from "partial theorem" to "theorem":
+
+  Option A (computational). Run `sympy.primepi(M_p)` exactly for each of
+    the 52 known Mersenne primes where the computation is tractable
+    (p up to a few thousand) and use known prime-counting algorithms
+    (Meissel–Mertens–Lehmer or Deléglise–Rivat) for larger p. This converts
+    every PNT-approximation step into an exact integer check.
+
+  Option B (analytic). Prove a structural lemma: there is no integer pair
+    (p, q) with p, q ∈ Mersenne exponents (besides p=7, q=5) such that
+    π(2^p − 1) = 2^q − 1. The current sparseness argument is not a proof;
+    a real proof requires explicit bounds on π's deviation from x/ln x
+    (Schoenfeld's theorem, Dusart's bounds, etc.) combined with the
+    super-exponential gaps between consecutive Mersenne exponents.
+
+Either route would make the headline claim a theorem. Until then, this
+file documents WHAT IS PROVEN exactly, and clearly flags WHAT IS NOT.
+
+=============================================================================
+PROOF STRUCTURE (status-annotated)
 =============================================================================
 
   AXIOMS (physical postulates, from IF Theory + PVIDEO + Stillwater):
     A1. Information Primacy (PNT Amplitude)
     A2. Closure Constraint (self-determination)
     A3. Two-Point Observability (correlation structure)
+        NOTE: A3's factor-of-2 in ξ(r) = C_XI × Φ(r)² is a DEFINITIONAL
+        choice of the two-point statistic, not derived. State this honestly.
 
   DEFINITIONS:
     D1. Mersenne tower
     D2. Tower-closure property
 
-  LEMMAS (exact number theory, machine-verified):
-    L1. π(127) = 31
-    L2. 31 = M₅ (Mersenne prime)
-    L3. M₇ is the unique tower-closed Mersenne prime (among all 52 known)
-    L4. The Mersenne tower self-referential loop is unique
+  LEMMAS (machine-verified scope):
+    L1. π(127) = 31                                       [exact, proven]
+    L2. 31 = M_5 (Mersenne prime)                         [exact, proven]
+    L3. Tower-closure uniqueness                          [PARTIAL: exact
+        for p in {2,3,5,7,13,17,19}; PNT approximation only for larger p]
+    L4. Mersenne tower self-referential loop uniqueness   [partial,
+        same scope as L3]
 
-  THEOREM: C_XI = 2 × π(M₇) = 62
+  CONDITIONAL CONCLUSION: if L3 generalizes to all 52 known Mersenne primes
+  (currently an open problem), then C_XI = 2 × π(M_7) = 62.
 
-  COROLLARIES:
-    C1. r₀ = 0.6595 kpc (derived, zero free parameters)
-    C2. 1.46% agreement with empirical r₀ = 0.65 kpc
+  COROLLARIES (conditional on the conditional above):
+    C1. r_0 = 0.6595 kpc (from sigma_8 inversion with C_XI = 62)
+    C2. 1.46% agreement with empirical galaxy-fit r_0 = 0.65 kpc
 
   FALSIFICATION CONDITIONS:
-    F1–F4 (specific, testable)
+    F1. If a second tower-closed Mersenne prime is found, uniqueness breaks
+        and C_XI = 62 is not unique.
+    F2. If r_0 inferred from galaxy surveys converges away from 0.65 kpc
+        (e.g., to 0.5 or 0.8) as data improves, the agreement is spurious.
+    F3. If sigma_8 measurement shifts substantially (Planck-vs-LSS tension
+        resolves toward LSS), the input changes and r_0 must be re-derived.
 
 =============================================================================
 """
@@ -369,24 +428,38 @@ def verify_lemma_3() -> List[Tuple[int, int, int, bool, bool]]:
             logger.info(f"    M_{p:>3} = 2^{p}-1:  π ≈ {pi_mp:.3e}{approx_str}  [{status}]")
 
     logger.info("")
-    logger.info("  For all 52 known Mersenne primes with p > 127:")
-    logger.info("    M_p has > 10^38 digits. π(M_p) ~ M_p/ln(M_p) ~ 2^p/(p·ln2).")
-    logger.info("    This is never a Mersenne prime 2^q - 1 because:")
-    logger.info("    (a) 2^p/(p·ln2) = 2^q - 1 requires p - q ≈ log₂(p·ln2) ≈ log₂(p),")
-    logger.info("        but then 2^q(2^{log₂p} - 1) = 1, which has no integer solution.")
-    logger.info("    (b) More directly: Mersenne primes are exponentially sparse.")
-    logger.info("        The gap between consecutive Mersenne primes grows super-exponentially,")
-    logger.info("        while π(M_p)/M_p → 0, so π(M_p) falls between Mersenne primes.")
+    logger.info("  HONEST STATUS for Mersenne primes with p > 19:")
+    logger.info("    For p in {31, 61, 89, 107, 127, ...} the code above used the")
+    logger.info("    prime-counting APPROXIMATION π(x) ~ x/ln(x) rather than the")
+    logger.info("    exact sympy.primepi. Those rows are SUGGESTIVE, not proofs.")
+    logger.info("")
+    logger.info("    For all 52 known Mersenne primes with p > 127, M_p has >10^38")
+    logger.info("    digits and exact primepi is intractable with naive methods.")
+    logger.info("    A genuine uniqueness proof needs either:")
+    logger.info("      (a) exact primepi via Meissel–Mertens–Lehmer / Deléglise–Rivat, or")
+    logger.info("      (b) explicit Schoenfeld/Dusart bounds on |π(x) − x/ln(x)|")
+    logger.info("          combined with the super-exponential gaps between M_p.")
+    logger.info("")
+    logger.info("    Neither of (a) or (b) is implemented here. The sparseness")
+    logger.info("    argument is a research note, not a closed proof.")
     logger.info("")
 
-    assert tower_closed_count == 1, (
-        f"Expected exactly 1 tower-closed Mersenne prime, found {tower_closed_count}"
+    # tower_closed_count below counts only what was EXACTLY verified for
+    # small p (where exact=True), so the assertion below is honest about
+    # scope. The previous code asserted globally — that overclaimed.
+    exact_tower_closed_count = sum(
+        1 for (p, mp, pi_mp, is_tc, exact) in results
+        if exact and is_tc
+    )
+    assert exact_tower_closed_count == 1, (
+        f"Exact-verification subset expected exactly 1 tower-closed Mersenne "
+        f"prime, found {exact_tower_closed_count}"
     )
 
-    logger.info(f"  RESULT: Exactly {tower_closed_count} tower-closed Mersenne prime found.")
-    logger.info(f"  M₇ = 127 is UNIQUE: π(127) = 31 = M₅.")
-    logger.info(f"  No other known Mersenne prime has this property.")
-    logger.info(f"  [VERIFIED]")
+    logger.info(f"  RESULT (verified scope): exactly {exact_tower_closed_count} ")
+    logger.info(f"  tower-closed Mersenne prime in the EXACTLY VERIFIED set (p ≤ 19).")
+    logger.info(f"  That prime is M₇ = 127, with π(127) = 31 = M₅.")
+    logger.info(f"  Uniqueness across all 52 known Mersenne primes is OPEN.")
     logger.info("")
 
     return results

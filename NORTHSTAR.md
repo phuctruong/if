@@ -62,10 +62,20 @@ IF Theory's information-theoretic foundations directly inform pzip's compression
 algorithm. The prime field equations provide the mathematical basis for
 near-lossless compression at extreme ratios.
 
-**Publication plan:**
-- ApJ paper target: March 2026 (dark energy + BAO proof)
-- Mersenne Tower Theorem: preprint + phucnet announcement article
-- Full IF Theory book: publish on phuc.net/books/ (phucnet project)
+**Publication plan (status: 2026-05-19)**:
+- ApJ paper original target: March 2026. Status: NOT submitted as of
+  2026-05-19. Pre-submission blocker: the BAO 2.1σ tension (χ²/dof = 1.72,
+  p = 0.034) must be disclosed prominently in the paper, and the
+  χ²/dof values currently transcribed from notebook runs must be
+  reproduced by a live audit script before submission. Revised target:
+  arXiv preprint Q3 2026, ApJ submission Q4 2026 after the Mersenne
+  uniqueness lemma is closed.
+- Mersenne Tower paper: status DOWNGRADED from "theorem" to "partial
+  theorem + open uniqueness lemma" pending exact π(M_p) verification
+  for all 52 known Mersenne primes. Preprint can ship as a structured
+  conjecture-and-evidence paper; full theorem requires closing L3.
+- Full IF Theory book: publish on phuc.net/books/ (phucnet project).
+  No timeline change; book absorbs whatever the technical work finds.
 
 **phucnet integration:**
 IF Theory papers and books are published on phuc.net as accessible long-form content:

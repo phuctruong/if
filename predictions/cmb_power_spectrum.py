@@ -18,13 +18,9 @@ import json
 import os
 from pathlib import Path
 
-try:
-    import camb
-    from camb import model
-    CAMB_AVAILABLE = True
-except ImportError:
-    CAMB_AVAILABLE = False
-
+import camb
+from camb import model
+CAMB_AVAILABLE = True
 EVIDENCE_DIR = Path(__file__).parent.parent / "evidence"
 EVIDENCE_DIR.mkdir(exist_ok=True)
 

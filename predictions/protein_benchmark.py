@@ -22,15 +22,11 @@ from pathlib import Path
 from typing import Optional
 from io import StringIO
 
-try:
-    from Bio.PDB import PDBParser, PDBList
-    from Bio.PDB.Polypeptide import is_aa, protein_letters_3to1
-    def three_to_one(resname):
-        return protein_letters_3to1.get(resname, 'X')
-    BIOPYTHON = True
-except ImportError:
-    BIOPYTHON = False
-
+from Bio.PDB import PDBParser, PDBList
+from Bio.PDB.Polypeptide import is_aa, protein_letters_3to1
+def three_to_one(resname):
+    return protein_letters_3to1.get(resname, 'X')
+BIOPYTHON = True
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
 from protein_closure import fold_protein, HYDROPHOBICITY

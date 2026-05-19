@@ -139,12 +139,12 @@ class PrimeFieldTheory:
         
         # Initialize physics modules
         self.field_eq = FieldEquations(self.r0_mpc)
-
-        # CRITICAL: If σ₈ integration used fallback, ensure FieldEquations has correct r₀
-        # The fallback value (0.014824 Mpc) is from validated observations, not a free parameter
-        if abs(self.r0_mpc - 0.014824) < 1e-6:
-            # Using fallback - ensure all modules have this value
-            self.field_eq.update_r0(self.r0_mpc)
+        # Note (2026-05-19 honesty pass): the previous block here detected
+        # a hardcoded fallback value (0.014824 Mpc) and patched FieldEquations
+        # accordingly. The fallback itself has been removed in
+        # core/parameter_derivations.py — an optimization failure now raises
+        # rather than silently substituting an empirical value. This block
+        # is therefore no longer needed.
 
         self.orbital = OrbitalDynamics(self)
         self.cosmological = CosmologicalPredictions(self)
