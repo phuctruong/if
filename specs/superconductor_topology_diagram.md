@@ -26,4 +26,4 @@ graph TD
 ```
 
 ### Analytical Interpretation
-Our High-Throughput Engine (`discover_rt_superconductor.py`) avoids isolated substations (e.g., LK-99 Apatite Traps) by explicitly searching for **Continuous Planar 1D/2D Conduction highways** alongside geometric stabilizers protecting the structure from ambient thermal vibration up to $\approx 400K$.
+Our High-Throughput Engine (`discover_rt_superconductor.py`) avoids isolated substitutions (e.g., LK-99 Apatite Traps) by explicitly searching for **Continuous Planar 1D/2D Conduction highways** alongside geometric stabilizers protecting the structure from ambient thermal vibration up to $\approx 400K$.
