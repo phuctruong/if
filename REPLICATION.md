@@ -5,6 +5,17 @@
 > someone who has never seen this repository to reproduce every claim
 > from a fresh checkout, on a fresh machine, with full provenance.
 
+## TL;DR
+
+Seven steps: fresh checkout → venv → pytest → stage ~120 MB of public
+data → run each prediction → diff against committed evidence → report.
+End to end on a modest laptop is ~1 hour (plus dataset download time).
+
+For per-claim status see `SCORE.md`. For falsification criteria see
+`FALSIFIABILITY.md`.
+
+---
+
 ## Prerequisites
 
 - **Hardware**: any modern x86_64 or arm64 system with ≥ 8 GB RAM and
@@ -207,3 +218,13 @@ diff evidence/sparc_per_galaxy_ml/sparc_per_galaxy_ml_results.json \
 ```
 
 If the diff is empty, the chain is intact.
+
+---
+
+## See also
+
+- **`README.md`** — overview with TL;DR and Quick Start
+- **`SCORE.md`** — per-claim PASS / TENSION / FAIL with σ values
+- **`VALIDATION.md`** — survey-by-survey empirical detail
+- **`FALSIFIABILITY.md`** — sharp falsification criteria
+- **`INDEPENDENT_VALIDATION.md`** — 2025-12 Solace AGI replication report

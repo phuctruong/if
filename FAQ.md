@@ -1,179 +1,158 @@
-# Prime Field Theory: Frequently Asked Questions
+# IF Theory — Frequently Asked Questions
 
-## Theoretical Foundation
+Short answers to common questions. For per-claim PASS/TENSION/FAIL with
+σ values, see `SCORE.md`. For the load-bearing equations and verification
+commands, see `README.md`.
 
-### Q: What is the physical justification for connecting prime numbers to gravity?
+---
 
-**A: The connection emerges from information-theoretic principles.**
+## Theoretical foundation
+
+### Q: Why connect prime numbers to gravity?
 
 Three lines of evidence converge:
 
-1. **Information is fundamental**: The holographic principle shows information content scales with area, not volume, suggesting information underlies spacetime geometry.
+1. **Information may be fundamental.** The holographic principle has information scaling with area, not volume — suggesting information underlies spacetime geometry.
+2. **Primes are a natural basis.** Prime numbers carry maximum entropy consistent with unique factorization — the "most random" distribution available.
+3. **Emergent gravity.** Following Verlinde, gravity may emerge from information gradients. The logarithmic form Φ ∝ ln(r/r₀+1) appears naturally from prime counting via π(x) ~ x/log(x).
 
-2. **Prime distribution is special**: Prime numbers have maximum entropy - they're the "most random" distribution consistent with unique factorization. This makes them a natural basis for fundamental structure.
+The field equation represents information density in spacetime. This is a physical postulate (axiom A1 in `FALSIFIABILITY.md`), not a theorem.
 
-3. **Gravity from entropy**: Following Verlinde and others, gravity may emerge from entropic forces related to information gradients. The logarithmic form appears naturally.
+### Q: How do "informational modes" produce the log form?
 
-The field equation Φ(r) = 1/log(r/r₀ + 1) represents information density in spacetime.
+Through mode counting, analogous to the Casimir effect:
 
-### Q: How do "informational modes" lead to the 1/log(r) form?
-
-**A: Through mode counting, similar to the Casimir effect.**
-
-In the Casimir effect:
 ```
 Force ∝ -(excluded modes) × (energy per mode)
 ```
 
 For the prime field:
-1. **Mode density**: Number of prime modes up to scale N is π(N) ~ N/log(N)
-2. **Mode exclusion**: A mass of size r excludes modes up to r/r₀
-3. **Result**: Field strength Φ(r) ∝ 1/[density of excluded modes] = 1/log(r/r₀ + 1)
 
-This provides a concrete mechanism linking prime distribution to gravity.
+1. **Mode density**: Number of prime modes up to scale N is π(N) ~ N/log(N).
+2. **Mode exclusion**: A mass of size r excludes modes up to r/r₀.
+3. **Result**: Φ(r) ∝ 1/[density of excluded modes] = 1/log(r/r₀ + 1).
 
 ### Q: What's the action principle?
 
-**A: The effective action is:**
 ```
 S = ∫ d⁴x √(-g) [R/16πG + L_matter + L_prime + L_bubble]
 ```
 
-Where:
-- L_prime = -ρ₀/log(r/r₀ + 1) creates dark matter effects
-- L_bubble = -ρ_DE × f_bubble(r, t) creates dark energy
+- `L_prime = -ρ₀/log(r/r₀ + 1)` produces the dark-matter-like contribution
+- `L_bubble = -ρ_DE × f_bubble(r, t)` produces the dark-energy-like contribution
 
-Both enter through the stress-energy tensor, not modified gravity.
+Both enter through the stress-energy tensor — General Relativity remains the framework.
 
 ---
 
 ## The Bubble Universe
 
-### Q: What exactly are these "bubbles"?
+### Q: What are the "bubbles"?
 
-**A: Coherent gravitational regions around galaxies.**
+Coherent gravitational regions around galaxies:
 
-Think of them as:
-- Regions where a galaxy's gravity dominates
-- Zones of coherent spacetime curvature
+- Zones where a galaxy's own curvature dominates
 - Scales where internal dynamics matter more than cosmic expansion
 
-They're not literal bubbles but gravitational domains that can become independent.
+Not literal bubbles — gravitational domains that can decouple from the Hubble flow.
 
-### Q: How do bubbles create dark energy without new physics?
+### Q: How do bubbles produce dark energy without new physics?
 
-**A: Through a phase transition in gravitational coupling.**
+A phase transition in gravitational coupling:
 
-The mechanism:
-1. Galaxies create curved spacetime regions (bubbles)
-2. Bubbles grow with cosmic expansion
-3. At 10.3 Mpc, internal velocity equals Hubble flow (decoupling)
-4. Beyond 14.1 Mpc, bubbles become completely independent
-5. Independent bubbles create negative pressure (dark energy)
+1. Galaxies create curved spacetime regions (bubbles).
+2. Bubbles grow with cosmic expansion.
+3. At ~10.3 Mpc, internal velocity equals Hubble flow → decoupling.
+4. Beyond ~14.1 Mpc, bubbles become independent.
+5. Independent bubbles produce effective negative pressure → dark energy.
 
-No new fields - just emergent behavior from gravity at specific scales.
+No new fields. Emergent behavior from gravity at specific scales.
 
-### Q: Why exactly √3 in the bubble formula?
+### Q: Why √3 in the bubble formula?
 
-**A: It emerges from calculation, not assumption.**
+Derived, not assumed. Three factors combine:
 
-Three factors multiply:
 - Logarithmic correction at 10 Mpc: 1.22
 - Matter-energy dynamics: 1.15
 - Geometric mass distribution: 2.14
 
-Product: 1.22 × 1.15 × 2.14 = 3.00 → √3
+Product: 1.22 × 1.15 × 2.14 = 3.00 → √3.
 
-This is derived, not fitted to data.
+### Q: How does this address the cosmological constant problem?
 
-### Q: How does this solve the cosmological constant problem?
-
-**A: By providing a mechanism instead of a constant.**
-
-Standard cosmology (ΛCDM):
-- Requires fine-tuning Λ to 10⁻¹²⁰ in natural units
-- No explanation for the value
-- "Why now?" coincidence problem
-
-Bubble Universe:
-- Dark energy emerges at r_bubble = 10.3 Mpc
-- Scale set by v₀/H₀ (no fine-tuning)
-- Natural emergence when structures large enough
-- Coincidence solved: happens when universe is old enough for bubbles
+| | ΛCDM | Bubble Universe |
+|---|---|---|
+| Λ value | requires fine-tuning to 10⁻¹²⁰ | not used |
+| Why now? | unexplained coincidence | natural — happens when universe is old enough for bubbles |
+| Mechanism | none | r_bubble = v₀/H₀ × √3 |
 
 ---
 
-## Zero Parameters
+## Zero parameters
 
-### Q: Is this really "zero parameters"?
+### Q: Is this *really* zero parameters?
 
-**A: Zero adjustable parameters - nothing fitted to galaxy or BAO data.**
+Zero **adjustable** parameters. Nothing fitted to galaxy or BAO data.
 
 The distinction:
+
 - We use cosmological inputs (H₀, Ω_m, σ₈) like all theories
-- But add ZERO additional parameters
-- All scales derived from first principles
+- We add ZERO additional parameters
+- All scales derive from first principles
 - Cannot improve fit by adjusting anything
 
 The ~30% uncertainty in v₀ is theoretical uncertainty, not parameter freedom.
 
 ### Q: What about cosmological parameters?
 
-**A: These are external measurements, not model parameters.**
+Like the speed of light — external measurements describing the universe we're in, not knobs we tune.
 
-Like the speed of light:
-- They describe the universe we're in
-- Used by all cosmological models
-- Not adjusted to fit our predictions
-- We add ZERO parameters on top
+### Q: How are all the bubble scales derived?
 
-### Q: How can all bubble scales be derived?
+From the decoupling condition v_internal = v_Hubble:
 
-**A: They follow from the decoupling condition:**
+- r_bubble = (v₀/H₀) × √3
+- r_coupling = r_bubble/e (natural exponential decay scale)
+- r_detachment = r_bubble + r_coupling
 
-- r_bubble = (v₀/H₀) × √3 from v_internal = v_Hubble
-- r_coupling = r_bubble/e is the natural decay scale
-- If v₀ or H₀ change, bubble scales change predictably
-- No freedom to adjust independently
+Change v₀ or H₀ and the scales change predictably. No independent freedom.
 
 ---
 
-## Statistical Interpretation
+## Statistical interpretation
 
-### Q: How should we interpret high χ²/dof values?
+### Q: How should we read high χ²/dof values?
 
-**A: Differently than for models with parameters.**
+Differently than for parametric models. For zero-parameter models:
 
-For zero-parameter models:
-1. **Cannot minimize χ²** - no parameters to adjust
-2. **High values expected** - measures absolute agreement
-3. **Focus on correlation** - shows shape agreement
-4. **Variation is proof** - 13,700× range proves zero parameters
+1. **Cannot minimize χ²** — no parameters to tune.
+2. **High values are expected** — measures absolute agreement, not best-fit agreement.
+3. **Correlation matters** — shape agreement is the primary metric.
+4. **Variation is signal** — wide χ²/dof variation proves no tuning is happening.
 
 ### Q: Why does χ²/dof vary from 2.4 to 32,849?
 
-**A: This extreme variation proves zero parameters!**
+The variation *itself* is evidence of zero parameters:
 
-With parameters:
-- 2 parameters: χ²/dof varies ~2× between samples
-- 1 parameter: χ²/dof varies ~4×
-- 0 parameters: χ²/dof varies 13,700×!
+| Parameters | Typical χ²/dof variation |
+|---|---|
+| 2+ | ~2× between samples |
+| 1 | ~4× |
+| 0 | 13,700× (this work) |
 
-The variation increases exponentially as parameters decrease.
+A model with free parameters would always tune to χ²/dof ≈ 1.
 
-### Q: How can χ²/dof = 1.72 be good for BAO?
+### Q: Is χ²/dof = 1.72 good for BAO?
 
-**A: For zero parameters, this is excellent!**
+For zero parameters against DESI DR1, yes:
 
-Compare:
 - ΛCDM: χ²/dof ~ 1.0 with 6 fitted parameters
-- Prime Field: χ²/dof = 1.72 with 0 parameters
+- IF Theory: χ²/dof = 1.79 with 0 parameters (p = 0.044, ~2σ — same tension as standard ΛCDM)
 
-Information criteria account for this:
-- AIC = 22.3 (Prime Field) vs 24.0 (ΛCDM)
-- BIC = 22.3 (Prime Field) vs 27.4 (ΛCDM)
+Information criteria account for the complexity penalty:
 
-We win despite higher raw χ²!
+- AIC: 22.3 (IF) vs 24.0 (ΛCDM)
+- BIC: 22.3 (IF) vs 27.4 (ΛCDM)
 
 ---
 
@@ -181,121 +160,115 @@ We win despite higher raw χ²!
 
 ### Q: How can I verify no hidden parameters?
 
-**A: Check these key points:**
-
 ```python
-# 1. Amplitude from prime theorem
-assert amplitude == 1.0  # Mathematical, not fitted
+# 1. Amplitude from prime number theorem
+assert amplitude == 1.0  # mathematical, not fitted
 
 # 2. Scale from σ₈
-r0 = derive_r0_from_sigma8()  # Full integration shown
+r0 = derive_r0_from_sigma8()  # full integration shown
 
 # 3. Velocity from physics
-v0 = virial_theorem_velocity()  # No galaxy data used
+v0 = virial_theorem_velocity()  # no galaxy data used
 
-# 4. MW prediction NOT 220
+# 4. MW prediction is NOT 220
 mw_velocity = theory.predict(10.0)
-assert abs(mw_velocity - 220) > 1  # Not calibrated!
+assert abs(mw_velocity - 220) > 1  # not calibrated
 ```
 
 ### Q: Why convergence warnings?
 
-**A: The σ₈ integration is numerically challenging.**
+The σ₈ integration spans many orders of magnitude. Warnings are normal. The code has documented fallback values; everything is transparent.
 
-- Spans many orders of magnitude
-- Warnings are normal and expected
-- Has fallback values if needed
-- Everything is transparent
+### Q: Should I install Numba?
 
-### Q: Should I use Numba?
-
-**A: Yes, for 10-20× speedup on pair counting.**
+Yes — 10-20× speedup on pair counting:
 
 ```bash
 pip install numba
 ```
-The code automatically detects and uses it.
+
+The code auto-detects and uses it.
 
 ---
 
-## Physical Interpretation
+## Physical interpretation
 
 ### Q: How does this differ from MOND?
 
-**A: Fundamental differences:**
+| Aspect | IF Theory | MOND | ΛCDM |
+|---|---|---|---|
+| Free parameters | 0 | 1 (a₀) | 6+ |
+| Dark matter | emergent | modified gravity | particle |
+| Dark energy | bubbles | none | Λ |
+| Basis | prime numbers | empirical | phenomenology |
 
-| Aspect | Prime Field | MOND | ΛCDM |
-|--------|------------|------|------|
-| Parameters | 0 | 1 (a₀) | 6+ |
-| Dark Matter | Emergent | Modified gravity | Particles |
-| Dark Energy | Bubbles | None | Λ constant |
-| Basis | Prime numbers | Empirical | Phenomenology |
+### Q: Compatible with General Relativity?
 
-### Q: Is this compatible with General Relativity?
+Yes. We don't modify Einstein's equations. We add:
 
-**A: Yes, it's an effective theory within GR.**
-
-We don't modify Einstein's equations but add:
-- Information density contribution (dark matter effect)
-- Bubble dynamics contribution (dark energy effect)
+- Information density (dark-matter-like contribution)
+- Bubble dynamics (dark-energy-like contribution)
 - Both through the stress-energy tensor
 - GR remains the framework
 
 ### Q: What are "prime attractors"?
 
-**A: Preferred configurations in phase space.**
+Hypothesised preferred configurations in phase space:
 
-The hypothesis:
 - Detached bubbles evolve toward specific states
-- These states relate to prime number patterns
-- Creates effective negative pressure
-- This is the most speculative aspect
+- States relate to prime number patterns
+- Produces effective negative pressure
+
+This is the most speculative aspect — listed as OPEN in `FALSIFIABILITY.md`.
 
 ---
 
 ## Validation
 
-### Q: What predictions are actually validated?
+### Q: What predictions are validated against real public data?
 
-**A: Three core predictions:**
+See `SCORE.md` for the full table with σ values. Headline:
 
-1. **Galaxy Rotation**: MW velocity 226±68 km/s (observed: 220±20)
-2. **Bubble Scale**: Decoupling at 10.3 Mpc (detected in data)
-3. **Dark Energy**: w = -0.999995 (matches observations)
-
-All genuine predictions, not fits.
+| Claim | Test | Result |
+|---|---|---|
+| MW v(10 kpc) | `predictions/mw_rotation_sigma_accounting.py` | 0.23σ |
+| SPARC Tully-Fisher | `predictions/sparc_per_galaxy_ml.py` | slope +1.024, r +0.950 |
+| BOSS DR12 ξ(r) | `predictions/boss_published_xi_test.py` | Pearson r +0.98 vs Cuesta 2016 |
+| Pantheon+ | `predictions/pantheon_plus_test.py` | χ²/dof 0.932 at SH0ES h |
+| Hubble bubble | `predictions/hubble_tension_bubble_test.py` | r_bubble 10.20 Mpc derived |
+| JWST early galaxies | independent literature search | consistent with JADES-GS-z14-0 |
+| DESI DR1 BAO | `predictions/desi_bao_test.py` | χ²/dof = 1.79 (same ~2σ tension as ΛCDM) |
 
 ### Q: What would falsify the theory?
 
-**A: Any of these:**
+Sharp criteria per claim are in `FALSIFIABILITY.md`. Examples:
 
-1. MW velocity outside 226 ± 68 km/s
-2. No correlation with galaxy data (r < 0.9)
-3. No feature at 10.3 Mpc scale
-4. Dark energy w significantly different from -1
-5. Information criteria favoring ΛCDM
+1. MW v(10 kpc) outside 200–240 km/s (would invalidate the σ-accounted PASS).
+2. ξ(r) on a clean galaxy sample with log-log Pearson r < 0.90.
+3. Cosmic void catalogue showing typical voids < 10% under-dense.
+4. JWST z > 16 galaxy at much lower mass than the prediction.
+5. w(z) at z ≈ 0.5 differing from −1 by more than 5σ (combined Pantheon+ / DESI / Planck).
 
-The theory is maximally falsifiable.
+### Q: Why prefer this over ΛCDM?
 
-### Q: Why should I believe this over ΛCDM?
+| Criterion | IF | ΛCDM |
+|---|---|---|
+| Free parameters | 0 | 6+ |
+| Fine-tuning | none required | Λ to 10⁻¹²⁰ |
+| Mechanism for dark energy | bubbles (geometric) | unexplained constant |
+| Falsifiability | maximum | high |
+| Information criteria (DESI DR1) | AIC 22.3, BIC 22.3 | AIC 24.0, BIC 27.4 |
 
-**A: Consider the evidence:**
-
-1. **Zero parameters** vs 6+ for ΛCDM
-2. **No fine-tuning** vs 10¹²⁰ for Λ
-3. **Physical mechanism** vs unexplained constant
-4. **Information criteria** prefer Prime Field
-5. **Solves coincidence problem** naturally
+These advantages are tentative until independent replication (see `REPLICATION.md` for the protocol).
 
 ---
 
-## Summary
+## See also
 
-Prime Field Theory is a zero-parameter model that:
-- Explains dark matter and dark energy from one equation
-- Makes predictions that cannot be adjusted
-- Matches observations as well as theories with many parameters
-- Provides physical mechanisms instead of unexplained constants
-- Is maximally falsifiable
-
-The extreme χ²/dof variation and information criteria preference provide strong evidence for this approach.
+- **`README.md`** — overview with TL;DR, Quick Start, and confirmed/tension/open tables
+- **`SIMPLE.md`** — one-page Feynman-style summary
+- **`THEORY.md`** — full mathematical framework
+- **`VALIDATION.md`** — detailed empirical results across surveys
+- **`SCORE.md`** — per-claim PASS / TENSION / FAIL with σ
+- **`FALSIFIABILITY.md`** — explicit falsification criteria
+- **`REPLICATION.md`** — independent-replication protocol

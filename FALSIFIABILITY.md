@@ -6,6 +6,15 @@
 > lists them. If you find evidence that meets any criterion below, the
 > corresponding claim is falsified — please open an issue.
 
+## TL;DR
+
+Three physical postulates (A1, A2, A3) underlie the Mersenne Tower
+derivation of `C_XI = 62`. Each is falsifiable, with sharp σ thresholds.
+Per-claim falsifiers follow. Open / unfalsifiable claims are listed at
+the end with the work needed to sharpen them.
+
+For per-claim PASS / TENSION / FAIL status see `SCORE.md`.
+
 ## The three axioms (physical postulates, not theorems)
 
 The Mersenne Tower Theorem derives `C_XI = 62` from three axioms. Each
@@ -169,3 +178,13 @@ Every claim in `SCORE.md` either:
 If you can show a claim should be FAILED but is currently marked
 PASSED, please open a GitHub issue. The goal is honest validation,
 not preserved priors.
+
+---
+
+## See also
+
+- **`README.md`** — overview with TL;DR and Quick Start
+- **`SCORE.md`** — per-claim PASS / TENSION / FAIL with σ values
+- **`VALIDATION.md`** — survey-by-survey empirical detail
+- **`REPLICATION.md`** — independent-replication protocol
+- **`THEORY.md`** — full mathematical framework

@@ -1,4 +1,4 @@
-# IF Theory Validation Scoreboard
+# IF Theory — Validation Scoreboard
 
 > Author: Phuc Vinh Truong (theory)
 > Validation pass: 2026-04-29 evening (Claude Opus 4.7, 1M context)
@@ -8,8 +8,26 @@
 > validated against real public data.
 >
 > Protein folding, materials, and other applications of the same prime
-> substrate are in a separate private repository (geo). This file scores
-> only the cosmology side.
+> substrate live in a separate private repository (geo). This file
+> scores only the cosmology side.
+
+## TL;DR
+
+Per-claim PASS / TENSION / FAIL / OPEN against real public data, with
+σ values and links to validation scripts and JSON evidence files.
+
+| Status | Count |
+|---|---|
+| PASS | 12 |
+| COMPETITIVE | 1 |
+| TENSION (ΛCDM-class) | 1 |
+| CONSISTENT (signal below detection) | 1 |
+| FAIL (superseded variants) | 3 |
+| OPEN | 0 |
+| Joint Bayesian (ΔBIC = −30.7) | NEW PASS |
+
+For falsification criteria see `FALSIFIABILITY.md`. For survey-by-survey
+detail see `VALIDATION.md`.
 
 This file tracks every claim in the project against real public data,
 with honest σ-accounting and clear PASS / TENSION / FAIL verdicts.
@@ -228,3 +246,15 @@ curl -L -o ~/Downloads/if/data/sdss_dr12/lowz/galaxy_DR12v5_LOWZ_South.fits.gz \
 ```
 
 Full data manifest with sha256 hashes: `~/Downloads/if/data/MANIFEST.md`.
+
+---
+
+## See also
+
+- **`README.md`** — overview with TL;DR and Quick Start
+- **`VALIDATION.md`** — survey-by-survey empirical detail
+- **`FALSIFIABILITY.md`** — sharp falsification criteria per claim
+- **`REPLICATION.md`** — independent-replication protocol
+- **`INDEPENDENT_VALIDATION.md`** — 2025-12 Solace AGI replication report
+- **`THEORY.md`** — full mathematical framework
+- **`TECHNICAL.md`** — implementation API
