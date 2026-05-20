@@ -245,6 +245,9 @@ MIT (see `LICENSE`). Maximally open: run the tests, reproduce the validation, fo
 - **`SIMPLE.md`** — Feynman-style one-page summary
 - **`SCORE.md`** — per-claim PASS / TENSION / FAIL / OPEN with σ values
 - **`FALSIFIABILITY.md`** — Aaronson-style falsification criteria per claim
+- **`BETS.md`** — dated public predictions with sharp pass/fail criteria
 - **`REPLICATION.md`** — Curie-style independent-replication protocol
+- **`adversarial/`** — runnable scripts that attempt to break the theory
+- **`METRICS.md`** — distribution + reach tracking
 - **`THEORY.md`, `VALIDATION.md`, `TECHNICAL.md`, `FAQ.md`** — deeper docs
 - **`CHANGELOG.md`** — version history
