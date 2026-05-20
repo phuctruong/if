@@ -1,0 +1,93 @@
+{
+  "inputs": {
+    "boss_r_mpch": 25.0,
+    "boss_r_mpc": 36.90581635665781,
+    "boss_xi": 0.0237,
+    "boss_xi_sigma": 0.0015,
+    "r0_kpc_canonical": 0.6594900863537677,
+    "c_xi_canonical": 62,
+    "candidates": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ]
+  },
+  "canonical_chi2": 108922.0629052504,
+  "canonical_sigma_offset_from_data": 330.03342695134745,
+  "canonical_is_catastrophic_at_canonical_r0": true,
+  "best_fit_continuous_c_xi": 2.8325775464666467,
+  "best_fit_delta_from_canonical": -59.167422453533355,
+  "integers_consistent_within_1sigma_of_data": [
+    3
+  ],
+  "table": [
+    {
+      "c_xi": 60,
+      "xi_predicted": 0.5020162649293753,
+      "chi2": 101682.86635377262,
+      "delta_chi2_vs_62": -7239.196551477769,
+      "sigma_offset_vs_62": 85.083468144392,
+      "r0_kpc_best_fit": 5.1923976927169056e-18,
+      "r0_ratio_vs_canonical": 7.873352155185496e-18,
+      "tag": "-2 from canonical"
+    },
+    {
+      "c_xi": 61,
+      "xi_predicted": 0.5103832026781983,
+      "chi2": 105271.35100849252,
+      "delta_chi2_vs_62": -3650.7118967578717,
+      "sigma_offset_vs_62": 60.421121280210215,
+      "r0_kpc_best_fit": 3.4199732342274475e-18,
+      "r0_ratio_vs_canonical": 5.1857841459543705e-18,
+      "tag": "-1 from canonical"
+    },
+    {
+      "c_xi": 62,
+      "xi_predicted": 0.5187501404270212,
+      "chi2": 108922.0629052504,
+      "delta_chi2_vs_62": 0.0,
+      "sigma_offset_vs_62": 0.0,
+      "r0_kpc_best_fit": 2.2602574513208154e-18,
+      "r0_ratio_vs_canonical": 3.42728040662063e-18,
+      "tag": "CANONICAL (Mersenne tower)"
+    },
+    {
+      "c_xi": 63,
+      "xi_predicted": 0.5271170781758441,
+      "chi2": 112635.00204404617,
+      "delta_chi2_vs_62": 3712.939138795773,
+      "sigma_offset_vs_62": 60.93389154481907,
+      "r0_kpc_best_fit": 1.4987799666925941e-18,
+      "r0_ratio_vs_canonical": 2.272634566774381e-18,
+      "tag": "+1 from canonical"
+    },
+    {
+      "c_xi": 64,
+      "xi_predicted": 0.535484015924667,
+      "chi2": 116410.16842487987,
+      "delta_chi2_vs_62": 7488.1055196294765,
+      "sigma_offset_vs_62": 86.53384031481254,
+      "r0_kpc_best_fit": 9.970762020581232e-19,
+      "r0_ratio_vs_canonical": 1.5118895987820284e-18,
+      "tag": "+2 from canonical"
+    },
+    {
+      "c_xi": 65,
+      "xi_predicted": 0.5438509536734899,
+      "chi2": 120247.56204775155,
+      "delta_chi2_vs_62": 11325.499142501154,
+      "sigma_offset_vs_62": 106.42132841917147,
+      "r0_kpc_best_fit": 6.654208287892248e-19,
+      "r0_ratio_vs_canonical": 1.0089929212859703e-18,
+      "tag": "+3 from canonical"
+    }
+  ],
+  "within_1sigma_of_canonical": [],
+  "within_3sigma_of_canonical": [],
+  "verdict": "AMPLITUDE-REGIME-MISMATCH",
+  "verdict_detail": "At canonical r\u2080 = 0.6595 kpc, ALL integers in {60-65} give \u03c7\u00b2 > 1e+05 vs the BOSS bin \u03c3 \u2014 they are all 330\u03c3 off because the BOSS galaxy data sits in a different amplitude regime than the halo-derived r\u2080. The Mersenne tower integer 62 is NOT distinguished from its neighbors by BOSS, because the amplitude scale itself doesn't match. The shape test (boss_published_xi_test.py H_1) absorbs this by fitting amplitude separately; in that regime, the integer 62 is compatible with a range of nearby values.",
+  "honest_framing": "If 2+ neighboring integers in {60, 61, 63, 64, 65} fit the BOSS shape within \u0394\u03c7\u00b2 < 1 of C_XI = 62, the 'C_XI = 62 from number theory' derivation is decorative for this dataset \u2014 the Mersenne Tower Theorem remains a real number-theoretic result, but the empirical falsifier 'BOSS confirms 62 exactly' is not what it sounds."
+}

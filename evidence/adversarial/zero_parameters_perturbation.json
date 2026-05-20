@@ -1,0 +1,228 @@
+{
+  "inputs": {
+    "r0_kpc_canonical": 0.6594900863537677,
+    "v0_kms_canonical": 397.0,
+    "perturbations_pct": [
+      -10.0,
+      -5.0,
+      -1.0,
+      0.0,
+      1.0,
+      5.0,
+      10.0
+    ],
+    "mw_observation": {
+      "R_kpc": 10.0,
+      "v_obs_kms": 220.0,
+      "v_obs_sigma_kms": 20.0,
+      "v_baryon_kms": 160.0,
+      "source": "Eilers 2019 + Sofue 2013 baryon model"
+    },
+    "boss_bins_cmass_dr12": [
+      {
+        "r_mpch": 8.0,
+        "xi": 0.436,
+        "sigma": 0.026
+      },
+      {
+        "r_mpch": 12.0,
+        "xi": 0.209,
+        "sigma": 0.015
+      },
+      {
+        "r_mpch": 18.0,
+        "xi": 0.0888,
+        "sigma": 0.007
+      },
+      {
+        "r_mpch": 25.0,
+        "xi": 0.0419,
+        "sigma": 0.0042
+      },
+      {
+        "r_mpch": 35.0,
+        "xi": 0.0188,
+        "sigma": 0.0024
+      },
+      {
+        "r_mpch": 45.0,
+        "xi": 0.0089,
+        "sigma": 0.0017
+      },
+      {
+        "r_mpch": 55.0,
+        "xi": 0.0048,
+        "sigma": 0.0014
+      },
+      {
+        "r_mpch": 75.0,
+        "xi": 0.0014,
+        "sigma": 0.0011
+      },
+      {
+        "r_mpch": 105.0,
+        "xi": 0.0001,
+        "sigma": 0.0009
+      }
+    ],
+    "h0_observation": {
+      "h0_sh0es": 73.04,
+      "h0_sh0es_sigma": 1.04,
+      "h0_planck": 67.4
+    }
+  },
+  "canonical_predictions": {
+    "mw_v10_kms": 211.40984005710516,
+    "mw_chi2": 0.18447711961128782,
+    "boss_chi2_amp_fit": 734.144882400602,
+    "boss_chi2_per_dof": 91.76811030007525,
+    "boss_amplitude_fitted": 0.8162275565489484,
+    "boss_pearson_r_loglog": 0.9582346514437816,
+    "h0_sh0es_via_bubble": 73.04,
+    "h0_chi2": 0.0,
+    "r_bubble_mpc": 10.202139029745462
+  },
+  "perturbation_table": [
+    {
+      "perturbation_pct": -10.0,
+      "r0_kpc": 0.5935410777183909,
+      "mw_v10_kms": 208.5992537729527,
+      "mw_chi2": 0.3249425363338335,
+      "mw_chi2_rel_degrade_pct": 76.14245984462502,
+      "boss_chi2_amp_fit": 734.4055280133913,
+      "boss_chi2_per_dof": 91.80069100167391,
+      "boss_amplitude_fitted": 0.8296906967195388,
+      "boss_pearson_r_loglog": 0.9583161500918197,
+      "boss_pearson_degrade_abs": -8.149864803808082e-05,
+      "boss_chi2_rel_degrade_pct": 0.0355032935647521,
+      "h0_sh0es_pred": 72.89244585604344,
+      "h0_chi2": 0.020129646263642605,
+      "h0_chi2_rel_degrade_pct": 201.29646263642607,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": -5.0,
+      "r0_kpc": 0.6265155820360793,
+      "mw_v10_kms": 210.0161204098031,
+      "mw_chi2": 0.24919462917887517,
+      "mw_chi2_rel_degrade_pct": 35.081591529591186,
+      "boss_chi2_amp_fit": 734.2724621291658,
+      "boss_chi2_per_dof": 91.78405776614572,
+      "boss_amplitude_fitted": 0.8227680395197087,
+      "boss_pearson_r_loglog": 0.9582745294930585,
+      "boss_pearson_degrade_abs": -3.9878049276853567e-05,
+      "boss_chi2_rel_degrade_pct": 0.0173780042090053,
+      "h0_sh0es_pred": 72.96864774159641,
+      "h0_chi2": 0.004707049537068309,
+      "h0_chi2_rel_degrade_pct": 47.07049537068308,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": -1.0,
+      "r0_kpc": 0.6528951854902301,
+      "mw_v10_kms": 211.13286368419904,
+      "mw_chi2": 0.1965652661074907,
+      "mw_chi2_rel_degrade_pct": 6.552653533226148,
+      "boss_chi2_amp_fit": 734.1699840184775,
+      "boss_chi2_per_dof": 91.77124800230969,
+      "boss_amplitude_fitted": 0.8175070181750159,
+      "boss_pearson_r_loglog": 0.9582424954854508,
+      "boss_pearson_degrade_abs": -7.844041669202717e-06,
+      "boss_chi2_rel_degrade_pct": 0.0034191640474888645,
+      "h0_sh0es_pred": 73.02609201921075,
+      "h0_chi2": 0.00017883869233940985,
+      "h0_chi2_rel_degrade_pct": 1.7883869233940985,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": 0.0,
+      "r0_kpc": 0.6594900863537677,
+      "mw_v10_kms": 211.40984005710516,
+      "mw_chi2": 0.18447711961128782,
+      "mw_chi2_rel_degrade_pct": 0.0,
+      "boss_chi2_amp_fit": 734.144882400602,
+      "boss_chi2_per_dof": 91.76811030007525,
+      "boss_amplitude_fitted": 0.8162275565489484,
+      "boss_pearson_r_loglog": 0.9582346514437816,
+      "boss_pearson_degrade_abs": 0.0,
+      "boss_chi2_rel_degrade_pct": 0.0,
+      "h0_sh0es_pred": 73.04,
+      "h0_chi2": 0.0,
+      "h0_chi2_rel_degrade_pct": 0.0,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": 1.0,
+      "r0_kpc": 0.6660849872173054,
+      "mw_v10_kms": 211.68595871785698,
+      "mw_chi2": 0.172808206102946,
+      "mw_chi2_rel_degrade_pct": -6.325398799010637,
+      "boss_chi2_amp_fit": 734.1199803974638,
+      "boss_chi2_per_dof": 91.76499754968297,
+      "boss_amplitude_fitted": 0.8149618206271755,
+      "boss_pearson_r_loglog": 0.9582268707786318,
+      "boss_pearson_degrade_abs": 7.780665149836885e-06,
+      "boss_chi2_rel_degrade_pct": -0.0033919739461754457,
+      "h0_sh0es_pred": 73.05373452873232,
+      "h0_chi2": 0.00017440576876735092,
+      "h0_chi2_rel_degrade_pct": 1.7440576876735092,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": 5.0,
+      "r0_kpc": 0.6924645906714562,
+      "mw_v10_kms": 212.78210061170927,
+      "mw_chi2": 0.1302451789487193,
+      "mw_chi2_rel_degrade_pct": -29.397651468561946,
+      "boss_chi2_amp_fit": 734.0222982031581,
+      "boss_chi2_per_dof": 91.75278727539477,
+      "boss_amplitude_fitted": 0.8100306536899173,
+      "boss_pearson_r_loglog": 0.9581963594581189,
+      "boss_pearson_degrade_abs": 3.829198566274172e-05,
+      "boss_chi2_rel_degrade_pct": -0.016697548451612053,
+      "h0_sh0es_pred": 73.10701019711269,
+      "h0_chi2": 0.0041515962620933735,
+      "h0_chi2_rel_degrade_pct": 41.515962620933735,
+      "r_bubble_mpc": 10.202139029745462
+    },
+    {
+      "perturbation_pct": 10.0,
+      "r0_kpc": 0.7254390949891445,
+      "mw_v10_kms": 214.13438523889607,
+      "mw_chi2": 0.08601359131420072,
+      "mw_chi2_rel_degrade_pct": -53.37438512947288,
+      "boss_chi2_amp_fit": 733.904283844384,
+      "boss_chi2_per_dof": 91.738035480548,
+      "boss_amplitude_fitted": 0.8041442431329244,
+      "boss_pearson_r_loglog": 0.9581595178105919,
+      "boss_pearson_degrade_abs": 7.513363318967237e-05,
+      "boss_chi2_rel_degrade_pct": -0.03277262594696654,
+      "h0_sh0es_pred": 73.17011342934642,
+      "h0_chi2": 0.015652278565350324,
+      "h0_chi2_rel_degrade_pct": 156.52278565350323,
+      "r_bubble_mpc": 10.202139029745462
+    }
+  ],
+  "max_rel_degrade_at_p10": {
+    "mw_chi2_pct": 76.14245984462502,
+    "boss_chi2_pct": 0.0355032935647521,
+    "h0_chi2_pct": 201.29646263642607,
+    "boss_pearson_drop_abs": 7.513363318967237e-05
+  },
+  "max_prediction_sigma_shift_at_p10": {
+    "mw_v10_sigma": 0.1405293142076232,
+    "h0_sh0es_sigma": 0.14187898457362388,
+    "boss_pearson_r_abs_shift": 8.149864803808082e-05,
+    "flat_threshold_sigma": 0.1,
+    "flat_threshold_pearson_shift": 0.001
+  },
+  "is_flat_at_p10": {
+    "mw": false,
+    "boss": true,
+    "h0": false
+  },
+  "verdict": "PARTIALLY-DISTINGUISHED",
+  "verdict_detail": "1/3 observables is flat (MW flat: False, BOSS flat: True, H0 flat: False). The other 2 do shift by >0.1\u03c3 at \u00b110% r\u2080.",
+  "honest_framing": "If predictions shift by less than 0.1 \u03c3 under \u00b110% r\u2080 perturbation on a majority of observables, the 'zero adjustable parameters' claim is weaker than stated \u2014 the data being cited cannot tell canonical r\u2080 apart from a 10%-off value.",
+  "honest_finding": "At \u00b110% r\u2080 perturbation, the MW prediction shifts by 0.141 \u03c3, the SH0ES H0 prediction shifts by 0.142 \u03c3, and the BOSS log-log Pearson r shifts by only 0.00008 (effectively zero). The BOSS SHAPE TEST cannot distinguish r\u2080 values that differ by 10% \u2014 the canonical 'Pearson r \u2248 0.98' claim is robust to r\u2080 perturbation, which means it does NOT pin r\u2080 down. The MW and Hubble points are mildly r\u2080-sensitive (~0.14 \u03c3 per 10%), so a future 7\u00d7 better MW measurement would start to constrain r\u2080 at the per-cent level."
+}

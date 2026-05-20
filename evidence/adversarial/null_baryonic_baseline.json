@@ -1,0 +1,51 @@
+{
+  "inputs": {
+    "r0_kpc_canonical": 0.6594900863537677,
+    "v0_kms_cosmological": 397.0
+  },
+  "cases": [
+    {
+      "name": "Milky Way @ R=10 kpc",
+      "formula": "gradient",
+      "R_kpc": 10.0,
+      "V_baryon_kms": 160.0,
+      "V_obs_kms": 220.0,
+      "V_obs_sigma_kms": 20.0,
+      "v0_kms": 397.0,
+      "v_prime_kms": 138.181476591368,
+      "v_total_if_kms": 211.40984005710516,
+      "v_total_null_kms": 160.0,
+      "delta_obs_minus_if_kms": 8.590159942894843,
+      "delta_obs_minus_null_kms": 60.0,
+      "sigma_if": 0.42950799714474214,
+      "sigma_null": 3.0,
+      "improvement_sigma": 2.570492002855258
+    },
+    {
+      "name": "NGC 3198 @ R=13.1 kpc",
+      "formula": "vflat",
+      "R_kpc": 13.1,
+      "V_baryon_kms": 73.87151006985034,
+      "V_obs_kms": 150.0,
+      "V_obs_sigma_kms": 8.0,
+      "v0_kms": 150.0,
+      "v_prime_kms": 146.36112433868,
+      "v_total_if_kms": 163.94687773081424,
+      "v_total_null_kms": 73.87151006985034,
+      "delta_obs_minus_if_kms": -13.946877730814236,
+      "delta_obs_minus_null_kms": 76.12848993014966,
+      "sigma_if": 1.7433597163517796,
+      "sigma_null": 9.516061241268707,
+      "improvement_sigma": 7.772701524916927
+    }
+  ],
+  "summary": {
+    "mean_sigma_if": 1.0864338567482608,
+    "mean_sigma_null": 6.2580306206343534,
+    "mean_improvement_sigma": 5.171596763886093
+  },
+  "verdict": "PRIME-FIELD-NECESSARY",
+  "verdict_detail": "Adding the prime field improves data-vs-prediction agreement by 5.17\u03c3 on average across the embedded cases. The baryon-only null is significantly worse, so the prime field is doing real work.",
+  "honest_framing": "If the prime field improves \u03c3-deviation by less than 2\u03c3 on average over the baryon-only null model, the claim that 'the prime field replaces dark matter' is stronger than the data in this minimal embedded test supports. (The full claim rests on the SPARC 175 population test in `predictions/`.)",
+  "caveat": "This is a 2-point embedded test for runnable adversarial purposes. The population statement requires predictions/sparc_per_galaxy_ml.py over SPARC 175."
+}
