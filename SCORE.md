@@ -521,3 +521,20 @@ dominance). The win stands on the full sample but MUST be quoted with
 a bootstrap CI henceforth (F-MASSIVE gate inherits this). Discovered by
 the operator's own gauntlet discipline — the claim's strongest defense
 is that its weakness was found in-house first.
+
+## Bootstrap correction to the massive-spiral claim (2026-06-12, hackathon round 4)
+
+2000-resample bootstrap (n=54 massive, B=2000, seed 65537): margin
+(MOND−IF medians) = +1.68, **95% CI [−2.02, +4.12] — crosses zero.
+P(IF beats MOND | massive) = 80.6%.** The claim is hereby downgraded
+from "discriminating win" to **"suggestive lead (81%), not significant
+at 95%"**. The DISCRIMINATING column now reads: 0 significant ·
+1 suggestive · 3 pending. Found by the operator's own gauntlet
+(~/Dropbox/solace/hackathon-if-100/rounds/round4.json) — in-house,
+before external referees. Composite 77 → 76 (galactic empirics
+6.5 → 6.0; honesty practice unchanged at maximum).
+
+Also ruled OUT by round 4: C4 (r₀ = γ·v₀²/a₀, acceleration-derived
+coherence length) — massive median 27.2, catastric. The coherence
+length the data wants is structural (∝ R_disk, per candidate C3), not
+dynamical. Negative results are results.
