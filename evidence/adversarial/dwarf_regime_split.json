@@ -1,0 +1,44 @@
+{
+  "artifact": "dwarf regime split \u2014 IF vs MOND discriminating subsample",
+  "source": "evidence/sparc_fair_benchmark/sparc_fair_benchmark_full.json",
+  "class_definition": {
+    "dwarf": "Vflat < 80.0",
+    "intermediate": "80.0 <= Vflat < 150.0",
+    "massive": "Vflat >= 150.0"
+  },
+  "summary": {
+    "dwarf": {
+      "n": 36,
+      "median_chi2_IF": 8.823341791767685,
+      "median_chi2_MOND": 3.9666955222693647,
+      "median_chi2_NFW": 0.8945285927153181,
+      "IF_over_MOND_median_ratio": 2.224355699153791,
+      "IF_beats_MOND_fraction": 0.4444444444444444
+    },
+    "intermediate": {
+      "n": 45,
+      "median_chi2_IF": 10.116984228654497,
+      "median_chi2_MOND": 2.6578800592323906,
+      "median_chi2_NFW": 1.1290624597107584,
+      "IF_over_MOND_median_ratio": 3.806411125856572,
+      "IF_beats_MOND_fraction": 0.13333333333333333
+    },
+    "massive": {
+      "n": 54,
+      "median_chi2_IF": 4.1813410281720005,
+      "median_chi2_MOND": 5.864273320044557,
+      "median_chi2_NFW": 1.7136391182018884,
+      "IF_over_MOND_median_ratio": 0.7130194654945295,
+      "IF_beats_MOND_fraction": 0.4444444444444444
+    },
+    "unknown": {
+      "n": 40,
+      "median_chi2_IF": 5.9558564333456605,
+      "median_chi2_MOND": 3.2383034745563792,
+      "median_chi2_NFW": 0.8099040587594399,
+      "IF_over_MOND_median_ratio": 1.8391903291773986,
+      "IF_beats_MOND_fraction": 0.3
+    }
+  },
+  "verdict": "REGIME-SPECIFIC-DEFICIT: IF's loss to MOND concentrates in dwarfs (ratio 2.22 vs 0.71 in massive) \u2014 the saturating R/(R+r0) form is the failure mode at low accelerations; the galactic law is incomplete there."
+}
