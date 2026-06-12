@@ -243,8 +243,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument(
         "--surveys",
         nargs="+",
-        choices=("sdss", "desi", "euclid"),
-        default=["sdss", "desi", "euclid"],
+        choices=("sdss", "desi", "euclid", "sparc", "pantheon", "boss"),
+        default=["sdss", "desi", "euclid", "sparc", "pantheon", "boss"],
         help="Survey families to include.",
     )
     parser.add_argument(

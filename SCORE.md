@@ -416,3 +416,30 @@ the file that made the claim). Engineering ceiling estimate unchanged:
 notebook-execution gate, downloader coverage for SPARC/Pantheon+/BOSS/
 randoms). Beyond that: nature's three votes (JWST 2030, DESI DR2 v2
 lock, dwarf-regime extension surviving F-DWARF).
+
+---
+
+## Scoreboard v2.2 — loop iteration 3 (2026-06-12)
+
+| Shipped | Artifact |
+|---|---|
+| One-command replication staging | `survey_data_manifest.py` + `download_survey_data.py` now cover SPARC, Pantheon+ (incl. the STATONLY cov whose absence broke 2 tests), BOSS Cuesta, and DESI LRG randoms — all size-verified against the staged files. REPLICATION.md's manual steps are now optional. |
+| CI integrity gates | `tests/test_referee_integrity_gates.py` — locks: failable kernel (no unconditional VALIDATED), notebook referee banners, manifest completeness, v2 null-beating lock + unedited v1 (LAI-22). |
+| Euclid: honestly scoped OUT | A 1-tile Q1 port cannot measure 5–120 Mpc correlations (~20 Mpc transverse per tile; original runs used 102 tiles). Euclid stays UNVERIFIED with the port path documented in the kernel docstring — saying "we cannot test this yet" beats a toy test that pretends. |
+| Regression | **67/67 tests pass** (63 + 4 new gates) |
+
+**Composite: 75 → 77/100.** Reproducibility 9.5 → 9.8 (one-command
+staging + gates). THE ENGINEERING CEILING IS NOW EFFECTIVELY REACHED:
+remaining engineering items (Euclid multi-tile port, MCMC posterior)
+are research-scale, not loop-scale. The distance from 77 to 100 is
+nature's, on three pre-registered instruments:
+
+1. **DESI DR2 under the v2 lock** — IF must beat the power-law null it
+   currently loses to on two surveys.
+2. **JWST z ≥ 25 mature galaxy by 2030** (BETS.md #1).
+3. **A dwarf-regime extension that survives F-DWARF** (theory work: fix
+   the 2.2× dwarf deficit without breaking the 0.71 massive-spiral win).
+
+Per LAI-23 / SCORE_INFLATION: no further loop iteration may add points
+by editing documents. The loop's remaining honest function is to await
+and adjudicate those three measurements.
