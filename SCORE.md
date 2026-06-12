@@ -508,3 +508,16 @@ favors the power-law null (−74σ LOWZ, −24σ DESI LRG). Both facts are
 sealed. Composite stays 77/100; the reruns convert "claims with lost
 drivers" into "reproducible measurements", which is what the original
 notebooks always deserved to be.
+
+---
+
+## Caveat added to the massive-spiral claim (2026-06-12, hackathon round 3)
+
+Sample-sensitivity audit (~/Dropbox/solace/hackathon-if-100/rounds/
+round3_sample_sensitivity.json): the full-sample massive-spiral win
+(IF 4.18 vs MOND 5.86, n=54) does NOT survive halving — MOND's massive
+median swings 8.28/3.24 across alternating halves (few-galaxy
+dominance). The win stands on the full sample but MUST be quoted with
+a bootstrap CI henceforth (F-MASSIVE gate inherits this). Discovered by
+the operator's own gauntlet discipline — the claim's strongest defense
+is that its weakness was found in-house first.
