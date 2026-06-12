@@ -244,3 +244,76 @@ in this review is detail.
 
 — Claude Fable 5, external referee pass, 2026-06-12.
 Truth first, with care. Purpose × Evidence × Love.
+
+---
+
+## Addendum — notebook audit (2026-06-12, same day, after operator challenge)
+
+The operator correctly pointed out the first pass did not open the six
+Jupyter notebooks. They have now all been read and executed. Results:
+
+| Notebook | Executed? | Verdict |
+|---|---|---|
+| `dark_energy_bao_proof.ipynb` | ✅ ran clean | Reproduces χ²/dof = 1.72, w(z=0) = −0.999995. Consistent with `desi_bao_test.py`. Honest. |
+| `dark_energy_demo.ipynb` | ✅ ran clean | Demo/visualization; no claims beyond the scripts. |
+| `prime_field_demo.ipynb` | ✅ ran clean (first attempt failed on MY harness — script-dir import path, not a repo bug; corrected with PYTHONPATH) | Demo; honest "derived, not fitted" framing. |
+| `dark_matter_sdss.ipynb` | ⚠️ runs in seconds, touches NO data | **See finding N1.** |
+| `dark_matter_desi.ipynb` | ⚠️ same | Same finding. |
+| `dark_matter_euclid.ipynb` | ⚠️ same | Same finding. |
+
+### Finding N1 — the survey notebooks contain claim tables with no
+### generating code, plus a fake-verification cell (SEVERITY: HIGHEST)
+
+The three `dark_matter_*` notebooks ship with **no stored outputs** and
+their markdown headers claim strong results (r = 0.977–0.997, up to
+6.6σ, "470× χ²/dof variation = strong evidence for zero parameters").
+The committed code cells are: (1) a configuration cell that drives no
+analysis, and (2) an "EXACT ARITHMETIC NOTEBOOK VERIFICATION" cell
+calling `audits/dark_matter_exact_kernel.py::validate_sdss/desi/euclid`.
+
+That kernel does the following (verbatim from source):
+- hardcodes historical correlation values as `Fraction(989,1000)`,
+  `Fraction(988,1000)`, … labeled "(from historical data)";
+- compares them against a "theory" vector of the literal integer 1;
+- returns `"status": "VALIDATED"` **unconditionally** — the status does
+  not depend on any computation (the computed pearson_r is literally 0
+  because the theory vector has zero variance, and VALIDATED is stamped
+  anyway).
+
+This is what the solace-hub canon calls `CAPABILITY_THEATER`: a cell
+whose banner says "NO float contamination / exact verification" and
+whose substance verifies nothing about any survey. The audit log's
+"hardcoded test correlations 0.988, 0.983 — partially addressed" issue
+is NOT addressed here; it is live in all three notebooks. The markdown
+tables may well be real outputs of an older notebook version whose
+driver code was deleted in the v3.0.0 refactor into `sdss_util` — but
+as committed, they are unverifiable claims decorated with a
+verification cell that always passes.
+
+**Required fixes:**
+1. Delete or rewrite `DarkMatterExactKernel.validate_*` — a verifier
+   must be able to fail. (Its `status` must be computed, and the
+   "measurements" must come from data files, not hardcoded Fractions.)
+2. Either restore the driver code that generated the markdown tables
+   (so `jupyter nbconvert --execute` reproduces them from the staged
+   catalogs), or delete the tables and point to `predictions/*.py`.
+3. Add a CI check: any notebook making a quantitative claim must
+   execute clean from staged data (the repo already has notebook
+   contract tests — extend them to execution).
+
+### Score adjustment
+
+The load-bearing evidence chain (SCORE.md → predictions/*.py →
+evidence/*.json) is unaffected — it was independently regenerated this
+pass and matched byte-for-byte. But a fake-verification cell in three
+committed notebooks lowers the honesty axis: a reader who opened only
+the notebooks would come away deceived.
+
+- Honesty culture: 8.5 → **7.0**
+- **Composite: 58 → 55/100** until Finding N1 is fixed (the fix is
+  ~1 day; the score returns to 58+ immediately after, and the notebook
+  cleanup makes the whole repo stronger).
+
+— Fable 5, addendum sealed same day. The operator's challenge was
+correct in direction (notebooks were unexamined) and the examination
+made the review STRICTER, not kinder. That is how evidence works.
