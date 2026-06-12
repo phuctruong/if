@@ -317,3 +317,88 @@ the notebooks would come away deceived.
 — Fable 5, addendum sealed same day. The operator's challenge was
 correct in direction (notebooks were unexamined) and the examination
 made the review STRICTER, not kinder. That is how evidence works.
+
+---
+
+## Addendum 2 — operator challenge round 2: "you didn't consider my 3 surveys + working code" (2026-06-12)
+
+The operator is partially right. Corrections and final considerations:
+
+### A2.1 CORRECTION — locked discriminating predictions EXIST (review missed them)
+
+`evidence/jwst_preregistration/jwst_high_z_preregistration.json` +
+`BETS.md` Bet #1 (locked 2026-05-20): spectroscopically confirmed
+mature galaxy at z ≥ 20 confirms, z ≥ 25 strongly confirms, explicit
+fail-closed condition, deadline 2030-01-01, with an IF-vs-ΛCDM
+prediction grid (e.g. 10⁸ M_☉: earliest-z IF ≈ 47 vs ΛCDM ≈ 36). This
+IS a genuine discriminating pre-registration — ΛCDM cannot survive a
+confirmed mature z≥25 galaxy; IF expects them. §6.4 of this review
+recommended creating "a hashed JWST z>16 bet" as if none existed — 
+**wrong; one already exists and is better-specified than my sketch.**
+
+Likewise `evidence/lss_bao_locked_prediction/` locks the exact model
+spec (SHA-256) for future DESI/Euclid/Roman data with a no-tuning rule
+— procedurally exemplary. ONE URGENT FIX: its pass criterion is
+"Pearson r(log) ≥ 0.93", which Finding 3.1 proved non-discriminating
+(any survey's ξ(r) will hand that to a power law too). Upgrade the
+locked criterion NOW — before new survey data lands — to a relative
+margin: "IF shape must beat the same-parameter-count power-law null by
+Δr ≥ X / Δχ² ≥ Y on predeclared bins." Then a future pass means
+something.
+
+**Scoreline correction:** "Discriminating PASSes: 0" stands as written
+(none RESOLVED), but must be read with: **2 discriminating predictions
+locked and pending** (JWST 2030; LSS-BAO next surveys). Falsifiability
+practice 6.5 → **7.5**. Composite 55 → **56**.
+
+### A2.2 The 3-survey, 3.5M-galaxy correlation results (VALIDATION.md §5)
+
+Considered in full now. SDSS LOWZ/CMASS + DESI BGS/LRG/ELG/QSO + Euclid
+give r ≈ 0.93–0.99 across z = 0.15–3.5, runtimes logged up to 1161 min.
+Three points, stated plainly:
+
+1. These are the same statistic class Finding 3.1 covers: shape
+   correlations of a declining ξ(r) against a declining model curve.
+   The observed ξ(r) has been known to be approximately a power law
+   since the 1970s (Peebles: ξ ≈ (r/r₀)^−1.8). ANY smooth declining
+   shape — including the no-theory power law — scores r ≥ 0.93 against
+   every such survey at every z. Cross-survey "consistency with no
+   redshift trend" (§7.1) is therefore the universality of the
+   POWER-LAW-LIKE ξ(r), re-detected seven times. It is real data,
+   honestly processed, answering a question that cannot come out NO.
+2. The full-run tables cannot currently be reproduced from the
+   committed notebooks (Finding N1: driver code absent). I do not doubt
+   the runs occurred; as committed, they are unverifiable.
+3. The verifiable subset (published Cuesta consensus ξ) was run fresh
+   this pass — and the power-law null beat the IF shape on it.
+
+### A2.3 The "13,700× χ²/dof variation = strongest possible evidence
+### for zero parameters" argument (VALIDATION.md §4) — statistically backwards
+
+A CORRECT zero-parameter model gives χ²/dof ≈ 1 on every dataset
+(within cosmic variance + systematics) — that is what "correct, no
+tuning needed" means. Wide χ²/dof variation (2.4 → 32,849) is evidence
+of two things only: (a) nothing was tuned — TRUE and verifiable from
+the code; (b) the model's absolute normalization is usually wrong by
+large, sample-dependent factors. Variation can never evidence
+correctness; parameter-freeness is a property of the model's
+definition, not something data exhibits. And §4's own admission — "the
+CMASS χ²/dof = 2.4 is a cosmic coincidence we CANNOT reproduce by
+design" — concedes the one good absolute fit is luck. Reading high
+χ²/dof as "EXPECTED" (§9.2) makes χ² unable to falsify the model,
+which contradicts the "maximum falsifiability" claim two sections
+earlier. Recommendation: drop §4's framing entirely; report absolute
+χ²/dof as the honest mis-normalization measurement it is, and let the
+shape claims ride on null-beating margins instead.
+
+### A2.4 "Code that works"
+
+Confirmed, again, for the record: 62/62 tests, every SCORE.md script
+reproduces byte-for-byte from fresh public data. Working code was
+never in dispute. The dispute is, and remains, only about which
+questions the working code asks.
+
+**Final composite after both addenda: 56/100** — with two locked
+discriminating bets pending that could move it dramatically in either
+direction. That pending-ness is the most scientifically honest position
+in the whole repo.
