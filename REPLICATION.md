@@ -57,7 +57,10 @@ Pinned versions used in the validation pass:
 python3 -m pytest tests/ -v
 ```
 
-Expected: **13 passed in < 2 seconds**.
+Expected: **62 passed in < 30 seconds** once data is staged (Step 4).
+Without staged data, ~51 pass and the data-dependent prediction
+entrypoint tests fail with FileNotFoundError — stage data first.
+(Count updated 2026-06-12 replication pass; was "13" — stale.)
 
 This verifies:
 - π(127) = 31 from Eratosthenes-from-scratch (no sympy hardcode)
@@ -88,6 +91,30 @@ The following datasets must be downloaded once. Total ~120 MB.
 | Planck 2018 PR3 parameter tables | https://wiki.cosmos.esa.int/planck-legacy-archive/ | `~/Downloads/if/data/planck_2018/` | 5 MB |
 | 20 PDB experimental structures | https://www.rcsb.org/ | `~/Downloads/if/data/pdb/` | 4 MB |
 | 12 AFDB AlphaFold predictions | https://alphafold.ebi.ac.uk/ | `~/Downloads/if/data/afdb/` | 2 MB |
+
+> **Note (2026-06-12 replication pass):** `download_survey_data.py`
+> stages only the SDSS/DESI/Euclid families. SPARC, Pantheon+, and the
+> BOSS Cuesta 2016 files must be staged manually. Exact commands that
+> worked on this pass (Pantheon+ requires BOTH covariance files —
+> `STAT+SYS` *and* `STATONLY`; the latter's absence fails 2 tests):
+>
+> ```bash
+> mkdir -p ~/Downloads/if/data/sparc && cd ~/Downloads/if/data/sparc
+> curl -sSL -O https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt
+> curl -sSL -O https://astroweb.cwru.edu/SPARC/Rotmod_LTG.zip
+> unzip -q -o Rotmod_LTG.zip -d Rotmod_LTG
+>
+> D=~/Downloads/if/data/pantheon_plus/Pantheon+_Data/4_DISTANCES_AND_COVAR
+> mkdir -p "$D" && cd "$D"
+> B="https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2B_Data/4_DISTANCES_AND_COVAR"
+> curl -sSL -o "Pantheon+SH0ES.dat"          "$B/Pantheon%2BSH0ES.dat"
+> curl -sSL -o "Pantheon+SH0ES_STAT+SYS.cov" "$B/Pantheon%2BSH0ES_STAT%2BSYS.cov"
+> curl -sSL -o "Pantheon+SH0ES_STATONLY.cov" "$B/Pantheon%2BSH0ES_STATONLY.cov"
+>
+> mkdir -p ~/Downloads/if/data/boss_published_xi && cd ~/Downloads/if/data/boss_published_xi
+> curl -sSL -O https://data.sdss.org/sas/dr12/boss/papers/clustering/Cuesta_2016_CMASSDR12_LOWZDR12_measurements.tar.gz
+> tar xzf Cuesta_2016_CMASSDR12_LOWZDR12_measurements.tar.gz
+> ```
 
 A `DATA_MANIFEST.md` with sha256 hashes is stored at
 `~/Downloads/if/data/MANIFEST.md` (created by the validation pass).

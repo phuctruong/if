@@ -1,0 +1,24 @@
+{
+  "test": "power_law_null_test",
+  "fit_range_mpc": [
+    10.0,
+    180.0
+  ],
+  "r0_kpc": 0.6594900863537677,
+  "note": "Pearson r in log-log space is affine-invariant, hence identical for every power-law exponent \u2014 the null requires zero tuning.",
+  "results": {
+    "LOWZ_DR12": {
+      "n_bins": 22,
+      "pearson_log_IF_shape": 0.9835,
+      "pearson_log_power_law_null": 0.9881,
+      "delta": -0.0046
+    },
+    "CMASS_DR12": {
+      "n_bins": 22,
+      "pearson_log_IF_shape": 0.9652,
+      "pearson_log_power_law_null": 0.9714,
+      "delta": -0.0061
+    }
+  },
+  "verdict": "NON-DISCRIMINATING \u2014 a generic power law matches or beats the IF shape; the 'Pearson r = +0.98' BOSS headline is not evidence for [1/log]\u00b2 specifically and should be reported as a consistency check only"
+}

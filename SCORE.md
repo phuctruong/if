@@ -258,3 +258,30 @@ Full data manifest with sha256 hashes: `~/Downloads/if/data/MANIFEST.md`.
 - **`INDEPENDENT_VALIDATION.md`** — 2025-12 Solace AGI replication report
 - **`THEORY.md`** — full mathematical framework
 - **`TECHNICAL.md`** — implementation API
+
+---
+
+## External referee deltas — 2026-06-12 (Claude Fable 5, fresh full replication)
+
+Full review: `audits/PEER_REVIEW_FABLE5_2026-06-12.md`. Every number in
+this file reproduced exactly from a fresh data download (62/62 tests,
+all prediction scripts re-run). The deltas below are re-interpretations
+of what those reproduced numbers actually establish:
+
+| Row | Was | Referee verdict |
+|---|---|---|
+| BOSS ξ(r) Pearson r = +0.98 | PASS | **DEMOTE to shape-consistency.** New `adversarial/power_law_null_test.py`: an untuned power law scores r = +0.988/+0.971 vs IF's +0.984/+0.965 (log-log Pearson r is exponent-invariant). Zero discriminating power. H₀ absolute χ²/dof is 6.7e4–2.0e5; freed r₀ runs to the fit bound (1e5 kpc vs canonical 0.66). |
+| δ_max = 0.137 "derived, 0.3% match" | PASS | **CIRCULAR.** Input is the observed SH0ES/Planck ratio; the "match" is two functions of the same input agreeing. Real content = implied 50% void depth sits inside the (wide) observed 30–70% range. Re-run forward, pre-registered, from void catalogs → predicted δ_H. |
+| SPARC "χ²/dof 7.13, competitive with MOND" | PASS/COMPETITIVE | **NOT competitive.** Own fair benchmark (n=25 smoke): IF 10.75 vs MOND 3.96 vs NFW 1.14 median χ²/dof at equal/greater param count. Honest claim: rigid zero-shape-freedom law within ~3× of MOND. M/L distribution strained (36.6% physical). Run full n=135 with Schombert prior on all models. |
+| "One equation, both phenomena" | headline | **Two regime forms** (galactic ln(r/r₀+1) validated; LSS 1/log shape-only + amplitude regime mismatch). THEORY.md front door still presents 1/log as producing flat curves — contradicted by the repo's own FAIL rows. Align THEORY.md + prime_field_theory.py with the validated code. |
+| C_XI = 62 from Mersenne tower | PASS (math) | Math PASS stands (π(127)=31 verified). **Empirical decoration**: own `c_xi_uniqueness_test.py` — 62 not distinguished from 60–65 by BOSS. |
+| Pantheon+ 0.932 / Joint ΔBIC −30.7 | PASS | Reproduced, but these test **ΛCDM-at-SH0ES-h** (IF ≡ Λ to 5 decimals by construction). Parameter-count win conditional on "constants are derived" — weakened by rows above. No SNe/BAO observation can currently distinguish IF from Λ. |
+| MW v(10 kpc) 0.23σ | PASS | **Stands** (weak: ±30% theory band on v₀). |
+| Honest-FAIL rows, adversarial suite, replication infra | — | **Stands, exemplary — 9.5/10.** Best-in-class for an independent theory. |
+
+**Referee composite: 58/100** (vs ~99 self-score). Largest single
+upgrade available: ONE pre-registered discriminating prediction where
+IF ≠ ΛCDM ≠ MOND (candidates in the review §6.4: CosmicFlows-4
+peculiar velocities at the 10.3 Mpc transition; JWST z>16 mass
+function; dwarf/UDG regime where R≪r₀). Consistency PASSes: 12.
+**Discriminating PASSes: 0.** Grow the second number.
