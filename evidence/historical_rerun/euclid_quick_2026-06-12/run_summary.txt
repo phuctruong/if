@@ -1,0 +1,20 @@
+INFO:   Mean error: 0.597
+INFO:   Correlation function computed in 0.8s
+INFO:     χ²/dof = 4.81 (dof = 8)
+INFO:     Correlation = 0.917
+INFO:     Significance = 3.2σ
+  χ²/dof = 2.8 (dof = 8)
+  Correlation = 0.754
+  Significance = 2.2σ
+  χ²/dof = 5.4 (dof = 8)
+  Correlation = 0.966
+  Significance = 3.9σ
+  χ²/dof = 167.8 (dof = 8)
+  Correlation = 0.927
+  Significance = 3.3σ
+  χ²/dof = 4.8 (dof = 8)
+  Correlation = 0.917
+  Significance = 3.2σ
+  Mean correlation: 0.891
+  Mean significance: 3.1σ
+  Total tiles used: 5

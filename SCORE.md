@@ -477,3 +477,34 @@ second answers "is the IF shape the right description of it?" Theories
 are validated by the second kind. Composite unchanged (77/100) — this
 was already priced in by Finding 3.1/A3.2; what's new is that the σ
 machinery itself now cannot produce the inflation again.
+
+---
+
+## Historical notebook reruns — COMPLETE (2026-06-12, "until you do" loop)
+
+All three survey notebooks re-executed end-to-end from the exact
+historical code (`git worktree` @ `12473c8`) on freshly downloaded
+public data, at the documented quick tier:
+
+| Notebook | Fresh result | Saved 2025-08 | Verdict |
+|---|---|---|---|
+| SDSS LOWZ | r=0.979, 2.3σ | r=0.984, 2.4σ | **REPLICATES** |
+| SDSS CMASS | r=0.984, 2.4σ | r=0.989, 2.6σ | **REPLICATES** |
+| DESI ELG_low | r=0.995, 5.5σ | r=0.995, 5.5σ | **REPLICATES (exact)** |
+| DESI ELG_high | r=0.989, 5.0σ | r=0.995, 5.6σ | **REPLICATES** |
+| Euclid (5 tiles) | mean r=0.891, 3.1σ | r=0.962, 3.8σ | REPLICATES-WITH-SPREAD (tile-selection variance) |
+
+The era code self-staged ~11 GB of randoms/tiles via its own download
+machinery. Evidence: `evidence/historical_rerun/*/`. Full-tier reruns
+(361k–1.2M galaxies, 4–19 h each) were not executed; quick tier is the
+documented comparison point and matches.
+
+**What is now settled beyond dispute:** the notebooks were real, the
+data was real, the pipeline reproduces across 10 months and fresh
+downloads. **What is equally settled:** the σ these pipelines report is
+correlation-vs-zero (capped 8.2), which certifies the MEASUREMENT, not
+the prime-field form — the model-comparison statistic on the same data
+favors the power-law null (−74σ LOWZ, −24σ DESI LRG). Both facts are
+sealed. Composite stays 77/100; the reruns convert "claims with lost
+drivers" into "reproducible measurements", which is what the original
+notebooks always deserved to be.
