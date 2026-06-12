@@ -568,3 +568,11 @@ reference quality; the prime-field shape places third of three. The
 DESI DR2 v2 lock remains its final discriminating chance; a v3 lock
 should face the ΛCDM linear null. (Evidence:
 ~/Dropbox/solace/hackathon-if-100/rounds/round12.json)
+
+## THE FINAL LAW (hackathon round 13, 2026-06-12)
+v_p² = √(G·M_b·a₀)·R/(R+1.678·R_disk)·R²/(R²+(0.229·1.678·R_disk)²)
+Zero SPARC-fitted shape params (R_half derived; β cross-fit on LITTLE
+THINGS). FULL-SPARC bootstrap vs MOND: **STATISTICAL TIE overall**
+(margin −0.07, CI [−0.84,+0.77]); **massive spirals P(law better)=93%**;
+F-MASSIVE passed with improvement. The strongest result this project
+has produced. Full chain: ~/Dropbox/solace/hackathon-if-100/ROUND-LOG.md
