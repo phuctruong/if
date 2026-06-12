@@ -557,3 +557,14 @@ curve median χ²/dof 5.02 ≈ SPARC dwarfs 5.08 — dwarf behavior
 REPLICATES on independent data. Registered conjecture (75%
 look-elsewhere, needs mechanism): a₀ ≈ v₀²/(C_XI·r₀) within 6%.
 Full log: ~/Dropbox/solace/hackathon-if-100/ROUND-LOG.md
+
+## LSS strong-null verdict (2026-06-12, hackathon round 12 — closes the LSS question)
+
+ΛCDM linear theory (EH98, Planck params, amplitude/bias-marginalized)
+against this repo's own measured ξ(r): **LOWZ χ²/dof = 1.4, DESI LRG
+= 0.8** — vs power law (9.5/5.2) vs IF [1/log]² (294.7/74.7). The
+measurement pipeline is good enough to confirm standard cosmology at
+reference quality; the prime-field shape places third of three. The
+DESI DR2 v2 lock remains its final discriminating chance; a v3 lock
+should face the ΛCDM linear null. (Evidence:
+~/Dropbox/solace/hackathon-if-100/rounds/round12.json)
