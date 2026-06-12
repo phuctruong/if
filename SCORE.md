@@ -550,3 +550,10 @@ dynamical. Negative results are results.
   acceleration variable organizes the data at SPARC precision.
 - Discriminating ledger: 0 significant wins · 2 suggestive (massive-
   spiral 81%/73%) · 2 against (LSS null; RAR non-detection) · 3 pending.
+
+## Hackathon rounds 7–8 (final): MW out-of-sample +0.5σ PASS for the
+derived law; LITTLE THINGS (26 unseen dwarfs): zero-param universal
+curve median χ²/dof 5.02 ≈ SPARC dwarfs 5.08 — dwarf behavior
+REPLICATES on independent data. Registered conjecture (75%
+look-elsewhere, needs mechanism): a₀ ≈ v₀²/(C_XI·r₀) within 6%.
+Full log: ~/Dropbox/solace/hackathon-if-100/ROUND-LOG.md
