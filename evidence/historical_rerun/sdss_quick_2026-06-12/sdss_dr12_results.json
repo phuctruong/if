@@ -1,0 +1,60 @@
+{
+  "survey": "SDSS DR12",
+  "date": "2026-06-12 14:48:25",
+  "version": "3.0.0",
+  "samples": {
+    "LOWZ": {
+      "n_galaxies": 25000,
+      "n_randoms": 249952,
+      "z_range": [
+        0.15,
+        0.43
+      ],
+      "chi2_dof": 4.214843059212014,
+      "correlation": 0.9786175063231242,
+      "sigma": 2.301161685654427,
+      "interpretation": "Very Good match (r=0.979). Remarkably good absolute fit TRUE ZERO parameters!",
+      "n_jackknife_valid": 10,
+      "params": {
+        "amplitude": 0.08690820042173744,
+        "bias": 1.348161328588375,
+        "r0_factor": 1.3639960531149895
+      }
+    },
+    "CMASS": {
+      "n_galaxies": 25000,
+      "n_randoms": 249775,
+      "z_range": [
+        0.43,
+        0.7
+      ],
+      "chi2_dof": 3.2399042091312684,
+      "correlation": 0.9839330403768638,
+      "sigma": 2.407390954407662,
+      "interpretation": "Very Good match (r=0.984). Remarkably good absolute fit TRUE ZERO parameters!",
+      "n_jackknife_valid": 10,
+      "params": {
+        "amplitude": 0.06561746443497425,
+        "bias": 1.6085409252669038,
+        "r0_factor": 1.2954400952827523
+      }
+    }
+  },
+  "config": {
+    "mode": "quick",
+    "max_galaxies": 25000,
+    "n_bins": 15,
+    "r_range": [
+      1.0,
+      150.0
+    ],
+    "fitting_range": [
+      20.0,
+      80.0
+    ],
+    "n_jackknife": 10,
+    "cosmology": "Planck15",
+    "numba": true
+  },
+  "runtime_seconds": 1846.9820330142975
+}

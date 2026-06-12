@@ -1,0 +1,6 @@
+  χ²/dof = 4.2
+  Correlation = 0.979
+  Significance = 2.3σ
+  χ²/dof = 3.2
+  Correlation = 0.984
+  Significance = 2.4σ
