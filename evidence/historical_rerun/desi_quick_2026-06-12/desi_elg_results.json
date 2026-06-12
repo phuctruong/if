@@ -1,0 +1,63 @@
+{
+  "survey": "DESI DR1",
+  "date": "2026-06-12 14:52:58",
+  "version": "3.0.0",
+  "using_real_randoms": true,
+  "samples": {
+    "ELG_low": {
+      "n_galaxies": 40894,
+      "n_randoms": 613410,
+      "z_range": [
+        0.8,
+        1.1
+      ],
+      "chi2_dof": 51.223854562958365,
+      "correlation": 0.9949939857801834,
+      "sigma": 5.546867461661922,
+      "interpretation": "Excellent match (r=0.995). High \u03c7\u00b2/dof expected for zero-parameter model TRUE ZERO parameters!",
+      "n_jackknife_valid": 15,
+      "params": {
+        "amplitude": 0.044569667520485155,
+        "bias": 1.2313167259786477,
+        "r0_factor": 1.2067792068259078
+      },
+      "using_real_randoms": true
+    },
+    "ELG_high": {
+      "n_galaxies": 59106,
+      "n_randoms": 880608,
+      "z_range": [
+        1.1,
+        1.6
+      ],
+      "chi2_dof": 60.8866466585611,
+      "correlation": 0.9888973197191785,
+      "sigma": 5.038286486083422,
+      "interpretation": "Very Good match (r=0.989). High \u03c7\u00b2/dof expected for zero-parameter model TRUE ZERO parameters!",
+      "n_jackknife_valid": 15,
+      "params": {
+        "amplitude": 0.03189804579348195,
+        "bias": 1.2787663107947806,
+        "r0_factor": 1.1287116568396618
+      },
+      "using_real_randoms": true
+    }
+  },
+  "config": {
+    "mode": "quick",
+    "max_galaxies": 100000,
+    "n_bins": 20,
+    "r_range": [
+      3.0,
+      150.0
+    ],
+    "fitting_range": [
+      15.0,
+      80.0
+    ],
+    "n_jackknife": 15,
+    "cosmology": "Planck18",
+    "numba": true
+  },
+  "runtime_seconds": 258.73815631866455
+}
