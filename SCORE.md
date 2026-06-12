@@ -538,3 +538,15 @@ Also ruled OUT by round 4: C4 (r₀ = γ·v₀²/a₀, acceleration-derived
 coherence length) — massive median 27.2, catastric. The coherence
 length the data wants is structural (∝ R_disk, per candidate C3), not
 dynamical. Negative results are results.
+
+## Hackathon rounds 5–6 sealed (2026-06-12, ~/Dropbox/solace/hackathon-if-100)
+
+- Best adjusted law (C3-derived, ZERO fitted shape params):
+  v_p² = √(G·M_b·a₀)·R/(R+1.678·R_disk) — coherence length DERIVED as
+  the disk half-mass radius. 31% better than the original law; still
+  significantly behind MOND overall (bootstrap P(C3 better)=1.4%).
+- RAR residual discriminator (3,391 pts): ρ=+0.025, p=0.145 — no
+  structural signal where the IF hypothesis predicts one; the
+  acceleration variable organizes the data at SPARC precision.
+- Discriminating ledger: 0 significant wins · 2 suggestive (massive-
+  spiral 81%/73%) · 2 against (LSS null; RAR non-detection) · 3 pending.
