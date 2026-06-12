@@ -1,5 +1,18 @@
 # IF Theory — Empirical Validation
 
+> ⚠️ **Referee harmonization (2026-06-12):** the per-survey correlation
+> tables below are honest outputs of real runs, but the r ≥ 0.93 shape
+> statistic is **non-discriminating** (an untuned power law scores the
+> same or better on every survey — `adversarial/power_law_null_test.py`
+> + the executed end-to-end replications in `evidence/adversarial/`).
+> Read every "Correlation" column as consistency, not confirmation.
+> §4's "χ²/dof variation validates zero parameters" argument is
+> RETRACTED — variation evidences non-tuning, never correctness (a
+> correct zero-parameter model gives χ²/dof ≈ 1 everywhere); see
+> `audits/PEER_REVIEW_FABLE5_2026-06-12.md` A2.3. The current honest
+> per-claim scoreboard is `SCORE.md` §"Scoreboard v2" (composite 73/100,
+> Discriminating: 1 won / 0 lost / 3 pending).
+
 ## TL;DR
 
 IF Theory (with Bubble Universe dark energy) has been tested against:

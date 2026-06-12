@@ -262,8 +262,23 @@ class DarkMatterExactKernel:
         return result
 
     def validate_desi(self) -> Dict:
-        """DESI: no executed in-repo clustering replication yet — say so."""
-        return self._unverified("DESI", "ELG")
+        """DESI: executed LRG SGC replication (2026-06-12, weighted+jackknife)."""
+        ev = _ROOT / "evidence" / "adversarial" / "survey_replication_desi_lrg_sgc.json"
+        if not ev.exists():
+            return self._unverified("DESI", "LRG_SGC")
+        d = json.loads(ev.read_text())
+        r_if = Fraction(str(d["pearson_log_IF"]))
+        r_null = Fraction(str(d["pearson_log_power_law"]))
+        passes = bool(d.get("v2_lock_criterion_met"))
+        result = {
+            "survey": "DESI DR1", "sample": "LRG SGC (executed, weighted, jackknife)",
+            "pearson_r": str(r_if), "pearson_r_power_law_null": str(r_null),
+            "criterion": "v2 lock: r margin >= 0.01 AND null/IF shape-chi2 >= 2",
+            "status": "VALIDATED_DISCRIMINATING" if passes
+                      else "NON-DISCRIMINATING (power-law null favored)",
+        }
+        self.validation_results["DESI"] = result
+        return result
 
     def validate_euclid(self) -> Dict:
         """Euclid: no executed in-repo clustering replication yet — say so."""

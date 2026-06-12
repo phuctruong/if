@@ -391,3 +391,28 @@ had 12 consistency passes and could not name one discriminating result.)
   extension that survives F-DWARF, LSS v2 lock winning on DESI DR2+,
   JWST z≥25 by 2030. Self-declared 100 is forbidden (SCORE_INFLATION /
   LAI-23); the loop will not fake it.
+
+---
+
+## Scoreboard v2.1 — loop iteration 2 (2026-06-12)
+
+| Shipped | Artifact |
+|---|---|
+| README front page harmonized | honest pitch: massive-spiral win EARNED, non-discriminating rows labeled, pre-registered stakes listed; "zero-parameter / one-equation" headline retired (v2.0.0) |
+| VALIDATION.md harmonized | referee banner; §4 "χ²/dof variation validates zero parameters" RETRACTED |
+| **DESI replication EXECUTED (first ever)** | `adversarial/survey_clustering_replication.py desi_lrg_sgc` — 25k LRG SGC galaxies + 250k DESI randoms, survey weights, 8-region jackknife: r IF +0.9794 vs null +0.9858; shape χ²/dof IF 76.7 vs null **4.1**. v2 lock criterion NOT met. DESI status: UNVERIFIED → NON-DISCRIMINATING (executed). |
+| LOWZ upgraded to publication-grade errors | weighted (SYSTOT×(NOZ+CP−1)×FKP) + jackknife: null is a GOOD fit (χ²/dof 9.0), IF is not (694.6). v1 conclusion survives proper error treatment. |
+| Kernel updated | DESI now evidence-driven; only Euclid remains UNVERIFIED |
+| Regression | 63/63 tests pass after all edits |
+
+The LSS negative is now robust across TWO independent surveys with
+survey-standard weights and jackknife errors. Under the v2 lock this is
+the baseline DESI DR2 must INVERT for the IF shape to claim a win.
+
+**Composite: 73 → 75/100** (theoretical coherence 5→5.5: front pages
+now match the evidence everywhere; honesty 9→9.5: the retraction is in
+the file that made the claim). Engineering ceiling estimate unchanged:
+~80–82 (remaining: Euclid replication port w/ synthetic randoms, CI
+notebook-execution gate, downloader coverage for SPARC/Pantheon+/BOSS/
+randoms). Beyond that: nature's three votes (JWST 2030, DESI DR2 v2
+lock, dwarf-regime extension surviving F-DWARF).

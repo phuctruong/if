@@ -1,30 +1,48 @@
-# Information Field Theory — A Zero-Parameter Cosmology
+# Information Field Theory — A Maximally-Rigid Cosmology, Honestly Scored
 
-**One equation from prime number theory predicts galactic rotation curves and cosmological observations — with no fitted dark matter, no fitted dark energy, no adjustable parameters.**
+**A logarithmic potential with one stellar M/L per galaxy (MOND's own
+convention) and zero shape freedom — which beats MOND head-to-head in
+massive spirals, loses to it in dwarfs, and stakes its cosmological
+claims on pre-registered bets it can publicly lose.**
 
-Author: Phuc Vinh Truong · phuc@phuc.net · MIT License · Version 1.0.0
+Author: Phuc Vinh Truong · phuc@phuc.net · MIT License · Version 2.0.0
 Repository: https://github.com/phuctruong/if
+External referee review: [`audits/PEER_REVIEW_FABLE5_2026-06-12.md`](audits/PEER_REVIEW_FABLE5_2026-06-12.md) · Honest composite: **73/100** (SCORE.md §"Scoreboard v2")
 
 ---
 
 ## TL;DR
 
-One field. One scale. Zero free parameters.
+One logarithm, two regime faces (deriving the transition is THE open
+problem), one scale, one M/L per galaxy.
 
 ```
-Φ(r) = ln(r/r₀ + 1)        r₀ = 0.659 kpc, derived from σ₈
+Galactic (validated):  Φ_gal(r) = ln(r/r₀ + 1)  →  v² = v₀²·R/(R+r₀)
+LSS (shape-only):      Φ(r) = 1/log(r/r₀ + 1)   →  ξ = C_XI·[Φ]²
+                       r₀ = 0.659 kpc, derived from σ₈
 ```
 
-The same equation reproduces:
+**EARNED (executed, discriminating):**
+- **Massive spirals: beats MOND head-to-head** — median χ²/dof 4.18 vs
+  5.86, n=54, identical 1-param fairness (`adversarial/dwarf_regime_split.py`)
 
-- **Galaxy rotation curves** — SPARC 175 galaxies, Tully-Fisher slope +1.024
-- **Milky Way rotation** — 0.23σ vs Eilers et al. 2019
-- **BOSS DR12 ξ(r)** — Pearson r = +0.98 vs Cuesta 2016
-- **Pantheon+ supernovae** — χ²/dof = 0.932 at SH0ES h
-- **Hubble tension** — bubble radius 10.20 Mpc derived from v₀/H₀·√3
-- **JWST z > 25 early galaxies** — without top-heavy IMF or 20-65% SFE
+**Consistent but not discriminating (truthful labels):**
+- MW rotation 0.23σ · SPARC TF slope +1.024 · Pantheon+ 0.932 at SH0ES h
+  (IF ≡ Λ to 5 decimals — Λ's successes are inherited, not won)
+- LSS ξ(r) shape r ≥ 0.93 on every survey — **an untuned power law
+  scores the same or better** (`adversarial/power_law_null_test.py`)
+- Hubble tension: void catalogs forward-predict H_local ∈ [70.7, 74.9];
+  SH0ES (73.04) lands inside (`predictions/delta_max_forward_prediction.py`)
 
-No dark matter halo. No cosmological constant fitted. No tunable knobs.
+**At stake (pre-registered, can publicly lose):**
+- JWST mature galaxy at z ≥ 25 by 2030 (`BETS.md` #1)
+- LSS v2 lock: IF must BEAT the power-law null on DESI DR2+
+  (`evidence/lss_bao_locked_prediction/lss_bao_locked_prediction_v2.json`)
+- Dwarf regime: the law loses there 2.2× today; any fix must not break
+  the massive-spiral win (F-DWARF, `FALSIFIABILITY.md`)
+
+Known failure modes are listed before reviewers find them. That is the
+point of this repo.
 
 [Quick Start ↓](#quick-start) · [What's confirmed ↓](#whats-confirmed-vs-hypothesis) · [Math ↓](#mathematical-foundation)
 
