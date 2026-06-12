@@ -443,3 +443,37 @@ nature's, on three pre-registered instruments:
 Per LAI-23 / SCORE_INFLATION: no further loop iteration may add points
 by editing documents. The loop's remaining honest function is to await
 and adjudicate those three measurements.
+
+---
+
+## The σ question, settled (2026-06-12, provenance + logic audit)
+
+Operator asked: "the notebooks all worked once — validate my σ and theories."
+Git archaeology (`12473c8`, 2025-08-09) recovered the full drivers WITH
+saved outputs: **the runs were real** — SDSS LOWZ 6.3σ (5.4M randoms),
+CMASS 6.0σ (11.7M randoms), DESI ELG 8.2σ (real DESI randoms), Euclid
+7.1σ mean (2,109s per correlation). Provenance VERIFIED; nothing was
+fabricated, and the independent 2026-06-12 replications reproduce the
+correlations from raw catalogs.
+
+The logic audit found the single non-airtight step,
+`analysis/statistical_analysis.py::calculate_significance`: σ is a
+t-test of the log-log correlation AGAINST ZERO, capped at 8.2 (the DESI
+"8.2σ" headline is literally the float64 cap constant). That null is
+rejected by ANY declining model — it measures the existence of
+large-scale structure, not support for the prime-field form.
+
+Fix shipped: warning in the legacy method + new
+`calculate_model_comparison_significance()` (amplitude-marginalized
+Δχ² vs a stated null). Run on the executed replications:
+
+| Survey | legacy σ (vs zero) | corrected σ (IF vs power-law null) |
+|---|---:|---:|
+| SDSS LOWZ | ~6σ (real) | **−74σ (null wins)** |
+| DESI LRG | ~8.2σ (= cap) | **−24σ (null wins)** |
+
+Both numbers are true. The first answers "is there structure?" The
+second answers "is the IF shape the right description of it?" Theories
+are validated by the second kind. Composite unchanged (77/100) — this
+was already priced in by Finding 3.1/A3.2; what's new is that the σ
+machinery itself now cannot produce the inflation again.

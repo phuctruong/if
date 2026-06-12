@@ -104,16 +104,26 @@ class StatisticalAnalysis:
             else:
                 corr_log = corr_linear
         
-        # Significance from correlation (more appropriate for zero parameters)
+        # Significance from correlation — AGAINST ZERO. ⚠️ INFERENCE LIMIT
+        # (referee finding, 2026-06-12): this t-test rejects the null
+        # "xi(r) is uncorrelated with the model in log space". EVERY
+        # declining model — including an untuned power law — rejects that
+        # null at equal or higher sigma (Pearson r in log-log is affine-
+        # invariant; the null scored HIGHER on both executed replications,
+        # evidence/adversarial/survey_replication_*.json). This sigma
+        # therefore measures the existence of large-scale structure, NOT
+        # support for the prime-field form specifically. For theory
+        # support use calculate_model_comparison_significance() below.
+        # Values reported as exactly 8.2 are the float64 CAP, not data.
         n = len(obs)
         if abs(corr_log) < 1 and n > 2:
             t_stat = corr_log * np.sqrt(n - 2) / np.sqrt(1 - corr_log**2)
             p_value = 2 * (1 - stats.t.cdf(abs(t_stat), n - 2))
-            
+
             if p_value > 1e-15:
                 sigma = stats.norm.ppf(1 - p_value/2)
             else:
-                sigma = 8.2  # Maximum for float64
+                sigma = 8.2  # Maximum for float64 (CAP — see warning above)
         else:
             p_value = 0.0
             sigma = np.inf if corr_log > 0 else 0.0
@@ -137,6 +147,43 @@ class StatisticalAnalysis:
             'interpretation': interpretation
         }
     
+    def calculate_model_comparison_significance(
+            self, observed: np.ndarray, pred_model: np.ndarray,
+            pred_null: np.ndarray, errors: np.ndarray) -> Dict[str, float]:
+        """Significance of the MODEL BEATING A NULL — the discriminating test.
+
+        Added 2026-06-12 (referee fix). Amplitude-marginalized log-space
+        chi2 for both the theory and a stated null (e.g. power law), and
+        the sigma equivalent of the chi2 difference. THIS — not
+        correlation-vs-zero — is the number that supports a theory.
+        Positive delta_chi2 means the model beats the null.
+        """
+        valid = (np.isfinite(observed) & (observed > 0) & (errors > 0)
+                 & np.isfinite(pred_model) & (pred_model > 0)
+                 & np.isfinite(pred_null) & (pred_null > 0))
+        obs, err = observed[valid], errors[valid]
+        n = int(valid.sum())
+        if n < 3:
+            return {'n_points': n, 'delta_chi2': 0.0, 'sigma_model_vs_null': 0.0,
+                    'verdict': 'insufficient data'}
+
+        def chi2_shape(pred):
+            resid = np.log(obs) - np.log(pred[valid])
+            resid -= resid.mean()  # marginalize amplitude (1 implicit param each)
+            return float(np.sum((resid / (err / obs)) ** 2))
+
+        chi2_m, chi2_n = chi2_shape(pred_model), chi2_shape(pred_null)
+        delta = chi2_n - chi2_m  # >0 → model better than null
+        sigma = float(np.sign(delta) * np.sqrt(abs(delta)))
+        return {
+            'n_points': n,
+            'chi2_model': chi2_m, 'chi2_null': chi2_n, 'delta_chi2': delta,
+            'sigma_model_vs_null': sigma,
+            'verdict': ('MODEL BEATS NULL' if sigma >= 2.0 else
+                        'NULL BEATS MODEL' if sigma <= -2.0 else
+                        'INDISTINGUISHABLE'),
+        }
+
     def _interpret_results(self, chi2_dof: float, correlation: float) -> str:
         """Provide interpretation of statistical results."""
         if correlation > 0.99:
