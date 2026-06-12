@@ -1,0 +1,49 @@
+{
+  "artifact": "delta_max forward prediction (de-circularized)",
+  "supersedes_interpretation_of": "predictions/delta_max_derivation.py",
+  "inputs": {
+    "H_planck": 67.4,
+    "void_ranges": {
+      "Pan_2012_typical": [
+        0.3,
+        0.7
+      ],
+      "Sutter_2014_range": [
+        0.2,
+        0.8
+      ]
+    },
+    "ltb": "H_local/H_inf = sqrt(1 + delta_void/3)"
+  },
+  "measurement_under_test": {
+    "H_sh0es": 73.04,
+    "err": 1.04
+  },
+  "results": {
+    "Pan_2012_typical": {
+      "delta_void_range": [
+        0.3,
+        0.7
+      ],
+      "predicted_H_local_band": [
+        70.69,
+        74.85
+      ],
+      "sh0es_inside_band": true,
+      "implied_delta_void_at_sh0es": 0.523
+    },
+    "Sutter_2014_range": {
+      "delta_void_range": [
+        0.2,
+        0.8
+      ],
+      "predicted_H_local_band": [
+        69.61,
+        75.86
+      ],
+      "sh0es_inside_band": true,
+      "implied_delta_void_at_sh0es": 0.523
+    }
+  },
+  "verdict": "CONSISTENT \u2014 SH0ES falls inside the void-catalog-predicted H_local band; implied local void depth 52% is observationally typical. HONEST WEIGHT: the band is wide (~5 km/s/Mpc); this is a consistency test, not a precision derivation. It sharpens only with a direct measurement of the local void depth at the SH0ES volume."
+}

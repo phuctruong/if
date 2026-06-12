@@ -188,3 +188,26 @@ not preserved priors.
 - **`VALIDATION.md`** — survey-by-survey empirical detail
 - **`REPLICATION.md`** — independent-replication protocol
 - **`THEORY.md`** — full mathematical framework
+
+---
+
+## Dwarf-regime falsifier + massive-spiral protection clause (added 2026-06-12)
+
+Source: executed regime split, `adversarial/dwarf_regime_split.py`
+(full SPARC 175, sealed JSON). Current state: IF beats MOND in massive
+spirals (median χ²/dof ratio 0.71, n=54) and loses 2.2–3.8× in
+dwarfs/intermediates.
+
+- **Falsifier F-DWARF:** if any future extension of the galactic law
+  (new term, regime interpolation, r₀ mapping) brings dwarf median
+  χ²/dof below MOND's *but degrades the massive-spiral median by more
+  than 20%*, the extension is rejected — the massive-spiral win is the
+  theory's hardest-won empirical asset and may not be traded away
+  silently (never-worse, LAI-27 analog).
+- **Falsifier F-MASSIVE:** if an independent re-analysis (different
+  M/L priors, different error floors) erases the massive-spiral win
+  (ratio ≥ 1.0), the theory's strongest galactic claim falls back to
+  "within 2× of MOND" and SCORE.md must be downgraded accordingly.
+- **Pre-registered expectation:** the un-extended law will keep losing
+  in dwarfs. A future claimed dwarf win without a published extension
+  mechanism should be treated as a fitting artifact.

@@ -1,0 +1,25 @@
+{
+  "artifact": "IF Theory LSS locked prediction v2 — null-beating criterion (HARDENED)",
+  "status": "PREDICTION_LOCKED_FOR_FUTURE_SURVEYS",
+  "locked_date": "2026-06-12",
+  "supersedes": "lss_bao_locked_prediction.json (v1) — per LAI-22, v1 is NOT edited (its sha256 stands); v2 hardens the PASS criterion only",
+  "why_v2": "The 2026-06-12 referee pass (audits/PEER_REVIEW_FABLE5_2026-06-12.md, Finding 3.1 + A3.2) proved v1's pass criterion 'Pearson r(log xi) >= 0.93' is non-discriminating: an untuned power law scores >= 0.93 on every survey's xi(r) at every redshift, and BEAT the IF shape on freshly measured LOWZ data in every fit window. A pass under v1 therefore carries no evidential weight for the IF form specifically. v2 requires beating the null.",
+  "model_spec": {
+    "formula": "xi(r) = C_XI / [log(r/r0 + 1)]^2",
+    "C_XI": 62,
+    "r0_kpc": 0.6594900863537677,
+    "free_parameters_allowed_on_future_data": 0
+  },
+  "null_spec": {
+    "formula": "xi(r) = A * r^(-gamma)",
+    "note": "For the log-log Pearson statistic gamma is irrelevant (affine invariance); for shape-chi2 the null gets the SAME amplitude-marginalization as IF, gamma fixed at 1.8 (Peebles textbook value, locked here, no tuning)."
+  },
+  "future_data_rule": {
+    "allowed": "Apply both model_spec and null_spec, exactly as written, to new DESI DR2 / Euclid / Roman correlation-function data on predeclared bins.",
+    "forbidden": "No amplitude fit beyond the declared marginalization, no r0 fit, no gamma tuning, no bin-range tuning after seeing the new data.",
+    "pass_IF": "IF beats the power-law null on BOTH statistics: Pearson r(log) margin >= +0.01 AND amplitude-marginalized shape chi2/dof ratio (null/IF) >= 2.0, on the predeclared range 10-120 Mpc.",
+    "fail_IF": "Null matches or beats IF on either statistic (the 2026-06-12 LOWZ replication outcome, if repeated on new surveys).",
+    "reference_executed_baseline": "evidence/adversarial/lowz_clustering_replication.json — on SDSS DR12 LOWZ South (25k galaxies, fresh Landy-Szalay): r_IF=+0.9867 vs r_null=+0.9916, shape-chi2 IF=2186 vs null=61 over 5-120 Mpc. v2 PASS requires the new-survey outcome to INVERT this."
+  },
+  "honest_statement": "As of lock date, the executed evidence FAVORS THE NULL. This lock exists so that a future claimed pass means something: under v2, IF can genuinely win, genuinely lose, and cannot draw."
+}

@@ -2,16 +2,37 @@
 
 ## TL;DR
 
-One field potential. One scale. Zero adjustable parameters.
+One logarithm, two regime-dependent faces, one scale. (Corrected
+2026-06-12 to match the validated code — the previous "one equation"
+TL;DR contradicted the repo's own FAIL rows; see
+`audits/PEER_REVIEW_FABLE5_2026-06-12.md` §3.4.)
 
 ```
-Φ(r) = 1/log(r/r₀ + 1)        amplitude = 1 from prime number theorem
-                              r₀ = 0.65 kpc from σ₈
+Galactic (validated):   Φ_gal(r) = ln(r/r₀ + 1)   →  v² = v₀²·R/(R+r₀)
+LSS (shape-only):       Φ(r)     = 1/log(r/r₀ + 1) →  ξ = C_XI·[Φ]²
+                        r₀ = 0.65 kpc from σ₈; amplitude 1 from PNT
 ```
 
-Dark matter effects emerge from this potential at galactic scales.
-Dark energy emerges from "bubble" decoupling at r_bubble ≈ 10.3 Mpc.
-Both phenomena from a single equation, no free parameters added.
+**Honest empirical status (executed measurements, 2026-06-12):**
+- The galactic ln-form is real and earns its keep: on the full SPARC
+  sample it **beats MOND head-to-head in massive spirals** (median
+  χ²/dof 4.18 vs 5.86, n=54, identical 1-param fairness) — and loses
+  2.2–3.8× in dwarfs/intermediates, localizing exactly where the
+  saturating form is incomplete (`adversarial/dwarf_regime_split.py`).
+- The LSS 1/log-form survives only as a shape consistency: an untuned
+  power law beats it on freshly measured ξ(r)
+  (`adversarial/lowz_clustering_replication.py`). Its absolute
+  amplitude at canonical r₀ is off by orders of magnitude.
+- The two forms are NOT yet derived from one another. "Differential
+  and integral faces of the same logarithm" is the working conjecture;
+  deriving the regime transition (where, why, and with what r₀
+  mapping) is the theory's central OPEN PROBLEM. Until it is solved,
+  claims must say "two regime forms", not "one equation".
+
+Dark energy emerges from "bubble" decoupling at r_bubble ≈ 10.3 Mpc
+(consistency-level support: the void-catalog forward prediction brackets
+SH0ES, `predictions/delta_max_forward_prediction.py`; w ≡ −1 to 5
+decimals means no current SNe/BAO data can distinguish this from Λ).
 
 Plain language: galaxies live inside coherent gravitational regions. Inside
 each region the logarithmic potential keeps rotation curves flat (looks
@@ -64,17 +85,27 @@ Plain language: the logarithmic potential pulls orbital speeds toward a
 constant value at large radius. That looks identical to what a dark matter
 halo would do — but no particle is required.
 
-### Orbital velocities
+### Orbital velocities — the VALIDATED galactic form
 
-For circular orbits in the prime field:
+(Corrected 2026-06-12. The previous text derived v from the 1/log
+form and claimed "v ∝ 1/√log(r) → flat rotation curves". That is
+wrong twice: 1/√log decays, and the 1/log form FAILED SPARC with
+median χ²/dof ≈ 10³ — kept honestly as FAIL rows in SCORE.md. The
+validated galactic potential is the integrated ln form.)
+
 ```
-v²(r) = r|dΦ/dr| = r/[(r/r₀ + 1) · log²(r/r₀ + 1)]
+Φ_gal(r) = ln(r/r₀ + 1)
+dΦ/dr    = 1/(r + r₀)
+v²(R)    = v₀² · R/(R + r₀)   →   v → v₀ (FLAT) as R ≫ r₀
+v₀²      = 0.62 · G·M_baryon/R_disk   (Freeman 1970 disk virial)
 ```
 
-This produces:
-- **Small r**: Newtonian v ∝ 1/√r
-- **Large r**: flattens to v ∝ 1/√log(r) → flat rotation curves
-- **No dark matter particles required**
+Executed status on SPARC 175 (`adversarial/dwarf_regime_split.py`):
+- **Massive spirals (Vflat ≥ 150 km/s): BEATS MOND** (4.18 vs 5.86
+  median χ²/dof) — the theory's strongest empirical result.
+- Dwarfs/intermediates: loses to MOND 2.2–3.8× — the saturating form
+  cannot shape slowly-rising low-acceleration curves. Any extension
+  must fix this regime WITHOUT breaking the massive-spiral win.
 
 ### Milky Way prediction
 

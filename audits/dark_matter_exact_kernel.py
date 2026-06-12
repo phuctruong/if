@@ -11,12 +11,15 @@ Rules:
 """
 
 import json
+from pathlib import Path
 from decimal import Decimal, getcontext
 from fractions import Fraction
 from typing import Dict, List, NamedTuple, Optional, Union
 
 # Set high precision for Decimal
 getcontext().prec = 50
+
+_ROOT = Path(__file__).resolve().parent.parent
 
 
 class ExactNumber(NamedTuple):
@@ -210,170 +213,81 @@ class DarkMatterExactKernel:
         self.validation_results = {}
 
     def validate_sdss(self) -> Dict:
-        """Validate SDSS DR12 with exact arithmetic"""
-        # LOWZ sample
-        lowz = CorrelationComputation("SDSS DR12", "LOWZ")
+        """Validate SDSS against EXECUTED evidence (failable — 2026-06-12 rewrite).
 
-        # Add exact measurements (from historical data)
-        measurements = [
-            (Fraction(989, 1000), Fraction(1, 100)),  # obs=0.989, err=0.01
-            (Fraction(988, 1000), Fraction(1, 100)),
-            (Fraction(987, 1000), Fraction(2, 100)),
-        ]
-        for obs, err in measurements:
-            lowz.add_correlation(obs, err)
-
-        # Theory values (Prime Field predictions)
-        theory = [
-            ExactNumber.from_int(1),  # Theory predicts normalized correlation
-            ExactNumber.from_int(1),
-            ExactNumber.from_int(1),
-        ]
-
-        # Compute exactly
-        r = lowz.compute_pearson_r(theory)
-        chi2 = lowz.compute_chi2_dof(theory)
-
+        The pre-2026-06-12 version hardcoded historical correlations as
+        Fractions, compared them to a constant "theory" of 1, and returned
+        status "VALIDATED" unconditionally — a verifier that could not
+        fail (review Finding N1, audits/PEER_REVIEW_FABLE5_2026-06-12.md).
+        This version loads the sealed end-to-end LOWZ replication and
+        computes the status from the v2 locked criterion: IF must BEAT
+        the power-law null. It can fail, and currently does.
+        """
+        ev = _ROOT / "evidence" / "adversarial" / "lowz_clustering_replication.json"
+        if not ev.exists():
+            result = {"sample": "LOWZ", "status": "UNVERIFIED_NO_EXECUTED_EVIDENCE",
+                      "needed": "run adversarial/lowz_clustering_replication.py"}
+            self.validation_results["SDSS"] = result
+            return result
+        d = json.loads(ev.read_text())
+        r_if = Fraction(str(d["pearson_log_IF"]))
+        r_null = Fraction(str(d["pearson_log_power_law"]))
+        x2_if = Fraction(str(d["chi2_shape_IF"]))
+        x2_null = Fraction(str(d["chi2_shape_power_law"]))
+        passes = (r_if - r_null >= Fraction(1, 100)) and (x2_null / x2_if >= 2)
         result = {
-            "sample": "LOWZ",
-            "pearson_r": str(r.fraction),
-            "chi2_dof": str(chi2.fraction),
-            "status": "VALIDATED",
+            "sample": "LOWZ (executed Landy-Szalay replication, n_gal=%d)" % d["n_galaxies"],
+            "pearson_r": str(r_if),
+            "pearson_r_power_law_null": str(r_null),
+            "chi2_shape_IF": str(x2_if),
+            "chi2_shape_null": str(x2_null),
+            "criterion": "v2 lock: r margin >= 0.01 AND null/IF shape-chi2 >= 2",
+            "status": "VALIDATED_DISCRIMINATING" if passes
+                      else "NON-DISCRIMINATING (power-law null favored)",
         }
-
-        # CMASS sample
-        cmass = CorrelationComputation("SDSS DR12", "CMASS")
-        measurements = [
-            (Fraction(983, 1000), Fraction(1, 100)),
-            (Fraction(982, 1000), Fraction(1, 100)),
-        ]
-        for obs, err in measurements:
-            cmass.add_correlation(obs, err)
-
-        r = cmass.compute_pearson_r(theory[:2])
-        chi2 = cmass.compute_chi2_dof(theory[:2])
-
-        result["CMASS"] = {
-            "pearson_r": str(r.fraction),
-            "chi2_dof": str(chi2.fraction),
-            "status": "VALIDATED",
-        }
-
-        self.computations["SDSS"] = lowz
         self.validation_results["SDSS"] = result
         return result
 
-    def validate_desi(self) -> Dict:
-        """Validate DESI DR1 with exact arithmetic"""
-        desi = CorrelationComputation("DESI DR1", "ELG")
-
-        measurements = [
-            (Fraction(978, 1000), Fraction(1, 100)),
-            (Fraction(977, 1000), Fraction(2, 100)),
-        ]
-        for obs, err in measurements:
-            desi.add_correlation(obs, err)
-
-        theory = [ExactNumber.from_int(1), ExactNumber.from_int(1)]
-        r = desi.compute_pearson_r(theory)
-        chi2 = desi.compute_chi2_dof(theory)
-
+    def _unverified(self, survey: str, sample: str) -> Dict:
         result = {
-            "survey": "DESI DR1",
-            "sample": "ELG",
-            "pearson_r": str(r.fraction),
-            "chi2_dof": str(chi2.fraction),
-            "status": "VALIDATED",
+            "survey": survey, "sample": sample,
+            "status": "UNVERIFIED_NO_EXECUTED_EVIDENCE",
+            "note": ("No end-to-end clustering replication has been executed for "
+                     "this survey in-repo. The notebook markdown tables are "
+                     "historical and currently unreproducible (review Finding N1). "
+                     "Port adversarial/lowz_clustering_replication.py to this "
+                     "survey's staged catalogs to populate this."),
         }
-
-        self.computations["DESI"] = desi
-        self.validation_results["DESI"] = result
+        self.validation_results[survey] = result
         return result
+
+    def validate_desi(self) -> Dict:
+        """DESI: no executed in-repo clustering replication yet — say so."""
+        return self._unverified("DESI", "ELG")
 
     def validate_euclid(self) -> Dict:
-        """Validate Euclid DR1 with exact arithmetic"""
-        euclid = CorrelationComputation("Euclid DR1", "Main")
-
-        measurements = [
-            (Fraction(940, 1000), Fraction(3, 100)),
-            (Fraction(941, 1000), Fraction(3, 100)),
-        ]
-        for obs, err in measurements:
-            euclid.add_correlation(obs, err)
-
-        theory = [ExactNumber.from_int(1), ExactNumber.from_int(1)]
-        r = euclid.compute_pearson_r(theory)
-        chi2 = euclid.compute_chi2_dof(theory)
-
-        result = {
-            "survey": "Euclid DR1",
-            "sample": "Main",
-            "pearson_r": str(r.fraction),
-            "chi2_dof": str(chi2.fraction),
-            "status": "VALIDATED",
-        }
-
-        self.computations["Euclid"] = euclid
-        self.validation_results["Euclid"] = result
-        return result
+        """Euclid: no executed in-repo clustering replication yet — say so."""
+        return self._unverified("Euclid", "Main")
 
     def generate_report(self) -> Dict:
-        """Generate comprehensive validation report"""
+        """Report computed from actual validation results — no hardcoded summary."""
         return {
             "exact_math_kernel": True,
-            "float_contamination": False,
-            "null_zero_distinction_enforced": True,
-            "computations": {
-                name: comp.to_evidence_dict()
-                for name, comp in self.computations.items()
-            },
+            "verifier_can_fail": True,
             "validation_results": self.validation_results,
-            "summary": {
-                "sdss_status": "VALIDATED",
-                "desi_status": "VALIDATED",
-                "euclid_status": "VALIDATED",
-                "all_exact_arithmetic": True,
-                "zero_free_parameters_verified": True,
-            }
+            "summary": {k.lower() + "_status": v.get("status")
+                        for k, v in self.validation_results.items()},
         }
 
 
 if __name__ == "__main__":
     print("=" * 80)
-    print("DARK MATTER EXACT MATH KERNEL VALIDATION")
+    print("DARK MATTER EXACT KERNEL — evidence-driven, failable (2026-06-12)")
     print("=" * 80)
-    print()
-
     kernel = DarkMatterExactKernel()
-
-    print("Validating SDSS DR12...")
-    sdss_result = kernel.validate_sdss()
-    print(f"  LOWZ Pearson r: {sdss_result['pearson_r']}")
-    print(f"  CMASS Pearson r: {sdss_result['CMASS']['pearson_r']}")
-    print()
-
-    print("Validating DESI DR1...")
-    desi_result = kernel.validate_desi()
-    print(f"  ELG Pearson r: {desi_result['pearson_r']}")
-    print()
-
-    print("Validating Euclid DR1...")
-    euclid_result = kernel.validate_euclid()
-    print(f"  Main Pearson r: {euclid_result['pearson_r']}")
-    print()
-
-    # Generate report
-    report = kernel.generate_report()
-    print("=" * 80)
-    print("EXACT MATH KERNEL REPORT")
-    print("=" * 80)
-    print(json.dumps(report, indent=2))
-    print()
-
-    # Summary
-    print("✅ VALIDATION SUMMARY")
-    print("  Exact arithmetic: ENFORCED")
-    print("  Float contamination: NONE")
-    print("  Null/Zero distinction: VERIFIED")
-    print("  All surveys: VALIDATED")
-    print("  Free parameters: 0 (CONFIRMED)")
+    for name, fn in [("SDSS", kernel.validate_sdss),
+                     ("DESI", kernel.validate_desi),
+                     ("Euclid", kernel.validate_euclid)]:
+        r = fn()
+        print(f"{name}: {r['status']}")
+    print(json.dumps(kernel.generate_report()["summary"], indent=2))
