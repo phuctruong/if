@@ -156,9 +156,11 @@ XP → 15450.
 
 ### Next moves after this session, ranked
 
-1. **Entry 08 — cluster-merger memory survey** (prose + literature): inventory
-   published merging-cluster lensing–X-ray offsets with collision-age estimates;
-   ≥ 10 systems → a τ_IF prereg becomes possible. The most IF-distinctive live thread.
+1. **Entry 08 — DONE (iteration 13): PARKED on a data gap.** Offsets (Harvey+15,
+   errors per Wittman+18) and collision ages (MCC 29 clusters) are disjoint samples;
+   τ_IF prereg premature. Reopen conditions recorded in
+   `canon/20-cosmology/11-merger-memory-survey.md` (Euclid-era lensing of the MCC
+   sample is the natural trigger).
 2. **Entry 12 — I_NL estimator freeze** (CAMELS, pixel-level spec before any data).
 3. **Notebook 10 round 2** — parked until DESI DR3 / Euclid DR1 (or a logged v2
    amendment); growth side must stay unopened until an expansion signal ≥ 2σ exists.

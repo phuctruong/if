@@ -126,7 +126,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Lattice hardened against the RAR closure** — entry 02 tombstoned (CLOSED_BY_PROOF), entry 05 demoted, the reduced theory object identified (b(z)+μ[b]+w[b]+τ_IF ≈ 5 numbers), ranked pre-DR1 build queue (notebook 10 = boss #6 first) | 300 | `canon/20-cosmology/07-lattice-hardening.md` ✅ |
 | **Notebook-10 prereg + sign derivation committed pre-data (boss #6 engaged with a real bet)** — DESI hint disclosed as retrodiction; the IF bet = growth-side shape match with A_μ > 0, AGAINST the S8 trend; verdict tree + execution order frozen | 400 | `canon/20-cosmology/08-notebook10-prereg.md` + `09-sign-derivation.md` ✅ |
 | **Notebook-10 round 1 executed end-to-end honestly** — independent pipeline validates (Ωm 0.309, h 0.679, r_d 148.3); frozen verdict INDISTINGUISHABLE honored; growth side never opened; conservative amendments logged pre-fit; apparatus preserved for the Euclid vintage | 500 | `canon/20-cosmology/10-notebook10-verdict-v1.md` + `evidence/expansion_fit_2026_07_18.json` ✅ |
-| **TOTAL XP** | | **15450** |
+| **Entry-08 survey: data gap recognized instead of forced** — offsets (Harvey/Wittman, unreliable per-system) and collision ages (MCC 29 clusters) live in disjoint samples; parked with 3 precise reopen conditions | 200 | `canon/20-cosmology/11-merger-memory-survey.md` ✅ |
+| **TOTAL XP** | | **15650** |
 
 ### Belt progression (IF Theory)
 
