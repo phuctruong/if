@@ -125,7 +125,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Family A killed by the RAR bound + the branch redirect proved** — cosmology's positive target moved from SPARC (provably unwinnable for IF-distinctive laws) to the Euclid lattice; two ℒ_IF kills today at zero fit cost | 500 | `canon/20-cosmology/06-sigma-degeneracy-check.md` ✅ |
 | **Lattice hardened against the RAR closure** — entry 02 tombstoned (CLOSED_BY_PROOF), entry 05 demoted, the reduced theory object identified (b(z)+μ[b]+w[b]+τ_IF ≈ 5 numbers), ranked pre-DR1 build queue (notebook 10 = boss #6 first) | 300 | `canon/20-cosmology/07-lattice-hardening.md` ✅ |
 | **Notebook-10 prereg + sign derivation committed pre-data (boss #6 engaged with a real bet)** — DESI hint disclosed as retrodiction; the IF bet = growth-side shape match with A_μ > 0, AGAINST the S8 trend; verdict tree + execution order frozen | 400 | `canon/20-cosmology/08-notebook10-prereg.md` + `09-sign-derivation.md` ✅ |
-| **TOTAL XP** | | **14950** |
+| **Notebook-10 round 1 executed end-to-end honestly** — independent pipeline validates (Ωm 0.309, h 0.679, r_d 148.3); frozen verdict INDISTINGUISHABLE honored; growth side never opened; conservative amendments logged pre-fit; apparatus preserved for the Euclid vintage | 500 | `canon/20-cosmology/10-notebook10-verdict-v1.md` + `evidence/expansion_fit_2026_07_18.json` ✅ |
+| **TOTAL XP** | | **15450** |
 
 ### Belt progression (IF Theory)
 
@@ -148,7 +149,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | ☠️ **SLAIN (04g v2)** — sign survives, *content* falsified: ΔW tunable at ΔI_use ≡ 0 |
 | 5 | **The Signed Functional J** | prove squeezed SU↔Still | ⚖️ **CONTESTED — panel says don't build it**; Π_C promoted to primitive instead. Live disagreement recorded. |
 | 5b | **The Representational-Format Obstruction** | formalize: causal-work-positive with zero recoverable predictive information | 🆕 **NEW — the successor claim**, panel-rated the honest ceiling of the program |
-| 6 | **ΛCDM** | expansion–growth consistency, one b(z) | ⚔️ **ENGAGED** — Phase 3 live; we enter down 7.13 to 1.14 on the archived galaxy benchmark |
+| 6 | **ΛCDM** | expansion–growth consistency, one b(z) | ⚔️ **ROUND 1 FOUGHT (2026-07-18): INDISTINGUISHABLE** — full frozen apparatus built (pinned DESI DR2 + Pantheon+ + verified Planck priors; deterministic profile likelihood); expansion side prefers A_w≠0 at only ~1.3σ < 2σ gate, so the shape-match test can't bite; growth side NEVER OPENED (provable from git history); test preserved intact for DESI DR3 / Euclid DR1. |
 | 7 | **Euclid DR1** | preregistered forecast, ~Oct 2026 | 🔒 LOCKED (Phase 4) |
 | 8 | **The Still-Life Desert** (does any Conway-gate universe grow movers?) | pre-declared 216-config sweep + D4 | ☠️ **SLAIN (`if-mobility-search`)** — B3/S23 at E_BIRTH=0.25/inflow=12 grows 24 movers/run from soup; the asterisk substrate exists. First mover audit: UNDECIDED (t=−0.94) — the *next* boss is decidability, not existence |
 

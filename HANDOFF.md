@@ -140,14 +140,29 @@ Verdict tree frozen incl. UNIFICATION DEAD. Execution order: sign note ✅ → n
 skeleton w/ CONTRACT (datasets pinned, no data) → expansion fit → growth fit →
 verdict, each step committed before the next. XP → 14950.
 
+### Loop iterations 11–12 (2026-07-18, /loop) — notebook 10 round 1 COMPLETE: INDISTINGUISHABLE
+
+Skeleton + data guard built (`notebooks/10_expansion_growth_consistency.ipynb`).
+Ingest from pinned sources (DESI DR2 BAO official likelihood via CobayaSampler repo;
+Pantheon+ official release incl. 32MB STAT+SYS cov; Planck-2018 distance priors
+transcribed from the Chen/Huang/Wang PDF Table I — nothing typed from memory).
+Logged pre-fit amendment: r_d free (conservative). Fit (`scripts/expansion_fit.py`,
+deterministic profile likelihood): ΛCDM validates (Ωm 0.309, h 0.679, r_d 148.3);
+IF shape family Δχ² = −1.74 → **A_w ≠ 0 at only ~1.3σ < the frozen 2σ gate →
+verdict INDISTINGUISHABLE (branch 1); growth side NEVER OPENED** — test preserved
+intact for DESI DR3 / Euclid DR1. Boss #6 round 1 fought, unresolved. Possible v2
+amendments declared in `10-notebook10-verdict-v1.md` (must be logged before running).
+XP → 15450.
+
 ### Next moves after this session, ranked
 
-1. **Notebook 10 implementation** per the frozen execution order: (3) skeleton +
-   CONTRACT cell with pinned dataset versions (no data loaded), (4) expansion-side
-   fit (DESI DR2 BAO + Pantheon+ + Planck-2018 distance priors; `_archive/` pipelines
-   may be mined for machinery, never numbers), (5) growth-side fit (pinned fσ₈
-   compilation + Planck lensing cross-check), (6) verdict same-session. Data downloads
-   are the practical constraint; check `_archive/` first.
+1. **Entry 08 — cluster-merger memory survey** (prose + literature): inventory
+   published merging-cluster lensing–X-ray offsets with collision-age estimates;
+   ≥ 10 systems → a τ_IF prereg becomes possible. The most IF-distinctive live thread.
+2. **Entry 12 — I_NL estimator freeze** (CAMELS, pixel-level spec before any data).
+3. **Notebook 10 round 2** — parked until DESI DR3 / Euclid DR1 (or a logged v2
+   amendment); growth side must stay unopened until an expansion signal ≥ 2σ exists.
+4. **Track-C notebooks** · **book manuscript** (arc now includes P17 + boss-#6 round 1).
 2. **Entry 08 survey**: published merging-cluster lensing–X-ray offsets + collision
    ages; ≥10 systems → τ_IF prereg becomes possible.
 3. **Entry 12**: freeze the I_NL estimator on CAMELS to pixel level.
