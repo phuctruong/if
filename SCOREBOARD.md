@@ -72,6 +72,51 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 274177 | Causal-work threshold reproduced across ≥3 rule families | ⬜ |
 | 65537 | Preregistered Euclid forecast frozen in a timestamped commit before DR1 | ⬜ |
 
+
+## 🎮 The Game — belts, XP, and boss fights
+
+> Bruce Lee gate: *"Absorb what is useful, discard what is useless, add what is
+> uniquely your own."* Points are for **discarding** as much as for building.
+> A fished positive scores 0. A clean kill scores full.
+
+### XP ledger (2026-07-18)
+
+| Act | XP | Earned |
+|---|---:|---|
+| Original result, observed **and** derived | 300 | Parasite band ✅ |
+| Original result, observed | 200 | Rule/state dissociation ✅ · work-per-bit stability ✅ |
+| **Boss kill** — flagship claim falsified under a pre-committed stop rule | **500** | IF-H1 universality ✅ |
+| Honest kill (self-caught error, logged before interpretation) | 100 ea | v0.0 contract · Θ* raw · lockstep · smoother-parasite · I_use v1/v2/v3 (×7) = 700 ✅ |
+| Candidate theorem with named missing lemmas | 250 | Break-even theorem ✅ |
+| Adversarial round survived + folded | 100 ea | Rounds 1–4 (×4) = 400 ✅ |
+| Canonical paper landed | 100 ea | P00–P06, P15 (×8) = 800 ✅ |
+| Rung sealed | 400 ea | 274177 ✅ |
+| **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
+| **TOTAL XP** | | **3550** |
+
+### Belt progression (IF Theory)
+
+| Belt | Criterion | Status |
+|---|---|---|
+| White | Repo rebooted around a stated core idea | ✅ |
+| Yellow | First deterministic result with a frozen contract | ✅ parasite band |
+| Orange | Adversarial review survived; kills logged publicly | ✅ 4 rounds, 8 kills |
+| **Green** | **A flagship claim killed by its own pre-committed test** | ✅ **CURRENT — IF-H1** |
+| Blue | A surviving claim reproduced by an independent party | ⬜ |
+| Black | A preregistered prediction confirmed against data nobody had seen | ⬜ Euclid DR1 |
+
+### Boss fights
+
+| # | Boss | HP | Outcome |
+|---|---|---|---|
+| 1 | **Θ\* the False Constant** | cost-invariance control | ☠️ SLAIN (iter 2) |
+| 2 | **η\* the Unmeasurable** | 3 estimators | ☠️ SLAIN (P15 §3) |
+| 3 | **Υ_IF the Last Rescaling** | 3 families × 2 costs | ☠️ SLAIN (P15 §4) |
+| 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | 🔓 OPEN — next |
+| 5 | **The Signed Functional J** | prove squeezed SU↔Still | 🔓 OPEN (P15 §3 strengthens its case) |
+| 6 | **ΛCDM** | expansion–growth consistency, one b(z) | 🔒 LOCKED (Phase 3) |
+| 7 | **Euclid DR1** | preregistered forecast, ~Oct 2026 | 🔒 LOCKED (Phase 4) |
+
 ## Kill log (falsifiers that fired)
 
 | Date | Claim killed | Evidence |

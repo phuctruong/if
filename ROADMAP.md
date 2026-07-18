@@ -1,5 +1,18 @@
 # IF Theory — ROADMAP
 
+> 🎮 **Game state:** Green belt · 3550 XP · 3 bosses slain · next boss = the R ≤ 0 lemma.
+> Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
+
+| Phase | Seal | State |
+|---|---|---|
+| 0 Absorb + Constitution | — | ✅ SEALED (`if-founding-100` 100/100) |
+| 1 Foundations | rung 641 | ◐ P00–P06 + P15 landed; dimensions/estimator/falsifier audit open |
+| 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
+| 3 Observational Cosmology Lab | — | 🔒 next: SPARC + Planck/DESI baselines, then b(z) |
+| 4 Preregistration | rung 65537 | 🔒 Euclid forecast frozen before DR1 (~Oct 2026) |
+| 5 Papers + Book | — | ◐ P07–P14 revisions + parasite-band write-up + book arc |
+
+
 > Everything below serves one core idea: the discharging-battery universe and the
 > post-threshold recharge role of intelligence (see NORTHSTAR §core idea).
 > Reboot 2026-07-18. Build order optimized for AI coding agents + deterministic Jupyter notebooks + public data.
