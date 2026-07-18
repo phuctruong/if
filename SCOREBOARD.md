@@ -94,8 +94,10 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
 | Archived falsification recovered + scoped (not re-litigated) | 300 | SPARC 175-galaxy prior ✅ |
 | Adversarial round survived + folded (round 4) | 100 | Kill verdict verified + P15 rewritten ✅ |
+| **Declaring a branch not-yet-testable instead of fitting it** | 300 | Cosmology C3 audit ✅ |
+| Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **4350** |
+| **TOTAL XP** | | **4850** |
 
 ### Belt progression (IF Theory)
 

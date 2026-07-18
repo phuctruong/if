@@ -1,6 +1,6 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 4350 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 4850 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |
@@ -8,7 +8,7 @@
 | 0 Absorb + Constitution | — | ✅ SEALED (`if-founding-100` 100/100) |
 | 1 Foundations | rung 641 | ◐ P00–P06 + P15 landed; dimensions/estimator/falsifier audit open |
 | 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
-| 3 Observational Cosmology Lab | — | ▶️ **LIVE** — `hackathons/if-cosmology-lab/`; enters at a deficit (archived IF galaxy law lost to MOND *and* NFW) |
+| 3 Observational Cosmology Lab | — | ▶️ LIVE 25/100 — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
 | 4 Preregistration | rung 65537 | 🔒 Euclid forecast frozen before DR1 (~Oct 2026) |
 | 5 Papers + Book | — | ◐ P07–P14 revisions + parasite-band write-up + book arc |
 
