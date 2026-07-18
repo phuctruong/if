@@ -30,7 +30,7 @@
 7. `30-meaning/01-maxlove.md` — IF-H3 + the layer firewall
 8. `30-meaning/02-recharge-role-and-heat-death.md` — THE CORE IDEA, decomposed by layer (read this to understand why the program exists)
 
-## The 15-paper series (source plan, msg[51])
+## The 15-paper series (all 15 extracted 2026-07-18; titles below are AS-WRITTEN — the series evolved from the msg[51] plan at slots 12–14)
 
 | # | Title | Canon home | Extracted |
 |---:|---|---|---|
@@ -46,6 +46,6 @@
 | 9 | IF Cosmology: Expansion–Growth Consistency | `papers/P09.md` | ✅ `extracted/paper-09-extracted.md` |
 | 10 | Information and Topology in the Cosmic Web | `papers/P10.md` | ✅ `extracted/paper-10-extracted.md` |
 | 11 | A Preregistered IF Forecast for Euclid | `papers/P11.md` | ✅ `extracted/paper-11-extracted.md` |
-| 12 | IF Functional Consciousness | `papers/P12.md` | ✅ `extracted/paper-12-extracted.md` |
-| 13 | The Evolutionary Conditions for MaxLove | `papers/P13.md` | ✅ `extracted/paper-13-extracted.md` |
-| 14 | Scientific Results, Philosophical Implications, Theological Boundaries | `papers/P14.md` | harvesting |
+| 12 | The Arrow of Time in IF Theory *(series evolved: replaces planned 'Functional Consciousness' slot)* | `papers/P12.md` | ✅ `extracted/paper-12-extracted.md` |
+| 13 | Functional Consciousness in IF Theory | `papers/P13.md` | ✅ `extracted/paper-13-extracted.md` |
+| 14 | MaxLove in IF Theory (agency-preserving cooperation; normative-mechanism proposal) | `papers/P14.md` | ✅ `extracted/paper-14-extracted.md` |

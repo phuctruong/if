@@ -9,7 +9,7 @@
 
 - [x] Archive old repo → `_archive/`
 - [x] Extract full ChatGPT arc → `canon/extracted/` (70 msgs, papers 0–2)
-- [x] Harvest papers 3–6 ✅; 7–14 via Solace Browser driver (running autonomously)
+- [x] Harvest papers 3–14 ✅ COMPLETE (all 15 papers in `canon/extracted/`; driver exited clean 07:50)
 - [x] leak4 frontier panel rounds 1+2 (Claude Fable 5 High + Gemini + ChatGPT arc) → `canon/extracted/frontier-panel/`
 - [x] Revised canon v1: foundations / agency / cosmology / meaning / panels subdirs
 - [x] NORTHSTAR + SCOREBOARD + ROADMAP + CLAUDE.md + README (founding-panel consensus versions)

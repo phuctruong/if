@@ -87,7 +87,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 
-Papers 0–9 extracted ✅ · Papers 10–14 harvesting (autonomous) · P00–P06 canonical revisions ✅. Hackathon: `hackathons/if-founding-100/` drives the repo to 100/100.
+ALL 15 papers (0–14) extracted ✅ (series evolved at slots 12–14: Arrow of Time / Functional Consciousness / MaxLove) · P00–P06 canonical revisions ✅. Hackathon: `hackathons/if-founding-100/` drives the repo to 100/100.
 
 ## Frontier panel (leak4) results — Round 1 (2026-07-18, thread `if-theory-v2`)
 
