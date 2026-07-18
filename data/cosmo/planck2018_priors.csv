@@ -1,0 +1,10 @@
+# Planck 2018 TT,TE,EE+lowE distance priors, wCDM row of Table I
+# Chen, Huang & Wang, arXiv:1808.05724 (verified from PDF 2026-07-18)
+# quantity,mean,sigma
+R,1.7493,0.00465
+lA,301.462,0.0895
+omega_b,0.02239,0.00015
+# correlation matrix rows (R, lA, omega_b):
+# 1.00 0.47 -0.66
+# 0.47 1.00 -0.34
+# -0.66 -0.34 1.00

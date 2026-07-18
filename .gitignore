@@ -1,3 +1,5 @@
 data/sparc/*.dat
 data/sparc/*.zip
 data/sparc/*.mrt
+data/cosmo/pantheon_plus.dat
+data/cosmo/pantheon_plus_statsys.cov
