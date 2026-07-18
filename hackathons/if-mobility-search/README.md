@@ -84,6 +84,15 @@ protocol, T = 60); compute t on W_C.
 - t < −2 → negative causal work — logged as-is
 - |t| ≤ 2 → undecided at this sample; report widths, no upgrade to a claim.
 
+### Logged amendment #1 (2026-07-18, before the audit ran — after stages A/B, before M3)
+
+`emergent_audit.py`'s harvest region (bounding box dilated ×6) was designed for still
+lifes. A mover at glider speed (c/4) travels ~15 cells during the T=60 audit window and
+would exit its own audit region, undercounting intact-fork harvest. Amendment: for the
+mover audit the dilation is **21** (= 6 + 15 travel allowance), applied identically to
+the intact and scrambled forks. No verdict threshold changes. The W_C measure (region
+resource drawdown, intact fork T steps vs scramble-step + T−1 steps) is unchanged.
+
 ## Instrument controls (must pass BEFORE the sweep is interpreted)
 
 - **C1 positive**: empty universe + one seeded glider (the `gliders.py` dist=0 config).

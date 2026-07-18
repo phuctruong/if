@@ -1,0 +1,54 @@
+{
+ "c1_glider_pass": true,
+ "m0_per_seed": [
+  {
+   "seed": 7,
+   "persistent_tracks": 3,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 11,
+   "persistent_tracks": 3,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 23,
+   "persistent_tracks": 3,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 42,
+   "persistent_tracks": 0,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 101,
+   "persistent_tracks": 0,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 202,
+   "persistent_tracks": 5,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 303,
+   "persistent_tracks": 1,
+   "mobile": 0,
+   "mobile_detail": []
+  },
+  {
+   "seed": 404,
+   "persistent_tracks": 3,
+   "mobile": 0,
+   "mobile_detail": []
+  }
+ ],
+ "m0_total_mobile": 0
+}
