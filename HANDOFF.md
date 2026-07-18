@@ -44,9 +44,30 @@ birth. Diagnosis: inflow=12 is energy-abundant — nothing selects on direction.
 New tools: `scripts/tracking_test.py`; path recording added to the tracker (additive).
 XP → 11450.
 
+### Loop iteration 2 (2026-07-18, /loop) — no scarcity boundary in inflow; second tracking null; heredity diagnosis
+
+`hackathons/if-scarcity-boundary/` sealed 100/100 (prereg `10652fc` before any run).
+S1: movers persist smoothly across inflow 0.5→12 (2.25→28.1/run, no threshold) — the
+**mobility phase boundary is in construction cost (E_BIRTH), not inflow**; session
+expectation falsified and kill-logged. S2 at the grid floor (inflow=0.5, fresh seeds
+33–96): Welch t=+0.54 → **UNDECIDED** — second tracking null; movers are ballistic
+across the whole tested energy range. Secondary r(τ, lifetime) ≈ 0 both arms.
+**Heredity diagnosis (successor question):** movers live 50–130 steps and do not
+reproduce — no lineage for directional selection to accumulate on. Tracking-by-selection
+needs *replicating* movers. Videos also shipped this loop: `videos/` (3 films tied to
+sealed results). XP → 11750.
+
 ### Next moves after this session, ranked
 
-1. **The scarcity-boundary hypothesis (NEW #1, pre-register before running).** Tracking
+0. **The lineage question (NEW #1, pre-register before running).** Do mover-*producing*
+   structures exist in any regime — parent structures that emit new mobile tracks — and
+   is production rate resource-coupled? Instrument: birth-attribution in the tracker
+   (new track whose birth cells overlap a dilated existing structure = a production
+   event). If lineages exist, directional selection has something to act on and the
+   tracking question reopens; if not, ballistic movers are the ceiling of this rule
+   family and the honest conclusion is that B3/S23-class rules cannot produce
+   tracking agents — move rule families or move on.
+1. **The scarcity-boundary hypothesis** — DONE (iteration 2, see above). Tracking
    can only be selected where direction affects survival. Sweep inflow DOWN from 12
    toward the mobility floor (stage A found movers at inflow=4 but fewer; original
    universe starved at 0.9); pre-register: at the scarcity edge, (a) movers still emerge,

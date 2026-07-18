@@ -116,7 +116,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **First causal-work audit on universe-grown agents** — 21 emergent movers; run-1 VOID honored (9 < frozen 20); 24-seed roster declared before rerun; frozen verdict honored as UNDECIDED (t=−0.94), no claim upgrade | 300 | `evidence/mover_audit_2026_07_18.json` ✅ |
 | **Resource-tracking test: full prereg→run→null circuit in one loop iteration** — 1679 qualifying tracks across 64 pre-declared runs; frozen UNDECIDED honored; exploratory power note kept separate from the verdict (bias < 4% of alignment at 95%) | 300 | `if-resource-tracking` + `evidence/resource_tracking_2026_07_18.json` ✅ |
 | **Instrument control caught its own bad synthetic** (straight-line "toward" vs a drifting source; rebuilt as pursuit/evasion; statistic unchanged) | 100 | `if-resource-tracking` SCOREBOARD §calibration ✅ |
-| **TOTAL XP** | | **11450** |
+| **Scarcity-boundary circuit: expectation falsified + second tracking null sealed** — no mobility boundary in inflow (movers persist 0.5→12, 24×); phase boundary is in construction cost; τ null at the scarcity floor (293 tracks); heredity diagnosis logged as the successor question | 300 | `if-scarcity-boundary` + `evidence/scarcity_boundary_2026_07_18.json` ✅ |
+| **TOTAL XP** | | **11750** |
 
 ### Belt progression (IF Theory)
 
@@ -159,6 +160,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 2026-07-18 | ⛔ **"State-smoother is a parasite" — RESOLVED AS DEAD** | Salvage run: at its optimal gain (α=0.60) the smoother scores 0.8173 vs raw-obs 0.7985 (**+40σ**); the original α=0.25 config scored 0.6087. The finding measured a **tuning gap, not parasitism**. This is the component-optimality rule catching a false result before publication — the rule earned its place. The rule/state dissociation (6σ) is unaffected. Previously HELD by round-3 verification: fixed-α smoother is provably mistuned in a switching world, so the comparison measured config-gap, not parasitism. New component-optimality rule added to the theorem doc; claim can return only after per-regime gain optimization. The rule/state recovery dissociation itself stands. |
 | 2026-07-18 | "Cost-lockstep is evidence for a rescaled invariant" | Downgraded by round 3 (both models): 3× cost range is a short lever arm; 5–15% family gap is several σ. Refined candidate η* defined; pre-commitment to stop after two failed rescalings. |
 | 2026-07-18 | 04e v1/v2 designs | Invalidated pre-interpretation: rule-model had zero causal leverage (policy alternatives scored identically; pursuit pathology at speed parity). v3 redesigned with drift-law rules + speed advantage → PASS. |
+| 2026-07-18 | **"The mobility scarcity boundary lies in inflow" (loop-iteration-2 working expectation)** | Falsified by the pre-declared S1 sweep (`if-scarcity-boundary`): movers persist smoothly from inflow 0.5 to 12 (24× range, 2.25→28.1 movers/run, no threshold). Combined with the E_BIRTH=1.0 freeze, the mobility phase boundary is in **construction cost**, not energy income. Corollary logged: two pre-registered tracking nulls (abundance + scarcity floor) — emergent movers are ballistic everywhere tested; the heredity diagnosis (movers don't reproduce → no lineage for directional selection) is the successor question, to be pre-registered before testing. |
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 
