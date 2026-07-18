@@ -44,8 +44,8 @@
 | 7 | The IF Unified Geometry Hypothesis | `papers/P07.md` | ✅ `extracted/paper-07-extracted.md` |
 | 8 | IF Theory and Galactic Missing Gravity | `papers/P08.md` | ✅ `extracted/paper-08-extracted.md` |
 | 9 | IF Cosmology: Expansion–Growth Consistency | `papers/P09.md` | ✅ `extracted/paper-09-extracted.md` |
-| 10 | Information and Topology in the Cosmic Web | `papers/P10.md` | harvesting |
-| 11 | A Preregistered IF Forecast for Euclid | `papers/P11.md` | harvesting |
-| 12 | IF Functional Consciousness | `papers/P12.md` | harvesting |
-| 13 | The Evolutionary Conditions for MaxLove | `papers/P13.md` | harvesting |
+| 10 | Information and Topology in the Cosmic Web | `papers/P10.md` | ✅ `extracted/paper-10-extracted.md` |
+| 11 | A Preregistered IF Forecast for Euclid | `papers/P11.md` | ✅ `extracted/paper-11-extracted.md` |
+| 12 | IF Functional Consciousness | `papers/P12.md` | ✅ `extracted/paper-12-extracted.md` |
+| 13 | The Evolutionary Conditions for MaxLove | `papers/P13.md` | ✅ `extracted/paper-13-extracted.md` |
 | 14 | Scientific Results, Philosophical Implications, Theological Boundaries | `papers/P14.md` | harvesting |

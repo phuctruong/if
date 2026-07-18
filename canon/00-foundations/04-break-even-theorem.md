@@ -97,11 +97,40 @@ as the universal constant** — it scales ~1/C_MEMORY and the ring/Kalman famili
 are statistically distinguishable (3.5–9.6σ) at every cost level once crossing
 statistics tighten. What survives, and points to the refined candidate: the two
 families track in lockstep across a 3× cost range (5–15% apart), and the clean
-work-per-bit ratio (04g) is stable across environments. **IF-H1 (restated v3):
-some cost-rescaled invariant — leading candidates Θ*·C_model and the clean
-work-per-bit coefficient — takes the same value across ≥3 unrelated rule
-families.** The falsifier killed the naive form and pointed at the better one;
-that is the mechanism working.
+work-per-bit ratio (04g) is stable across environments. **IF-H1 (restated v4, round-3 verified):** the candidate invariant is the
+**clean work-per-bit at competitive break-even**
+
+```
+η* ≡ (W_intact − W_scr) / (kT·ΔI_use)  evaluated where Π_C = 1
+```
+
+— dimensionless *before* any threshold is taken (no C leaking through), reported
+alongside the Sagawa–Ueda efficiency ceiling on the same axes (a "universal
+constant" that equals the SU bound is a rediscovered second law, not a
+discovery — Claude R3). Round-3 caution, adopted: the observed cost-lockstep is
+NOT yet evidence (a 3× cost range is a short lever arm; the 5–15% family gap is
+several σ). **Pre-commitment: if η\* fails across families, and one further
+principled rescaling (Gemini's Υ_IF = Θ*·C_model/ν_active) also fails, IF-H1 is
+dead — no third fishing expedition.** The decisive experiment is the THIRD,
+alien family (run-and-tumble chemotaxis) at fixed cost, τ = 1 enforced.
+
+## Component-optimality rule (round-3 addition — load-bearing)
+
+The twin-normalization guardrail applies INWARD as well: *an ablation of
+component c is interpretable only when the intact agent is Pareto-optimal in c
+conditional on all other components* — no local reparameterization of c alone
+may improve ΔW_net. Otherwise the ablation measures the configuration gap, not
+the component's causal-work contribution. (Discovered via 04e: a fixed-gain
+smoother in a switching world is provably mistuned, so "smoother is a parasite"
+was a config-gap artifact — claim withdrawn to HELD in the kill log.)
+
+## Unit conventions (round-3 audit fixes)
+
+All information terms are per-cycle (bits per control step) and all costs are
+per-cycle work; every term shares one horizon convention, and notebooks enforce
+τ = 1 unless the contract explicitly states otherwise. The `falsify`
+intervention's domain: J (not MI) is its native functional — MI-based forms of
+the inequality apply to erase/scramble/time-shift only.
 
 ## The proof program (what exists, what's missing)
 
