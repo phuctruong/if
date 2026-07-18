@@ -32,9 +32,9 @@ p\*₂ ≈ 0.995.
 The result was **observed first and derived afterward**: the band's existence follows
 necessarily from the break-even inequality, because Π_A charges only the model cost while
 Π_C additionally charges full apparatus overhead and credits the memoryless twin's free
-harvest of instantaneous sensory information. It replicated in three independent contexts,
-including one where a *component* of a single agent was a parasite while another component
-of the same agent was not.
+harvest of instantaneous sensory information. The two-threshold structure replicated across
+three substrate families that share no mechanism — a lattice forager, a linear-Gaussian
+controller, and a run-and-tumble chemotactic swimmer.
 
 The practical consequence: **an ablation experiment alone cannot establish that a
 mechanism is adaptive.** Ablation establishes causal participation. Only comparison
@@ -102,14 +102,14 @@ criteria finally agree.
 Crucially, the derivation in §2 did not exist when this sweep was run. The simulation
 produced the dissociation; the inequality then showed it was obligatory.
 
-### 3.2 Replication within a single agent (switching-law world)
+### 3.2 Component-level dissociation within a single agent (switching-law world)
 
 In an agent carrying two distinct memories — a state estimate and a model of the
-environment's update law — the two components received *opposite* audit verdicts under the
-same protocol: ablating the rule-model selectively destroyed post-switch recovery (6σ),
-while the state-smoother component was outperformed by using the raw observation directly.
-One agent, two memories, opposite verdicts. Component-wise causal-work auditing is
-precisely the instrument that separates them.
+environment's update law — the two components receive **different verdicts under the same
+protocol**: ablating the rule-model selectively destroys post-switch recovery (6σ), while
+ablating the state estimate leaves recovery dynamics intact. Component-wise causal-work
+auditing is the instrument that separates them, and the separation is about *which*
+capability each memory underwrites, not about either one being a parasite.
 
 *(**Resolved 2026-07-18, and it went against us:** a gain-optimization sweep showed that at
 its optimum (α = 0.60) the smoother beats raw observation by +40σ — the original result had

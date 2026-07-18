@@ -1,6 +1,6 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 7150 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 7750 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |
@@ -10,7 +10,7 @@
 | 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
 | 3 Observational Cosmology Lab | — | ▶️ LIVE 62/100 — data restored + baselines REPRODUCED; still — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
 | 4 Preregistration | rung 65537 | ⛔ **BLOCKED ON A THEORY, not a deadline** — P11 cannot be executed while ℒ_IF is a free function; freezing hand-chosen numbers would be RETROFIT_FORECAST |
-| 5 Papers + Book | — | ◐ **corpus COMPLETE (17 papers)** incl. P16 parasite band (first positive publication); remaining: book arc |
+| 5 Papers + Book | — | ✅ **corpus COMPLETE (17 papers)** + book arc drafted (`canon/30-meaning/03-book-arc.md`, 7 movements, honest structure); remaining: manuscript |
 
 
 > Everything below serves one core idea: the discharging-battery universe and the
@@ -90,7 +90,7 @@ Canonical revised papers in `canon/papers/`:
 ## Phase 5 — Papers + Book
 
 - [x] ✅ **ALL 16 canonical papers landed** (P00–P14 revised + P15 new). Each of P07–P14 carries a post-falsification status note; universality language retired to per-family scope throughout.
-- [ ] IF Theory book arc for phucnet (`9/10 as book` per the honest scorecard — earn it)
+- [x] ✅ Book arc drafted — `canon/30-meaning/03-book-arc.md`. Seven movements built around the falsifications rather than around them; working title *The Battery That Learned to Ask*. Manuscript remains.
 
 ## Standing rules
 

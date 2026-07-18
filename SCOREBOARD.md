@@ -98,10 +98,13 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
 | **Independent baseline reproduction** (fresh data + independent pipeline, within tolerance) | 300 | SPARC MOND/NFW ✅ |
 | **Refusing to freeze a preregistration that would be hand-chosen numbers** | 200 | P11 blocked-not-pending ✅ |
+| Book arc drafted around the kills rather than around them | 300 | `30-meaning/03-book-arc.md` ✅ |
+| Coherence repair after a self-correction (P16 abstract + §3.2) | 100 | ✅ |
+| Adversarial round survived + folded (round 5) | 100 | in flight |
 | **Self-correction: own result killed by own rule** | 300 | Smoother-parasite → config artifact ✅ |
 | **Boss slain by construction** (clean-channel counterexample; conjecture → requirement) | 500 | R ≤ 0 lemma content ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **7450** |
+| **TOTAL XP** | | **7750** |
 
 ### Belt progression (IF Theory)
 
