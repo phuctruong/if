@@ -32,16 +32,33 @@ Evidence: `evidence/mobility_{controls,sweep_stageA,confirm_stageB}_2026_07_18.j
 `evidence/mover_audit_2026_07_18.json`. XP 10150 → **11050**; belt stays Green
 (Blue still requires an external party).
 
+### Loop iteration 1 (2026-07-18, /loop) — movers do NOT track resource (tight null)
+
+`hackathons/if-resource-tracking/` sealed 100/100. The M3-stretch question ran as its
+own pre-registered circuit (prereg `59c99b7` before any run): τ = window-cosine between
+mover displacement and bearing-to-source, gradient (σ=40) vs placebo (σ=10⁶) arms,
+32 seeds each. Result: 849 vs 830 qualifying tracks, **Welch t = +0.34 → UNDECIDED**
+by frozen criteria — and at this power that is a **tight null**: any tracking bias is
+< ~4% of full alignment. Movers in the sealed regime are ballistic; direction is set at
+birth. Diagnosis: inflow=12 is energy-abundant — nothing selects on direction.
+New tools: `scripts/tracking_test.py`; path recording added to the tracker (additive).
+XP → 11450.
+
 ### Next moves after this session, ranked
 
-1. **Find the right observable for mover agency.** Raw harvest is confounded by
-   scramble-ignited growth. Candidates (freeze ONE before running): survival-conditioned
-   harvest, harvest per unit mass-step, or net displacement toward resource (tracking
-   test M3-stretch never ran). A new prereg amendment or a small successor hackathon.
-2. **More statistics on the same frozen audit** — declare a larger roster (e.g. 64
-   seeds) before running; at sd 23.8 the current design needs ~n×5 to resolve a
-   W_C ≈ ±5 effect. Cheap, embarrassingly parallel.
-3. Then the pre-existing queue below (ℒ_IF commit-first for Phase 3/4, Track-C
+1. **The scarcity-boundary hypothesis (NEW #1, pre-register before running).** Tracking
+   can only be selected where direction affects survival. Sweep inflow DOWN from 12
+   toward the mobility floor (stage A found movers at inflow=4 but fewer; original
+   universe starved at 0.9); pre-register: at the scarcity edge, (a) movers still emerge,
+   (b) τ(gradient) − τ(placebo) > 0. If tracking appears under scarcity and vanishes
+   under abundance, that is a *selection-produces-agency* result — the program's first
+   positive emergent-agency claim. Freeze the boundary-finding procedure separately
+   from the τ test to avoid garden-of-forking-paths.
+2. **More statistics on the mover causal-work audit** — declare a ~64-seed roster
+   before running; at sd 23.8 the current design needs ~5× n to resolve W_C ≈ ±5.
+3. **Find the right harvest observable** — survival-conditioned harvest or harvest per
+   mass-step (the scramble-ignition confound from `if-mobility-search` still stands).
+4. Then the pre-existing queue below (ℒ_IF commit-first for Phase 3/4, Track-C
    notebooks, Π_C-primitive disagreement, book).
 
 ---

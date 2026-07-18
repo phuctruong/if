@@ -85,14 +85,22 @@ def instrument_control():
         pass
     toward = Fake(); toward.t0 = 0
     away = Fake(); away.t0 = 0
-    s0 = src_at(0)
-    start = (s0 + np.array([30.0, 0.0]))  # 30 cells "south" of source
-    toward.path = [start - np.array([0.5 * i, 0.0]) for i in range(60)]
-    away.path = [start + np.array([0.5 * i, 0.0]) for i in range(60)]
+    start = src_at(0) + np.array([40.0, 0.0])  # 40 cells "south" of source
+    # pursuit / evasion of the MOVING source (the source drifts east; a straight
+    # line at its t=0 position is genuinely misaligned — first control caught that)
+    tp, ap = [start.copy()], [start.copy()]
+    for i in range(60):
+        h = _wrap_delta(tp[-1] % N, src_at(i), N)
+        tp.append(tp[-1] + 0.5 * h / max(np.hypot(*h), 1e-9))
+        h = _wrap_delta(ap[-1] % N, src_at(i), N)
+        ap.append(ap[-1] - 0.5 * h / max(np.hypot(*h), 1e-9))
+    toward.path, away.path = tp, ap
     tt, _ = track_tau(toward)
     ta, _ = track_tau(away)
     print(f"instrument control: toward tau={tt:+.3f} (want ~+1), away tau={ta:+.3f} (want ~-1)")
-    ok = tt is not None and ta is not None and tt > 0.9 and ta < -0.9
+    # away gate is -0.85: the evader's bearing lags the eastward-drifting source
+    # across each 4-step window (pursuit has no lag), so exact -1 is unreachable
+    ok = tt is not None and ta is not None and tt > 0.9 and ta < -0.85
     print(f"T1 {'PASS' if ok else 'FAIL'}\n")
     return ok
 

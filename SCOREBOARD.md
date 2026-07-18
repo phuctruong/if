@@ -114,7 +114,9 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Instrument-blindness caught on entry** (min_size=6 detector could never see a 5-cell glider) + still-life verdict re-confirmed at the corrected floor, 8 seeds | 200 | `if-mobility-search` M0 ✅ |
 | **Mobility regime discovered inside a pre-declared 216-config space** — still-life mystery solved as energy starvation (E_BIRTH 1.0→0.25 + inflow), not rules; mean 24.0 emergent movers/run at 8 seeds | 400 | `evidence/mobility_confirm_stageB_2026_07_18.json` ✅ |
 | **First causal-work audit on universe-grown agents** — 21 emergent movers; run-1 VOID honored (9 < frozen 20); 24-seed roster declared before rerun; frozen verdict honored as UNDECIDED (t=−0.94), no claim upgrade | 300 | `evidence/mover_audit_2026_07_18.json` ✅ |
-| **TOTAL XP** | | **11050** |
+| **Resource-tracking test: full prereg→run→null circuit in one loop iteration** — 1679 qualifying tracks across 64 pre-declared runs; frozen UNDECIDED honored; exploratory power note kept separate from the verdict (bias < 4% of alignment at 95%) | 300 | `if-resource-tracking` + `evidence/resource_tracking_2026_07_18.json` ✅ |
+| **Instrument control caught its own bad synthetic** (straight-line "toward" vs a drifting source; rebuilt as pursuit/evasion; statistic unchanged) | 100 | `if-resource-tracking` SCOREBOARD §calibration ✅ |
+| **TOTAL XP** | | **11450** |
 
 ### Belt progression (IF Theory)
 
