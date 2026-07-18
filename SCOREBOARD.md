@@ -118,3 +118,9 @@ causally load-bearing under ablation (scrambling costs hundreds of work units) y
 to possess. First concrete instance of the panel's parasite concept, and it sharpens IF-H1:
 the canonical agency criterion needs BOTH inequalities (ablation-positive AND competitive-positive).
 v0 toy caveat: designed memory, one rule family — protocol demo, not IF-H1 evidence.
+
+**Second evidence (iteration 1): Θ\* consistent across two families.** Notebook 04f:
+Θ\*_ring = 6.59 ± 0.66 vs Θ\*_Kalman = 6.15 ± 0.07 (8 seeds each, fine grids at the
+competitive crossing) — 1.48σ apart → PASS. The candidate invariant survives its first
+kill-test; a third *alien* family + cost-invariance control required before any
+universality claim (guardrails in the notebook).
