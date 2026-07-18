@@ -78,9 +78,20 @@ fully pre-registered negative with its mechanism: energy-gated Life-like CA prod
 with a fundamentally cheaper detection idea). B3/S23 movers remain live for exactly one
 question: the causal-work audit (UNDECIDED at n=21). XP → 12550.
 
+### Loop iteration 5 (2026-07-18, /loop) — power run UNDECIDED; emergent program RESTS; P17 written
+
+`hackathons/if-causal-power/` sealed 100/100. Fresh 64-seed roster → 53 movers:
+t = −0.88 → **UNDECIDED**, rest-clause fired — no further same-design sampling. Stable
+shape across 74 total movers: median W_C +0.4 (51–62% positive), mean dragged negative
+by the scramble-ignition tail. **The whole five-hackathon arc is now canon:**
+`canon/papers/P17-motion-without-lineage.md` — movers emerge (construction-cost phase
+boundary), movers are ballistic (2 nulls), no heredity unit (ABSENT), generalizes
+(BARREN, branch closed), causal work indistinguishable from zero under drawdown
+(rest). XP → 13250.
+
 ### Next moves after this session, ranked
 
--2. **Causal-work audit power run (NEW #1, pre-register before running).** The one live
+-2. **Causal-work audit power run — DONE (iteration 5, UNDECIDED, program rests).** The one live
    question on the emergent substrate. Declare a fresh ~64-seed roster; primary verdict
    on the fresh roster alone at the frozen ±2 thresholds; pooled with the sealed 21 as
    declared secondary. At sd≈24 and ~1 mover/seed, n≈85 total resolves |W_C|≈5. If it

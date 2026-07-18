@@ -119,7 +119,9 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Scarcity-boundary circuit: expectation falsified + second tracking null sealed** — no mobility boundary in inflow (movers persist 0.5→12, 24×); phase boundary is in construction cost; τ null at the scarcity floor (293 tracks); heredity diagnosis logged as the successor question | 300 | `if-scarcity-boundary` + `evidence/scarcity_boundary_2026_07_18.json` ✅ |
 | **Lineage census: the heredity gap measured** — production events common (14.5/run) but repeat-producers ABSENT (0 in 24 gradient runs); pre-registered painful tier honored; completes the movers-are-ballistic arc with its mechanism | 400 | `if-lineage` + `evidence/lineage_2026_07_18.json` ✅ |
 | **Rule-search BARREN + branch closed by its own stop rule** — 6 rule families × 4 energy configs, 0 flags; the four-experiment emergent-agency arc completes as a fully pre-registered negative with its mechanism (motion without lineage); scope limitation recorded against overclaim | 400 | `if-rule-search` + `evidence/rule_search_2026_07_18.json` ✅ |
-| **TOTAL XP** | | **12550** |
+| **Causal-work power run + rest-clause honored** — 53 fresh movers (n=74 pooled), t=−0.88 UNDECIDED; distribution shape published (median +0.4, ignition tail); LAST same-design sample, decided in advance | 300 | `if-causal-power` + `evidence/power_audit_2026_07_18.json` ✅ |
+| **P17 written: the five-hackathon arc as a canonical paper** — Motion Without Lineage; every claim scoped + regenerable from scripts | 400 | `canon/papers/P17-motion-without-lineage.md` ✅ |
+| **TOTAL XP** | | **13250** |
 
 ### Belt progression (IF Theory)
 
