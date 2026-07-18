@@ -97,11 +97,12 @@ class UniverseX:
 
 # ---------------------------------------------------------------- tracker (D2)
 class Track:
-    __slots__ = ('tid', 't0', 't1', 'pos', 'start', 'sizes', 'alive', 'cys', 'cxs')
+    __slots__ = ('tid', 't0', 't1', 'pos', 'start', 'sizes', 'alive', 'cys', 'cxs', 'path')
     def __init__(self, tid, t, com, size, cys, cxs):
         self.tid, self.t0, self.t1 = tid, t, t
         self.pos = np.array(com, float)      # unwrapped
         self.start = self.pos.copy()
+        self.path = [self.pos.copy()]        # unwrapped COM per tracked step
         self.sizes = [size]
         self.alive = True
         self.cys, self.cxs = cys, cxs
@@ -176,6 +177,7 @@ def track_universe(u, steps, min_size=MIN_SIZE):
             c = comps[best_lb]
             raw_prev = tr.pos % n
             tr.pos = tr.pos + _wrap_delta(raw_prev, c['com'], n)
+            tr.path.append(tr.pos.copy())
             tr.sizes.append(c['size'])
             tr.cys, tr.cxs = c['cells']
             tr.t1 = t
