@@ -57,9 +57,25 @@ reproduce — no lineage for directional selection to accumulate on. Tracking-by
 needs *replicating* movers. Videos also shipped this loop: `videos/` (3 films tied to
 sealed results). XP → 11750.
 
+### Loop iteration 3 (2026-07-18, /loop) — PRODUCERS ABSENT; the heredity gap is the mechanism
+
+`hackathons/if-lineage/` sealed 100/100 (prereg `8692d62`). Birth-attribution census,
+24 seeds × 2 arms: production *events* common (14.5 mover-productions/run — one-shot
+fission) but **repeat-producers (≥2 mobile children) ABSENT**: 0 in the gradient arm.
+The pre-registered painful tier fired and stands: **in energy-gated B3/S23, motion
+emerges but agency cannot be selected for, because no heredity unit exists.** This is
+the mechanism behind both tracking nulls. Kill-logged. XP → 12150.
+
 ### Next moves after this session, ranked
 
-0. **The lineage question (NEW #1, pre-register before running).** Do mover-*producing*
+-1. **Rule-family producer search (NEW #1, pre-register before running).** Declare a
+   rule grid with replicator/gun folklore (e.g. B36/S23 HighLife, B368/S238, B34/S34,
+   B2/S345?) + the energy axes, frozen producer criterion (P3, ≥2 mobile children),
+   and a stop rule. Find ONE energy-gated family with reproducible producers → rerun
+   the τ tracking test there (selection finally has a lineage to act on). If the
+   declared grid is barren → close the emergent-agency branch honestly; B3/S23 movers
+   remain the substrate for the causal-work question only.
+0. **The lineage question — DONE (iteration 3, see above).** Do mover-*producing*
    structures exist in any regime — parent structures that emit new mobile tracks — and
    is production rate resource-coupled? Instrument: birth-attribution in the tracker
    (new track whose birth cells overlap a dilated existing structure = a production

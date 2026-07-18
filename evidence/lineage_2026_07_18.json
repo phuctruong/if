@@ -1,0 +1,443 @@
+{
+ "gradient": [
+  {
+   "n_tracks": 4488,
+   "n_mobile": 17,
+   "n_production_events": 3468,
+   "n_mover_productions": 11,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 7
+  },
+  {
+   "n_tracks": 6595,
+   "n_mobile": 23,
+   "n_production_events": 5081,
+   "n_mover_productions": 16,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 11
+  },
+  {
+   "n_tracks": 7514,
+   "n_mobile": 25,
+   "n_production_events": 6104,
+   "n_mover_productions": 17,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 23
+  },
+  {
+   "n_tracks": 5285,
+   "n_mobile": 22,
+   "n_production_events": 4030,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 42
+  },
+  {
+   "n_tracks": 7719,
+   "n_mobile": 28,
+   "n_production_events": 6065,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 101
+  },
+  {
+   "n_tracks": 5496,
+   "n_mobile": 26,
+   "n_production_events": 4392,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 202
+  },
+  {
+   "n_tracks": 5948,
+   "n_mobile": 25,
+   "n_production_events": 4655,
+   "n_mover_productions": 19,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 303
+  },
+  {
+   "n_tracks": 5789,
+   "n_mobile": 26,
+   "n_production_events": 4471,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 404
+  },
+  {
+   "n_tracks": 4844,
+   "n_mobile": 14,
+   "n_production_events": 3625,
+   "n_mover_productions": 7,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 501
+  },
+  {
+   "n_tracks": 6373,
+   "n_mobile": 27,
+   "n_production_events": 5014,
+   "n_mover_productions": 18,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 502
+  },
+  {
+   "n_tracks": 6838,
+   "n_mobile": 21,
+   "n_production_events": 5501,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 503
+  },
+  {
+   "n_tracks": 6690,
+   "n_mobile": 22,
+   "n_production_events": 5387,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 504
+  },
+  {
+   "n_tracks": 7651,
+   "n_mobile": 29,
+   "n_production_events": 6014,
+   "n_mover_productions": 18,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 505
+  },
+  {
+   "n_tracks": 5809,
+   "n_mobile": 29,
+   "n_production_events": 4490,
+   "n_mover_productions": 16,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 506
+  },
+  {
+   "n_tracks": 5187,
+   "n_mobile": 24,
+   "n_production_events": 4034,
+   "n_mover_productions": 12,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 507
+  },
+  {
+   "n_tracks": 6329,
+   "n_mobile": 20,
+   "n_production_events": 4917,
+   "n_mover_productions": 11,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 508
+  },
+  {
+   "n_tracks": 5267,
+   "n_mobile": 30,
+   "n_production_events": 4069,
+   "n_mover_productions": 14,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 509
+  },
+  {
+   "n_tracks": 5946,
+   "n_mobile": 17,
+   "n_production_events": 4681,
+   "n_mover_productions": 10,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 510
+  },
+  {
+   "n_tracks": 5410,
+   "n_mobile": 28,
+   "n_production_events": 4115,
+   "n_mover_productions": 12,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 511
+  },
+  {
+   "n_tracks": 5362,
+   "n_mobile": 14,
+   "n_production_events": 4213,
+   "n_mover_productions": 7,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 512
+  },
+  {
+   "n_tracks": 5250,
+   "n_mobile": 20,
+   "n_production_events": 4088,
+   "n_mover_productions": 14,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 513
+  },
+  {
+   "n_tracks": 6469,
+   "n_mobile": 27,
+   "n_production_events": 5080,
+   "n_mover_productions": 19,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 514
+  },
+  {
+   "n_tracks": 5855,
+   "n_mobile": 34,
+   "n_production_events": 4496,
+   "n_mover_productions": 21,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 515
+  },
+  {
+   "n_tracks": 5982,
+   "n_mobile": 32,
+   "n_production_events": 4604,
+   "n_mover_productions": 22,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 516
+  }
+ ],
+ "placebo": [
+  {
+   "n_tracks": 4634,
+   "n_mobile": 16,
+   "n_production_events": 3565,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 7
+  },
+  {
+   "n_tracks": 6607,
+   "n_mobile": 38,
+   "n_production_events": 5006,
+   "n_mover_productions": 20,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 11
+  },
+  {
+   "n_tracks": 8370,
+   "n_mobile": 28,
+   "n_production_events": 6659,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 23
+  },
+  {
+   "n_tracks": 5072,
+   "n_mobile": 32,
+   "n_production_events": 3865,
+   "n_mover_productions": 17,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 42
+  },
+  {
+   "n_tracks": 6078,
+   "n_mobile": 19,
+   "n_production_events": 4776,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 101
+  },
+  {
+   "n_tracks": 4226,
+   "n_mobile": 20,
+   "n_production_events": 3235,
+   "n_mover_productions": 10,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 202
+  },
+  {
+   "n_tracks": 6282,
+   "n_mobile": 29,
+   "n_production_events": 4804,
+   "n_mover_productions": 21,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 303
+  },
+  {
+   "n_tracks": 5407,
+   "n_mobile": 37,
+   "n_production_events": 4218,
+   "n_mover_productions": 22,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 404
+  },
+  {
+   "n_tracks": 5358,
+   "n_mobile": 25,
+   "n_production_events": 3776,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 501
+  },
+  {
+   "n_tracks": 6723,
+   "n_mobile": 31,
+   "n_production_events": 5139,
+   "n_mover_productions": 20,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 502
+  },
+  {
+   "n_tracks": 6142,
+   "n_mobile": 27,
+   "n_production_events": 4766,
+   "n_mover_productions": 14,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 503
+  },
+  {
+   "n_tracks": 5895,
+   "n_mobile": 19,
+   "n_production_events": 4392,
+   "n_mover_productions": 11,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 504
+  },
+  {
+   "n_tracks": 6349,
+   "n_mobile": 22,
+   "n_production_events": 4925,
+   "n_mover_productions": 14,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 505
+  },
+  {
+   "n_tracks": 5621,
+   "n_mobile": 25,
+   "n_production_events": 4363,
+   "n_mover_productions": 17,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 506
+  },
+  {
+   "n_tracks": 5420,
+   "n_mobile": 24,
+   "n_production_events": 4232,
+   "n_mover_productions": 15,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 507
+  },
+  {
+   "n_tracks": 8197,
+   "n_mobile": 27,
+   "n_production_events": 6563,
+   "n_mover_productions": 18,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 508
+  },
+  {
+   "n_tracks": 5925,
+   "n_mobile": 23,
+   "n_production_events": 4557,
+   "n_mover_productions": 13,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 509
+  },
+  {
+   "n_tracks": 5616,
+   "n_mobile": 26,
+   "n_production_events": 4391,
+   "n_mover_productions": 14,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 510
+  },
+  {
+   "n_tracks": 5543,
+   "n_mobile": 24,
+   "n_production_events": 4254,
+   "n_mover_productions": 16,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 511
+  },
+  {
+   "n_tracks": 6060,
+   "n_mobile": 30,
+   "n_production_events": 4779,
+   "n_mover_productions": 20,
+   "n_producers": 1,
+   "producer_children": [
+    2
+   ],
+   "seed": 512
+  },
+  {
+   "n_tracks": 5995,
+   "n_mobile": 20,
+   "n_production_events": 4680,
+   "n_mover_productions": 12,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 513
+  },
+  {
+   "n_tracks": 6038,
+   "n_mobile": 37,
+   "n_production_events": 4577,
+   "n_mover_productions": 23,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 514
+  },
+  {
+   "n_tracks": 7980,
+   "n_mobile": 31,
+   "n_production_events": 6464,
+   "n_mover_productions": 20,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 515
+  },
+  {
+   "n_tracks": 7816,
+   "n_mobile": 30,
+   "n_production_events": 6054,
+   "n_mover_productions": 17,
+   "n_producers": 0,
+   "producer_children": [],
+   "seed": 516
+  }
+ ],
+ "q1_mean_producers": 0.0,
+ "q1_total_producers": 0,
+ "q1_verdict": "PRODUCERS ABSENT \u2014 ballistic one-shot movers are the ceiling of this rule family; change rule family or close the branch"
+}
