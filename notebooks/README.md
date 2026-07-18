@@ -30,9 +30,9 @@ Track C notebooks run with zero external data; Track A/B notebooks mine
 |---|---|
 | `00_if_prediction_contract.ipynb` | ✅ built + code cells verified |
 | `04_if_causal_work_threshold.ipynb` | ✅ v0.1 RUN + PASS (parasite band; see repo SCOREBOARD §first evidence) |
-| `04e_update_law_ablation.ipynb` | planned — self-reflection threshold (model-of-the-RULES ablation) |
-| `04f_kalman_theta_star.ipynb` | ✅ RUN + PASS — Θ\* consistent across ring/Kalman at 1.48σ |
-| `04g_scramble_ratchet.ipynb` | planned — R-lemma attack (the spine test) |
+| `04e_update_law_ablation.ipynb` | ✅ RUN + PASS — rule/state dissociation 6σ; bonus: state-smoother parasite |
+| `04f_kalman_theta_star.ipynb` | ✅ RUN — verdict: raw Θ\* NOT universal (cost control; kill logged); lockstep survival → refined candidates |
+| `04g_scramble_ratchet.ipynb` | ✅ RUN + PASS — dirty-intervention R>0 signature 11.6σ; clean work-per-bit stable |
 
 ## Naming
 

@@ -80,6 +80,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 2026-07 | "IF explains consciousness" | Downgraded to functional-consciousness hypothesis + phenomenal conjecture (firewalled). |
 | 2026-07-18 | Notebook 04 v0.0 contract | Invalidated by design bug, not by nature: agents sensed the world after it moved, making prediction worthless by construction (W_intact ≡ W_scrambled). Redesigned to act→world-moves→collect as v0.1 before any sweep was interpreted. Logged per EDIT_UNVERIFIED discipline. |
 | 2026-07-18 | "Π_A > 1 ⟺ memory pays" (implicit v0.0 assumption) | v0.1 run falsified the equivalence: ablation-positive ≠ competitive-positive (parasite band). IF-H1 restated as two inequalities. |
+| 2026-07-18 | **IF-H1 as "raw Θ* is universal"** | Cost-invariance control (04f): Θ* scales ~1/C_MEMORY and families scatter 3.5–9.6σ at every cost level with proper statistics; the iteration-1 1.48σ PASS was an error-bar artifact. Survivors: families move in lockstep with cost; 04g clean work-per-bit stable. Refined candidates: cost-rescaled Θ*·C_model, work-per-bit coefficient. |
+| 2026-07-18 | 04e v1/v2 designs | Invalidated pre-interpretation: rule-model had zero causal leverage (policy alternatives scored identically; pursuit pathology at speed parity). v3 redesigned with drift-law rules + speed advantage → PASS. |
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 

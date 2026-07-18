@@ -90,10 +90,18 @@ universality candidate is:
 ```
 
 — the fraction of full apparatus cost concentrated in belief-maintenance, at
-competitive break-even. Dimensionless, boundary-free. **IF-H1 (restated):
-Θ* takes the same critical value across ≥3 unrelated rule families**
-(ring world / Kalman-LQG world / chemotaxis world). Agreement → IF has a
-constant. Scatter → IF has curve fits. Neither threshold alone is the invariant.
+competitive break-even. Dimensionless, boundary-free.
+
+**STATUS UPDATE (2026-07-18, notebook 04f + cost control): raw Θ* is FALSIFIED
+as the universal constant** — it scales ~1/C_MEMORY and the ring/Kalman families
+are statistically distinguishable (3.5–9.6σ) at every cost level once crossing
+statistics tighten. What survives, and points to the refined candidate: the two
+families track in lockstep across a 3× cost range (5–15% apart), and the clean
+work-per-bit ratio (04g) is stable across environments. **IF-H1 (restated v3):
+some cost-rescaled invariant — leading candidates Θ*·C_model and the clean
+work-per-bit coefficient — takes the same value across ≥3 unrelated rule
+families.** The falsifier killed the naive form and pointed at the better one;
+that is the mechanism working.
 
 ## The proof program (what exists, what's missing)
 
