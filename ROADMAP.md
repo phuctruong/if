@@ -31,11 +31,14 @@ Canonical revised papers in `canon/papers/`:
 | C3 | `15_arrow_of_time.ipynb` | records accumulate asymmetrically under reversible rules | 10/8/10 |
 | C4 | `17_optimal_memory_depth.ipynb` | L* = argmax[W(L) − C(L)]; collapse below predictability threshold | 10/8/9 |
 | C5 | `18_repair_mortality.ipynb` | repair evolves only in d_min < d < d_max damage window | 10/8/9 |
-| C6 | `20_maxlove_vs_exploitation.ipynb` | MaxLove wins in calculable region; metric = Σ log|viable actions| (A_future) | 10/7/10 |
+| C6 | `20_maxlove_vs_exploitation.ipynb` | agency-preserving cooperation wins in calculable region; metric = Σ log|viable actions| (A_future) | 10/7/10 |
+| C7 | `04e_update_law_ablation.ipynb` | **self-reflection threshold** (Conway/Dennett): ablate model-of-the-RULES specifically; selective loss of adaptation to rule-changes | 9/9/9 |
+| C8 | `04f_kalman_theta_star.ipynb` | **Θ\* invariant test**: LQG/Kalman family, same protocol; Θ\*_Kalman vs Θ\*_ring vs bootstrap error | 9/9/10 |
+| C9 | `04g_scramble_ratchet.ipynb` | **R-lemma attack**: scramble heat drives a ratchet; robust R>0 kills the spine | 8/9/10 |
 
 - Noether gate: property-based conservation tests auto-fail any leaky rule.
 - Conway gate: agents detected, never declared.
-- Seal: rung 274177 when C1 shows the same threshold across ≥3 rule families.
+- Seal: rung 274177 = **Θ\* agrees across ≥3 unrelated rule families** (Noether, founding panel) — supersedes the vaguer same-threshold wording.
 
 ## Phase 3 — Observational Cosmology Lab (Tracks A/B: reproduce, then predict)
 

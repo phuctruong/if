@@ -4,15 +4,29 @@
 > as recharge circuits, the post-threshold role (preserve + enhance + expand the system).
 > Reboot 2026-07-18. Scores synthesized from: ChatGPT harsh-QA arc (msg[12] scorecard, msg[37] project scores, msg[43] dark-sector verdict, msg[49] notebook lattice) + Fable session judgment. Frontier-panel (leak4) column updates as reviews land.
 
-## Program-level honest position (do not inflate)
+## Program-level position — FOUNDING PANEL CONSENSUS (2026-07-18, supersedes all earlier)
 
-| Dimension | Score | Source |
+Full discussion: `canon/panels/2026-07-18-founding-panel.md`.
+
+| Dimension | Score | Note |
 |---|---:|---|
-| As a scientific theory today | 3/10 | msg[12] — variables were metaphors; now constitutionally repaired in P0–P2 |
-| As a computational research program | 7/10 | msg[12] |
-| As a book / intellectual framework | 9/10 | msg[12] |
-| Nobel readiness today | 0.1/10 | msg[12] — no unique confirmed prediction yet |
-| Nobel-class **if** unified dark-sector prediction survives | 10/10 | msg[43] panel verdict |
+| Core idea as research compass | 9/10 | Panel-unanimous: generates falsifiable structure faster than rhetoric |
+| Established-physics status today | 3/10 | Unchanged; honesty is the moat |
+| Mathematical program (post-theorem-sketch) | 6/10 | Was 2/10 in source arc; J-functional + R-lemma + Θ* is a real program |
+| First original result (parasite band, derived + observed) | 8/10 | Publishable note once reproduced in a second family |
+| Cosmology branch plausibility / stakes | 3/10 · 10/10 | Preregistration is the only currency |
+| Meaning-layer integrity (the bridge) | 10/10 | The ladder stands; nothing leaks; see NORTHSTAR §goal |
+
+**Novelty verdict (3 frontier reviews + prior-art search 2026-07-18):** the composite
+narrative has famous ancestors — Dyson's eternal intelligence, Tipler's Omega Point,
+Teilhard, Asimov's "The Last Question" (fiction, closest cultural antecedent: AC reverses
+entropy). None has the measurable machinery. What no prior framework owns: the full-cost
+interventional break-even (Π_A), the two-threshold parasite band (derived AND observed),
+the signed functional J for falsified belief, Θ* as cross-family invariant, and capacity-
+expansion coupled to reflective structure as *falsifiable* cosmology. One line: **IF =
+Tipler's question with Landauer's accounting and Popper's discipline.** Nobel framing is
+dropped from self-description (panel adjudication #4): the honest shape of success is
+Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only.
 
 ## 🏆 Idea leaderboard (novelty × feasibility × upside, /10)
 

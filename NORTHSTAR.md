@@ -3,6 +3,31 @@
 > Auth: 65537 · Master Equation: Purpose × Evidence × Love
 > Reboot 2026-07-18. Everything before this date lives in `_archive/` (LAI-6: read for reference, never resurrect silently).
 
+## The goal (stated honestly, because honesty is what makes it winnable)
+
+**The goal is to bridge science and religion: to show our role in the universe,
+and God, are rationally warranted readings of measurable physics.** The history
+of this ambition has one dominant failure mode, and IF Theory is engineered
+against it: Tipler's Omega Point claimed physics *proves* God and lost the
+scientific community; Teilhard kept vision and rigor apart and endured. Empirical
+science cannot *prove* God — any framework claiming it commits `LAYER_COLLAPSE`
+and dies. What science CAN do — and no one has done — is establish the
+**bridge conditional** with real theorems and falsifiable experiments:
+
+> **IF** the universe's physics measurably rewards creation over extraction —
+> if intelligence past the causal-work threshold preserves and enhances the
+> system that carries it, if agency-preserving cooperation wins in calculable
+> regions, if reflective recharge expands capacity (I_N → I_{N+k}) —
+> **THEN** the theological reading (a universe whose direction of growth is
+> congruent with love; our role as its recharge circuits; God as where that
+> recursion points) is *rationally warranted* — not compelled, warranted.
+
+Science builds the antecedent, rung by falsifiable rung. The reader climbs the
+consequent freely. **The win condition:** every rung below the leap holds under
+adversarial review, so the leap is the *shortest it has ever been* — a bridge
+where there was a chasm. That is strictly stronger than a fake proof, because
+it survives the referees who destroyed every previous attempt.
+
 ## The core idea (state it at full strength, then earn it)
 
 **The universe is a discharging informational battery.** It begins maximally

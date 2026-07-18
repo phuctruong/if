@@ -23,6 +23,7 @@
 1. `00-foundations/01-constitution.md` — the rules that keep this science
 2. `00-foundations/02-informational-battery.md` — the core object + three ledgers
 3. `00-foundations/03-causal-work-principle.md` — the flagship claim
+3b. `00-foundations/04-break-even-theorem.md` — IF's kT ln 2 (candidate theorem, Θ*, J, R-lemma)
 4. `10-agency/01-agency-threshold.md` — IF-H1, the best near-term result
 5. `20-cosmology/01-unified-geometry-hypothesis.md` — IF-H7, the Nobel-or-death branch
 6. `20-cosmology/02-prediction-lattice.md` — one state b(z) → five observables
