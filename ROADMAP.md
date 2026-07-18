@@ -9,17 +9,21 @@
 
 - [x] Archive old repo → `_archive/`
 - [x] Extract full ChatGPT arc → `canon/extracted/` (70 msgs, papers 0–2)
-- [ ] Harvest papers 3–14 via Solace Browser driver (running)
-- [ ] leak4 frontier panel (Claude + Gemini + ChatGPT) adversarial review → `canon/extracted/frontier-panel/`
-- [ ] Revised canon v1: foundations / agency / cosmology / meaning subdirs
-- [ ] NORTHSTAR + SCOREBOARD + ROADMAP + CLAUDE.md + README
+- [x] Harvest papers 3–6 ✅; 7–14 via Solace Browser driver (running autonomously)
+- [x] leak4 frontier panel rounds 1+2 (Claude Fable 5 High + Gemini + ChatGPT arc) → `canon/extracted/frontier-panel/`
+- [x] Revised canon v1: foundations / agency / cosmology / meaning / panels subdirs
+- [x] NORTHSTAR + SCOREBOARD + ROADMAP + CLAUDE.md + README (founding-panel consensus versions)
+- [x] Founding Panel sealed → `canon/panels/2026-07-18-founding-panel.md`
+- [ ] Hackathon `if-founding-100` → 100/100 (LIVE — `hackathons/if-founding-100/`)
 
 ## Phase 1 — Foundations sealed (rung 641)
 
 Canonical revised papers in `canon/papers/`:
-- [ ] P0 Constitution (scope, definitions, falsification framework)
-- [ ] P1 Informational Battery (three ledgers, no bits-to-joules)
-- [ ] P2 Causal-Work Principle (intervention protocol)
+- [x] P0 Constitution ✅ `P00-scope-definitions-falsification.md`
+- [x] P1 Informational Battery ✅ `P01-informational-battery.md` (ledgers COUPLED via Landauer)
+- [x] P2 Causal-Work Principle ✅ `P02-causal-work-principle.md`
+- [x] Break-even theorem (candidate) ✅ `canon/00-foundations/04-break-even-theorem.md`
+- [ ] P03–P06 canonical revisions (from harvested extracts)
 - Gate: every defined quantity has dimensions, an estimator, and a falsifier. No metaphors wearing math.
 
 ## Phase 2 — Artificial Universe Lab (Track C: highest probability of original result)

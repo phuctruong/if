@@ -74,7 +74,9 @@ canon/
   20-cosmology/     Unified geometry hypothesis, prediction lattice b(z), galaxy/cosmology/GW tests
   30-meaning/       MaxLove, philosophy, theology — interpretation layer ONLY
   papers/           Revised final papers P0–P14 (canon versions, supersede extracted/)
+  panels/           Founding Panel + future panel seals (consensus, adjudications, rankings)
 notebooks/          Deterministic Jupyter notebooks (contract cell first, seeded, replayable)
+hackathons/         if-founding-100: rubric + live scoreboard driving the repo to 100/100
 evidence/           Run outputs, WORM — never edited after write
 scripts/            Extraction/harvest/verify tooling
 _archive/           Pre-reboot repo (SPARC/BAO/Mersenne pipelines — minable for baselines)

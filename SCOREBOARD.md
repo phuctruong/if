@@ -83,7 +83,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 
-Papers 0–2 extracted ✅ · Papers 3–14 harvesting via Solace Browser driver (2026-07-18).
+Papers 0–6 extracted ✅ · Papers 7–14 harvesting via Solace Browser driver (autonomous). Hackathon: `hackathons/if-founding-100/` drives the repo to 100/100.
 
 ## Frontier panel (leak4) results — Round 1 (2026-07-18, thread `if-theory-v2`)
 

@@ -24,6 +24,16 @@ See `../ROADMAP.md` Phase 2 (artificial-universe lab) and Phase 3 (cosmology lab
 Track C notebooks run with zero external data; Track A/B notebooks mine
 `../_archive/` for the previous generation's SPARC/BAO pipelines (state provenance).
 
+## Status (2026-07-18)
+
+| Notebook | State |
+|---|---|
+| `00_if_prediction_contract.ipynb` | ✅ built + code cells verified |
+| `04_if_causal_work_threshold.ipynb` | ✅ v0.1 RUN + PASS (parasite band; see repo SCOREBOARD §first evidence) |
+| `04e_update_law_ablation.ipynb` | planned — self-reflection threshold (model-of-the-RULES ablation) |
+| `04f_kalman_theta_star.ipynb` | planned — Θ\* second-family test (rung-274177 path) |
+| `04g_scramble_ratchet.ipynb` | planned — R-lemma attack (the spine test) |
+
 ## Naming
 
 `NN_short_name.ipynb`, numbered per the roadmap. Divergence-hunt companions:
