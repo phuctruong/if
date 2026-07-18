@@ -99,12 +99,21 @@ entropic gradient / memory kernel) with named risks, and branch forbidden states
 (`FIT_BEFORE_FREEZE`, `PER_GALAXY_KNOB`, `INTERPOLATION_SMUGGLING`,
 `ESTIMATOR_HANDWAVE`). No SPARC contact — no legitimacy spent.
 
+### Loop iteration 7 (2026-07-18, /loop) — family C killed on paper; family A's wedge found
+
+`canon/20-cosmology/05-lif-family-selection.md`: **memory-kernel gravity (family C) is
+dead** — any single global timescale forces BTFR slope 3 vs observed ≈ 4 (dimensional
+proof; kill-logged; zero data cost). Family B deferred pending a Verlinde prior-art
+audit. **Family A survives only via the wedge: structure-dependence of rotation curves
+at fixed Σ(r) — a prediction MOND forbids.** Freeze-blocked on (i) pixel-level
+structure-estimator specification, (ii) Σ-degeneracy literature check. XP → 13750.
+
 ### Next moves after this session, ranked
 
-1. **ℒ_IF family selection on paper** (constraints doc §candidates): derive BTFR
-   behavior + Newtonian limit for ONE family in prose, run the P16-style prior-art
-   self-audit, and only if it survives, freeze the exact functional in a prereg commit
-   and touch SPARC once. This is the Phase-3/4 unblock path.
+1. **ℒ_IF family A: estimator specification + Σ-degeneracy check** (prose + literature
+   only, no kinematics contact). If the estimator provably reduces to Σ(r), family A
+   dies like C and the branch needs new ideas; if not, freeze the functional in a
+   prereg commit and touch SPARC once against the frozen bar.
 2. **Track-C notebooks** (arrow of time, expansion–complexity window, memory depth,
    repair/mortality, cooperation) — deterministic, all visualizable, unbuilt.
 3. **Redesigned causal-work observable** (harvest-per-mass-step) — only with its own
