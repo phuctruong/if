@@ -123,7 +123,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **P17 written: the five-hackathon arc as a canonical paper** — Motion Without Lineage; every claim scoped + regenerable from scripts | 400 | `canon/papers/P17-motion-without-lineage.md` ✅ |
 | **ℒ_IF family C killed on paper** (cubic-BTFR proof; a suggestive τ_IF ≈ 3×10⁸ yr normalization noted and killed anyway) + family A's falsifiable wedge identified (structure-dependence at fixed Σ — a prediction MOND forbids) | 500 | `canon/20-cosmology/05-lif-family-selection.md` ✅ |
 | **Family A killed by the RAR bound + the branch redirect proved** — cosmology's positive target moved from SPARC (provably unwinnable for IF-distinctive laws) to the Euclid lattice; two ℒ_IF kills today at zero fit cost | 500 | `canon/20-cosmology/06-sigma-degeneracy-check.md` ✅ |
-| **TOTAL XP** | | **14250** |
+| **Lattice hardened against the RAR closure** — entry 02 tombstoned (CLOSED_BY_PROOF), entry 05 demoted, the reduced theory object identified (b(z)+μ[b]+w[b]+τ_IF ≈ 5 numbers), ranked pre-DR1 build queue (notebook 10 = boss #6 first) | 300 | `canon/20-cosmology/07-lattice-hardening.md` ✅ |
+| **TOTAL XP** | | **14550** |
 
 ### Belt progression (IF Theory)
 

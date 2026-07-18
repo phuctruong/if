@@ -119,12 +119,26 @@ Proved consequence: galaxy rotation curves cannot host IF-specific evidence; P11
 blocked-not-pending WITH a proof; the cosmology branch's positive target is the
 Euclid-facing prediction lattice (boss #7).** XP → 14250.
 
+### Loop iteration 9 (2026-07-18, /loop) — lattice hardened; the reduced theory object
+
+`canon/20-cosmology/07-lattice-hardening.md`: every lattice entry re-statused under the
+RAR closure. Entry 02 tombstoned (CLOSED_BY_PROOF), 05 demoted (MOND's fight, not
+ours), 03 survives only via hysteresis. **Key yield: the pre-DR1 program needs only a
+reduced theory object — scalar b(z) + response maps μ[b], w[b] + τ_IF (~5 numbers), not
+a galaxy functional.** Ranked build queue: notebook 10 (boss #6, public chains, buildable
+NOW) → entry 08 merger-memory data survey → entry 12 estimator freeze → notebook 14
+Euclid prereg (~Oct 2026). XP → 14550.
+
 ### Next moves after this session, ranked
 
-1. **Euclid-facing lattice hardening** (`20-cosmology/02-prediction-lattice.md`): which
-   lattice entries are (a) implementable without an ℒ_IF galaxy law, (b) genuinely
-   IF-distinctive vs ΛCDM *and* MOND at cluster/cosmological scales, (c) computable
-   before DR1. Prose first; any implementable entry gets its own prereg.
+1. **Notebook 10 prereg + build (boss #6, expansion–growth consistency).** Freeze:
+   b(z) parameterization (2–3 params), response maps, datasets (public BAO/SNe/H(z) +
+   growth chains), consistency metric, falsifier (two different b(z) → UNIFICATION
+   DEAD) — all BEFORE reading any chain. Then implement. This is the highest-value
+   pre-DR1 circuit and the program's first cosmology bet since the lattice was written.
+2. **Entry 08 survey**: published merging-cluster lensing–X-ray offsets + collision
+   ages; ≥10 systems → τ_IF prereg becomes possible.
+3. **Entry 12**: freeze the I_NL estimator on CAMELS to pixel level.
 2. **Track-C notebooks** (arrow of time, expansion–complexity window, memory depth,
    repair/mortality, cooperation) — deterministic, visualizable, unbuilt; the agency
    branch's remaining constructive program.
