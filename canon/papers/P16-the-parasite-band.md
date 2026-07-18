@@ -36,9 +36,13 @@ harvest of instantaneous sensory information. The two-threshold structure replic
 three substrate families that share no mechanism — a lattice forager, a linear-Gaussian
 controller, and a run-and-tumble chemotactic swimmer.
 
-The practical consequence: **an ablation experiment alone cannot establish that a
-mechanism is adaptive.** Ablation establishes causal participation. Only comparison
-against an optimal simpler competitor establishes that the mechanism earns its keep.
+The practical consequence — **an ablation experiment alone cannot establish that a
+mechanism is adaptive** — is *not new*: experimental evolution has long known that knockout
+phenotype ≠ competitive fitness, and Still (2020) bounds the thermodynamic benefit of
+memory by its predictive content (§3b). What we contribute is narrower and structural: a
+derivation that the two criteria must cross **in a fixed order**, with a band width set by
+the reactive twin's free sensory harvest plus non-memory overhead, holding across three
+substrates that share no mechanism.
 
 ---
 
@@ -126,6 +130,44 @@ companion study — a lattice forager, a linear-Gaussian controller, and a run-a
 chemotactic swimmer — despite those families sharing no mechanism. **The parasite band
 survived the same experiment that falsified the program's universality claim.** It does
 not depend on any invariant.
+
+## 3b. Prior art — the methodological point is NOT new (self-audit, 2026-07-18)
+
+A literature check run *before* external review, under this repo's `NOVELTY_INFLATION`
+prohibition, found that the paper's headline methodological claim is **already established
+in two fields**:
+
+**Experimental evolution.** That a knockout's visible phenotype does not establish a gene's
+fitness contribution is standard. Yeast deletion collections show many mutants with no
+detectable phenotype in ordinary culture that reveal significant fitness deficits — and
+occasionally *gains* — only under direct competition against wild type. The field's own
+summary of this is that competition acts as "a microscope that makes formerly invisible
+phenotypes visible." That is the ablation-versus-competition distinction, discovered
+empirically and in wide use. Our §4 claim is a rediscovery of it in thermodynamic units.
+
+**Information thermodynamics.** Still (*Thermodynamic Cost and Benefit of Memory*, PRL 124,
+050601, 2020; arXiv:1705.00612) establishes that retaining non-predictive information
+limits thermodynamic efficiency, and that under a metabolic constraint there is a maximum
+achievable benefit set by the *relevant* information. Our "nostalgia" term
+(I_mem − I_pred) is Still's non-predictive retention cost, arrived at independently and
+therefore **not a new quantity**.
+
+**What survives as plausibly novel**, stated narrowly:
+
+1. The **ordering claim** — that Π_A crosses unity at strictly lower environment
+   predictability than Π_C, with a derived band width
+   β·C_overhead + [I_react − nostalgia] > 0 — is a structural prediction we have not found
+   stated in either literature. Biology observes the dissociation case by case; Still bounds
+   the efficiency. Neither derives that the two criteria must cross in a fixed order.
+2. The identification of the **reactive twin's free harvest** (I_react) as the specific
+   term that makes ablation systematically over-credit memory.
+3. The demonstration that the same structure appears across three substrates that share no
+   mechanism.
+
+**What we withdraw:** any suggestion that "ablation alone cannot establish adaptiveness"
+is our finding. It is not. We re-derived a known methodological constraint from a
+thermodynamic accounting, which is worth reporting as convergence — and worth reporting
+*as convergence*, not as discovery.
 
 ## 4. What this does and does not license
 
