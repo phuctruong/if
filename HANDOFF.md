@@ -154,6 +154,16 @@ intact for DESI DR3 / Euclid DR1. Boss #6 round 1 fought, unresolved. Possible v
 amendments declared in `10-notebook10-verdict-v1.md` (must be logged before running).
 XP → 15450.
 
+### Loop iteration 14 (2026-07-18, /loop) — arrow-records VOID; the gate worked
+
+`hackathons/if-arrow-records/` sealed as VOID at 70/100 (prereg `e46de28`). G1: the
+Critters-class reversible core retraces bit-perfectly. G2 fired: the substrate is a
+number-conserving particle gas (pop exactly 315 across 400 steps) — in-place
+persistence records are the EMPTY SET; frozen-block count over 16 composed steps = 0.
+TA-H3/TA-H11 left untouched (no verdict from a broken instrument). Lesson logged:
+reversible + number-conserving ⇒ no cheap records (aligned with P12 TA-H6/TA-H11
+spirit). Next attempt specified: BBM-with-walls substrate, own prereg. XP → 15800.
+
 ### Next moves after this session, ranked
 
 1. **Entry 08 — DONE (iteration 13): PARKED on a data gap.** Offsets (Harvey+15,
