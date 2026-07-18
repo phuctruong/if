@@ -89,7 +89,28 @@ boundary), movers are ballistic (2 nulls), no heredity unit (ABSENT), generalize
 (BARREN, branch closed), causal work indistinguishable from zero under drawdown
 (rest). XP → 13250.
 
+### Loop iteration 6 (2026-07-18, /loop) — ℒ_IF design constraints written (no evaluation)
+
+`canon/20-cosmology/04-lif-design-constraints.md`: hard constraints C1–C8 any ℒ_IF
+must survive before freezing (dimensional closure, Newtonian recovery, zero per-galaxy
+freedom, the frozen admission bar, BTFR-out-not-in, the new P17 constraint, cross-scale
+consistency, regeneration), three candidate families sketched (modified inertia /
+entropic gradient / memory kernel) with named risks, and branch forbidden states
+(`FIT_BEFORE_FREEZE`, `PER_GALAXY_KNOB`, `INTERPOLATION_SMUGGLING`,
+`ESTIMATOR_HANDWAVE`). No SPARC contact — no legitimacy spent.
+
 ### Next moves after this session, ranked
+
+1. **ℒ_IF family selection on paper** (constraints doc §candidates): derive BTFR
+   behavior + Newtonian limit for ONE family in prose, run the P16-style prior-art
+   self-audit, and only if it survives, freeze the exact functional in a prereg commit
+   and touch SPARC once. This is the Phase-3/4 unblock path.
+2. **Track-C notebooks** (arrow of time, expansion–complexity window, memory depth,
+   repair/mortality, cooperation) — deterministic, all visualizable, unbuilt.
+3. **Redesigned causal-work observable** (harvest-per-mass-step) — only with its own
+   prereg; the drawdown design is retired by the rest-clause.
+4. **Π_C-primitive live disagreement** (panel round; leak4 driver needs the scripts/
+   workarounds) · **book manuscript** (arc now includes P17).
 
 -2. **Causal-work audit power run — DONE (iteration 5, UNDECIDED, program rests).** The one live
    question on the emergent substrate. Declare a fresh ~64-seed roster; primary verdict
