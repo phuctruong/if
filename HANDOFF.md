@@ -3,7 +3,50 @@
 > Read this first in a new session. Then `bash scripts/verify.sh` (should print GREEN),
 > then `NORTHSTAR.md` → `SCOREBOARD.md` → this file's §Next moves.
 
-## What this session did
+## LATEST SESSION (2026-07-18, later) — the mobility search ran; the asterisk is closed
+
+`hackathons/if-mobility-search/` — sealed 100/100 under condition (a). Three results:
+
+1. **The still-life mystery is solved: energy starvation, not rules.** A pre-declared
+   216-config sweep (prereg commit `aed7149` *before* any run) found that the same
+   Conway-gate rules grow movers from random soup once construction is cheap:
+   `B3/S23, e_birth=0.25, e_maint=0.01, inflow=12, σ=40, ρ=0.15` → mean **24.0 emergent
+   mobile tracks per run** (8 seeds × 600 steps, D4 threshold was 0.5). Boss #8
+   (Still-Life Desert) slain. Also found on entry: the old detector (`min_size=6`) was
+   glider-blind by construction, but M0 re-confirmed the still-life verdict at
+   `min_size=5` — the old kill stands on stronger evidence.
+2. **The first causal-work audit on agents a universe produced** (what the asterisk
+   demanded): 21 emergent movers, 24-seed declared roster, frozen criteria →
+   **UNDECIDED, t = −0.94** (W_C mean −4.9 ± 5.2 SEM, 61.9% positive). Run 1 returned
+   only 9 movers < frozen minimum 20 → VOID honored; roster extended by declaration
+   *before* rerun. No claim upgrade in either direction.
+3. **A real finding in the tail**: count-preserving scrambles of movers occasionally
+   ignite debris growth explosions that out-harvest the organized structure
+   (W_C −39, −93). In an energy-rich regime organization is energy-*frugal*, not
+   energy-greedy — **raw regional harvest is probably the wrong observable for
+   mover-class agency**. This is the #1 open thread now (see Next moves).
+
+New tools: `scripts/mobility_search.py` (UniverseX + wrap-aware overlap tracker +
+declared sweep), `scripts/mover_audit.py` (mover-adapted causal-work audit).
+Evidence: `evidence/mobility_{controls,sweep_stageA,confirm_stageB}_2026_07_18.json`,
+`evidence/mover_audit_2026_07_18.json`. XP 10150 → **11050**; belt stays Green
+(Blue still requires an external party).
+
+### Next moves after this session, ranked
+
+1. **Find the right observable for mover agency.** Raw harvest is confounded by
+   scramble-ignited growth. Candidates (freeze ONE before running): survival-conditioned
+   harvest, harvest per unit mass-step, or net displacement toward resource (tracking
+   test M3-stretch never ran). A new prereg amendment or a small successor hackathon.
+2. **More statistics on the same frozen audit** — declare a larger roster (e.g. 64
+   seeds) before running; at sd 23.8 the current design needs ~n×5 to resolve a
+   W_C ≈ ±5 effect. Cheap, embarrassingly parallel.
+3. Then the pre-existing queue below (ℒ_IF commit-first for Phase 3/4, Track-C
+   notebooks, Π_C-primitive disagreement, book).
+
+---
+
+## What the previous session did
 
 Rebooted the repo from scratch around the core idea (old repo → `_archive/`, read-only),
 extracted 15 working papers from a ChatGPT thread, wrote 17 canonical papers, built 7
@@ -23,7 +66,7 @@ untested: its one previously implemented galaxy law lost to both MOND and an NFW
 claim, confirmed at +138σ in a provably coupling-free substrate, though its qualitative
 point was de-claimed as prior art after a self-audit.
 
-## The asterisk that matters most (discovered in the final hour)
+## The asterisk that matters most (discovered in the final hour) — ✅ CLOSED, see LATEST SESSION above
 
 **The Conway gate was never satisfied by the experiments that falsified IF-H1.** The ring,
 Kalman, and chemotaxis families all had memory mechanisms *designed by hand*. When an

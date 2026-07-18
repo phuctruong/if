@@ -11,12 +11,12 @@
  "window": 100,
  "T": 60,
  "dilate": 21,
- "n": 9,
- "W_C_mean": -14.388711111111112,
- "W_C_sd": 32.43825722062009,
- "t": -1.3307167841894365,
- "frac_positive": 0.6666666666666666,
- "verdict": "VOID \u2014 below frozen minimum sample; no verdict may be taken",
+ "n": 21,
+ "W_C_mean": -4.8817666666666675,
+ "W_C_sd": 23.751375681217567,
+ "t": -0.9418850333289599,
+ "frac_positive": 0.6190476190476191,
+ "verdict": "UNDECIDED at this sample \u2014 report widths, no claim upgrade.",
  "rows": [
   {
    "seed": 7,
@@ -107,6 +107,126 @@
    "w_intact": 2.8701,
    "w_scrambled": 1.9652,
    "W_C": 0.9049
+  },
+  {
+   "seed": 501,
+   "id": 0,
+   "size": 7,
+   "life": 86,
+   "disp": 10.17,
+   "w_intact": -7.1454,
+   "w_scrambled": -7.4099,
+   "W_C": 0.2645
+  },
+  {
+   "seed": 505,
+   "id": 0,
+   "size": 7,
+   "life": 53,
+   "disp": 11.14,
+   "w_intact": -97.1936,
+   "w_scrambled": -101.7119,
+   "W_C": 4.5183
+  },
+  {
+   "seed": 506,
+   "id": 0,
+   "size": 9,
+   "life": 46,
+   "disp": 12.47,
+   "w_intact": -40.1901,
+   "w_scrambled": -68.1342,
+   "W_C": 27.9441
+  },
+  {
+   "seed": 509,
+   "id": 0,
+   "size": 26,
+   "life": 40,
+   "disp": 10.77,
+   "w_intact": -5.3178,
+   "w_scrambled": -2.9555,
+   "W_C": -2.3623
+  },
+  {
+   "seed": 510,
+   "id": 0,
+   "size": 56,
+   "life": 59,
+   "disp": 11.73,
+   "w_intact": 19.539,
+   "w_scrambled": 12.2329,
+   "W_C": 7.3061
+  },
+  {
+   "seed": 513,
+   "id": 0,
+   "size": 7,
+   "life": 100,
+   "disp": 18.43,
+   "w_intact": 4.3762,
+   "w_scrambled": 13.3081,
+   "W_C": -8.9318
+  },
+  {
+   "seed": 513,
+   "id": 1,
+   "size": 5,
+   "life": 95,
+   "disp": 13.2,
+   "w_intact": -94.2314,
+   "w_scrambled": -102.534,
+   "W_C": 8.3027
+  },
+  {
+   "seed": 515,
+   "id": 0,
+   "size": 7,
+   "life": 56,
+   "disp": 11.14,
+   "w_intact": -41.9404,
+   "w_scrambled": -30.8882,
+   "W_C": -11.0523
+  },
+  {
+   "seed": 515,
+   "id": 1,
+   "size": 10,
+   "life": 40,
+   "disp": 8.69,
+   "w_intact": -15.7028,
+   "w_scrambled": -3.2907,
+   "W_C": -12.4121
+  },
+  {
+   "seed": 516,
+   "id": 0,
+   "size": 10,
+   "life": 56,
+   "disp": 15.43,
+   "w_intact": -2.3962,
+   "w_scrambled": -4.4586,
+   "W_C": 2.0623
+  },
+  {
+   "seed": 516,
+   "id": 1,
+   "size": 8,
+   "life": 53,
+   "disp": 16.46,
+   "w_intact": 16.1611,
+   "w_scrambled": 19.0916,
+   "W_C": -2.9305
+  },
+  {
+   "seed": 516,
+   "id": 2,
+   "size": 6,
+   "life": 53,
+   "disp": 12.57,
+   "w_intact": -1.2243,
+   "w_scrambled": -15.4966,
+   "W_C": 14.2723
   }
  ]
 }
