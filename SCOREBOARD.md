@@ -124,7 +124,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **ℒ_IF family C killed on paper** (cubic-BTFR proof; a suggestive τ_IF ≈ 3×10⁸ yr normalization noted and killed anyway) + family A's falsifiable wedge identified (structure-dependence at fixed Σ — a prediction MOND forbids) | 500 | `canon/20-cosmology/05-lif-family-selection.md` ✅ |
 | **Family A killed by the RAR bound + the branch redirect proved** — cosmology's positive target moved from SPARC (provably unwinnable for IF-distinctive laws) to the Euclid lattice; two ℒ_IF kills today at zero fit cost | 500 | `canon/20-cosmology/06-sigma-degeneracy-check.md` ✅ |
 | **Lattice hardened against the RAR closure** — entry 02 tombstoned (CLOSED_BY_PROOF), entry 05 demoted, the reduced theory object identified (b(z)+μ[b]+w[b]+τ_IF ≈ 5 numbers), ranked pre-DR1 build queue (notebook 10 = boss #6 first) | 300 | `canon/20-cosmology/07-lattice-hardening.md` ✅ |
-| **TOTAL XP** | | **14550** |
+| **Notebook-10 prereg + sign derivation committed pre-data (boss #6 engaged with a real bet)** — DESI hint disclosed as retrodiction; the IF bet = growth-side shape match with A_μ > 0, AGAINST the S8 trend; verdict tree + execution order frozen | 400 | `canon/20-cosmology/08-notebook10-prereg.md` + `09-sign-derivation.md` ✅ |
+| **TOTAL XP** | | **14950** |
 
 ### Belt progression (IF Theory)
 

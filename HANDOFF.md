@@ -129,13 +129,25 @@ a galaxy functional.** Ranked build queue: notebook 10 (boss #6, public chains, 
 NOW) → entry 08 merger-memory data survey → entry 12 estimator freeze → notebook 14
 Euclid prereg (~Oct 2026). XP → 14550.
 
+### Loop iteration 10 (2026-07-18, /loop) — boss #6 engaged: prereg + sign frozen pre-data
+
+`08-notebook10-prereg.md` (commit `54f9717`) + `09-sign-derivation.md`: the
+expansion–growth shape-consistency test is frozen. w = −1 + A_w(1+z)^(−γ_E),
+μ = 1 + A_μ(1+z)^(−γ_G); the IF bet = **γ_E = γ_G with A_w > 0 AND A_μ > 0** — the
+growth sign runs AGAINST the S8 trend, so the bet is real and the community prior
+leans against us. DESI's evolving-DE hint disclosed as retrodiction (no credit).
+Verdict tree frozen incl. UNIFICATION DEAD. Execution order: sign note ✅ → notebook
+skeleton w/ CONTRACT (datasets pinned, no data) → expansion fit → growth fit →
+verdict, each step committed before the next. XP → 14950.
+
 ### Next moves after this session, ranked
 
-1. **Notebook 10 prereg + build (boss #6, expansion–growth consistency).** Freeze:
-   b(z) parameterization (2–3 params), response maps, datasets (public BAO/SNe/H(z) +
-   growth chains), consistency metric, falsifier (two different b(z) → UNIFICATION
-   DEAD) — all BEFORE reading any chain. Then implement. This is the highest-value
-   pre-DR1 circuit and the program's first cosmology bet since the lattice was written.
+1. **Notebook 10 implementation** per the frozen execution order: (3) skeleton +
+   CONTRACT cell with pinned dataset versions (no data loaded), (4) expansion-side
+   fit (DESI DR2 BAO + Pantheon+ + Planck-2018 distance priors; `_archive/` pipelines
+   may be mined for machinery, never numbers), (5) growth-side fit (pinned fσ₈
+   compilation + Planck lensing cross-check), (6) verdict same-session. Data downloads
+   are the practical constraint; check `_archive/` first.
 2. **Entry 08 survey**: published merging-cluster lensing–X-ray offsets + collision
    ages; ≥10 systems → τ_IF prereg becomes possible.
 3. **Entry 12**: freeze the I_NL estimator on CAMELS to pixel level.
