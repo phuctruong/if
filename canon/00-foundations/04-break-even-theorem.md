@@ -97,7 +97,13 @@ as the universal constant** — it scales ~1/C_MEMORY and the ring/Kalman famili
 are statistically distinguishable (3.5–9.6σ) at every cost level once crossing
 statistics tighten. What survives, and points to the refined candidate: the two
 families track in lockstep across a 3× cost range (5–15% apart), and the clean
-work-per-bit ratio (04g) is stable across environments. **IF-H1 (restated v4, round-3 verified):** the candidate invariant is the
+work-per-bit ratio (04g) is stable across environments. > ⛔ **FALSIFIED 2026-07-18 — see `canon/papers/P15-falsification-of-universality.md`.**
+> Both η\* and Υ_IF failed across ring/Kalman/chemotaxis; the pre-committed stop rule
+> was honored. No universal constant exists in this framework at measurable rank.
+> Π_A/Π_C survive as per-family instruments. The section below is retained as the
+> record of what was claimed and how it was tested.
+
+**IF-H1 (restated v4, round-3 verified — NOW FALSIFIED):** the candidate invariant is the
 **clean work-per-bit at competitive break-even**
 
 ```

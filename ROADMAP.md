@@ -42,7 +42,9 @@ Canonical revised papers in `canon/papers/`:
 
 - Noether gate: property-based conservation tests auto-fail any leaky rule.
 - Conway gate: agents detected, never declared.
-- Seal: rung 274177 = **Θ\* agrees across ≥3 unrelated rule families** (Noether, founding panel) — supersedes the vaguer same-threshold wording.
+- ✅ **Rung 274177 SEALED 2026-07-18 — by falsification.** The decisive three-family test
+  ran and IF-H1 universality FAILED (P15). The rung was defined as *asking honestly*, and
+  the pre-committed stop rule was honored. A negative answer, cleanly obtained, seals it.
 
 ## Phase 3 — Observational Cosmology Lab (Tracks A/B: reproduce, then predict)
 
