@@ -1,6 +1,6 @@
-# The Falsification of Causal-Work Universality
+# "Used Information" Is Not Substrate-Portable
 
-## Why No Cost-Free Dimensionless Invariant Survives Three Substrates, and What Remains of the Agency Threshold
+## A Pre-Registered Falsification of Causal-Work Universality, and the Representational-Format Obstruction It Exposed
 
 **Author:** Phuc Vinh Truong
 **Series:** IF Theory Canonical Papers
@@ -13,27 +13,34 @@
 
 ## Abstract
 
-IF Theory's central near-term claim (IF-H1) was that a dimensionless quantity built
-from the causal-work ratios — the fraction of apparatus cost concentrated in
-belief-maintenance at competitive break-even — takes a common critical value across
-structurally unrelated agent substrates. This paper reports that **the claim is false
-in the regime we can measure**, and documents the two independent ways it failed.
+**A run-and-tumble chemotactic agent performs substantial causal work while carrying
+essentially no recoverable predictive information about the variable it tracks.** That
+single observation — not the scatter tables that follow it — is this paper's result.
+It falsifies the representational assumption tacitly shared by semantic-information
+accounts of agency: that an agent's internal state must be *about* the world in a
+decodable way for that state to do physical work.
 
-First, the information-denominated form (η\* = ΔW_ablation / kT·ΔI_use) proved
-**not measurable in a family-portable way**: three successive declared estimators of
-I_use each failed by a distinct and instructive pathology, culminating in the finding
-that any estimator keyed to environmental prediction structurally privileges
-predictor-shaped agents and cannot, even in principle, test substrate-independence.
-Second, the cost-denominated form with dimensional rescaling (Υ_IF = Θ\*·C_model/ν_active)
-**scattered across families at 3.8–182σ** at every cost level tested.
+**What this paper does not claim.** The causal-work principle survives, and so does the
+agency-threshold structure: scrambling internal information changes extractable work in
+a measurable, sign-meaningful way in every family we tested, and the two-threshold
+dissociation (the *parasite band*) held across all three substrates. What died is
+narrower and specific: the claim that a single **information-normalized invariant** takes
+a universal critical value across agent architectures.
 
-Per a pre-registered stop rule adopted before the experiment, two failed principled
-rescalings terminate the universality claim. We therefore report IF-H1 as falsified
-rather than attempting a third rescaling. We delimit precisely what dies (a universal
-constant; the "physical law of agency" framing) and what survives intact (Π_A and Π_C
-as per-family measurement instruments; the parasite band; the rule/state dissociation).
+We report that claim (IF-H1) as falsified, on two independent grounds. First, the
+information-denominated form η\* = ΔW_ablation / kT·ΔI_use proved **not measurable
+family-portably**: three successive declared estimators of I_use each failed by a distinct
+pathology, and the three pathologies turn out to be three faces of one structural fact —
+*"the information an agent uses" is definable only relative to an assumed internal
+representational format*, and no single format survives a Kalman predictor, a lattice
+drift-estimator, and a scalar gradient-climber. Second, the cost-denominated form with
+dimensional rescaling (Υ_IF = Θ\*·C_model/ν_active) **scattered at 3.8–182σ** across
+families at every cost level tested.
 
----
+A stop rule pre-registered before the experiment terminated the universality claim after
+two failed principled rescalings. We honor it: no third rescaling was attempted, and a
+stable cross-family ordering we noticed afterward is reported as an observation we
+deliberately did not pursue.
 
 ## 1. What was claimed
 
@@ -108,6 +115,26 @@ a tight deterministic relationship between decision and (poor) outcome. Informat
 is not usefulness — the very confusion the signed functional *J* was conjectured to
 repair, here appearing as a concrete measurement failure rather than a thought experiment.
 
+**The three pathologies are one fact.** v1 inverted because a competent agent's error is
+white while a broken agent's error is structured — MI-with-the-world has the wrong sign
+convention for competence. v2 died because it presumed a predictor-shaped internal
+variable that chemotaxis simply does not have. v3 went negative because plain mutual
+information cannot carry a sign, so "more coupling" and "worse agent" become
+indistinguishable. Together:
+
+\[
+\boxed{I_{\mathrm{use}} \text{ is representation-relative: it is definable only against an assumed internal format.}}
+\]
+
+**Contact with semantic-information theory.** Kolchinsky–Wolpert's viability-based
+semantic information, Friston's free-energy agent (definitionally a predictor), and the
+broader "agency = internal model of the world" tradition all assume the agent's internal
+state is *about* the world in a recoverable way. **Chemotaxis is an existence proof
+against that assumption**: causal-work-positive, and carrying no decodable predictive
+information about the drift it exploits. Formalizing this obstruction — an agent can be
+causal-work-positive while carrying zero recoverable predictive information about the
+variable it controls — is the successor result to this paper.
+
 **Corroboration from the corpus.** The source working papers (P02 §Order parameters,
 P05 §1) define the primary observable with a **cost** denominator, Π_A = ΔW_enabled /
 C_model, and never an information denominator. That choice, undocumented as to
@@ -139,8 +166,14 @@ third rescaling, and this paper is the public record of that commitment being ho
 - Rung 274177 as originally worded (*"the same threshold across ≥3 rule families"*).
 
 **What survives, stated conservatively:**
-- Π_A and Π_C as **per-family measurement instruments**. Nothing here impugns their
-  internal validity; they measure what they measure within a substrate.
+- Π_A and Π_C as **per-family measurement instruments**, shipped as a *method, not a law*.
+  The cost denominator escapes the estimator pathology because C_model is a **declared**
+  quantity, not an inferred one — vindicating the source papers' choice. But it does not
+  escape arbitrariness; it **relocates** it: the numerator still requires defining the
+  scramble, the denominator still requires drawing the memory-cost boundary. Declared
+  arbitrariness is auditable; inferred arbitrariness is a trap. That is a real improvement
+  and it is not invariance — Υ_IF, built on Π_A, scattered too. **The cost denominator
+  escapes the measurability problem but not the universality problem.**
 - **The parasite band** — the dissociation of ablation-positive from
   competitive-positive information — which is a *structural* consequence of the
   break-even inequality and was independently replicated in a third context
@@ -151,11 +184,12 @@ third rescaling, and this paper is the public record of that commitment being ho
   (R ≤ 0 and the signed functional J) remain open, and §3 arguably *strengthens* the
   case that J is necessary, since informativeness demonstrably diverged from usefulness.
 
-**Logged but explicitly not claimed:** the ordering ring > Kalman > chemotaxis is
-stable across both cost levels with roughly preserved ratios (2.49 and 2.33 for
-ring/Kalman). Under the stop rule we record this and decline to build on it. A
-regularity noticed *after* a falsification is precisely the pattern a pre-commitment
-exists to protect against.
+**Logged but explicitly not claimed:** we observed a stable ordering
+(ring > Kalman > chemotaxis, both cost levels, ratios 2.49 and 2.33) whose mechanism we
+**did not pursue, per pre-registration** — it is flagged here solely as a candidate for
+independent future testing. A 7% ratio spread over one cost octave is exactly the shape
+of pattern a binding stop rule exists to protect against, and the commitment is binding
+precisely at the moment it is painful.
 
 ## 6. Why a negative result was worth the cost
 
@@ -174,6 +208,22 @@ Three considerations, none of them consolation:
    produced by the same discipline that produced the parasite band — frozen contracts,
    marginal-preserving interventions, cost controls, and a stop rule written before the
    data existed. Reporting the kill is the evidence that the discipline is real.
+
+## 6b. Declared limitations (named before a referee names them)
+
+1. **Component-optimality was not enforced everywhere.** Ablation of a component is
+   strictly interpretable only when the intact agent is Pareto-optimal in that component
+   (the rule added in `canon/00-foundations/04-break-even-theorem.md` after notebook 04e
+   produced a config-gap artifact). The three families here use fixed, unoptimized
+   internal gains. This does not affect the universality verdict — a non-invariant
+   quantity cannot be rescued by tuning — but it does mean per-family Θ\*/Υ magnitudes
+   should be read as protocol-specific, not as each family's optimum.
+2. **One cost octave.** C_MEMORY spans 2× here (0.01–0.02); the earlier Θ\* control spanned
+   4×. Neither is a long lever arm for a scaling claim, which is part of why we decline to
+   build on the observed ordering.
+3. **Crossing location by linear interpolation** on a finite p-grid; an independent
+   method for locating Π_C = 1 would strengthen (or overturn) the scatter magnitudes,
+   though not their sign.
 
 ## 7. Falsifiers of *this* paper
 

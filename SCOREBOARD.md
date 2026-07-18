@@ -93,7 +93,9 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Rung sealed | 400 ea | 274177 ✅ |
 | **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
 | Archived falsification recovered + scoped (not re-litigated) | 300 | SPARC 175-galaxy prior ✅ |
-| **TOTAL XP** | | **3850** |
+| Adversarial round survived + folded (round 4) | 100 | Kill verdict verified + P15 rewritten ✅ |
+| **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
+| **TOTAL XP** | | **4350** |
 
 ### Belt progression (IF Theory)
 
@@ -115,6 +117,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 3 | **Υ_IF the Last Rescaling** | 3 families × 2 costs | ☠️ SLAIN (P15 §4) |
 | 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | 🔓 OPEN — next |
 | 5 | **The Signed Functional J** | prove squeezed SU↔Still | 🔓 OPEN (P15 §3 strengthens its case) |
+| 5b | **The Representational-Format Obstruction** | formalize: causal-work-positive with zero recoverable predictive information | 🆕 **NEW — the successor claim**, panel-rated the honest ceiling of the program |
 | 6 | **ΛCDM** | expansion–growth consistency, one b(z) | ⚔️ **ENGAGED** — Phase 3 live; we enter down 7.13 to 1.14 on the archived galaxy benchmark |
 | 7 | **Euclid DR1** | preregistered forecast, ~Oct 2026 | 🔒 LOCKED (Phase 4) |
 
