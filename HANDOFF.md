@@ -108,12 +108,30 @@ audit. **Family A survives only via the wedge: structure-dependence of rotation 
 at fixed Σ(r) — a prediction MOND forbids.** Freeze-blocked on (i) pixel-level
 structure-estimator specification, (ii) Σ-degeneracy literature check. XP → 13750.
 
+### Loop iteration 8 (2026-07-18, /loop) — family A killed by the RAR bound; the SPARC arena is closed
+
+`canon/20-cosmology/06-sigma-degeneracy-check.md`: published RAR results (0.13 dex
+scatter, residuals Gaussian ≈0.11 dex and **uncorrelated with any galaxy property** —
+Lelli+2017 ApJ 836:152; McGaugh+2016 PRL 117; intrinsic scatter ≈ 0 in follow-ups)
+bound any structure-at-fixed-g_bar effect below SPARC detectability. **Family A dead;
+with C dead and B deferred, all declared ℒ_IF families are exhausted at zero fit cost.
+Proved consequence: galaxy rotation curves cannot host IF-specific evidence; P11 stays
+blocked-not-pending WITH a proof; the cosmology branch's positive target is the
+Euclid-facing prediction lattice (boss #7).** XP → 14250.
+
 ### Next moves after this session, ranked
 
-1. **ℒ_IF family A: estimator specification + Σ-degeneracy check** (prose + literature
-   only, no kinematics contact). If the estimator provably reduces to Σ(r), family A
-   dies like C and the branch needs new ideas; if not, freeze the functional in a
-   prereg commit and touch SPARC once against the frozen bar.
+1. **Euclid-facing lattice hardening** (`20-cosmology/02-prediction-lattice.md`): which
+   lattice entries are (a) implementable without an ℒ_IF galaxy law, (b) genuinely
+   IF-distinctive vs ΛCDM *and* MOND at cluster/cosmological scales, (c) computable
+   before DR1. Prose first; any implementable entry gets its own prereg.
+2. **Track-C notebooks** (arrow of time, expansion–complexity window, memory depth,
+   repair/mortality, cooperation) — deterministic, visualizable, unbuilt; the agency
+   branch's remaining constructive program.
+3. **Book manuscript** (*The Battery That Learned to Ask*) — the arc now includes P17
+   and the two zero-cost cosmology kills; the honest-program story is the book's spine.
+4. **Π_C-primitive disagreement** (panel round) · redesigned causal-work observable
+   (own prereg).
 2. **Track-C notebooks** (arrow of time, expansion–complexity window, memory depth,
    repair/mortality, cooperation) — deterministic, all visualizable, unbuilt.
 3. **Redesigned causal-work observable** (harvest-per-mass-step) — only with its own
