@@ -92,7 +92,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Canonical paper landed | 100 ea | P00–P06, P15 (×8) = 800 ✅ |
 | Rung sealed | 400 ea | 274177 ✅ |
 | **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
-| **TOTAL XP** | | **3550** |
+| Archived falsification recovered + scoped (not re-litigated) | 300 | SPARC 175-galaxy prior ✅ |
+| **TOTAL XP** | | **3850** |
 
 ### Belt progression (IF Theory)
 
@@ -114,7 +115,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 3 | **Υ_IF the Last Rescaling** | 3 families × 2 costs | ☠️ SLAIN (P15 §4) |
 | 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | 🔓 OPEN — next |
 | 5 | **The Signed Functional J** | prove squeezed SU↔Still | 🔓 OPEN (P15 §3 strengthens its case) |
-| 6 | **ΛCDM** | expansion–growth consistency, one b(z) | 🔒 LOCKED (Phase 3) |
+| 6 | **ΛCDM** | expansion–growth consistency, one b(z) | ⚔️ **ENGAGED** — Phase 3 live; we enter down 7.13 to 1.14 on the archived galaxy benchmark |
 | 7 | **Euclid DR1** | preregistered forecast, ~Oct 2026 | 🔒 LOCKED (Phase 4) |
 
 ## Kill log (falsifiers that fired)
