@@ -1,6 +1,6 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 4850 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 5650 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |
@@ -10,7 +10,7 @@
 | 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
 | 3 Observational Cosmology Lab | — | ▶️ LIVE 25/100 — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
 | 4 Preregistration | rung 65537 | 🔒 Euclid forecast frozen before DR1 (~Oct 2026) |
-| 5 Papers + Book | — | ◐ P07–P14 revisions + parasite-band write-up + book arc |
+| 5 Papers + Book | — | ◐ **corpus COMPLETE (16 papers)**; remaining: parasite-band standalone write-up + book arc |
 
 
 > Everything below serves one core idea: the discharging-battery universe and the
@@ -84,7 +84,7 @@ Canonical revised papers in `canon/papers/`:
 
 ## Phase 5 — Papers + Book
 
-- [ ] Revise papers 3–14 into `canon/papers/` as results land (paper ← notebook, never the reverse)
+- [x] ✅ **ALL 16 canonical papers landed** (P00–P14 revised + P15 new). Each of P07–P14 carries a post-falsification status note; universality language retired to per-family scope throughout.
 - [ ] IF Theory book arc for phucnet (`9/10 as book` per the honest scorecard — earn it)
 
 ## Standing rules

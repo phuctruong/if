@@ -89,7 +89,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Honest kill (self-caught error, logged before interpretation) | 100 ea | v0.0 contract · Θ* raw · lockstep · smoother-parasite · I_use v1/v2/v3 (×7) = 700 ✅ |
 | Candidate theorem with named missing lemmas | 250 | Break-even theorem ✅ |
 | Adversarial round survived + folded | 100 ea | Rounds 1–4 (×4) = 400 ✅ |
-| Canonical paper landed | 100 ea | P00–P06, P15 (×8) = 800 ✅ |
+| Canonical paper landed | 100 ea | P00–P15 (×16) = 1600 ✅ |
 | Rung sealed | 400 ea | 274177 ✅ |
 | **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
 | Archived falsification recovered + scoped (not re-litigated) | 300 | SPARC 175-galaxy prior ✅ |
@@ -97,7 +97,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Declaring a branch not-yet-testable instead of fitting it** | 300 | Cosmology C3 audit ✅ |
 | Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **4850** |
+| **TOTAL XP** | | **5650** |
 
 ### Belt progression (IF Theory)
 
@@ -140,7 +140,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 
-ALL 15 papers (0–14) extracted ✅ (series evolved at slots 12–14: Arrow of Time / Functional Consciousness / MaxLove) · P00–P06 canonical revisions ✅. Hackathon: `hackathons/if-founding-100/` drives the repo to 100/100.
+ALL 15 papers (0–14) extracted ✅ → **ALL 16 canonical papers written** (P00–P14 + P15) ✅ (series evolved at slots 12–14: Arrow of Time / Functional Consciousness / MaxLove) · P00–P06 canonical revisions ✅. Hackathon: `hackathons/if-founding-100/` drives the repo to 100/100.
 
 ## Frontier panel (leak4) results — Round 1 (2026-07-18, thread `if-theory-v2`)
 
