@@ -131,11 +131,38 @@ chemotactic swimmer — despite those families sharing no mechanism. **The paras
 survived the same experiment that falsified the program's universality claim.** It does
 not depend on any invariant.
 
+### 3.4 Pre-ship control: the band is not a contamination artifact
+
+The clean-channel experiment (notebook 04g v2) showed Π_A is contaminable by
+memory-state-dependent energetics. The band must therefore be demonstrated in a substrate
+where that channel is **structurally absent**, or it could itself be an artifact of the
+contamination. Control run 2026-07-18 (`scripts/coupling_free_control.py`):
+
+**Construction guarantee, verified numerically:** the per-step cost function is independent
+of the *value* of the belief. Forcing the belief constant at +1 and at −1 gives total cost
+700.0000 in both cases, difference 0.000000 — memory cannot set a potential in this substrate.
+
+**Result:** p\*₁ = 0.6370 ± 0.0059 (n=10), p\*₂ = 0.9879 ± 0.0022, band width
+**+0.3510 ± 0.0025 (+138σ)**.
+
+The ordering survives where the contamination channel provably does not exist. The band's
+existence rests on Π_C — a pure competitive comparison requiring no information measure and
+carrying no memory-energetics exposure — and the clean-channel result therefore damages
+Π_A's *labeling*, not the band.
+
 ## 3b. Prior art — the methodological point is NOT new (self-audit, 2026-07-18)
 
 A literature check run *before* external review, under this repo's `NOVELTY_INFLATION`
 prohibition, found that the paper's headline methodological claim is **already established
 in two fields**:
+
+**Neuroscience.** The *lesion-deficit fallacy* — inferring a structure's normal function
+from the deficit produced by removing it — is a named and long-criticized error. Our claim
+is its thermodynamic restatement.
+
+**Population genetics.** Nearly-neutral theory (Ohta; Lynch) already formalizes that a
+mechanism can be maintained, produce measurable effects on removal, and still be a net
+fitness liability at the population's effective size.
 
 **Experimental evolution.** That a knockout's visible phenotype does not establish a gene's
 fitness contribution is standard. Yeast deletion collections show many mutants with no

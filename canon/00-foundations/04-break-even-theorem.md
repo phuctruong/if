@@ -120,6 +120,16 @@ principled rescaling (Gemini's Υ_IF = Θ*·C_model/ν_active) also fails, IF-H1
 dead — no third fishing expedition.** The decisive experiment is the THIRD,
 alien family (run-and-tumble chemotaxis) at fixed cost, τ = 1 enforced.
 
+## Direction of travel (round-5 adjudication, 2026-07-18)
+
+The program's instrument hierarchy has inverted. **Π_C (competitive comparison) is now the
+primitive** — it requires no information estimator, has no apparatus-boundary freedom
+beyond the declared twin, and is immune to memory-state energetics. **Π_A (ablation) is
+demoted to establishing causal participation only.** Every quantity that tried to sit
+between them — I_use, η\*, Θ\*, Υ_IF, and provisionally J — has either failed or is
+contested. The lesson is consistent across five rounds: *the measurements that survived are
+the ones that never tried to put work and information on a common scale.*
+
 ## Instrument caveat (2026-07-18, load-bearing)
 
 **Π_A does not measure information-mediated work alone.** Notebook 04g v2 shows it also
@@ -156,7 +166,7 @@ the inequality apply to erase/scramble/time-shift only.
 | Steady-state rates, İ_use over horizon | Barato–Seifert transducer/information-flow bounds | off the shelf |
 | Interventional semantics (scramble/erase) | Kolchinsky–Wolpert viability | off the shelf |
 | **DPI-for-interventions lemma: R ≤ 0** | — | ⚠️ **CONTENT FALSIFIED 2026-07-18** (notebook 04g v2). The *sign* survives, but the lemma's content — that ablated work measures the information's causal contribution — does not: a purely energetic memory back-action moves ΔW linearly (−4.36 → −26.14 across barriers) while **ΔI_use stays exactly zero**, with the world stream asserted byte-identical. The ablation delta is tunable without touching the information. |
-| **Signed usable-information functional** J = kT·Cov(belief-driven action, true work gradient) | — | 🔴 **PROMOTED FROM CONJECTURE TO REQUIREMENT** by the same experiment. Since Π_A demonstrably conflates information-mediated work with memory-state-dependent energetics, and no MI-based quantity separates them, only a functional carrying the (∂_M A) back-action term can. Constructing J is now the program's central open problem. |
+| **Signed usable-information functional** J = kT·Cov(belief-driven action, true work gradient) | — | ⚖️ **CONTESTED — do not build yet.** We concluded J was promoted to a requirement; **panel round 5 disagrees and we defer to it**: the clean-channel result plus P16 together argue for *demoting ablation to participation-only* and making **competitive comparison (Π_C) the primitive** — which needs no information measure at all and is structurally immune to the contamination. The panel's specific warning: J would likely die on chemotaxis exactly as I_use did, since it too presumes a decodable belief→action mapping. **Live disagreement, recorded rather than resolved.** J earns its place only if within-mechanism work *attribution* is needed, not merely the agency verdict. |
 
 ## Refutation notebooks (attack the load-bearing parts first)
 
