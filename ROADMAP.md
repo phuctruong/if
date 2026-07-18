@@ -1,6 +1,6 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 6550 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 7150 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |
@@ -8,9 +8,9 @@
 | 0 Absorb + Constitution | — | ✅ SEALED (`if-founding-100` 100/100) |
 | 1 Foundations | rung 641 | ✅ **SEALED** — quantity audit complete with two declared exclusions (I_use family, cosmology symbols); verify gate 6 enforces them |
 | 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
-| 3 Observational Cosmology Lab | — | ▶️ LIVE 25/100 — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
-| 4 Preregistration | rung 65537 | 🔒 Euclid forecast frozen before DR1 (~Oct 2026) |
-| 5 Papers + Book | — | ◐ **corpus COMPLETE (16 papers)**; remaining: parasite-band standalone write-up + book arc |
+| 3 Observational Cosmology Lab | — | ▶️ LIVE 62/100 — data restored + baselines REPRODUCED; still — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
+| 4 Preregistration | rung 65537 | ⛔ **BLOCKED ON A THEORY, not a deadline** — P11 cannot be executed while ℒ_IF is a free function; freezing hand-chosen numbers would be RETROFIT_FORECAST |
+| 5 Papers + Book | — | ◐ **corpus COMPLETE (17 papers)** incl. P16 parasite band (first positive publication); remaining: book arc |
 
 
 > Everything below serves one core idea: the discharging-battery universe and the
