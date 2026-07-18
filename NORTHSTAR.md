@@ -1,95 +1,61 @@
-# NORTHSTAR: Phuc_Forecast — IF-Theory
+# IF Theory — NORTHSTAR
 
-> "Formalize Information Force Theory into a testable, reproducible physics simulation framework."
+> Auth: 65537 · Master Equation: Purpose × Evidence × Love
+> Reboot 2026-07-18. Everything before this date lives in `_archive/` (LAI-6: read for reference, never resurrect silently).
 
-## Mission
+## The one-sentence northstar
 
-IF-Theory is the **physics simulation + information theory** project — formalizing
-the mathematical foundations of Information Force Theory (IF Theory) through exact
-proofs, reproducible simulations, and testable predictions.
+**Prove — or cleanly falsify — that one explicit informational accounting framework connects the emergence of structure, life, agency, reflection, and cooperation, and (speculatively) the cosmic dark sector, using deterministic notebooks, public data, and preregistered predictions.**
 
-## North Star Metric
+## The theory in one box
 
-**Proof Completeness**: # of IF Theory theorems with verified, machine-checkable proofs
-at rung 274177 (stability + replay-stable + null edge sweep).
+```
+IF Theory = Informational Field Theory
+  Informational battery  = nonequilibrium capacity + structured correlations that determine how it can be used
+  Three ledgers          = energy / thermodynamic entropy / information — NEVER added together
+  Causal-Work Principle  = information is agency only when interventionally preserving it
+                           yields net useful work > full cost of sensing+memory+compute+control
+  Unified Geometry Hyp.  = dark-matter-like attraction and dark-energy-like expansion are two
+                           regimes of ONE nonequilibrium informational geometry (no two substances)
+  MaxLove                = agency-preserving cooperation; favored in a *calculable* region, not everywhere
+```
 
-Secondary metrics:
-- Simulation reproducibility (byte-identical across seeds and platforms)
-- Theorem coverage (% of IF Theory axioms with corresponding proofs)
-- Zero CONVERGENCE_CLAIM_WITHOUT_R_P_CERTIFICATE violations
+## The two laboratories (from the 2026-07 ChatGPT arc)
 
-## Model Strategy
+| Lab | Question | Risk | Upside |
+|---|---|---|---|
+| **IF Artificial Universe Lab** (Track C) | Does a causal-work agency threshold Π_A = (W_intact − W_scrambled)/C_model > 1 exist as a real phase transition? | Low — pure deterministic simulation | New physical theory of agency; best near-term original result |
+| **IF Observational Cosmology Lab** (Tracks A/B/D) | Does ONE state b(z) jointly fix μ(k,z), η(k,z), w_IF(z), a_IF(z) — expansion AND growth AND galaxy anomaly? | High — must beat ΛCDM discipline | Nobel-class if it survives; dead if two sectors need separate parameters |
 
-| Model | Role | When |
-|-------|------|------|
-| **haiku** | Main session coordinator, proof inventory | Always-on |
-| **sonnet** | Coder (simulation code), Planner (proof strategy) | Implementation |
-| **opus** | Mathematician (formal proofs, convergence) | Proof work (primary) |
+## The three flagship hypotheses (IF Theory 2.0, msg[20] of the source arc)
 
-## Rung Target: 274177
+1. **IF-H1 Agency Threshold** — predictive agency appears at Π_A ≈ 1 with discontinuity, hysteresis, universality across rule families.
+2. **IF-H2 Expansion–Complexity Window** — emergent complexity peaks at intermediate space-growth rate g* (too slow → congestion; too fast → causal isolation).
+3. **IF-H3 MaxLove Stability Condition** — P_repeat·B_future + B_repair + B_innovation > G_extraction + C_cooperation defines where agency-preserving cooperation wins **without** being baked into the fitness function.
 
-Physics proofs require stability — rung 274177:
-- Seed sweep (min 3 seeds, deterministic simulation results)
-- Replay stability (proofs verify identically on replay)
-- Null edge sweep (zero mass, zero energy, boundary conditions)
+## Non-negotiable discipline (what makes this science, not vibes)
 
-## What Aligns with This Northstar
+1. **Prediction contract** on every notebook: `Prediction + Baseline + Data + Pass criterion + Falsifier` — frozen BEFORE running.
+2. **Reproduce before invent** (Feynman gate): no IF plot until the pipeline reproduces the published baseline (SPARC fits, Planck/DESI posteriors).
+3. **One state, no independent fits** (Noether gate): μ, η, w_IF, a_IF may NOT be tuned separately. If expansion and growth need different IF histories → the unification is falsified. Say so.
+4. **No intelligence in the primitives** (Conway gate): no `is_alive`, `reflection`, `love`, `recharge_bonus` in rule sets. Detect, don't inject.
+5. **Layer separation** (the constitutional rule): scientific result → philosophical interpretation → theological meaning. Never collapsed. God is an *interpretation layer*, never a variable.
+6. **Preregistration**: timestamped git commits freeze forecasts (Euclid DR1 ~Oct 2026) before data access.
 
-- Formal proofs with machine-checkable structure
-- Exact arithmetic (Fraction/Decimal) in all simulation paths
-- Convergence certificates for iterative physics methods
-- Reproducible simulation scripts (pinned seed + initial conditions)
+## Known prior art — do NOT re-claim as novel
 
-## What Does NOT Align
+Zuse/Fredkin/Wolfram/'t Hooft (universe-as-computation), Wheeler it-from-bit, Prigogine dissipative structures, Landauer, Kolchinsky–Wolpert semantic information, Hoel causal emergence, Friston free energy, England dissipative adaptation, IIT/GWT, Verlinde entropic gravity, Skordis–Złośnik relativistic MOND, **and (discovered 2026-07): "structure entropy drives expansion" — a 2026 entropic-backreaction preprint already exists.** The novelty claim is the *fixed quantitative relation across scales*, nothing weaker.
 
-- "It looks physically reasonable" claims without formal proof
-- Float in any verification or proof path
-- Convergence claims without halting certificate
+## What victory looks like
 
-## Stillwater Ecosystem Integration
+- **Near-term (2026):** a reproducible, substrate-independent causal-work threshold — the first measured phase boundary between passive structure and predictive agency.
+- **Long-term:** one dimensionless IF state predicts galactic missing gravity + cosmic growth + cosmic expansion with zero sector-specific parameters — confirmed by preregistered Euclid forecast.
+- **Honest failure:** falsifiers fire, we publish the kill, and the artificial-universe results stand on their own as artificial-life science.
 
-IF Theory is the physics foundation powering the Stillwater network's most ambitious projects.
+## Cross-references
 
-**IF Theory → pvideo (physics engine):**
-The Mersenne Tower theorem and prime field equations from this project are the
-mathematical substrate of pvideo's physics engine. pvideo generates video frames
-as verifiable IF Theory predictions — not neural interpolations.
-Every pvideo frame must satisfy IF Theory invariants (information conservation,
-causal consistency), checked by the automated invariant checker built here.
-
-**IF Theory → pzip (compression):**
-IF Theory's information-theoretic foundations directly inform pzip's compression
-algorithm. The prime field equations provide the mathematical basis for
-near-lossless compression at extreme ratios.
-
-**Publication plan:**
-- ApJ paper target: March 2026 (dark energy + BAO proof)
-- Mersenne Tower Theorem: preprint + phucnet announcement article
-- Full IF Theory book: publish on phuc.net/books/ (phucnet project)
-
-**phucnet integration:**
-IF Theory papers and books are published on phuc.net as accessible long-form content:
-- Technical papers → phucnet/books/if-theory/ (public-facing version)
-- Theorem announcements → phucnet articles (virality-focused)
-- ApJ paper acceptance → feature article on phuc.net
-
-**Verification governance (stillwater):**
-All IF Theory simulation claims require Stillwater verification:
-- Rung 274177 minimum for theorem proofs (seed sweep + replay stability)
-- Rung 65537 for any claim that feeds into pvideo production pipeline
-- Zero CONVERGENCE_CLAIM_WITHOUT_R_P_CERTIFICATE violations
-
-**Competition context:**
-IF Theory research positions the network against:
-- DeepMind AlphaFold: IF Theory as alternative physics substrate for protein folding
-- Standard model cosmology: dark energy + dark matter predictions via BAO analysis
-- Classical physics simulators (ANSYS, COMSOL): deterministic IF Theory solver
-
-## See Also
-
-- `CLAUDE.md` — prime-math + prime-coder loaded
-- `ripples/project.md` — IF Theory constraints
-- `skills/prime-math.md` — exact arithmetic for proofs
-- `/home/phuc/projects/pvideo/NORTHSTAR.md` — pvideo (IF Theory physics engine)
-- `/home/phuc/projects/phucnet/NORTHSTAR.md` — phucnet (publication channel)
-- `/home/phuc/projects/stillwater/NORTHSTAR.md` — Stillwater verification layer
+- `SCOREBOARD.md` — scored ideas + notebook rankings + verification rungs
+- `ROADMAP.md` — build order
+- `canon/INDEX.md` — the rebuilt canon
+- `canon/extracted/` — raw ChatGPT source arc (papers 0–14 + full transcript)
+- `_archive/` — the pre-2026-07-18 repo (SPARC/BAO/Mersenne work; reference only)
