@@ -1,0 +1,922 @@
+{
+ "stage_a": [
+  {
+   "rule": "B36/S23",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S23",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 5,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 7,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 8,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 4,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S23",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 3,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S23",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 12,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 6,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 8,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 5,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B368/S238",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B368/S238",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 8,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 10,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 9,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 3,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B368/S238",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B368/S238",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 11,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 1,
+     "n_mover_productions": 14,
+     "producer_children": [
+      2
+     ]
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 11,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 11,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 1,
+   "mean_producers": 0.25,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B38/S23",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 5,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 6,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B38/S23",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 12,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 10,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 11,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 11,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B38/S23",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 6,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B38/S23",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 20,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 24,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 12,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 1,
+     "n_mover_productions": 16,
+     "producer_children": [
+      2
+     ]
+    }
+   ],
+   "total_producers": 1,
+   "mean_producers": 0.25,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B34/S34",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B34/S34",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B34/S34",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B34/S34",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S125",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S125",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S125",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B36/S125",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 1,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 2,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B3678/S34678",
+   "inflow": 4.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B3678/S34678",
+   "inflow": 4.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B3678/S34678",
+   "inflow": 12.0,
+   "density": 0.08,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  },
+  {
+   "rule": "B3678/S34678",
+   "inflow": 12.0,
+   "density": 0.15,
+   "runs": [
+    {
+     "seed": 7,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 11,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 23,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    },
+    {
+     "seed": 42,
+     "explosive": false,
+     "n_producers": 0,
+     "n_mover_productions": 0,
+     "producer_children": []
+    }
+   ],
+   "total_producers": 0,
+   "mean_producers": 0.0,
+   "explosive_runs": 0
+  }
+ ],
+ "flagged": [],
+ "verdict": "BARREN \u2014 no config flagged in stage A; per the frozen stop rule the declared grid has no producer family and the emergent-agency branch closes."
+}

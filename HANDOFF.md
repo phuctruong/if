@@ -66,9 +66,28 @@ The pre-registered painful tier fired and stands: **in energy-gated B3/S23, moti
 emerges but agency cannot be selected for, because no heredity unit exists.** This is
 the mechanism behind both tracking nulls. Kill-logged. XP → 12150.
 
+### Loop iteration 4 (2026-07-18, /loop) — rule search BARREN; the emergent-agency branch is CLOSED
+
+`hackathons/if-rule-search/` sealed 100/100 (prereg `fa9d43a`). Six rule families
+(HighLife, LowDeath, Pedestrian Life, 34 Life, 2×2, Day & Night) × 4 energy configs ×
+4 seeds: **zero flagged configs** (two sub-bar singletons). The frozen stop rule fired:
+**the emergent-agency branch closes.** The four-experiment arc is now a complete,
+fully pre-registered negative with its mechanism: energy-gated Life-like CA produce
+**motion without lineage** — nothing for selection to act on. Scope limitation recorded
+(program budget ~10² soups vs Catagolue's ~10⁹; reopening requires a logged amendment
+with a fundamentally cheaper detection idea). B3/S23 movers remain live for exactly one
+question: the causal-work audit (UNDECIDED at n=21). XP → 12550.
+
 ### Next moves after this session, ranked
 
--1. **Rule-family producer search (NEW #1, pre-register before running).** Declare a
+-2. **Causal-work audit power run (NEW #1, pre-register before running).** The one live
+   question on the emergent substrate. Declare a fresh ~64-seed roster; primary verdict
+   on the fresh roster alone at the frozen ±2 thresholds; pooled with the sealed 21 as
+   declared secondary. At sd≈24 and ~1 mover/seed, n≈85 total resolves |W_C|≈5. If it
+   decides either way, that is the first decided causal-work result on universe-grown
+   agents. If still undecided, report widths and the emergent program rests until a
+   better observable is designed (harvest-per-mass-step candidate).
+-1. **Rule-family producer search — DONE (iteration 4, BARREN, branch closed).** Declare a
    rule grid with replicator/gun folklore (e.g. B36/S23 HighLife, B368/S238, B34/S34,
    B2/S345?) + the energy axes, frozen producer criterion (P3, ≥2 mobile children),
    and a stop rule. Find ONE energy-gated family with reproducible producers → rerun
