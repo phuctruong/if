@@ -96,8 +96,9 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Adversarial round survived + folded (round 4) | 100 | Kill verdict verified + P15 rewritten ✅ |
 | **Declaring a branch not-yet-testable instead of fitting it** | 300 | Cosmology C3 audit ✅ |
 | Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
+| **Boss slain by construction** (clean-channel counterexample; conjecture → requirement) | 500 | R ≤ 0 lemma content ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **6050** |
+| **TOTAL XP** | | **6550** |
 
 ### Belt progression (IF Theory)
 
@@ -117,8 +118,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | 1 | **Θ\* the False Constant** | cost-invariance control | ☠️ SLAIN (iter 2) |
 | 2 | **η\* the Unmeasurable** | 3 estimators | ☠️ SLAIN (P15 §3) |
 | 3 | **Υ_IF the Last Rescaling** | 3 families × 2 costs | ☠️ SLAIN (P15 §4) |
-| 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | 🔓 OPEN — next |
-| 5 | **The Signed Functional J** | prove squeezed SU↔Still | 🔓 OPEN (P15 §3 strengthens its case) |
+| 4 | **The R ≤ 0 Lemma** | clean-channel counterexample | ☠️ **SLAIN (04g v2)** — sign survives, *content* falsified: ΔW tunable at ΔI_use ≡ 0 |
+| 5 | **The Signed Functional J** | prove squeezed SU↔Still | 🔴 **PROMOTED TO REQUIREMENT** — now the program's central open problem |
 | 5b | **The Representational-Format Obstruction** | formalize: causal-work-positive with zero recoverable predictive information | 🆕 **NEW — the successor claim**, panel-rated the honest ceiling of the program |
 | 6 | **ΛCDM** | expansion–growth consistency, one b(z) | ⚔️ **ENGAGED** — Phase 3 live; we enter down 7.13 to 1.14 on the archived galaxy benchmark |
 | 7 | **Euclid DR1** | preregistered forecast, ~Oct 2026 | 🔒 LOCKED (Phase 4) |

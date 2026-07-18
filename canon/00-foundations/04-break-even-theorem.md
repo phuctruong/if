@@ -120,6 +120,15 @@ principled rescaling (Gemini's Υ_IF = Θ*·C_model/ν_active) also fails, IF-H1
 dead — no third fishing expedition.** The decisive experiment is the THIRD,
 alien family (run-and-tumble chemotaxis) at fixed cost, τ = 1 enforced.
 
+## Instrument caveat (2026-07-18, load-bearing)
+
+**Π_A does not measure information-mediated work alone.** Notebook 04g v2 shows it also
+absorbs memory-state-dependent energetics — an agent whose stored pattern sets a physical
+barrier will show a Π_A that is tunable by the barrier alone, at constant information.
+Every Π_A measurement must therefore declare either (a) that the substrate has no
+memory-state-dependent potentials, or (b) the magnitude of that channel. The earlier
+families in this repo satisfy (a); a biological or hardware substrate very likely will not.
+
 ## Component-optimality rule (round-3 addition — load-bearing)
 
 The twin-normalization guardrail applies INWARD as well: *an ablation of
@@ -146,8 +155,8 @@ the inequality apply to erase/scramble/time-shift only.
 | Maintenance floor C_mem ≥ kT·(I_mem − I_pred) | Still–Sivak–Crooks–Bialek thermodynamics of prediction | off the shelf |
 | Steady-state rates, İ_use over horizon | Barato–Seifert transducer/information-flow bounds | off the shelf |
 | Interventional semantics (scramble/erase) | Kolchinsky–Wolpert viability | off the shelf |
-| **DPI-for-interventions lemma: R ≤ 0** — W_intact − W_scr = kT[ΔI_use] + R with R (off-shell work) provably non-positive: *scrambling never creates usable work* | — | **MISSING — the theorem to prove** |
-| **Signed usable-information functional** J = kT·Cov(belief-driven action, true work gradient) — can go NEGATIVE for falsified belief (ordinary MI cannot); prove J squeezed between SU ceiling and Still floor | — | **MISSING — the one genuinely new mathematical object in the program** |
+| **DPI-for-interventions lemma: R ≤ 0** | — | ⚠️ **CONTENT FALSIFIED 2026-07-18** (notebook 04g v2). The *sign* survives, but the lemma's content — that ablated work measures the information's causal contribution — does not: a purely energetic memory back-action moves ΔW linearly (−4.36 → −26.14 across barriers) while **ΔI_use stays exactly zero**, with the world stream asserted byte-identical. The ablation delta is tunable without touching the information. |
+| **Signed usable-information functional** J = kT·Cov(belief-driven action, true work gradient) | — | 🔴 **PROMOTED FROM CONJECTURE TO REQUIREMENT** by the same experiment. Since Π_A demonstrably conflates information-mediated work with memory-state-dependent energetics, and no MI-based quantity separates them, only a functional carrying the (∂_M A) back-action term can. Constructing J is now the program's central open problem. |
 
 ## Refutation notebooks (attack the load-bearing parts first)
 
