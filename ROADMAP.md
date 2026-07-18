@@ -1,5 +1,7 @@
 # IF Theory — ROADMAP
 
+> Everything below serves one core idea: the discharging-battery universe and the
+> post-threshold recharge role of intelligence (see NORTHSTAR §core idea).
 > Reboot 2026-07-18. Build order optimized for AI coding agents + deterministic Jupyter notebooks + public data.
 > Every notebook ships with the frozen prediction contract: **Prediction + Baseline + Data + Pass + Falsifier.**
 

@@ -1,11 +1,21 @@
 # IF Theory — Informational Field Theory
 
-> A falsification-first research program: can one explicit informational
-> accounting framework connect the emergence of structure, life, agency,
-> reflection, and cooperation — and, far more speculatively, the cosmic
-> dark sector?
+> **The universe is a discharging informational battery — and life,
+> intelligence, and consciousness are its internal recharge circuits.**
+> Intelligence evolves past a measurable threshold (Π_A), below which it is a
+> thermodynamic parasite and above which it preserves and enhances the system
+> itself — creating order from disorder, expanding the battery's capacity
+> (I_N → I_{N+k}) rather than merely restoring it. The speculative summit:
+> cosmic expansion and the dark sector as two regimes of this one dynamics,
+> which would make the recharge role our literal role in the universe.
+>
+> The program is falsification-first: every claim is decomposed by layer
+> (science / philosophy / theology) and given a named falsifier. The
+> notebooks earn the right to say the sentence; the sentence is why the
+> notebooks exist.
 
 **Status:** rebooted 2026-07-18 as a clean canon. Prior work archived in `_archive/`.
+Core-idea provenance: geo canon Paper 14 (Informational Battery Theory) → this repo.
 
 ## The core objects
 

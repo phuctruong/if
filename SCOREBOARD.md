@@ -1,5 +1,7 @@
 # IF Theory — SCOREBOARD
 
+> Core idea being scored: the universe as discharging informational battery, life/intelligence
+> as recharge circuits, the post-threshold role (preserve + enhance + expand the system).
 > Reboot 2026-07-18. Scores synthesized from: ChatGPT harsh-QA arc (msg[12] scorecard, msg[37] project scores, msg[43] dark-sector verdict, msg[49] notebook lattice) + Fable session judgment. Frontier-panel (leak4) column updates as reviews land.
 
 ## Program-level honest position (do not inflate)

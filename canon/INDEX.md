@@ -1,6 +1,10 @@
 # IF Theory Canon — INDEX
 
 > Rebooted 2026-07-18 from the ChatGPT source arc (`extracted/`) + frontier-panel review.
+> **The core idea:** the universe is a discharging informational battery; life and
+> intelligence are its recharge circuits; past the causal-work threshold, intelligence
+> preserves and enhances the system and expands its capacity (I_N → I_{N+k}).
+> Canonical statement + layer decomposition: `30-meaning/02-recharge-role-and-heat-death.md`.
 > Layer discipline: every doc states whether it is SCIENCE, PHILOSOPHY, or THEOLOGY layer.
 
 ## Structure
@@ -23,6 +27,7 @@
 5. `20-cosmology/01-unified-geometry-hypothesis.md` — IF-H7, the Nobel-or-death branch
 6. `20-cosmology/02-prediction-lattice.md` — one state b(z) → five observables
 7. `30-meaning/01-maxlove.md` — IF-H3 + the layer firewall
+8. `30-meaning/02-recharge-role-and-heat-death.md` — THE CORE IDEA, decomposed by layer (read this to understand why the program exists)
 
 ## The 15-paper series (source plan, msg[51])
 

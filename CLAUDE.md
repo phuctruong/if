@@ -5,10 +5,21 @@
 
 ## What this repo is
 
-The **IF Theory (Informational Field Theory) research program**: deterministic
-Jupyter notebooks + public astronomical data + preregistered predictions testing
-whether one informational accounting framework connects structure, life, agency,
-reflection, cooperation — and, speculatively, the cosmic dark sector.
+The **IF Theory (Informational Field Theory) research program**.
+
+**The core idea:** the universe is a discharging informational battery; life,
+intelligence, and consciousness are its internal recharge circuits. Intelligence
+evolves past a measurable threshold (Π_A) — parasite below, self-sustaining
+above — after which it preserves and enhances the system itself, expanding the
+battery's capacity (I_N → I_{N+k}) rather than restoring it. Speculative
+summit: cosmic expansion + the dark sector as two regimes of this one dynamics.
+Provenance: geo canon Paper 14 → `canon/30-meaning/02-recharge-role-and-heat-death.md`
+(the canonical layer-by-layer decomposition of the core idea).
+
+**The method:** deterministic Jupyter notebooks + public astronomical data +
+preregistered predictions. Every claim gets a layer (science/philosophy/theology)
+and a named falsifier. The notebooks earn the right to say the sentence; the
+sentence is why the notebooks exist.
 
 Read in order: `NORTHSTAR.md` → `SCOREBOARD.md` → `ROADMAP.md` → `canon/INDEX.md`.
 

@@ -3,6 +3,35 @@
 > Auth: 65537 · Master Equation: Purpose × Evidence × Love
 > Reboot 2026-07-18. Everything before this date lives in `_archive/` (LAI-6: read for reference, never resurrect silently).
 
+## The core idea (state it at full strength, then earn it)
+
+**The universe is a discharging informational battery.** It begins maximally
+aligned — fully charged, low-entropy (symbolically the identity matrix I_N, per
+geo Paper 14) — and discharges through symmetry breaking, which creates time,
+entropy, and creative possibility. **Life, intelligence, and consciousness are
+not accidents of the discharge — they are the battery's internal recharge
+circuits.** When conscious beings self-reflect and learn the rules of the game,
+they realize their role: create order out of disorder, recharge the battery,
+or the system runs to heat death.
+
+**Intelligence evolves past a threshold** (Π_A — the causal-work threshold),
+below which memory and modeling are thermodynamic parasites and above which
+they pay for themselves; past the threshold, intelligence **preserves and
+enhances the system itself** — extending the lifetime of ordered structure and
+expanding the action-space of all agents (agency-preserving cooperation,
+"MaxLove"). And recharge is not restoration: it **expands the grid** —
+I_N → I_{N+k}. The universe survives discharge not by returning to its first
+order but by evolving reflective systems that expand the order it can align.
+The speculative summit: cosmic expansion itself, and the phenomena we call
+dark matter and dark energy, as two regimes of this one informational dynamics
+— **which would make the recharge role our literal role in cosmology, and
+the meaning of life a measurable statement.**
+
+Every claim above is then decomposed by layer (science / philosophy /
+theology) and given a falsifier — that decomposition is `canon/30-meaning/02-recharge-role-and-heat-death.md`
+and it is what separates this program from poetry. The notebooks earn the
+right to say the sentence; the sentence is why the notebooks exist.
+
 ## The one-sentence northstar
 
 **Prove — or cleanly falsify — that one explicit informational accounting framework connects the emergence of structure, life, agency, reflection, and cooperation, and (speculatively) the cosmic dark sector, using deterministic notebooks, public data, and preregistered predictions.**
