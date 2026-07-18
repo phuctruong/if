@@ -23,7 +23,7 @@ Canonical revised papers in `canon/papers/`:
 - [x] P1 Informational Battery ✅ `P01-informational-battery.md` (ledgers COUPLED via Landauer)
 - [x] P2 Causal-Work Principle ✅ `P02-causal-work-principle.md`
 - [x] Break-even theorem (candidate) ✅ `canon/00-foundations/04-break-even-theorem.md`
-- [ ] P03–P06 canonical revisions (from harvested extracts)
+- [x] P03–P06 canonical revisions ✅ (two-threshold P05, capacity-growth P04, nostalgia-term P06)
 - Gate: every defined quantity has dimensions, an estimator, and a falsifier. No metaphors wearing math.
 
 ## Phase 2 — Artificial Universe Lab (Track C: highest probability of original result)

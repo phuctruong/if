@@ -37,13 +37,13 @@
 | 0 | Scope, Definitions, Falsification Framework | `papers/P00.md` | ✅ `extracted/paper-00-extracted.md` |
 | 1 | The Informational Battery | `papers/P01.md` | ✅ |
 | 2 | The IF Causal-Work Principle | `papers/P02.md` | ✅ |
-| 3 | Emergent Structure in Resource-Conserving IF Universes | `papers/P03.md` | ✅ `extracted/paper-03-extracted.md` |
-| 4 | The Expansion–Complexity Window | `papers/P04.md` | ✅ `extracted/paper-04-extracted.md` |
-| 5 | The Agency Threshold | `papers/P05.md` | ✅ `extracted/paper-05-extracted.md` |
-| 6 | Memory, Reflection, Repair, and Mortality | `papers/P06.md` | ✅ `extracted/paper-06-extracted.md` |
-| 7 | The IF Unified Geometry Hypothesis | `papers/P07.md` | harvesting |
-| 8 | IF Theory and Galactic Missing Gravity | `papers/P08.md` | harvesting |
-| 9 | IF Cosmology: Expansion–Growth Consistency | `papers/P09.md` | harvesting |
+| 3 | Emergent Structure in Resource-Conserving IF Universes | ✅ `papers/P03-emergent-structure.md` | ✅ |
+| 4 | The Expansion–Complexity Window | ✅ `papers/P04-expansion-complexity-window.md` | ✅ |
+| 5 | The Agency Threshold | ✅ `papers/P05-agency-threshold.md` | ✅ |
+| 6 | Memory, Reflection, Repair, and Mortality | ✅ `papers/P06-memory-repair-mortality.md` | ✅ |
+| 7 | The IF Unified Geometry Hypothesis | `papers/P07.md` | ✅ `extracted/paper-07-extracted.md` |
+| 8 | IF Theory and Galactic Missing Gravity | `papers/P08.md` | ✅ `extracted/paper-08-extracted.md` |
+| 9 | IF Cosmology: Expansion–Growth Consistency | `papers/P09.md` | ✅ `extracted/paper-09-extracted.md` |
 | 10 | Information and Topology in the Cosmic Web | `papers/P10.md` | harvesting |
 | 11 | A Preregistered IF Forecast for Euclid | `papers/P11.md` | harvesting |
 | 12 | IF Functional Consciousness | `papers/P12.md` | harvesting |
