@@ -1,6 +1,6 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 8850 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 9050 XP · 4 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |

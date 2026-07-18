@@ -98,6 +98,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
 | **Independent baseline reproduction** (fresh data + independent pipeline, within tolerance) | 300 | SPARC MOND/NFW ✅ |
 | **Refusing to freeze a preregistration that would be hand-chosen numbers** | 200 | P11 blocked-not-pending ✅ |
+| Skeptic's summary written as the repo's front door | 200 | README §For the skeptical reader ✅ |
 | **Pre-ship control run before shipping a positive result** (+138σ, coupling-free) | 400 | P16 §3.4 ✅ |
 | **Deferring to the panel against our own conclusion** (J demoted; Π_C promoted) | 300 | theorem doc ✅ |
 | **Self-audit found own prior art and de-claimed before review** | 400 | P16 §3b (Still 2020 + yeast knockout competition) ✅ |
@@ -107,7 +108,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Self-correction: own result killed by own rule** | 300 | Smoother-parasite → config artifact ✅ |
 | **Boss slain by construction** (clean-channel counterexample; conjecture → requirement) | 500 | R ≤ 0 lemma content ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **8850** |
+| **TOTAL XP** | | **9050** |
 
 ### Belt progression (IF Theory)
 
@@ -117,7 +118,7 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Yellow | First deterministic result with a frozen contract | ✅ parasite band |
 | Orange | Adversarial review survived; kills logged publicly | ✅ 4 rounds, 8 kills |
 | **Green** | **A flagship claim killed by its own pre-committed test** | ✅ **CURRENT — IF-H1** |
-| Blue | A surviving claim reproduced by an independent party | ⬜ |
+| Blue | A surviving claim reproduced by an independent party | ⬜ — P16 is now shippable (pre-ship control passed); this is the next belt and it requires someone outside this repo |
 | Black | A preregistered prediction confirmed against data nobody had seen | ⬜ Euclid DR1 |
 
 ### Boss fights

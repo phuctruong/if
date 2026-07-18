@@ -17,6 +17,36 @@
 **Status:** rebooted 2026-07-18 as a clean canon. Prior work archived in `_archive/`.
 Core-idea provenance: geo canon Paper 14 (Informational Battery Theory) → this repo.
 
+---
+
+## For the skeptical reader — what actually happened, in one paragraph
+
+We set out to test whether a dimensionless constant of agency exists: a single number,
+shared across unrelated substrates, marking where information starts paying for itself.
+We built the instrument, pre-registered a stop rule, and ran it on three agent families
+that share no mechanism. **It scattered at 3.8–182σ. The claim is falsified and we stopped,
+as committed.** Along the way we falsified three more of our own things: the information
+denominator turned out not to be definable across substrates at all (a chemotactic
+bacterium does real thermodynamic work while carrying no recoverable prediction about what
+it tracks — which quietly contradicts an assumption shared by most theories of agency); our
+central ablation instrument turned out contaminable by non-informational back-action; and
+one of our own positive findings died to our own optimality rule when we tuned it properly.
+**One positive result survived**: two break-even criteria — ablation and competition —
+cross in a fixed order, leaving a band where an agent's memory is demonstrably doing causal
+work and demonstrably not worth having. Even that we de-claimed in part, because the
+qualitative point is known in experimental evolution, neuroscience, and Still (2020). The
+speculative cosmology branch is **specified, not yet implemented, not yet tested** — its
+one previously implemented galaxy law lost to both MOND and a dark-matter halo on 175
+galaxies. Nothing here proves the founding intuition. What we can report is that it
+survived being asked properly, which is more than most versions of it manage.
+
+**Where to check us:** `SCOREBOARD.md` §Kill log (every falsification, dated) ·
+`canon/papers/P15` (the falsification) · `canon/papers/P16` (the survivor, with its own
+prior-art audit) · `bash scripts/verify.sh` (6 integrity gates, including one that fails
+the build if a falsified quantity is ever used as though live).
+
+---
+
 ## The core objects
 
 - **Informational battery** — a system's physically accessible nonequilibrium
