@@ -62,17 +62,43 @@
 |---|---|---|
 | 2026-07 | "Structure entropy causes cosmic expansion" as a novelty claim | Prior art incl. 2026 entropic-backreaction preprint (msg[37]). Claim retired; replaced by *fixed cross-scale relation* claim. |
 | 2026-07 | "IF explains consciousness" | Downgraded to functional-consciousness hypothesis + phenomenal conjecture (firewalled). |
+| 2026-07-18 | Notebook 04 v0.0 contract | Invalidated by design bug, not by nature: agents sensed the world after it moved, making prediction worthless by construction (W_intact ≡ W_scrambled). Redesigned to act→world-moves→collect as v0.1 before any sweep was interpreted. Logged per EDIT_UNVERIFIED discipline. |
+| 2026-07-18 | "Π_A > 1 ⟺ memory pays" (implicit v0.0 assumption) | v0.1 run falsified the equivalence: ablation-positive ≠ competitive-positive (parasite band). IF-H1 restated as two inequalities. |
 
 ## Paper harvest status (ChatGPT arc → canon/extracted/)
 
 Papers 0–2 extracted ✅ · Papers 3–14 harvesting via Solace Browser driver (2026-07-18).
 
-## Frontier panel (leak4) results
+## Frontier panel (leak4) results — Round 1 (2026-07-18, thread `if-theory-v2`)
 
-_Pending — Claude + Gemini adversarial review running; ChatGPT consult after paper harvest completes. Results will be filed in `canon/extracted/frontier-panel/` and this table updated._
+Full texts: `canon/extracted/frontier-panel/round1-{claude,gemini}.md`.
 
-| Model | Verdict | Strongest point raised |
+| Model | Scores (nov/rigor/fals/Nobel) | Strongest point raised |
 |---|---|---|
-| Claude (claude.ai) | — | — |
-| Gemini | — | — |
-| ChatGPT (source arc) | 3/10 theory · 7/10 program · 9/10 book | Variables-as-metaphors critique + prediction-contract discipline |
+| Claude (Fable 5 High) | 6 / 3 / 6 / 2 | **"IF needs its kT ln 2"** — prove a Landauer-class inequality with a task-independent dimensionless invariant; the measure is currently "a knob, not an invariant" (apparatus-boundary freedom). Exact novelty located: full-apparatus debit + the **falsify** intervention (no analogue in KW/Friston/England). |
+| Gemini | 7 / 4 / 8.5(core)·1(cosmo) / 2 | The **thermodynamic parasite**: hunt cases where KW calls info meaningful but IF's full-cost audit rejects it. Ledgers must be *coupled* via Landauer terms, not walled off. |
+| ChatGPT (source arc) | 3/10 theory · 7/10 program · 9/10 book | Variables-as-metaphors critique + prediction-contract discipline. |
+
+**Panel consensus (all three, independently):** (1) the causal-work ablation core is the real contribution; (2) the cosmology branch must be firewalled from the agency program's public identity or it poisons everything ("reputational grenade" — Claude; "hallmark of crackpot physics" — Gemini); (3) "MaxLove" naming stays out of science-layer text; (4) Nobel-plausibility ≈ 2 — the honest shape of success is "Boltzmann-medal-shaped, not Stockholm-shaped" (Claude).
+
+**Panel disagreement:** Gemini says excise cosmology entirely for a decade; ChatGPT arc says run it in parallel under preregistration discipline. Adjudication: keep the two-lab structure (parallel, internal) but public identity = "Thermodynamic Foundations of Agency"; cosmology speaks only through preregistered forecasts.
+
+### New ideas contributed by the panel (added to leaderboard)
+
+| Idea | Source | Nov | Feas | Upside | Composite |
+|---|---|---:|---:|---:|---:|
+| **IF's kT ln 2: a provable Landauer-class break-even inequality** (theorem-as-spine; all papers become corollaries) | Claude | 10 | 5 | 10 | **8.8** |
+| **Intervention-menu dissociation** — is the work-loss vector of erase/scramble/time-shift/falsify rank-4, or a scalar ≈ MI destroyed? "Nobody has dissociated these." | Claude | 9 | 9 | 9 | **9.0** |
+| **Cross-scale collapse** — identical ledger on Szilard engine / chemotaxis / Kalman controller; one dimensionless break-even form or bust | Claude | 8 | 8 | 9 | **8.3** |
+| **KW-vs-IF divergence hunt** — exhibit info that is KW-semantically valuable but an IF thermodynamic parasite | Gemini | 8 | 9 | 8 | **8.3** |
+| **Apparatus-boundary normalization** — canonical rule making Π_A invariant to where "the system" ends | Claude (as attack) | 9 | 4 | 9 | **7.6** |
+
+## First evidence (2026-07-18): notebook 04 v0.1 ran and PASSED
+
+`notebooks/04_if_causal_work_threshold.ipynb` (seed 65537, deterministic): in a drift-gradient
+ring world, **Π_A crosses 1 at p*₁ ≈ 0.64 but memory only beats memorylessness at p*₂ ≈ 0.995**.
+The band between is a real, observed **thermodynamic parasite band** — information that is
+causally load-bearing under ablation (scrambling costs hundreds of work units) yet net-negative
+to possess. First concrete instance of the panel's parasite concept, and it sharpens IF-H1:
+the canonical agency criterion needs BOTH inequalities (ablation-positive AND competitive-positive).
+v0 toy caveat: designed memory, one rule family — protocol demo, not IF-H1 evidence.
