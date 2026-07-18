@@ -21,6 +21,8 @@ preregistered predictions. Every claim gets a layer (science/philosophy/theology
 and a named falsifier. The notebooks earn the right to say the sentence; the
 sentence is why the notebooks exist.
 
+**Continuing a prior session? Read [`HANDOFF.md`](HANDOFF.md) first**, then run `bash scripts/verify.sh`.
+
 Read in order: `NORTHSTAR.md` → `SCOREBOARD.md` → `ROADMAP.md` → `canon/INDEX.md`.
 
 ## The constitutional rules (from Paper 0 — these bind every session)

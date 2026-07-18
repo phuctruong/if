@@ -68,6 +68,7 @@ the build if a falsified quantity is ever used as though live).
 
 | File | What |
 |---|---|
+| [`HANDOFF.md`](HANDOFF.md) | **Continuing in a new session? Start here.** State, assets, ranked next moves |
 | [`NORTHSTAR.md`](NORTHSTAR.md) | The one-sentence goal + non-negotiable discipline |
 | [`SCOREBOARD.md`](SCOREBOARD.md) | Scored idea leaderboard, notebook rankings, kill log |
 | [`ROADMAP.md`](ROADMAP.md) | Phased build order (foundations → alife lab → cosmology lab → preregistration) |
