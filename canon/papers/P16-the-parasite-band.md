@@ -111,9 +111,13 @@ while the state-smoother component was outperformed by using the raw observation
 One agent, two memories, opposite verdicts. Component-wise causal-work auditing is
 precisely the instrument that separates them.
 
-*(Declared: the smoother's parasitism in that experiment is confounded with a fixed-gain
-configuration that is provably suboptimal in a switching world; the claim is held pending
-a per-regime gain optimization. The dissociation between components is not affected.)*
+*(**Resolved 2026-07-18, and it went against us:** a gain-optimization sweep showed that at
+its optimum (α = 0.60) the smoother beats raw observation by +40σ — the original result had
+used a mistuned α = 0.25. The smoother is **not** a parasite; that comparison measured a
+tuning gap. The claim is withdrawn. What remains from this replication is the **dissociation
+between components** — the two memories still receive different verdicts under the same
+protocol, and the rule-model's 6σ recovery effect is independent of the smoother's tuning.
+This correction is exactly what the component-optimality requirement exists to force.)*
 
 ### 3.3 Third context (three-family study)
 
