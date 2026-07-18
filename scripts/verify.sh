@@ -37,6 +37,32 @@ if bad: print("  FAIL:", bad); sys.exit(1)
 print(f"  OK ({len(glob.glob('notebooks/*.ipynb'))} notebooks)")
 PY
 
+echo "== 6. falsified quantities not used as live (rung-641 exclusions) =="
+python3 - <<'PY'
+import glob, re, sys
+DEAD = [r'eta\*', r'Theta\*', r'Upsilon_IF', r'\u03a5_IF', r'\u03b7\\?\*', r'\u0398\\?\*']
+CTX = re.compile(r'falsif|kill|dead|retire|not universal|scatter|superseded|FAILED|FALSIFIED|'
+                 r'exclusion|audit|obstruction|limitation|candidate|conjectur|restated|status update|'
+                 r'did not pursue|pre-commit|stop rule|per-family', re.I)
+WINDOW = 12   # lines of surrounding context, plus the whole enclosing section heading chain
+bad = []
+for f in glob.glob('canon/**/*.md', recursive=True):
+    if 'extracted' in f or 'panels' in f: continue
+    lines = open(f).read().split('\n')
+    for i, line in enumerate(lines):
+        if not any(re.search(d, line) for d in DEAD): continue
+        lo, hi = max(0, i-WINDOW), min(len(lines), i+WINDOW+1)
+        ctx = '\n'.join(lines[lo:hi])
+        heads = '\n'.join(l for l in lines[:i+1] if l.startswith('#'))[-800:]
+        if not (CTX.search(ctx) or CTX.search(heads)):
+            bad.append(f"{f}:{i+1}: {line.strip()[:70]}")
+if bad:
+    print("  FAIL: falsified quantity used as live (no falsification context):")
+    for b in bad[:8]: print("   ", b)
+    sys.exit(1)
+print("  OK (all uses carry falsification/limitation context)")
+PY
+
 echo "== 5. kill log non-empty and current =="
 grep -q "2026-07-18" SCOREBOARD.md && echo "  OK" || { echo "  FAIL"; fail=1; }
 

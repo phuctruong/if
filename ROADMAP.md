@@ -1,12 +1,12 @@
 # IF Theory — ROADMAP
 
-> 🎮 **Game state:** Green belt · 5650 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
+> 🎮 **Game state:** Green belt · 6050 XP · 3 bosses slain · Boss #6 (ΛCDM) engaged · new Boss #5b unlocked (representational-format obstruction — the successor claim found inside the dead one).
 > Full XP ledger + belt criteria + boss table: `SCOREBOARD.md` §The Game.
 
 | Phase | Seal | State |
 |---|---|---|
 | 0 Absorb + Constitution | — | ✅ SEALED (`if-founding-100` 100/100) |
-| 1 Foundations | rung 641 | ◐ P00–P06 + P15 landed; dimensions/estimator/falsifier audit open |
+| 1 Foundations | rung 641 | ✅ **SEALED** — quantity audit complete with two declared exclusions (I_use family, cosmology symbols); verify gate 6 enforces them |
 | 2 Artificial Universe Lab | rung 274177 | ✅ **SEALED by falsification** (IF-H1 dead, honestly) |
 | 3 Observational Cosmology Lab | — | ▶️ LIVE 25/100 — **C3 audit verdict: branch is specified but NOT IMPLEMENTED** (ℒ_IF is a free function); SPARC admission bar preregistered; C2/C4/C5 blocked on the missing theory, not on effort |
 | 4 Preregistration | rung 65537 | 🔒 Euclid forecast frozen before DR1 (~Oct 2026) |
@@ -37,7 +37,12 @@ Canonical revised papers in `canon/papers/`:
 - [x] P2 Causal-Work Principle ✅ `P02-causal-work-principle.md`
 - [x] Break-even theorem (candidate) ✅ `canon/00-foundations/04-break-even-theorem.md`
 - [x] P03–P06 canonical revisions ✅ (two-threshold P05, capacity-growth P04, nostalgia-term P06)
-- Gate: every defined quantity has dimensions, an estimator, and a falsifier. No metaphors wearing math.
+- ✅ **Rung 641 SEALED 2026-07-18** — `canon/00-foundations/05-quantity-audit-rung-641.md`.
+  19 quantities audited. Agency-branch foundations PASS (B, three ledgers, W_C, Π_A, Π_C,
+  A₀, parasite band, A_future). Declared exclusions: the I_use family (⛔ representation-
+  relative, P15) and the cosmology symbols (⛔ unspecified free function). The seal
+  certifies the audit, not universal passage — and `verify.sh` gate 6 now fails the build
+  if any ⛔ quantity is used as though live.
 
 ## Phase 2 — Artificial Universe Lab (Track C: highest probability of original result)
 

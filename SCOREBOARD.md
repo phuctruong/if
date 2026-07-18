@@ -68,8 +68,8 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 
 | Rung | Meaning | Status |
 |---|---|---|
-| 641 | Foundations sealed: every quantity has dimensions + estimator + falsifier | ⬜ in progress |
-| 274177 | Causal-work threshold reproduced across ≥3 rule families | ⬜ |
+| 641 | Foundations sealed: every quantity has dimensions + estimator + falsifier | ✅ **SEALED** (audit + 2 declared exclusions + verify gate 6) |
+| 274177 | Causal-work threshold reproduced across ≥3 rule families | ✅ **SEALED by falsification** (P15) |
 | 65537 | Preregistered Euclid forecast frozen in a timestamped commit before DR1 | ⬜ |
 
 
@@ -90,14 +90,14 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | Candidate theorem with named missing lemmas | 250 | Break-even theorem ✅ |
 | Adversarial round survived + folded | 100 ea | Rounds 1–4 (×4) = 400 ✅ |
 | Canonical paper landed | 100 ea | P00–P15 (×16) = 1600 ✅ |
-| Rung sealed | 400 ea | 274177 ✅ |
+| Rung sealed | 400 ea | 274177 ✅ · 641 ✅ = 800 |
 | **Fishing after a stop rule** | **−1000** | none — rule honored ✅ |
 | Archived falsification recovered + scoped (not re-litigated) | 300 | SPARC 175-galaxy prior ✅ |
 | Adversarial round survived + folded (round 4) | 100 | Kill verdict verified + P15 rewritten ✅ |
 | **Declaring a branch not-yet-testable instead of fitting it** | 300 | Cosmology C3 audit ✅ |
 | Preregistered performance bar frozen from an existing fair benchmark | 200 | SPARC admission criteria ✅ |
 | **Successor result identified inside the corpse of a dead claim** | 400 | Representational-format obstruction (chemotaxis counterexample vs Kolchinsky–Wolpert / Friston) ✅ |
-| **TOTAL XP** | | **5650** |
+| **TOTAL XP** | | **6050** |
 
 ### Belt progression (IF Theory)
 
