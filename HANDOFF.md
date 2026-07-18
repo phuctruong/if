@@ -164,6 +164,15 @@ TA-H3/TA-H11 left untouched (no verdict from a broken instrument). Lesson logged
 reversible + number-conserving ⇒ no cheap records (aligned with P12 TA-H6/TA-H11
 spirit). Next attempt specified: BBM-with-walls substrate, own prereg. XP → 15800.
 
+### Loop iteration 15 (2026-07-18, /loop) — synthesis + book scenes
+
+`canon/00-foundations/07-state-of-the-program-2026-07-18.md` — the ten-minute audit
+document: 4 surviving claims vs 11 self-retirements; the day's structural result (two
+arenas proved CLOSED by mechanism/proof, not fatigue); the live bet + its Euclid
+trigger; one change-our-mind table; PHILOSOPHY-layer coda stating plainly that the core
+intuition is untested-not-refuted and offering both readings. Book arc updated with the
+loop's scenes. **Start any new session here.** XP → 16200.
+
 ### Next moves after this session, ranked
 
 1. **Entry 08 — DONE (iteration 13): PARKED on a data gap.** Offsets (Harvey+15,

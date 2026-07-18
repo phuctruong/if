@@ -67,6 +67,28 @@ warranted, not compelled. The book's honest close: **the antecedent is not estab
 Some of it we falsified ourselves. What we can report is that the question survived being
 asked properly, which is more than most versions of it manage.**
 
+## Scenes added by the 2026-07-18 loop (fold into V and VI; drafted same day)
+
+- **For V (the kill), a second act:** we then built the universe the critics said we
+  owed them — Conway-gate rules, exact energy ledger — and asked it to grow agents.
+  It grew *movers* the moment construction got cheap, and the movers were projectiles:
+  two pre-registered nulls showed their motion never couples to where the energy is.
+  The mechanism was the cleanest sentence the program ever produced: **motion is cheap;
+  lineage is not.** Nothing the universe grew could pass direction to a descendant, so
+  there was nothing for selection to make into an agent. Six rule families, same
+  answer. The branch closed by its own stop rule (P17).
+- **For VI (what honesty costs), three new receipts:** (1) two cosmology candidate laws
+  killed on paper in one afternoon — one by a three-line dimensional argument (any
+  memory-timescale gravity predicts the wrong Tully–Fisher slope), one by published
+  data (the radial acceleration relation leaves no room for our distinctive term) —
+  total cost of both kills: zero fits; (2) the one live cosmology bet (one history
+  drives both dark sectors) was frozen with its risky sign BEFORE data, and round 1
+  returned *indistinguishable* — so we sealed the growth side unopened and parked the
+  bet for Euclid rather than torture the data; (3) an instrument gate VOIDed a whole
+  experiment before it could produce a verdict, because the substrate turned out to
+  hold no records at all — the gate firing IS the method working, and it goes in the
+  book as a scene, not a footnote.
+
 ## Rules binding the manuscript
 
 1. Every scientific claim in the book carries its rung (computational / physical /

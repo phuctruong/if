@@ -128,7 +128,9 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Notebook-10 round 1 executed end-to-end honestly** — independent pipeline validates (Ωm 0.309, h 0.679, r_d 148.3); frozen verdict INDISTINGUISHABLE honored; growth side never opened; conservative amendments logged pre-fit; apparatus preserved for the Euclid vintage | 500 | `canon/20-cosmology/10-notebook10-verdict-v1.md` + `evidence/expansion_fit_2026_07_18.json` ✅ |
 | **Entry-08 survey: data gap recognized instead of forced** — offsets (Harvey/Wittman, unreliable per-system) and collision ages (MCC 29 clusters) live in disjoint samples; parked with 3 precise reopen conditions | 200 | `canon/20-cosmology/11-merger-memory-survey.md` ✅ |
 | **Instrument gate fired before a hypothesis was touched (arrow-records VOID)** — G1 exact reversibility PASS; G2 caught that in-place records are the empty set in a number-conserving reversible gas; TA-H3/TA-H11 left untouched; BBM-walls redesign specified | 150 | `hackathons/if-arrow-records/` ✅ |
-| **TOTAL XP** | | **15800** |
+| **State-of-the-program synthesis** — 11 retirements vs 4 surviving claims stated plainly; two arenas proved CLOSED (not merely unproductive); single change-our-mind table; core intuition labeled untested-not-refuted with both readings offered | 300 | `canon/00-foundations/07-state-of-the-program-2026-07-18.md` ✅ |
+| **Book arc updated with the loop's scenes** (V second act: motion without lineage; VI three new receipts incl. the VOIDed gate) | 100 | `canon/30-meaning/03-book-arc.md` ✅ |
+| **TOTAL XP** | | **16200** |
 
 ### Belt progression (IF Theory)
 
