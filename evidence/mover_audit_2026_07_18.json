@@ -1,0 +1,112 @@
+{
+ "config": {
+  "rule": "B3/S23",
+  "e_birth": 0.25,
+  "e_maint": 0.01,
+  "inflow": 12.0,
+  "sigma": 40.0,
+  "density": 0.15
+ },
+ "warmup": 200,
+ "window": 100,
+ "T": 60,
+ "dilate": 21,
+ "n": 9,
+ "W_C_mean": -14.388711111111112,
+ "W_C_sd": 32.43825722062009,
+ "t": -1.3307167841894365,
+ "frac_positive": 0.6666666666666666,
+ "verdict": "VOID \u2014 below frozen minimum sample; no verdict may be taken",
+ "rows": [
+  {
+   "seed": 7,
+   "id": 0,
+   "size": 7,
+   "life": 44,
+   "disp": 11.57,
+   "w_intact": 4.3805,
+   "w_scrambled": 4.0605,
+   "W_C": 0.32
+  },
+  {
+   "seed": 42,
+   "id": 0,
+   "size": 5,
+   "life": 100,
+   "disp": 8.83,
+   "w_intact": 10.375,
+   "w_scrambled": 49.7748,
+   "W_C": -39.3998
+  },
+  {
+   "seed": 42,
+   "id": 1,
+   "size": 7,
+   "life": 78,
+   "disp": 14.79,
+   "w_intact": -60.1399,
+   "w_scrambled": -61.8658,
+   "W_C": 1.7259
+  },
+  {
+   "seed": 101,
+   "id": 0,
+   "size": 8,
+   "life": 80,
+   "disp": 8.08,
+   "w_intact": -4.7569,
+   "w_scrambled": -4.9226,
+   "W_C": 0.1657
+  },
+  {
+   "seed": 303,
+   "id": 0,
+   "size": 5,
+   "life": 100,
+   "disp": 35.36,
+   "w_intact": 0.7337,
+   "w_scrambled": 0.7107,
+   "W_C": 0.023
+  },
+  {
+   "seed": 303,
+   "id": 1,
+   "size": 7,
+   "life": 86,
+   "disp": 13.75,
+   "w_intact": 13.153,
+   "w_scrambled": 106.5397,
+   "W_C": -93.3867
+  },
+  {
+   "seed": 303,
+   "id": 2,
+   "size": 13,
+   "life": 43,
+   "disp": 14.66,
+   "w_intact": 18.987,
+   "w_scrambled": 17.5197,
+   "W_C": 1.4672
+  },
+  {
+   "seed": 404,
+   "id": 0,
+   "size": 5,
+   "life": 70,
+   "disp": 24.75,
+   "w_intact": -5.1932,
+   "w_scrambled": -3.8746,
+   "W_C": -1.3186
+  },
+  {
+   "seed": 404,
+   "id": 1,
+   "size": 5,
+   "life": 44,
+   "disp": 14.61,
+   "w_intact": 2.8701,
+   "w_scrambled": 1.9652,
+   "W_C": 0.9049
+  }
+ ]
+}

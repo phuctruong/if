@@ -76,9 +76,16 @@ def audit_seed(seed):
     return rows
 
 
+# Seed roster declared 2026-07-18 AFTER the first 8 seeds yielded 9 movers (< frozen
+# minimum 20, verdict VOID) and BEFORE any further run: fixed 24-seed roster below,
+# verdict taken on the FULL roster regardless of the t trajectory — no optional stopping.
+ROSTER = (7, 11, 23, 42, 101, 202, 303, 404,
+          501, 502, 503, 504, 505, 506, 507, 508,
+          509, 510, 511, 512, 513, 514, 515, 516)
+
 if __name__ == '__main__':
     allrows = []
-    for seed in (7, 11, 23, 42, 101, 202, 303, 404):
+    for seed in ROSTER:
         rows = audit_seed(seed)
         allrows += rows
         print(f"seed {seed:3d}: {len(rows)} live movers audited, "
