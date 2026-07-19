@@ -11,7 +11,7 @@ import numpy as np
 
 F0 = 10000.0
 LAMBDA = 0.01          # spontaneous discharge rate of the free-energy stock
-SAT = 30.0             # capture saturation (gradients are spread out)
+SAT = 400.0            # capture saturation (amendment #1: was 30, capture was saturated)
 CAP_N, CAP_R = 1.0, 2.0
 BOOST = 1.5            # extra reflective capture at knowledge saturation
 M_N, M_R = 0.020, 0.038  # maintenance; reflection costs more to run
@@ -28,10 +28,12 @@ def run(rho0, seed, teaching=True):
     n_r = int(round(rho0 * N0))
     refl = np.zeros(N0, bool)
     refl[:n_r] = True
-    reserve = np.full(N0, BODY + 1.0)
+    reserve = rng.uniform(0.5, 2.5, N0) + BODY   # amendment #1: per-agent variation
     F = F0 - reserve.sum()
     H, K, W, t_end = 0.0, 0.0, 0.0, 0
     hit_cap = False
+    refl_peak = float(refl.mean()) if len(refl) else 0.0
+    refl_area = 0.0
 
     for t in range(TMAX):
         n = len(reserve)
@@ -86,6 +88,8 @@ def run(rho0, seed, teaching=True):
             refl = np.concatenate([refl, refl[par]])
         elif len(par):
             hit_cap = True
+        refl_peak = max(refl_peak, float(refl.mean()))
+        refl_area += float(refl.mean())
         # --- Noether gate ---
         err = abs(F + H + reserve.sum() - F0)
         assert err < 1e-6, f"LEDGER LEAK {err:.3e} at t={t}"
@@ -95,6 +99,7 @@ def run(rho0, seed, teaching=True):
             'phi': W / F0, 't_end': t_end, 'K_final': float(K),
             'n_final': int(len(reserve)),
             'refl_frac_final': float(refl.mean()) if len(refl) else 0.0,
+            'refl_peak': refl_peak, 'refl_mean_over_life': refl_area / max(t_end, 1),
             'hit_cap': hit_cap}
 
 
@@ -107,10 +112,11 @@ def sweep(teaching):
         out.append({'rho0': rho, 'phi_mean': float(phi.mean()),
                     'phi_sd': float(phi.std(ddof=1)), 't_end_mean': float(te.mean()),
                     'refl_final': float(np.mean([r['refl_frac_final'] for r in rows])),
+                    'refl_life': float(np.mean([r['refl_mean_over_life'] for r in rows])),
                     'K_final': float(np.mean([r['K_final'] for r in rows])),
                     'rows': rows})
         print(f"   rho0={rho:4.2f}  Phi={phi.mean():.4f} +/- {phi.std(ddof=1):.4f}  "
-              f"t_end={te.mean():7.0f}  refl_final={out[-1]['refl_final']:.2f}  "
+              f"t_end={te.mean():7.0f}  refl_life={out[-1]['refl_life']:.2f}  "
               f"K={out[-1]['K_final']:.1f}")
     return out
 

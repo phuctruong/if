@@ -54,6 +54,25 @@ rises with K (which rises with their number), while cost stays linear per agent.
 Seeds 1–12, declared. TMAX = 20000. All four verdicts logged as-is, including the
 outcome where reflection helps nothing.
 
+## Logged amendment #1 (2026-07-19, run 1 declared VOID before any verdict was taken)
+
+Run 1 produced three instrument defects, all visible without looking at the verdicts:
+
+1. **Zero variance.** Every agent started with identical reserve, so the RNG was used
+   only by teaching. All 12 seeds in the teaching-OFF arm were bit-identical (σ = 0),
+   making every comparison against it infinitely significant. Fake error bars.
+2. **Saturated capture.** Φ ≈ 0.92 at ρ₀ = 0 — the naive population already intercepts
+   almost the whole discharge, leaving ~8% headroom for any effect to appear in.
+   SAT = 30 was far too small against a 100+ agent population.
+3. **Reflection always extinct** (`refl_final = 0.00` everywhere), so the arms were not
+   actually comparing sustained reflective populations.
+
+Fixes (instrument defects only — no verdict criterion, threshold, or benefit/cost
+parameter is touched): initial reserves drawn per-agent from U(0.5, 2.5) so seeds carry
+real variation; SAT raised 30 → 400 so capture is unsaturated and effects have room to
+show. Defect 3 is left alone deliberately — whether reflection can persist is an
+*outcome*, not something to be tuned away. Q1–Q4 criteria stand exactly as frozen.
+
 ## Scope limit (binding on every sentence of the write-up)
 
 This is a toy closed system with invented constants. It can establish the *structure*
