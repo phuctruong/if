@@ -130,7 +130,11 @@ Boltzmann-medal-shaped; the cosmology long shot keeps its 10/10-stakes line only
 | **Instrument gate fired before a hypothesis was touched (arrow-records VOID)** — G1 exact reversibility PASS; G2 caught that in-place records are the empty set in a number-conserving reversible gas; TA-H3/TA-H11 left untouched; BBM-walls redesign specified | 150 | `hackathons/if-arrow-records/` ✅ |
 | **State-of-the-program synthesis** — 11 retirements vs 4 surviving claims stated plainly; two arenas proved CLOSED (not merely unproductive); single change-our-mind table; core intuition labeled untested-not-refuted with both readings offered | 300 | `canon/00-foundations/07-state-of-the-program-2026-07-18.md` ✅ |
 | **Book arc updated with the loop's scenes** (V second act: motion without lineage; VI three new receipts incl. the VOIDed gate) | 100 | `canon/30-meaning/03-book-arc.md` ✅ |
-| **TOTAL XP** | | **16200** |
+| **Recharge-threshold circuit sealed** — the Track-C experiment the meaning canon named as owed; PERPETUAL_RECHARGE enforced and never fired; reflection buys intensity not duration (Φ +36%, t_end −6%) | 400 | `hackathons/if-recharge-threshold/` ✅ |
+| **Own pre-registered prediction falsified and logged** (predicted a lone reflective agent would sit in the parasite band; it swept to fixation instead) | 100 | Q1 ✅ |
+| **Refused a technically-fired verdict** — Q2 "THRESHOLD" reported as a seeding artifact (none→any), not a density phase transition | 200 | Q2 ✅ |
+| **Cost crossover + the selection-blindness result** (exploratory): reflection parasitic above ~6–7× upkeep premium yet still sweeps to fixation — individually selected, collectively destructive | 300 | `evidence/recharge_costsweep_exploratory_2026_07_19.json` ✅ |
+| **TOTAL XP** | | **17200** |
 
 ### Belt progression (IF Theory)
 
